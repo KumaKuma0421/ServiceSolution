@@ -20,6 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2F1EFCAA-B487-4FA0-8FC8-C5BBF3A2DC70}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RegistryAccess", "RegistryAccess\RegistryAccess.vcxproj", "{EA14AF4F-31EE-453D-A525-55C0F18B4D32}"
