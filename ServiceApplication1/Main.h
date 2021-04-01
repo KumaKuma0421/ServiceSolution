@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Service.h"
+#include "ServiceCore.h"
 #include "EventViewer.h"
 #include "ServiceMessage.h"
 
