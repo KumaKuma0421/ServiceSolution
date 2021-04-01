@@ -5,7 +5,8 @@
 #include "pch.h"
 #include "Main.h"
 
-static ServiceCore __service;
+static EventLogger __logger;
+static ServiceCore __service(__logger);
 
 //
 // SCMから起動時に呼ばれます。
@@ -18,16 +19,32 @@ static ServiceCore __service;
 //
 int _tmain(int argc, TCHAR** argv)
 {
-	_tsetlocale(LC_ALL, _T("Japanese"));
-
 	BOOL ret;
 
-	if (argc > 1)
-		ret = __service.Command(argv[1]);
-	else
-		__service.Entry();
+	_tsetlocale(LC_ALL, _T("Japanese"));
 
-	return ERROR_SUCCESS;
+	do
+	{
+		ret = __logger.Init(SERVICE_NAME);
+		if (!ret)
+		{
+			_tprintf(_T("EventLogger initialize failed.\n"));
+			break;
+		}
+
+		if (argc > 1)
+			ret = __service.Command(argv[1]);
+		else
+			__service.Entry();
+
+		ret = __logger.Exit();
+		if (!ret)
+			_tprintf(_T("EventLogger closing failed.\n"));
+
+	} while (0);
+
+
+	return ret == TRUE ? ERROR_SUCCESS : -1;
 }
 
 //

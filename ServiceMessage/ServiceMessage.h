@@ -69,6 +69,15 @@
 //
 #define CATEGORY_SERVICE_CONTROL         ((WORD)0x00000003L)
 
+//
+// MessageId: CATEGORY_SERVICE
+//
+// MessageText:
+//
+// Serivce
+//
+#define CATEGORY_SERVICE                 ((WORD)0x00000004L)
+
 
 // --------------
 // MESSAGE DEFINE

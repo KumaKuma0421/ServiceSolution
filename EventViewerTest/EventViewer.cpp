@@ -27,7 +27,7 @@ BOOL EventViewer::Exit()
 	return ::DeregisterEventSource(_hEventSource);
 }
 
-BOOL EventViewer::Write(
+BOOL EventViewer::Log(
 	WORD wEventType,
 	WORD wEventCategory,
 	DWORD dwEventID,
