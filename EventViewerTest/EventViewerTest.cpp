@@ -36,7 +36,7 @@ void WriteEventLogTest1()
 	ret = ev.Init(SVC_NAME);
 	assert(ret);
 
-	ret = ev.Write(
+	ret = ev.Log(
 		EVENTLOG_SUCCESS,
 		CATEGORY_SEVICE_CORE,
 		SVC_SUCCESS_SYSTEM,
@@ -44,7 +44,7 @@ void WriteEventLogTest1()
 		lpctszParams1);
 	assert(ret);
 
-	ret = ev.Write(
+	ret = ev.Log(
 		EVENTLOG_SUCCESS,
 		CATEGORY_SERVICE_MANAGER,
 		SVC_SUCCESS_RUNTIME,
@@ -52,7 +52,7 @@ void WriteEventLogTest1()
 		lpctszParams1);
 	assert(ret);
 
-	ret = ev.Write(
+	ret = ev.Log(
 		EVENTLOG_ERROR_TYPE,
 		CATEGORY_SERVICE_CONTROL,
 		SVC_SUCCESS_API,
@@ -60,7 +60,7 @@ void WriteEventLogTest1()
 		lpctszParams1);
 	assert(ret);
 
-	ret = ev.Write(
+	ret = ev.Log(
 		EVENTLOG_ERROR_TYPE,
 		CATEGORY_SEVICE_CORE,
 		SVC_SUCCESS_IO,
@@ -79,8 +79,8 @@ VOID ReadEventLogTest1()
 
 	DWORD dwReadFlags = EVENTLOG_SEQUENTIAL_READ | EVENTLOG_FORWARDS_READ;
 	DWORD dwRecordOffset = 0;
-	CONST DWORD cdwRecordSize = sizeof(EVENTLOGRECORD) * 100; // サンプルは1024でした。
-	BYTE byBuf[cdwRecordSize] = { 0 };
+	CONST DWORD cdwRecordSize = sizeof(EVENTLOGRECORD) * 1024; // サンプルは1024でした。
+	TCHAR tszBuf[cdwRecordSize] = { 0 };
 	DWORD dwBufSize = cdwRecordSize;
 
 	ret = ev.Open(_T("Application"));
@@ -88,8 +88,10 @@ VOID ReadEventLogTest1()
 
 	while (1)
 	{
-		ret = ev.Read(dwReadFlags, dwRecordOffset, byBuf, dwBufSize);
+		ret = ev.Read(dwReadFlags, dwRecordOffset, tszBuf, dwBufSize);
 		if (!ret) break;
+
+		_tprintf(_T("%s"), tszBuf);
 	}
 
 	ret = ev.Close();
@@ -100,7 +102,7 @@ int _tmain(int argc, TCHAR** argv)
 {
 	_tsetlocale(LC_ALL, _T("Japanese"));
 
-	WriteEventLogTest1();
+	//WriteEventLogTest1();
 	ReadEventLogTest1();
 
 	return ERROR_SUCCESS;

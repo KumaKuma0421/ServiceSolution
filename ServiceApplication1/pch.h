@@ -8,7 +8,8 @@
 #include <Windows.h>
 #include <tchar.h>
 #include <winsvc.h>
-
-#include <fstream>
+#include <processthreadsapi.h>
+#include <locale.h>
+#include <stdarg.h>
 
 #pragma comment(lib, "advapi32.lib")

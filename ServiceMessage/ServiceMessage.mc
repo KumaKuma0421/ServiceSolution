@@ -49,6 +49,15 @@ Language=Japanese
 ServiceControlクラス
 .
 
+MessageId=0x4
+SymbolicName=CATEGORY_SERVICE
+Language=English
+Serivce
+.
+
+Language=Japanese
+Serviceクラス
+.
 
 ;
 ;// --------------

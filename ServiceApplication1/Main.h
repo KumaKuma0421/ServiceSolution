@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Service.h"
-#include "EventViewer.h"
+#include "ServiceCore.h"
+#include "EventLogger.h"
 #include "ServiceMessage.h"
 
 VOID WINAPI SvcMain(DWORD dwArgc, LPTSTR* lptszArgv);

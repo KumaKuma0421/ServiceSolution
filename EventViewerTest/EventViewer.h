@@ -11,14 +11,13 @@ public:
     ~EventViewer();
 
     BOOL Init(LPCTSTR lpctszServiceName);
-    
     BOOL Exit();
 
-    BOOL Write(
+    BOOL Log(
         WORD wEventType,
         WORD wEventCategory,
         DWORD dwEventID,
-        WORD wNumOfArgs,
+        WORD wArgc,
         LPCTSTR* lpctszArgs);
 
     BOOL Open(LPCTSTR lpctszServiceName);

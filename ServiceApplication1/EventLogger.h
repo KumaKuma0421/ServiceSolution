@@ -1,21 +1,20 @@
 //
-// EventViewer.h
+// EventLogger.h
 //
 
 #pragma once
 
 #include "ServiceMessage.h"
 
-class EventViewer final
+class EventLogger final
 {
 public:
-    EventViewer()
+    EventLogger()
     {
         _hEventSource = nullptr;
-        _lpctszServiceName = nullptr;
     };
 
-    ~EventViewer()
+    ~EventLogger()
     {
         if (_hEventSource != nullptr)
             ::DeregisterEventSource(_hEventSource);
@@ -24,19 +23,17 @@ public:
     BOOL Init(LPCTSTR lpctszServiceName);
     BOOL Exit();
 
-    //! @ToDo lpctszArgÇÕîzóÒÇ≈Ç¢Ç¢Ç∆évÇ§ÅB
-    BOOL Write(
+    BOOL Log(
         WORD wEventType,
         WORD wEventCategory,
         DWORD dwEventID,
         WORD wArgc,
-        LPCTSTR* lpctszArg);
+        ...);
+
     BOOL TraceStart(WORD wCategory, LPCTSTR lpctszFunctionName);
     BOOL TraceFinish(WORD wCategory, LPCTSTR lpctszFunctionName);
 
-
 private:
     HANDLE _hEventSource;
-    LPCTSTR _lpctszServiceName;
 };
 
