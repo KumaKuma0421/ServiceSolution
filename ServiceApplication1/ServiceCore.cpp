@@ -79,7 +79,7 @@ BOOL ServiceCore::Entry()
     ret = ::StartServiceCtrlDispatcher(DispatchTable);
     if (!ret)
     {
-        _logger.Log(EVENTLOG_ERROR_TYPE, CATEGORY_SEVICE_CORE, SVC_ERROR_API, 2, __FUNCTIONW__, _T("StartServiceCtrlDispatcher()が失敗しました。"));
+        _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("StartServiceCtrlDispatcher()"));
     }
 
     _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
@@ -102,6 +102,7 @@ BOOL ServiceCore::Install()
         if (!dwRet)
         {
             // エラーログを画面出力へ
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("GetModuleFileName()"));
             break;
         }
 
@@ -273,7 +274,14 @@ VOID ServiceCore::Handler(DWORD dwControlCode)
 
     auto ActionLog = [&](LPCTSTR lpctszMsg)
     {
-        _logger.Log(EVENTLOG_SUCCESS, CATEGORY_SEVICE_CORE, SVC_SUCCESS_SYSTEM, 3, _T("ServiceCore::Handler"), _T("サービス制御コールバックを受信しました。"), lpctszMsg);
+        _logger.Log(
+            EVENTLOG_SUCCESS,
+            CATEGORY_SEVICE_CORE,
+            SVC_SUCCESS_SYSTEM,
+            3,
+            _T("ServiceCore::Handler"),
+            _T("サービス制御コールバックを受信しました。"),
+            lpctszMsg);
     };
 
     BOOL ret = TRUE;

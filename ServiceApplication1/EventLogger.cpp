@@ -54,6 +54,24 @@ BOOL EventLogger::Log(
     return ret;
 }
 
+BOOL EventLogger::ApiError(WORD wCategory, DWORD dwErrorCode, LPCTSTR lpctszFunctionName, LPCTSTR lpctszErrorAPI)
+{
+    DWORD dwFlags = FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM;
+    LPCVOID lpcvSource = nullptr;
+    DWORD dwLanguageId = MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT);
+    LPTSTR lptszBuffer = nullptr;
+    DWORD dwSize = 0;
+    va_list arguments = nullptr;
+
+    DWORD dwRet = ::FormatMessage(dwFlags, lpcvSource, dwErrorCode, dwLanguageId, (LPTSTR)&lptszBuffer, dwSize, &arguments);
+
+    BOOL ret = Log(EVENTLOG_ERROR_TYPE, wCategory, SVC_ERROR_API, 3, lpctszFunctionName, lpctszErrorAPI, lptszBuffer);
+
+    ::LocalFree(lptszBuffer);
+
+    return dwRet == 0 ? FALSE : TRUE;
+}
+
 BOOL EventLogger::TraceStart(WORD wCategory, LPCTSTR lpctszFunctionName)
 {
 #ifdef _DEBUG

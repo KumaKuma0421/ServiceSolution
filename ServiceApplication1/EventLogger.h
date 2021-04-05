@@ -30,6 +30,12 @@ public:
         WORD wArgc,
         ...);
 
+    BOOL ApiError(
+        WORD wCategory,
+        DWORD dwErrorCode,
+        LPCTSTR lpctszFunctionName,
+        LPCTSTR lpctszErrorAPI);
+
     BOOL TraceStart(WORD wCategory, LPCTSTR lpctszFunctionName);
     BOOL TraceFinish(WORD wCategory, LPCTSTR lpctszFunctionName);
 
