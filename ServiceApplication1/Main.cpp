@@ -25,7 +25,7 @@ int _tmain(int argc, TCHAR** argv)
 
 	do
 	{
-		ret = __logger.Init(SERVICE_NAME);
+		ret = __logger.Init(MY_SERVICE_NAME);
 		if (!ret)
 		{
 			_tprintf(_T("EventLogger initialize failed.\n"));
@@ -33,7 +33,7 @@ int _tmain(int argc, TCHAR** argv)
 		}
 
 		if (argc > 1)
-			ret = __service.Command(argv[1]);
+			ret = __service.Command(argv[1], argv[2]);
 		else
 			__service.Entry();
 

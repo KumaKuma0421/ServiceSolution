@@ -39,7 +39,7 @@ ServiceCore::~ServiceCore()
 {
 }
 
-BOOL ServiceCore::Command(LPCTSTR lpctszCommand)
+BOOL ServiceCore::Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption)
 {
     _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
 
@@ -52,6 +52,18 @@ BOOL ServiceCore::Command(LPCTSTR lpctszCommand)
     else if (_tcscmp(lpctszCommand, COMMAND_REMOVE) == 0)
     {
         Remove();
+    }
+    else if (_tcscmp(lpctszCommand, COMMAND_ENABLE) == 0)
+    {
+        Enable();
+    }
+    else if (_tcscmp(lpctszCommand, COMMAND_DISABLE) == 0)
+    {
+        Disable();
+    }
+    else if (_tcscmp(lpctszCommand, COMMAND_CHANGE_DESCRIPTION) == 0)
+    {
+        ChangeDescription(lpctszOption);
     }
     else
     {
@@ -72,7 +84,7 @@ BOOL ServiceCore::Entry()
 
     SERVICE_TABLE_ENTRY DispatchTable[] =
     {
-        { (LPTSTR)SERVICE_NAME, SvcMain },
+        { (LPTSTR)MY_SERVICE_NAME, SvcMain },
         { nullptr, nullptr }
     };
 
@@ -94,7 +106,7 @@ BOOL ServiceCore::Install()
     TCHAR tszMsg[MAX_MESSAGE_LEN] = { 0 };
     TCHAR tszPath[MAX_PATH] = { 0 };
     ServiceControlManager scm;
-    ServiceControl sc(scm, SERVICE_NAME);
+    ServiceControl sc(scm, MY_SERVICE_NAME);
 
     do
     {
@@ -114,6 +126,17 @@ BOOL ServiceCore::Install()
         }
 
         ret = sc.Create(tszPath);
+        if (!ret)
+        {
+            // エラーログを画面出力へ
+            break;
+        }
+        else
+        {
+            _logger.Log(EVENTLOG_INFORMATION_TYPE, CATEGORY_SEVICE_CORE, SVC_SUCCESS_API, 3, __FUNCTIONW__, _T("サービスをインストールしました。"), MY_SERVICE_NAME);
+        }
+
+        ret = sc.ChangeConfig2(MY_SERVICE_DESCRIPTION);
         if (!ret)
         {
             // エラーログを画面出力へ
@@ -149,7 +172,7 @@ BOOL ServiceCore::Remove()
     BOOL ret = FALSE;
     TCHAR tszMsg[MAX_MESSAGE_LEN] = { 0 };
     ServiceControlManager scm;
-    ServiceControl sc(scm, SERVICE_NAME);
+    ServiceControl sc(scm, MY_SERVICE_NAME);
 
     do
     {
@@ -160,7 +183,7 @@ BOOL ServiceCore::Remove()
             break;
         }
 
-        ret = sc.Open();
+        ret = sc.Open(DELETE);
         if (!ret)
         {
             // エラー情報を画面出力
@@ -172,6 +195,10 @@ BOOL ServiceCore::Remove()
         {
             // エラー情報を画面出力
             break;
+        }
+        else
+        {
+            _logger.Log(EVENTLOG_INFORMATION_TYPE, CATEGORY_SEVICE_CORE, SVC_SUCCESS_API, 3, __FUNCTIONW__, _T("サービスをアンインストールしました。"), MY_SERVICE_NAME);
         }
 
         ret = sc.Close();
@@ -185,6 +212,195 @@ BOOL ServiceCore::Remove()
         if (!ret)
         {
             // サービスマネージャのクローズ失敗を画面出力
+            break;
+        }
+
+        ret = TRUE;
+
+    } while (0);
+
+    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    return ret;
+}
+
+BOOL ServiceCore::Enable()
+{
+    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+
+    BOOL ret = FALSE;
+    TCHAR tszMsg[MAX_MESSAGE_LEN] = { 0 };
+    ServiceControlManager scm;
+    ServiceControl sc(scm, MY_SERVICE_NAME);
+
+    do
+    {
+        ret = scm.Open();
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("OpenSCManager()"));
+            // エラーログを画面出力へ
+            break;
+        }
+
+        ret = sc.Open(SERVICE_CHANGE_CONFIG);
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("OpenService()"));
+            // エラーログを画面出力へ
+            break;
+        }
+
+        ret = sc.ChangeConfig(TRUE);
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("ChangeServiceConfig()"));
+            // エラーログを画面出力へ
+            break;
+        }
+        else
+        {
+            _logger.Log(EVENTLOG_INFORMATION_TYPE, CATEGORY_SEVICE_CORE, SVC_SUCCESS_API, 2, __FUNCTIONW__, _T("サービスを有効にしました。"));
+        }
+
+        ret = sc.Close();
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("CloseServiceHandle()"));
+            // サービスクローズ失敗を画面出力
+            break;
+        }
+
+        ret = scm.Close();
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("CloseServiceHandle()"));
+            // サービスコントロールマネージャのクローズ失敗を画面出力
+            break;
+        }
+
+        ret = TRUE;
+
+    } while (0);
+
+    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    return ret;
+}
+
+BOOL ServiceCore::Disable()
+{
+    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+
+    BOOL ret = FALSE;
+    TCHAR tszMsg[MAX_MESSAGE_LEN] = { 0 };
+    ServiceControlManager scm;
+    ServiceControl sc(scm, MY_SERVICE_NAME);
+
+    do
+    {
+        ret = scm.Open();
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("OpenSCManager()"));
+            // エラーログを画面出力へ
+            break;
+        }
+
+        ret = sc.Open(SERVICE_CHANGE_CONFIG);
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("OpenService()"));
+            // エラーログを画面出力へ
+            break;
+        }
+
+        ret = sc.ChangeConfig(FALSE);
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("ChangeServiceConfig()"));
+            // エラーログを画面出力へ
+            break;
+        }
+        else
+        {
+            _logger.Log(EVENTLOG_INFORMATION_TYPE, CATEGORY_SEVICE_CORE, SVC_SUCCESS_API, 2, __FUNCTIONW__, _T("サービスを無効にしました。"));
+        }
+
+        ret = sc.Close();
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("CloseServiceHandle()"));
+            // サービスクローズ失敗を画面出力
+            break;
+        }
+
+        ret = scm.Close();
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("CloseServiceHandle()"));
+            // サービスコントロールマネージャのクローズ失敗を画面出力
+            break;
+        }
+
+        ret = TRUE;
+
+    } while (0);
+
+    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    return ret;
+}
+
+BOOL ServiceCore::ChangeDescription(LPCTSTR lpctszDescription)
+{
+    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+
+    BOOL ret = FALSE;
+    TCHAR tszMsg[MAX_MESSAGE_LEN] = { 0 };
+    ServiceControlManager scm;
+    ServiceControl sc(scm, MY_SERVICE_NAME);
+
+    do
+    {
+        ret = scm.Open();
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("OpenSCManager()"));
+            // エラーログを画面出力へ
+            break;
+        }
+
+        ret = sc.Open(SERVICE_CHANGE_CONFIG);
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("OpenService()"));
+            // エラーログを画面出力へ
+            break;
+        }
+
+        ret = sc.ChangeConfig2(lpctszDescription);
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("ChangeServiceConfig2()"));
+            // エラーログを画面出力へ
+            break;
+        }
+        else
+        {
+            _logger.Log(EVENTLOG_INFORMATION_TYPE, CATEGORY_SEVICE_CORE, SVC_SUCCESS_API, 3, __FUNCTIONW__, _T("サービスの説明を変更しました。"), lpctszDescription);
+        }
+
+        ret = sc.Close();
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("CloseServiceHandle()"));
+            // サービスクローズ失敗を画面出力
+            break;
+        }
+
+        ret = scm.Close();
+        if (!ret)
+        {
+            _logger.ApiError(CATEGORY_SEVICE_CORE, GetLastError(), __FUNCTIONW__, _T("CloseServiceHandle()"));
+            // サービスコントロールマネージャのクローズ失敗を画面出力
             break;
         }
 
@@ -335,7 +551,7 @@ BOOL ServiceCore::Init()
 
     do
     {
-        ret = _handler.Init(SERVICE_NAME, CtrlHandler);
+        ret = _handler.Init(MY_SERVICE_NAME, CtrlHandler);
         if (!ret)
         {
             // イベントビューアーにエラーを書き込む
