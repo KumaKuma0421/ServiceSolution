@@ -70,4 +70,9 @@
       <Filter>リソース ファイル</Filter>
     </CopyFileToFolders>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="EventLog_ServiceApplication.reg">
+      <Filter>リソース ファイル</Filter>
+    </None>
+  </ItemGroup>
 </Project>

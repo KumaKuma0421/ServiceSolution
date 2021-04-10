@@ -21,7 +21,7 @@ public:
 
     BOOL Create(LPCTSTR lpctszEventName)
     {
-        _hEvent = CreateEvent(
+        _hEvent = ::CreateEvent(
             nullptr,
             TRUE,  // manual reset event
             FALSE, // not signaled
