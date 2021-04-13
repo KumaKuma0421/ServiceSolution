@@ -54,18 +54,38 @@ BOOL EventLogger::Log(
     return ret;
 }
 
-BOOL EventLogger::ApiError(WORD wCategory, DWORD dwErrorCode, LPCTSTR lpctszFunctionName, LPCTSTR lpctszErrorAPI)
+BOOL EventLogger::ApiError(
+    WORD wCategory,
+    DWORD dwErrorCode,
+    LPCTSTR lpctszFunctionName,
+    LPCTSTR lpctszErrorAPI)
 {
-    DWORD dwFlags = FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM;
+    DWORD dwFlags = FORMAT_MESSAGE_ALLOCATE_BUFFER |
+        FORMAT_MESSAGE_IGNORE_INSERTS |
+        FORMAT_MESSAGE_FROM_SYSTEM;
     LPCVOID lpcvSource = nullptr;
     DWORD dwLanguageId = MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT);
     LPTSTR lptszBuffer = nullptr;
     DWORD dwSize = 0;
     va_list arguments = nullptr;
 
-    DWORD dwRet = ::FormatMessage(dwFlags, lpcvSource, dwErrorCode, dwLanguageId, (LPTSTR)&lptszBuffer, dwSize, &arguments);
+    DWORD dwRet = ::FormatMessage(
+        dwFlags,
+        lpcvSource,
+        dwErrorCode,
+        dwLanguageId,
+        (LPTSTR)&lptszBuffer,
+        dwSize,
+        &arguments);
 
-    BOOL ret = Log(EVENTLOG_ERROR_TYPE, wCategory, SVC_ERROR_API, 3, lpctszFunctionName, lpctszErrorAPI, lptszBuffer);
+    BOOL ret = Log(
+        EVENTLOG_ERROR_TYPE,
+        wCategory,
+        SVC_ERROR_API,
+        3,
+        lpctszFunctionName,
+        lpctszErrorAPI,
+        lptszBuffer);
 
     ::LocalFree(lptszBuffer);
 
@@ -75,7 +95,13 @@ BOOL EventLogger::ApiError(WORD wCategory, DWORD dwErrorCode, LPCTSTR lpctszFunc
 BOOL EventLogger::TraceStart(WORD wCategory, LPCTSTR lpctszFunctionName)
 {
 #ifdef _DEBUG
-    return Log(EVENTLOG_INFORMATION_TYPE, wCategory, SVC_INFO_RUNTIME, 2, lpctszFunctionName, _T("Start"));
+    return Log(
+        EVENTLOG_INFORMATION_TYPE,
+        wCategory,
+        SVC_INFO_TRACE,
+        2,
+        lpctszFunctionName,
+        _T("Start"));
 #else
     return TRUE;
 #endif
@@ -84,7 +110,28 @@ BOOL EventLogger::TraceStart(WORD wCategory, LPCTSTR lpctszFunctionName)
 BOOL EventLogger::TraceFinish(WORD wCategory, LPCTSTR lpctszFunctionName)
 {
 #ifdef _DEBUG
-    return Log(EVENTLOG_INFORMATION_TYPE, wCategory, SVC_INFO_RUNTIME, 2, lpctszFunctionName, _T("Finish"));
+    return Log(
+        EVENTLOG_INFORMATION_TYPE,
+        wCategory,
+        SVC_INFO_TRACE,
+        2,
+        lpctszFunctionName,
+        _T("Finish"));
+#else
+    return TRUE;
+#endif
+}
+
+BOOL EventLogger::Trace(WORD wCategory, LPCTSTR lpctszFunctionName, LPCTSTR lpctszMessage)
+{
+#ifdef _DEBUG
+    return Log(
+        EVENTLOG_INFORMATION_TYPE,
+        wCategory,
+        SVC_INFO_TRACE,
+        2,
+        lpctszFunctionName,
+        lpctszMessage);
 #else
     return TRUE;
 #endif

@@ -19,6 +19,7 @@
 #define COMMAND_START _T("/start")
 
 #define MAX_MESSAGE_LEN 256
+#define MAX_STATE_TRANSITION_TIME 3000
 
 #include "Main.h"
 #include "Event.hpp"
@@ -149,7 +150,7 @@ public:
                 (LPBYTE)&status,                // address of structure
                 sizeof(SERVICE_STATUS_PROCESS), // size of structure
                 &dwBytesNeeded);                // size needed if buffer is too small
-            
+
             if (ret == FALSE)
             {
                 response = QueryResponse::Error;
@@ -271,8 +272,7 @@ public:
 
     BOOL Exit()
     {
-        BOOL ret = ::DeregisterEventSource(_hService);
-        return ret;
+        return ::DeregisterEventSource(_hService);
     };
 
     SERVICE_STATUS_HANDLE GetHandle() { return _hService; };
@@ -286,7 +286,11 @@ class ServiceStatus final
 public:
     ServiceStatus() { ZeroMemory(&_Status, sizeof(_Status)); };
 
-    BOOL ReportStatus(ServiceStatusHandler handler, DWORD dwCurrentState, DWORD dwWin32ExitCode, DWORD dwWaitHint);
+    BOOL ReportStatus(
+        ServiceStatusHandler handler,
+        DWORD dwCurrentState,
+        DWORD dwWin32ExitCode,
+        DWORD dwWaitHint);
 
     SERVICE_STATUS GetStatus() { return _Status; };
 
@@ -315,16 +319,16 @@ public:
 
 private:
     BOOL Init();
-    BOOL Exit();
     BOOL Start();
     BOOL Stop();
     BOOL Suspend();
     BOOL Resume();
+    BOOL Exit();
 
     BOOL ReportStatus(
         DWORD dwCurrentState,
-        DWORD dwWin32ExitCode,
-        DWORD dwWaitHint);
+        DWORD dwWin32ExitCode = NO_ERROR,
+        DWORD dwWaitHint = MAX_STATE_TRANSITION_TIME);
 
     DWORD _dwControlCode;
 

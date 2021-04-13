@@ -38,6 +38,7 @@ public:
 
     BOOL TraceStart(WORD wCategory, LPCTSTR lpctszFunctionName);
     BOOL TraceFinish(WORD wCategory, LPCTSTR lpctszFunctionName);
+    BOOL Trace(WORD wCategory, LPCTSTR lpctszFunctionName, LPCTSTR lpctszMessage = nullptr);
 
 private:
     HANDLE _hEventSource;

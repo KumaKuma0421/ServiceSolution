@@ -93,6 +93,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Service.cpp" />
+    <ClCompile Include="ServiceCommand.cpp" />
     <ClCompile Include="ServiceCore.cpp" />
     <ClCompile Include="Thread.cpp" />
   </ItemGroup>
@@ -103,6 +104,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Service.h" />
+    <ClInclude Include="ServiceCommand.h" />
     <ClInclude Include="ServiceCore.h" />
     <ClInclude Include="Thread.h" />
   </ItemGroup>

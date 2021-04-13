@@ -31,6 +31,7 @@
 #define FACILITY_RUNTIME                 0x1
 #define FACILITY_API                     0x2
 #define FACILITY_IO                      0x3
+#define FACILITY_TRACE                   0xF
 
 
 //
@@ -202,6 +203,21 @@
 // %1 %2 %3
 //
 #define SVC_INFO_IO                      ((DWORD)0x40030000L)
+
+
+// -----------------
+// INFORMATION TRACE
+// -----------------
+
+//
+// MessageId: SVC_INFO_TRACE
+//
+// MessageText:
+//
+// Trace information.%r
+// %1 %2 %3
+//
+#define SVC_INFO_TRACE                   ((DWORD)0x400FFFFFL)
 
 
 // --------------
