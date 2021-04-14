@@ -6,17 +6,13 @@
 #include "Main.h"
 
 static EventLogger __logger;
-static ServiceCore __service(__logger);
+static ServiceCore __core(__logger);
 
 //
 // SCMから起動時に呼ばれます。
 // 
-// 手動でパラメータ"/install"付きで呼び出した場合は
-// サービスのインストールを行います。
+// パラメータがある場合は、コマンド起動と解釈します。
 // 
-// 手動でパラメータ"/remove"付きで呼び出した場合は
-// サービスのアンインストールを行います。
-//
 int _tmain(int argc, TCHAR** argv)
 {
 	BOOL ret;
@@ -33,9 +29,14 @@ int _tmain(int argc, TCHAR** argv)
 		}
 
 		if (argc > 1)
-			ret = __service.Command(argv[1], argv[2]);
+		{
+			ServiceCommand command;
+			ret = command.Command(argv[1], argv[2]);
+		}
 		else
-			__service.Entry();
+		{
+			__core.Entry();
+		}
 
 		ret = __logger.Exit();
 		if (!ret)
@@ -52,7 +53,7 @@ int _tmain(int argc, TCHAR** argv)
 //
 VOID WINAPI SvcMain(DWORD dwArgc, LPTSTR* lptszArgv)
 {
-	__service.Main(dwArgc, lptszArgv);
+	__core.Main(dwArgc, lptszArgv);
 }
 
 //
@@ -60,5 +61,5 @@ VOID WINAPI SvcMain(DWORD dwArgc, LPTSTR* lptszArgv)
 //
 VOID WINAPI CtrlHandler(DWORD dwControlCode)
 {
-	__service.Handler(dwControlCode);
+	__core.Handler(dwControlCode);
 }

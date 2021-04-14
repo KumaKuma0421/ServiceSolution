@@ -122,7 +122,10 @@ BOOL EventLogger::TraceFinish(WORD wCategory, LPCTSTR lpctszFunctionName)
 #endif
 }
 
-BOOL EventLogger::Trace(WORD wCategory, LPCTSTR lpctszFunctionName, LPCTSTR lpctszMessage)
+BOOL EventLogger::Trace(
+    WORD wCategory,
+    LPCTSTR lpctszFunctionName,
+    LPCTSTR lpctszMessage)
 {
 #ifdef _DEBUG
     return Log(
