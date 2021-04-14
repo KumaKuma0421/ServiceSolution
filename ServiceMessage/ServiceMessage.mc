@@ -10,6 +10,7 @@ FacilityNames=(
     Runtime=0x1:FACILITY_RUNTIME
     API=0x2:FACILITY_API
     IO=0x3:FACILITY_IO
+    Trace=0xF:FACILITY_TRACE
 )
 
 
@@ -224,6 +225,26 @@ IO information.%r
 
 Language=Japanese
 IO情報です。%r
+%1 %2 %3
+.
+
+;
+;// -----------------
+;// INFORMATION TRACE
+;// -----------------
+;
+
+MessageId=0xFFFF
+Severity=Information
+Facility=Trace
+SymbolicName=SVC_INFO_TRACE
+Language=English
+Trace information.%r
+%1 %2 %3
+.
+
+Language=Japanese
+トレース情報です。%r
 %1 %2 %3
 .
 

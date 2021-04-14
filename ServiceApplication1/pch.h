@@ -8,6 +8,7 @@
 #include <Windows.h>
 #include <tchar.h>
 #include <winsvc.h>
+#include <libloaderapi.h>
 #include <processthreadsapi.h>
 #include <locale.h>
 #include <stdarg.h>

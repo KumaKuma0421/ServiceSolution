@@ -6,29 +6,6 @@
 #include "ServiceCore.h"
 #include "Service.h"
 
-BOOL ServiceStatus::ReportStatus(ServiceStatusHandler handler, DWORD dwCurrentState, DWORD dwWin32ExitCode, DWORD dwWaitHint)
-{
-    BOOL ret = FALSE;
-
-    _Status.dwServiceType = SERVICE_WIN32_OWN_PROCESS;
-    _Status.dwServiceSpecificExitCode = 0;
-    _Status.dwCurrentState = dwCurrentState;
-    _Status.dwWin32ExitCode = dwWin32ExitCode;
-    _Status.dwWaitHint = dwWaitHint;
-
-    if (dwCurrentState == SERVICE_START_PENDING)
-        _Status.dwControlsAccepted = 0;
-    else
-        _Status.dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_PAUSE_CONTINUE;
-
-    if ((dwCurrentState == SERVICE_RUNNING) || (dwCurrentState == SERVICE_STOPPED))
-        _Status.dwCheckPoint = 0;
-    else
-        _Status.dwCheckPoint++;
-
-    return ::SetServiceStatus(handler.GetHandle(), &_Status);
-};
-
 ServiceCore::ServiceCore(EventLogger& logger)
     :_logger(logger)
 {
@@ -36,160 +13,31 @@ ServiceCore::ServiceCore(EventLogger& logger)
 }
 
 ServiceCore::~ServiceCore()
-{
-}
-
-BOOL ServiceCore::Command(LPCTSTR lpctszCommand)
-{
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
-
-    BOOL ret = TRUE;
-
-    if (_tcscmp(lpctszCommand, COMMAND_INSTALL) == 0)
-    {
-        Install();
-    }
-    else if (_tcscmp(lpctszCommand, COMMAND_REMOVE) == 0)
-    {
-        Remove();
-    }
-    else
-    {
-        _logger.Log(EVENTLOG_ERROR_TYPE, CATEGORY_SEVICE_CORE, SVC_ERROR_RUNTIME, 3, __FUNCTIONW__, _T("不明なコマンドです。"), lpctszCommand);
-        ret = FALSE;
-    }
-
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
-    return ret;
-}
+{}
 
 BOOL ServiceCore::Entry()
 {
     _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
 
     BOOL ret = FALSE;
-    TCHAR tszMsg[MAX_MESSAGE_LEN] = { 0 };
 
     SERVICE_TABLE_ENTRY DispatchTable[] =
     {
-        { (LPTSTR)SERVICE_NAME, SvcMain },
+        { (LPTSTR)MY_SERVICE_NAME, SvcMain },
         { nullptr, nullptr }
     };
 
     ret = ::StartServiceCtrlDispatcher(DispatchTable);
     if (!ret)
     {
-        _logger.Log(EVENTLOG_ERROR_TYPE, CATEGORY_SEVICE_CORE, SVC_ERROR_API, 2, __FUNCTIONW__, _T("StartServiceCtrlDispatcher()が失敗しました。"));
+        LPCTSTR lpctszMsg = _T("StartServiceCtrlDispatcher()");
+        _logger.ApiError(
+            CATEGORY_SEVICE_CORE,
+            GetLastError(),
+            __FUNCTIONW__,
+            lpctszMsg);
+        _tprintf(_T("%sが失敗しました。\n"), lpctszMsg);
     }
-
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
-    return ret;
-}
-
-BOOL ServiceCore::Install()
-{
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
-
-    BOOL ret = FALSE;
-    TCHAR tszMsg[MAX_MESSAGE_LEN] = { 0 };
-    TCHAR tszPath[MAX_PATH] = { 0 };
-    ServiceControlManager scm;
-    ServiceControl sc(scm, SERVICE_NAME);
-
-    do
-    {
-        DWORD dwRet = ::GetModuleFileName(nullptr, tszPath, MAX_PATH);
-        if (!dwRet)
-        {
-            // エラーログを画面出力へ
-            break;
-        }
-
-        ret = scm.Open();
-        if (!ret)
-        {
-            // エラーログを画面出力へ
-            break;
-        }
-
-        ret = sc.Create(tszPath);
-        if (!ret)
-        {
-            // エラーログを画面出力へ
-            break;
-        }
-
-        ret = sc.Close();
-        if (!ret)
-        {
-            // サービスクローズ失敗を画面出力
-            break;
-        }
-
-        ret = scm.Close();
-        if (!ret)
-        {
-            // サービスコントロールマネージャのクローズ失敗を画面出力
-            break;
-        }
-
-        ret = TRUE;
-
-    } while (0);
-
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
-    return ret;
-}
-
-BOOL ServiceCore::Remove()
-{
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
-
-    BOOL ret = FALSE;
-    TCHAR tszMsg[MAX_MESSAGE_LEN] = { 0 };
-    ServiceControlManager scm;
-    ServiceControl sc(scm, SERVICE_NAME);
-
-    do
-    {
-        ret = scm.Open();
-        if (!ret)
-        {
-            // エラー情報を画面出力
-            break;
-        }
-
-        ret = sc.Open();
-        if (!ret)
-        {
-            // エラー情報を画面出力
-            break;
-        }
-
-        ret = sc.Delete();
-        if (!ret)
-        {
-            // エラー情報を画面出力
-            break;
-        }
-
-        ret = sc.Close();
-        if (!ret)
-        {
-            // サービスのクローズ失敗を画面出力
-            break;
-        }
-
-        ret = scm.Close();
-        if (!ret)
-        {
-            // サービスマネージャのクローズ失敗を画面出力
-            break;
-        }
-
-        ret = TRUE;
-
-    } while (0);
 
     _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
     return ret;
@@ -204,14 +52,32 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
     ret = Init();
     if (!ret) return;
 
-    ret = Start();
-    if (!ret) return;
-
     Service service(_logger);
     ret = service.Start(STOP_EVENT);
-    if (!ret) return;
+    if (!ret)
+    {
+        LPCTSTR lpctszMsg = _T("サービスの実行に失敗しました。終了します。");
+        _logger.Log(
+            EVENTLOG_ERROR_TYPE,
+            CATEGORY_SEVICE_CORE,
+            SVC_ERROR_RUNTIME,
+            2,
+            __FUNCTIONW__,
+            lpctszMsg);
+        return;
+    }
+    else
+    {
+        _logger.Log(
+            EVENTLOG_SUCCESS,
+            CATEGORY_SEVICE_CORE,
+            SVC_SUCCESS_RUNTIME,
+            2,
+            __FUNCTIONW__, _T("サービスを実行中です。"));
+    }
 
-    _logger.Log(EVENTLOG_SUCCESS, CATEGORY_SEVICE_CORE, SVC_SUCCESS_SYSTEM, 2, __FUNCTIONW__, _T("サービスを実行中です。"));
+    ret = Start();
+    if (!ret) return;
 
     BOOL bLoop = TRUE;
     while (bLoop)
@@ -219,8 +85,15 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
         DWORD dwRet = _event.Wait();
         if (dwRet == WAIT_FAILED)
         {
-            ReportStatus(SERVICE_STOPPED, NO_ERROR, 0);
-            bLoop = FALSE;
+            LPCTSTR lpctszMsg = _T("WaitForSingleObject()");
+            _logger.ApiError(
+                CATEGORY_SEVICE_CORE,
+                GetLastError(),
+                __FUNCTIONW__,
+                lpctszMsg);
+
+            ReportStatus(SERVICE_STOPPED);
+            bLoop = FALSE; // この関数を終了します。
             break;
         }
 
@@ -228,41 +101,61 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
         {
             case SERVICE_CONTROL_STOP:
             case SERVICE_CONTROL_SHUTDOWN:
-                Stop();
                 service.Stop();
+                Stop();
                 bLoop = FALSE; // この関数を終了します。
                 break;
 
             case SERVICE_CONTROL_PAUSE:
             case SERVICE_CONTROL_PRESHUTDOWN:
+                ReportStatus(SERVICE_PAUSE_PENDING);
                 service.Suspend();
                 Suspend();
                 break;
 
             case SERVICE_CONTROL_CONTINUE:
+                ReportStatus(SERVICE_CONTINUE_PENDING);
                 service.Resume();
                 Resume();
                 break;
 
-            case WAIT_FAILED:
-                break;
-
             default:
-                ReportStatus(SERVICE_STOPPED, NO_ERROR, 0);
+                ReportStatus(SERVICE_STOP_PENDING);
+                bLoop = FALSE; // この関数を終了します。
                 break;
         }
-        
+
         ret = _event.Reset();
-        if (!ret) return;
+        if (!ret)
+        {
+            LPCTSTR lpctszMsg = _T("ResetEvent()");
+            _logger.ApiError(
+                CATEGORY_SEVICE_CORE,
+                GetLastError(),
+                __FUNCTIONW__,
+                lpctszMsg);
+            bLoop = FALSE; // この関数を終了します。
+            break;
+        }
     }
 
-    ret = service.Wait();
-    if (!ret) return;
+    ReportStatus(SERVICE_STOP_PENDING, NO_ERROR);
 
-    ret = Exit();
-    if (!ret) return;
+    ret = service.Wait();
+    if (!ret)
+    {
+        LPCTSTR lpctszMsg = _T("WaitForSingleObject()");
+        _logger.ApiError(
+            CATEGORY_SEVICE_CORE,
+            GetLastError(),
+            __FUNCTIONW__,
+            lpctszMsg);
+    }
+
+    Exit();
 
     _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    ReportStatus(SERVICE_STOPPED);
 }
 
 VOID ServiceCore::Handler(DWORD dwControlCode)
@@ -273,7 +166,14 @@ VOID ServiceCore::Handler(DWORD dwControlCode)
 
     auto ActionLog = [&](LPCTSTR lpctszMsg)
     {
-        _logger.Log(EVENTLOG_SUCCESS, CATEGORY_SEVICE_CORE, SVC_SUCCESS_SYSTEM, 3, _T("ServiceCore::Handler"), _T("サービス制御コールバックを受信しました。"), lpctszMsg);
+        _logger.Log(
+            EVENTLOG_SUCCESS,
+            CATEGORY_SEVICE_CORE,
+            SVC_SUCCESS_SYSTEM,
+            3,
+            _T("ServiceCore::Handler"),
+            _T("サービス制御コールバックを受信しました。"),
+            lpctszMsg);
     };
 
     BOOL ret = TRUE;
@@ -281,22 +181,27 @@ VOID ServiceCore::Handler(DWORD dwControlCode)
     {
         case SERVICE_CONTROL_STOP:
             ActionLog(_T("STOP"));
+            ReportStatus(SERVICE_STOP_PENDING);
             break;
 
         case SERVICE_CONTROL_SHUTDOWN:
             ActionLog(_T("SHUTDOWN"));
+            ReportStatus(SERVICE_STOP_PENDING);
             break;
 
         case SERVICE_CONTROL_PAUSE:
             ActionLog(_T("PAUSE"));
+            ReportStatus(SERVICE_PAUSE_PENDING);
             break;
 
         case SERVICE_CONTROL_PRESHUTDOWN:
             ActionLog(_T("PRESHUTDOWN"));
+            ReportStatus(SERVICE_STOP_PENDING);
             break;
 
         case SERVICE_CONTROL_CONTINUE:
             ActionLog(_T("CONTINUE"));
+            ReportStatus(SERVICE_CONTINUE_PENDING);
             break;
 
         default:
@@ -308,7 +213,15 @@ VOID ServiceCore::Handler(DWORD dwControlCode)
     if (ret)
     {
         ret = _event.Set();
-        if (!ret) return;
+        if (!ret)
+        {
+            LPCTSTR lpctszMsg = _T("SetEvent()");
+            _logger.ApiError(
+                CATEGORY_SEVICE_CORE,
+                GetLastError(),
+                __FUNCTIONW__,
+                lpctszMsg);
+        }
     }
 
     _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
@@ -323,65 +236,44 @@ BOOL ServiceCore::Init()
     _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
 
     BOOL ret = FALSE;
-    TCHAR tszMsg[MAX_MESSAGE_LEN] = { 0 };
 
     do
     {
-        ret = _handler.Init(SERVICE_NAME, CtrlHandler);
+        ret = _handler.Init(MY_SERVICE_NAME, CtrlHandler);
         if (!ret)
         {
-            // イベントビューアーにエラーを書き込む
+            _logger.ApiError(
+                CATEGORY_SEVICE_CORE,
+                GetLastError(),
+                __FUNCTIONW__,
+                _T("RegisterServiceCtrlHandler()"));
             break;
         }
 
         ret = _event.Create(EVENT_STOP);
         if (!ret)
         {
-            // イベントビューアーにエラーを書き込む
+            _logger.ApiError(
+                CATEGORY_SEVICE_CORE,
+                GetLastError(),
+                __FUNCTIONW__,
+                _T("CreateEvent()"));
             break;
         }
 
-        ReportStatus(SERVICE_START_PENDING, NO_ERROR, 3000);
+        ReportStatus(SERVICE_START_PENDING);
 
-        _logger.Log(EVENTLOG_SUCCESS, CATEGORY_SEVICE_CORE, SVC_SUCCESS_SYSTEM, 2, __FUNCTIONW__, _T("サービスを初期化しました。"));
-        ret = TRUE;
-
-    } while (0);
-
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
-    return ret;
-}
-
-BOOL ServiceCore::Exit()
-{
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
-
-    BOOL ret = FALSE;
-    TCHAR tszMsg[MAX_MESSAGE_LEN] = { 0 };
-
-    do
-    {
-        ret = _event.Close();
-        if (!ret)
-        {
-            // イベントビューアーにエラーを書き込む
-            break;
-        }
-
-        ret = _handler.Exit();
-        if (!ret)
-        {
-            // イベントビューアーにエラーを書き込む
-            break;
-        }
+        _logger.Log(
+            EVENTLOG_SUCCESS,
+            CATEGORY_SEVICE_CORE,
+            SVC_SUCCESS_SYSTEM,
+            2,
+            __FUNCTIONW__,
+            _T("サービスを初期化しました。"));
 
         ret = TRUE;
 
     } while (0);
-
-    if (ret) ReportStatus(SERVICE_STOPPED, NO_ERROR, 3000);
-
-    _logger.Log(EVENTLOG_SUCCESS, CATEGORY_SEVICE_CORE, SVC_SUCCESS_SYSTEM, 2, __FUNCTIONW__, _T("サービスを終了しました。"));
 
     _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
     return ret;
@@ -395,13 +287,16 @@ BOOL ServiceCore::Start()
 
     do
     {
-        // サービス開始処理で失敗した場合、ステータスを
-        // SERVICE_START_PENDING→SERVICE_STOPPEDに変更する。
+        ReportStatus(SERVICE_RUNNING);
 
-        ReportStatus(SERVICE_RUNNING, NO_ERROR, 3000);
+        _logger.Log(
+            EVENTLOG_SUCCESS,
+            CATEGORY_SEVICE_CORE,
+            SVC_SUCCESS_SYSTEM,
+            2,
+            __FUNCTIONW__,
+            _T("サービスを開始します。"));
 
-        _logger.Log(EVENTLOG_SUCCESS, CATEGORY_SEVICE_CORE, SVC_SUCCESS_SYSTEM, 2, __FUNCTIONW__, _T("サービスを開始します。"));
-        
         ret = TRUE;
 
     } while (0);
@@ -418,9 +313,15 @@ BOOL ServiceCore::Stop()
 
     do
     {
-        ReportStatus(SERVICE_STOPPED, NO_ERROR, 0);
+        ReportStatus(SERVICE_STOP_PENDING, NO_ERROR);
 
-        _logger.Log(EVENTLOG_SUCCESS, CATEGORY_SEVICE_CORE, SVC_SUCCESS_SYSTEM, 2, __FUNCTIONW__, _T("サービスを停止します。"));
+        _logger.Log(
+            EVENTLOG_SUCCESS,
+            CATEGORY_SEVICE_CORE,
+            SVC_SUCCESS_SYSTEM,
+            2,
+            __FUNCTIONW__,
+            _T("サービスを停止します。"));
 
         ret = TRUE;
 
@@ -438,9 +339,15 @@ BOOL ServiceCore::Suspend()
 
     do
     {
-        ReportStatus(SERVICE_PAUSED, NO_ERROR, 0);
+        ReportStatus(SERVICE_PAUSED, NO_ERROR);
 
-        _logger.Log(EVENTLOG_SUCCESS, CATEGORY_SEVICE_CORE, SVC_SUCCESS_SYSTEM, 2, __FUNCTIONW__, _T("サービスを中断します。"));
+        _logger.Log(
+            EVENTLOG_SUCCESS,
+            CATEGORY_SEVICE_CORE,
+            SVC_SUCCESS_SYSTEM,
+            2,
+            __FUNCTIONW__,
+            _T("サービスを中断します。"));
 
         ret = TRUE;
 
@@ -458,9 +365,15 @@ BOOL ServiceCore::Resume()
 
     do
     {
-        ReportStatus(SERVICE_RUNNING, NO_ERROR, 0);
+        ReportStatus(SERVICE_RUNNING, NO_ERROR);
 
-        _logger.Log(EVENTLOG_SUCCESS, CATEGORY_SEVICE_CORE, SVC_SUCCESS_SYSTEM, 2, __FUNCTIONW__, _T("サービスを再開します。"));
+        _logger.Log(
+            EVENTLOG_SUCCESS,
+            CATEGORY_SEVICE_CORE,
+            SVC_SUCCESS_SYSTEM,
+            2,
+            __FUNCTIONW__,
+            _T("サービスを再開します。"));
 
         ret = TRUE;
 
@@ -470,12 +383,62 @@ BOOL ServiceCore::Resume()
     return ret;
 }
 
-BOOL ServiceCore::ReportStatus(DWORD dwCurrentState, DWORD dwWin32ExitCode, DWORD dwWaitHint)
+BOOL ServiceCore::Exit()
 {
-    BOOL ret = _status.ReportStatus(_handler, dwCurrentState, dwWin32ExitCode, dwWaitHint);
+    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+
+    BOOL ret = FALSE;
+
+    do
+    {
+        ret = _event.Close();
+        if (!ret)
+        {
+            _logger.ApiError(
+                CATEGORY_SEVICE_CORE,
+                GetLastError(),
+                __FUNCTIONW__,
+                _T("CloseHandle()"));
+            break;
+        }
+
+        ret = TRUE;
+
+    } while (0);
+
+    if (ret) ReportStatus(SERVICE_STOPPED, NO_ERROR);
+
+    _logger.Log(
+        EVENTLOG_SUCCESS,
+        CATEGORY_SEVICE_CORE,
+        SVC_SUCCESS_SYSTEM,
+        2,
+        __FUNCTIONW__,
+        _T("サービスを終了しました。"));
+
+    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    return ret;
+}
+
+BOOL ServiceCore::ReportStatus(
+    DWORD dwCurrentState,
+    DWORD dwWin32ExitCode,
+    DWORD dwWaitHint)
+{
+    BOOL ret = _status.ReportStatus(
+        _handler,
+        dwCurrentState,
+        dwWin32ExitCode,
+        dwWaitHint);
     if (!ret)
     {
-        _logger.Log(EVENTLOG_ERROR_TYPE, CATEGORY_SEVICE_CORE, SVC_ERROR_API, 2, __FUNCTIONW__, _T("サービスの状態遷移に失敗しました。"));
+        _logger.Log(
+            EVENTLOG_ERROR_TYPE,
+            CATEGORY_SEVICE_CORE,
+            SVC_ERROR_API,
+            2,
+            __FUNCTIONW__,
+            _T("SetServiceStatus()"));
     }
 
     return ret;

@@ -16,8 +16,7 @@ public:
 
     ~EventLogger()
     {
-        if (_hEventSource != nullptr)
-            ::DeregisterEventSource(_hEventSource);
+        if (_hEventSource != nullptr) Exit();
     };
 
     BOOL Init(LPCTSTR lpctszServiceName);
@@ -30,8 +29,18 @@ public:
         WORD wArgc,
         ...);
 
+    BOOL ApiError(
+        WORD wCategory,
+        DWORD dwErrorCode,
+        LPCTSTR lpctszFunctionName,
+        LPCTSTR lpctszErrorAPI);
+
     BOOL TraceStart(WORD wCategory, LPCTSTR lpctszFunctionName);
     BOOL TraceFinish(WORD wCategory, LPCTSTR lpctszFunctionName);
+    BOOL Trace(
+        WORD wCategory,
+        LPCTSTR lpctszFunctionName,
+        LPCTSTR lpctszMessage = nullptr);
 
 private:
     HANDLE _hEventSource;

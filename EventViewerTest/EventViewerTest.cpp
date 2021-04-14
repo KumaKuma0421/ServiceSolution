@@ -46,7 +46,7 @@ void WriteEventLogTest1()
 
 	ret = ev.Log(
 		EVENTLOG_SUCCESS,
-		CATEGORY_SERVICE_MANAGER,
+		CATEGORY_SEVICE_CORE,
 		SVC_SUCCESS_RUNTIME,
 		3,
 		lpctszParams1);
@@ -54,16 +54,48 @@ void WriteEventLogTest1()
 
 	ret = ev.Log(
 		EVENTLOG_ERROR_TYPE,
-		CATEGORY_SERVICE_CONTROL,
-		SVC_SUCCESS_API,
+		CATEGORY_SERVICE_MANAGER,
+		SVC_ERROR_SYSTEM,
 		3,
 		lpctszParams1);
 	assert(ret);
 
 	ret = ev.Log(
 		EVENTLOG_ERROR_TYPE,
+		CATEGORY_SERVICE_MANAGER,
+		SVC_ERROR_RUNTIME,
+		3,
+		lpctszParams1);
+	assert(ret);
+
+	ret = ev.Log(
+		EVENTLOG_WARNING_TYPE,
+		CATEGORY_SERVICE_CONTROL,
+		SVC_WARNING_SYSTEM,
+		3,
+		lpctszParams1);
+	assert(ret);
+
+	ret = ev.Log(
+		EVENTLOG_WARNING_TYPE,
+		CATEGORY_SERVICE_CONTROL,
+		SVC_WARNING_RUNTIME,
+		3,
+		lpctszParams1);
+	assert(ret);
+
+	ret = ev.Log(
+		EVENTLOG_INFORMATION_TYPE,
 		CATEGORY_SEVICE_CORE,
-		SVC_SUCCESS_IO,
+		SVC_INFO_SYSTEM,
+		3,
+		lpctszParams1);
+	assert(ret);
+
+	ret = ev.Log(
+		EVENTLOG_INFORMATION_TYPE,
+		CATEGORY_SEVICE_CORE,
+		SVC_INFO_RUNTIME,
 		3,
 		lpctszParams1);
 	assert(ret);
@@ -102,7 +134,7 @@ int _tmain(int argc, TCHAR** argv)
 {
 	_tsetlocale(LC_ALL, _T("Japanese"));
 
-	//WriteEventLogTest1();
+	WriteEventLogTest1();
 	ReadEventLogTest1();
 
 	return ERROR_SUCCESS;
