@@ -9,14 +9,19 @@ QueryResponse ServiceControl::Query(QueryResponse wait)
 {
     QueryResponse response = QueryResponse::Error;
     BOOL ret;
-    SERVICE_STATUS_PROCESS status{ 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    SERVICE_STATUS_PROCESS status = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     DWORD dwBytesNeeded;
+#pragma warning(disable:28159)
+    CONST DWORD cdwStartTime = GetTickCount();
+#pragma warning(default:28159)
+    CONST DWORD cdwTimeout = 30000; // 30-second time-out
 
     DWORD dwWaitTime = 0;
 #pragma warning(disable:28159)
     DWORD dwStartTickCount = GetTickCount();
 #pragma warning(default:28159)
     DWORD dwCheckPointBefore = 0;
+    BOOL bChecking = FALSE;
 
     do
     {
@@ -53,6 +58,9 @@ QueryResponse ServiceControl::Query(QueryResponse wait)
             if (response != wait) break;
         }
 
+        if (!bChecking) _tprintf(_T("サービス状態を確認中です。"));
+        bChecking = TRUE;
+
         if (status.dwCheckPoint > dwCheckPointBefore)
         {
             // Continue to wait and check.
@@ -72,7 +80,19 @@ QueryResponse ServiceControl::Query(QueryResponse wait)
             }
         }
 
+#pragma warning(disable:28159)
+        if (GetTickCount() - cdwStartTime > cdwTimeout)
+#pragma warning(default:28159)
+        {
+            response = QueryResponse::Timeout;
+            break;
+        }
+
+        _tprintf(_T("."));
+
     } while (response == wait);
+
+    if (bChecking) _tprintf(_T("\n"));
 
     return response;
 }

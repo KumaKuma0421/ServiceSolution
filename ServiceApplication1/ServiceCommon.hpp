@@ -116,6 +116,13 @@ public:
         return ::StartService(_handle, 0, nullptr);
     }
 
+    BOOL Stop()
+    {
+        SERVICE_STATUS service_status = { 0, 0, 0, 0, 0, 0, 0 };
+
+        return ::ControlService(_handle, SERVICE_CONTROL_STOP, &service_status);
+    }
+
     BOOL ChangeConfig(BootSettings bootType)
     {
         return ::ChangeServiceConfig(
@@ -132,7 +139,7 @@ public:
             nullptr);          // display name: no change
     };
 
-    BOOL ChangeDescription(LPCTSTR lpctszServiceDescription)
+    BOOL ChangeConfig2Description(LPCTSTR lpctszServiceDescription)
     {
         SERVICE_DESCRIPTION service_description = { (LPTSTR)lpctszServiceDescription };
 
@@ -143,13 +150,12 @@ public:
     }
 
     //! @sa https://togarasi.wordpress.com/2008/05/17/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AE%E8%87%AA%E5%8B%95%E8%B5%B7%E5%8B%95%E3%82%92%E9%81%85%E5%BB%B6%E5%AE%9F%E8%A1%8C%E3%81%AB%E5%A4%89%E6%9B%B4/
-    // TODO:未使用！
-    BOOL ChangeDelayedAutoStart()
+    BOOL ChangeConfig2DelayedAutoStart(BOOL bDelayed = TRUE)
     {
         // 自動（遅延開始）について
         // 通常の自動開始サービスの約２分後に開始されるもの。
         // 自動→自動(遅延開始)なので、事前に自動になっていることが前提。
-        SERVICE_DELAYED_AUTO_START_INFO service_delayed_auto_start_info = { 0 };
+        SERVICE_DELAYED_AUTO_START_INFO service_delayed_auto_start_info = { bDelayed };
 
         return ::ChangeServiceConfig2(
             _handle,
@@ -177,8 +183,7 @@ public:
     };
 
     ~ServiceStatusHandler()
-    {
-    }
+    {}
 
     BOOL Init(LPCTSTR lpctszServiceName, LPHANDLER_FUNCTION lpfnCtrlHandler)
     {
