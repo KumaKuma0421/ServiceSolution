@@ -1,10 +1,11 @@
-//
+// -----------------------------------------------------------------------------
 // ServiceCommand.h
-//
+// -----------------------------------------------------------------------------
 
 #pragma once
 
 #define COMMAND_INSTALL                   _T("/install")
+#define COMMAND_STATUS                    _T("/status")
 #define COMMAND_REMOVE                    _T("/remove")
 #define COMMAND_ENABLE                    _T("/enable")
 #define COMMAND_ONDEMAND                  _T("/ondemand")
@@ -16,7 +17,7 @@
 
 #include "ServiceCommon.hpp"
 
-BOOL (*TemplateMethod)(LPVOID lpvParam);
+typedef BOOL (*TemplateMethod)(ServiceControl& sc, LPVOID lpvParam);
 
 class ServiceCommand final
 {
@@ -24,6 +25,7 @@ public:
     BOOL Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption = nullptr);
 
     BOOL Install(LPCTSTR lpctszModulePath);
+    BOOL Status();
     BOOL Remove();
     BOOL Enable(BOOL bAuto);
     BOOL Disable();
@@ -33,6 +35,11 @@ public:
     BOOL Stop();
 
 private:
-    BOOL TemplateAction();
+	BOOL TemplateAction(
+		DWORD dwOpenParam,
+		TemplateMethod method,
+		LPCTSTR lpctszLastMessage,
+		LPVOID lpvParam = nullptr);
+    VOID ShowCurrentStatus(QueryResponse response);
 };
 

@@ -17,7 +17,7 @@ ServiceCore::~ServiceCore()
 
 BOOL ServiceCore::Entry()
 {
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
     BOOL ret = FALSE;
 
@@ -32,20 +32,20 @@ BOOL ServiceCore::Entry()
     {
         LPCTSTR lpctszMsg = _T("StartServiceCtrlDispatcher()");
         _logger.ApiError(
-            CATEGORY_SEVICE_CORE,
+            CATEGORY_SERVICE_CORE,
             GetLastError(),
             __FUNCTIONW__,
             lpctszMsg);
         _tprintf(_T("%sが失敗しました。\n"), lpctszMsg);
     }
 
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceFinish(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
     return ret;
 }
 
 VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
 {
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
     BOOL ret;
 
@@ -59,7 +59,7 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
         LPCTSTR lpctszMsg = _T("サービスの実行に失敗しました。終了します。");
         _logger.Log(
             EVENTLOG_ERROR_TYPE,
-            CATEGORY_SEVICE_CORE,
+            CATEGORY_SERVICE_CORE,
             SVC_ERROR_RUNTIME,
             2,
             __FUNCTIONW__,
@@ -70,7 +70,7 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
     {
         _logger.Log(
             EVENTLOG_SUCCESS,
-            CATEGORY_SEVICE_CORE,
+            CATEGORY_SERVICE_CORE,
             SVC_SUCCESS_RUNTIME,
             2,
             __FUNCTIONW__, _T("サービスを実行中です。"));
@@ -87,7 +87,7 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
         {
             LPCTSTR lpctszMsg = _T("WaitForSingleObject()");
             _logger.ApiError(
-                CATEGORY_SEVICE_CORE,
+                CATEGORY_SERVICE_CORE,
                 GetLastError(),
                 __FUNCTIONW__,
                 lpctszMsg);
@@ -130,7 +130,7 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
         {
             LPCTSTR lpctszMsg = _T("ResetEvent()");
             _logger.ApiError(
-                CATEGORY_SEVICE_CORE,
+                CATEGORY_SERVICE_CORE,
                 GetLastError(),
                 __FUNCTIONW__,
                 lpctszMsg);
@@ -146,21 +146,22 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
     {
         LPCTSTR lpctszMsg = _T("WaitForSingleObject()");
         _logger.ApiError(
-            CATEGORY_SEVICE_CORE,
+            CATEGORY_SERVICE_CORE,
             GetLastError(),
             __FUNCTIONW__,
             lpctszMsg);
     }
 
-    Exit();
+    ret = Exit();
+    if (!ret) return;
 
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
     ReportStatus(SERVICE_STOPPED);
+    _logger.TraceFinish(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 }
 
 VOID ServiceCore::Handler(DWORD dwControlCode)
 {
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
     _dwControlCode = dwControlCode;
 
@@ -168,7 +169,7 @@ VOID ServiceCore::Handler(DWORD dwControlCode)
     {
         _logger.Log(
             EVENTLOG_SUCCESS,
-            CATEGORY_SEVICE_CORE,
+            CATEGORY_SERVICE_CORE,
             SVC_SUCCESS_SYSTEM,
             3,
             _T("ServiceCore::Handler"),
@@ -217,14 +218,14 @@ VOID ServiceCore::Handler(DWORD dwControlCode)
         {
             LPCTSTR lpctszMsg = _T("SetEvent()");
             _logger.ApiError(
-                CATEGORY_SEVICE_CORE,
+                CATEGORY_SERVICE_CORE,
                 GetLastError(),
                 __FUNCTIONW__,
                 lpctszMsg);
         }
     }
 
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceFinish(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 }
 
 // ------------
@@ -233,7 +234,7 @@ VOID ServiceCore::Handler(DWORD dwControlCode)
 
 BOOL ServiceCore::Init()
 {
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
     BOOL ret = FALSE;
 
@@ -243,7 +244,7 @@ BOOL ServiceCore::Init()
         if (!ret)
         {
             _logger.ApiError(
-                CATEGORY_SEVICE_CORE,
+                CATEGORY_SERVICE_CORE,
                 GetLastError(),
                 __FUNCTIONW__,
                 _T("RegisterServiceCtrlHandler()"));
@@ -254,7 +255,7 @@ BOOL ServiceCore::Init()
         if (!ret)
         {
             _logger.ApiError(
-                CATEGORY_SEVICE_CORE,
+                CATEGORY_SERVICE_CORE,
                 GetLastError(),
                 __FUNCTIONW__,
                 _T("CreateEvent()"));
@@ -265,7 +266,7 @@ BOOL ServiceCore::Init()
 
         _logger.Log(
             EVENTLOG_SUCCESS,
-            CATEGORY_SEVICE_CORE,
+            CATEGORY_SERVICE_CORE,
             SVC_SUCCESS_SYSTEM,
             2,
             __FUNCTIONW__,
@@ -275,13 +276,13 @@ BOOL ServiceCore::Init()
 
     } while (0);
 
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceFinish(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
     return ret;
 }
 
 BOOL ServiceCore::Start()
 {
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
     BOOL ret = FALSE;
 
@@ -291,7 +292,7 @@ BOOL ServiceCore::Start()
 
         _logger.Log(
             EVENTLOG_SUCCESS,
-            CATEGORY_SEVICE_CORE,
+            CATEGORY_SERVICE_CORE,
             SVC_SUCCESS_SYSTEM,
             2,
             __FUNCTIONW__,
@@ -301,13 +302,13 @@ BOOL ServiceCore::Start()
 
     } while (0);
 
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceFinish(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
     return ret;
 }
 
 BOOL ServiceCore::Stop()
 {
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
     BOOL ret = FALSE;
 
@@ -317,7 +318,7 @@ BOOL ServiceCore::Stop()
 
         _logger.Log(
             EVENTLOG_SUCCESS,
-            CATEGORY_SEVICE_CORE,
+            CATEGORY_SERVICE_CORE,
             SVC_SUCCESS_SYSTEM,
             2,
             __FUNCTIONW__,
@@ -327,13 +328,13 @@ BOOL ServiceCore::Stop()
 
     } while (0);
 
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceFinish(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
     return ret;
 }
 
 BOOL ServiceCore::Suspend()
 {
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
     BOOL ret = FALSE;
 
@@ -343,7 +344,7 @@ BOOL ServiceCore::Suspend()
 
         _logger.Log(
             EVENTLOG_SUCCESS,
-            CATEGORY_SEVICE_CORE,
+            CATEGORY_SERVICE_CORE,
             SVC_SUCCESS_SYSTEM,
             2,
             __FUNCTIONW__,
@@ -353,13 +354,13 @@ BOOL ServiceCore::Suspend()
 
     } while (0);
 
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceFinish(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
     return ret;
 }
 
 BOOL ServiceCore::Resume()
 {
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
     BOOL ret = FALSE;
 
@@ -369,7 +370,7 @@ BOOL ServiceCore::Resume()
 
         _logger.Log(
             EVENTLOG_SUCCESS,
-            CATEGORY_SEVICE_CORE,
+            CATEGORY_SERVICE_CORE,
             SVC_SUCCESS_SYSTEM,
             2,
             __FUNCTIONW__,
@@ -379,13 +380,13 @@ BOOL ServiceCore::Resume()
 
     } while (0);
 
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceFinish(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
     return ret;
 }
 
 BOOL ServiceCore::Exit()
 {
-    _logger.TraceStart(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
     BOOL ret = FALSE;
 
@@ -395,7 +396,7 @@ BOOL ServiceCore::Exit()
         if (!ret)
         {
             _logger.ApiError(
-                CATEGORY_SEVICE_CORE,
+                CATEGORY_SERVICE_CORE,
                 GetLastError(),
                 __FUNCTIONW__,
                 _T("CloseHandle()"));
@@ -410,13 +411,13 @@ BOOL ServiceCore::Exit()
 
     _logger.Log(
         EVENTLOG_SUCCESS,
-        CATEGORY_SEVICE_CORE,
+        CATEGORY_SERVICE_CORE,
         SVC_SUCCESS_SYSTEM,
         2,
         __FUNCTIONW__,
         _T("サービスを終了しました。"));
 
-    _logger.TraceFinish(CATEGORY_SEVICE_CORE, __FUNCTIONW__);
+    _logger.TraceFinish(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
     return ret;
 }
 
@@ -425,6 +426,13 @@ BOOL ServiceCore::ReportStatus(
     DWORD dwWin32ExitCode,
     DWORD dwWaitHint)
 {
+    TCHAR tszMsg[MAX_MESSAGE_LEN];
+
+    wsprintf(
+        tszMsg,
+        _T("SetServiceStatus(%d, %d, %d)"),
+        dwCurrentState, dwWin32ExitCode, dwWaitHint);
+
     BOOL ret = _status.ReportStatus(
         _handler,
         dwCurrentState,
@@ -434,11 +442,15 @@ BOOL ServiceCore::ReportStatus(
     {
         _logger.Log(
             EVENTLOG_ERROR_TYPE,
-            CATEGORY_SEVICE_CORE,
+            CATEGORY_SERVICE_CORE,
             SVC_ERROR_API,
             2,
             __FUNCTIONW__,
-            _T("SetServiceStatus()"));
+            tszMsg);
+    }
+    else
+    {
+        _logger.Trace(CATEGORY_SERVICE_CORE, _T("ReportService"), tszMsg);
     }
 
     return ret;

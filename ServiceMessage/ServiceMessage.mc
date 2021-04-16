@@ -21,7 +21,7 @@ LanguageNames=(Japanese=0x411:MSG00411)
 MessageIdTypedef=WORD
 
 MessageId=0x1
-SymbolicName=CATEGORY_SEVICE_CORE
+SymbolicName=CATEGORY_SERVICE_CORE
 Language=English
 ServiceCore
 .

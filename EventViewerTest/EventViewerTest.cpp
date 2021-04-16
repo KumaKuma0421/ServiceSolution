@@ -38,7 +38,7 @@ void WriteEventLogTest1()
 
 	ret = ev.Log(
 		EVENTLOG_SUCCESS,
-		CATEGORY_SEVICE_CORE,
+		CATEGORY_SERVICE_CORE,
 		SVC_SUCCESS_SYSTEM,
 		3,
 		lpctszParams1);
@@ -46,7 +46,7 @@ void WriteEventLogTest1()
 
 	ret = ev.Log(
 		EVENTLOG_SUCCESS,
-		CATEGORY_SEVICE_CORE,
+		CATEGORY_SERVICE_CORE,
 		SVC_SUCCESS_RUNTIME,
 		3,
 		lpctszParams1);
@@ -86,7 +86,7 @@ void WriteEventLogTest1()
 
 	ret = ev.Log(
 		EVENTLOG_INFORMATION_TYPE,
-		CATEGORY_SEVICE_CORE,
+		CATEGORY_SERVICE_CORE,
 		SVC_INFO_SYSTEM,
 		3,
 		lpctszParams1);
@@ -94,7 +94,7 @@ void WriteEventLogTest1()
 
 	ret = ev.Log(
 		EVENTLOG_INFORMATION_TYPE,
-		CATEGORY_SEVICE_CORE,
+		CATEGORY_SERVICE_CORE,
 		SVC_INFO_RUNTIME,
 		3,
 		lpctszParams1);

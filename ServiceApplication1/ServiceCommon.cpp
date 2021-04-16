@@ -5,12 +5,11 @@
 #include "pch.h"
 #include "ServiceCommon.hpp"
 
-QueryResponse ServiceControl::Query(QueryResponse wait)
+QueryResponse ServiceControl::QueryStatus(QueryResponse wait)
 {
     QueryResponse response = QueryResponse::Error;
     BOOL ret;
     SERVICE_STATUS_PROCESS status = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    DWORD dwBytesNeeded;
 #pragma warning(disable:28159)
     CONST DWORD cdwStartTime = GetTickCount();
 #pragma warning(default:28159)
@@ -31,13 +30,7 @@ QueryResponse ServiceControl::Query(QueryResponse wait)
 
         Sleep(dwWaitTime);
 
-        ret = ::QueryServiceStatusEx(
-            _handle,                        // handle to service 
-            SC_STATUS_PROCESS_INFO,         // information level
-            (LPBYTE)&status,                // address of structure
-            sizeof(SERVICE_STATUS_PROCESS), // size of structure
-            &dwBytesNeeded);                // size needed if buffer is too small
-
+        ret = QueryService(status);
         if (ret == FALSE)
         {
             response = QueryResponse::Error;

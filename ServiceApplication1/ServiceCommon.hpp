@@ -109,7 +109,19 @@ public:
         return _handle == nullptr ? FALSE : TRUE;
     };
 
-    QueryResponse Query(QueryResponse wait);
+    BOOL QueryService(SERVICE_STATUS_PROCESS& status)
+    {
+        DWORD dwBytesNeeded;
+
+        return ::QueryServiceStatusEx(
+            _handle,                        // handle to service 
+            SC_STATUS_PROCESS_INFO,         // information level
+            (LPBYTE)&status,                // address of structure
+            sizeof(SERVICE_STATUS_PROCESS), // size of structure
+            &dwBytesNeeded);                // size needed if buffer is too small
+    }
+
+    QueryResponse QueryStatus(QueryResponse wait);
 
     BOOL Start()
     {

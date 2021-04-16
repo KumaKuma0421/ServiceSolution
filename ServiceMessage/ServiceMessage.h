@@ -44,13 +44,13 @@
 
 
 //
-// MessageId: CATEGORY_SEVICE_CORE
+// MessageId: CATEGORY_SERVICE_CORE
 //
 // MessageText:
 //
 // ServiceCore
 //
-#define CATEGORY_SEVICE_CORE             ((WORD)0x00000001L)
+#define CATEGORY_SERVICE_CORE            ((WORD)0x00000001L)
 
 //
 // MessageId: CATEGORY_SERVICE_MANAGER
