@@ -10,7 +10,7 @@ class Service : public Thread
 {
 public:
     Service(EventLogger& logger);
-    virtual BOOL Run();
+    virtual BOOL WINAPI Run();
 
 private:
     Service();

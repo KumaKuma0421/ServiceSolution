@@ -543,3 +543,107 @@ VOID ServiceCommand::ShowCurrentStatus(QueryResponse response)
 
 	_tprintf(_T("%s\n"), lpctszMsg);
 }
+
+BOOL ServiceCommand::StopDependentServices(ServiceControlManager& scm, ServiceControl& sc, LPVOID lpvParam)
+{
+	BOOL ret = FALSE;
+	DWORD i;
+	DWORD dwBytesNeeded = 0;
+	DWORD dwCount = 0;
+	LPCTSTR lpctszMsg;
+
+	LPENUM_SERVICE_STATUS   lpNumServiceStatus = NULL;
+	ENUM_SERVICE_STATUS     enumServiceStatus;
+
+	// Pass a zero-length buffer to get the required buffer size.
+	// サイズ０のバッファを渡すことで、実際に必要なサイズを取得します。
+	if (::EnumDependentServices(sc.GetHandle(), SERVICE_ACTIVE, lpNumServiceStatus, dwBytesNeeded, &dwBytesNeeded, &dwCount))
+	{
+		// If the Enum call succeeds, then there are no dependent services, so do nothing.
+		// 関数が成功した場合、依存するサービスはありません。よって何もしません。
+		lpctszMsg = _T("依存するサービスはありません。");
+		_tprintf(_T("%s\n"), lpctszMsg);
+		ret = TRUE;
+	}
+	else
+	{
+		do
+		{
+			if (::GetLastError() != ERROR_MORE_DATA)
+			{
+				lpctszMsg = _T("EnumDependentServices()が失敗しました。"); // TODO:理由も添えて
+				_tprintf(_T("%s\n"), lpctszMsg);
+				break;
+			}
+
+			// Allocate a buffer for the dependencies.
+			// 依存関係を取得するためにバッファを準備します。
+			lpNumServiceStatus = (LPENUM_SERVICE_STATUS)::HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, dwBytesNeeded);
+			if (!lpNumServiceStatus)
+			{
+				lpctszMsg = _T("HeapAlloc()が失敗しました。"); // TODO:理由も添えて
+				_tprintf(_T("%s\n"), lpctszMsg);
+				break;
+			}
+
+			// Enumerate the dependencies.
+			// 依存するサービスを列挙します。
+			if (!::EnumDependentServices(sc.GetHandle(), SERVICE_ACTIVE, lpNumServiceStatus, dwBytesNeeded, &dwBytesNeeded, &dwCount))
+			{
+				lpctszMsg = _T("EnumDependentServices()が失敗しました。"); // TODO:理由も添えて
+				_tprintf(_T("%s\n"), lpctszMsg);
+				break;
+			}
+
+			for (i = 0; i < dwCount; i++)
+			{
+				enumServiceStatus = *(lpNumServiceStatus + i);
+				ServiceControl dependentSC(scm, enumServiceStatus.lpServiceName);
+				ret = dependentSC.Open(SERVICE_STOP | SERVICE_QUERY_STATUS);
+				if (!ret)
+				{
+					lpctszMsg = _T("OpenService()が失敗しました。"); // TODO:理由も添えて
+					_tprintf(_T("%s\n"), lpctszMsg);
+					break;
+				}
+
+				if (!dependentSC.Stop())
+				{
+					lpctszMsg = _T("ControlService()が失敗しました。"); // TODO:理由も添えて
+					_tprintf(_T("%s\n"), lpctszMsg);
+					break;
+				}
+
+				QueryResponse response = dependentSC.QueryStatus(QueryResponse::StopPending);
+				if (response == QueryResponse::Stopped)
+				{
+					lpctszMsg = _T("依存するサービスを停止しました。");
+				}
+				else
+				{
+					lpctszMsg = _T("依存するサービスの停止に失敗しました。");
+				}
+				_tprintf(_T("%s\n"), lpctszMsg);
+				
+				ret = dependentSC.Close();
+				if (!ret)
+				{
+					lpctszMsg = _T("CloseServiceHandle()が失敗しました。"); // TODO:理由も添えて
+					_tprintf(_T("%s\n"), lpctszMsg);
+					break;
+				}
+			}
+
+			ret = ::HeapFree(GetProcessHeap(), 0, lpNumServiceStatus);
+			if (!ret)
+			{
+				lpctszMsg = _T("HeapFree()が失敗しました。"); // TODO:理由も添えて
+				_tprintf(_T("%s\n"), lpctszMsg);
+				break;
+			}
+
+		} while (0);
+	}
+
+	return ret;
+}

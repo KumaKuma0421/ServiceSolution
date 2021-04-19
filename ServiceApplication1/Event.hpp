@@ -19,7 +19,7 @@ public:
         if (_hEvent == nullptr) Close();
     }
 
-    BOOL Create(LPCTSTR lpctszEventName)
+    BOOL WINAPI Create(LPCTSTR lpctszEventName)
     {
         _hEvent = ::CreateEvent(
             nullptr,
@@ -30,29 +30,29 @@ public:
         return _hEvent == nullptr ? FALSE : TRUE;
     };
 
-    BOOL Open(LPCTSTR lpctszEventName)
+    BOOL WINAPI Open(LPCTSTR lpctszEventName)
     {
         _hEvent = OpenEvent(EVENT_ALL_ACCESS, FALSE, lpctszEventName);
 
         return _hEvent == nullptr ? FALSE : TRUE;
     };
 
-    BOOL Set()
+    BOOL WINAPI Set()
     {
         return ::SetEvent(_hEvent);
     };
 
-    BOOL Reset()
+    BOOL WINAPI Reset()
     {
         return ::ResetEvent(_hEvent);
     };
 
-    DWORD Wait(DWORD dwMilliSeconds = INFINITE)
+    DWORD WINAPI Wait(DWORD dwMilliSeconds = INFINITE)
     {
         return ::WaitForSingleObject(_hEvent, dwMilliSeconds);
     };
 
-    BOOL Close()
+    BOOL WINAPI Close()
     {
         return ::CloseHandle(_hEvent);
     };

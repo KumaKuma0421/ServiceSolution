@@ -22,24 +22,28 @@ typedef BOOL (*TemplateMethod)(ServiceControl& sc, LPVOID lpvParam);
 class ServiceCommand final
 {
 public:
-    BOOL Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption = nullptr);
+    BOOL WINAPI Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption = nullptr);
 
-    BOOL Install(LPCTSTR lpctszModulePath);
-    BOOL Status();
-    BOOL Remove();
-    BOOL Enable(BOOL bAuto);
-    BOOL Disable();
-    BOOL ChangeConfig2Description(LPCTSTR lpctszDescription);
-    BOOL ChangeConfig2DelayedAutoStart();
-    BOOL Start();
-    BOOL Stop();
+    BOOL WINAPI Install(LPCTSTR lpctszModulePath);
+    BOOL WINAPI Status();
+    BOOL WINAPI Remove();
+    BOOL WINAPI Enable(BOOL bAuto);
+    BOOL WINAPI Disable();
+    BOOL WINAPI ChangeConfig2Description(LPCTSTR lpctszDescription);
+    BOOL WINAPI ChangeConfig2DelayedAutoStart();
+    BOOL WINAPI Start();
+    BOOL WINAPI Stop();
 
 private:
-	BOOL TemplateAction(
+	BOOL WINAPI TemplateAction(
 		DWORD dwOpenParam,
 		TemplateMethod method,
 		LPCTSTR lpctszLastMessage,
 		LPVOID lpvParam = nullptr);
-    VOID ShowCurrentStatus(QueryResponse response);
+    VOID WINAPI ShowCurrentStatus(QueryResponse response);
+    BOOL WINAPI StopDependentServices(
+        ServiceControlManager& scm,
+        ServiceControl& sc,
+        LPVOID lpvParam);
 };
 

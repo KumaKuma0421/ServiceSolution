@@ -17,19 +17,19 @@ public:
     ServiceCore(EventLogger& logger);
     ~ServiceCore();
 
-    BOOL Entry();
-    VOID Main(DWORD dwArgc, LPTSTR* lptszArgv);
-    VOID Handler(DWORD dwControlCode);
+    BOOL WINAPI Entry();
+    VOID WINAPI Main(DWORD dwArgc, LPTSTR* lptszArgv);
+    VOID WINAPI Handler(DWORD dwControlCode);
 
 private:
-    BOOL Init();
-    BOOL Start();
-    BOOL Stop();
-    BOOL Suspend();
-    BOOL Resume();
-    BOOL Exit();
+    BOOL WINAPI Init();
+    BOOL WINAPI Start();
+    BOOL WINAPI Stop();
+    BOOL WINAPI Suspend();
+    BOOL WINAPI Resume();
+    BOOL WINAPI Exit();
 
-    BOOL ReportStatus(
+    BOOL WINAPI ReportStatus(
         DWORD dwCurrentState,
         DWORD dwWin32ExitCode = NO_ERROR,
         DWORD dwWaitHint = MAX_STATE_TRANSITION_TIME);

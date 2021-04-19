@@ -19,25 +19,25 @@ public:
         if (_hEventSource != nullptr) Exit();
     };
 
-    BOOL Init(LPCTSTR lpctszServiceName);
-    BOOL Exit();
+    BOOL WINAPI Init(LPCTSTR lpctszServiceName);
+    BOOL WINAPI Exit();
 
-    BOOL Log(
+    BOOL WINAPI Log(
         WORD wEventType,
         WORD wEventCategory,
         DWORD dwEventID,
         WORD wArgc,
         ...);
 
-    BOOL ApiError(
+    BOOL WINAPI ApiError(
         WORD wCategory,
         DWORD dwErrorCode,
         LPCTSTR lpctszFunctionName,
         LPCTSTR lpctszErrorAPI);
 
-    BOOL TraceStart(WORD wCategory, LPCTSTR lpctszFunctionName);
-    BOOL TraceFinish(WORD wCategory, LPCTSTR lpctszFunctionName);
-    BOOL Trace(
+    BOOL WINAPI TraceStart(WORD wCategory, LPCTSTR lpctszFunctionName);
+    BOOL WINAPI TraceFinish(WORD wCategory, LPCTSTR lpctszFunctionName);
+    BOOL WINAPI Trace(
         WORD wCategory,
         LPCTSTR lpctszFunctionName,
         LPCTSTR lpctszMessage = nullptr);

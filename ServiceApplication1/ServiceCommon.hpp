@@ -44,22 +44,21 @@ public:
         if (_handle != nullptr) Close();
     };
 
-    virtual BOOL Close()
+    virtual BOOL WINAPI Close()
     {
         return ::CloseServiceHandle(_handle);
     }
 
-    virtual SC_HANDLE GetHandle() { return _handle; };
+    virtual SC_HANDLE WINAPI GetHandle() { return _handle; };
 
 protected:
     SC_HANDLE _handle;
 };
 
-
 class ServiceControlManager final : public ServiceHandler
 {
 public:
-    BOOL Open()
+    BOOL WINAPI Open()
     {
         _handle = ::OpenSCManager(
             nullptr,
@@ -70,7 +69,6 @@ public:
     };
 };
 
-
 class ServiceControl final : public ServiceHandler
 {
 public:
@@ -79,7 +77,7 @@ public:
     {
     };
 
-    BOOL Create(LPCTSTR lpctszFilePath, BOOL bAutoStart = TRUE)
+    BOOL WINAPI Create(LPCTSTR lpctszFilePath, BOOL bAutoStart = TRUE)
     {
         _handle = ::CreateService(
             _manager.GetHandle(),
@@ -99,7 +97,7 @@ public:
         return _handle == nullptr ? FALSE : TRUE;
     };
 
-    BOOL Open(DWORD dwDesiredAccess)
+    BOOL WINAPI Open(DWORD dwDesiredAccess)
     {
         _handle = ::OpenService(
             _manager.GetHandle(),
@@ -109,7 +107,7 @@ public:
         return _handle == nullptr ? FALSE : TRUE;
     };
 
-    BOOL QueryService(SERVICE_STATUS_PROCESS& status)
+    BOOL WINAPI QueryService(SERVICE_STATUS_PROCESS& status)
     {
         DWORD dwBytesNeeded;
 
@@ -121,21 +119,21 @@ public:
             &dwBytesNeeded);                // size needed if buffer is too small
     }
 
-    QueryResponse QueryStatus(QueryResponse wait);
+    QueryResponse WINAPI QueryStatus(QueryResponse wait);
 
-    BOOL Start()
+    BOOL WINAPI Start()
     {
         return ::StartService(_handle, 0, nullptr);
     }
 
-    BOOL Stop()
+    BOOL WINAPI Stop()
     {
         SERVICE_STATUS service_status = { 0, 0, 0, 0, 0, 0, 0 };
 
         return ::ControlService(_handle, SERVICE_CONTROL_STOP, &service_status);
     }
 
-    BOOL ChangeConfig(BootSettings bootType)
+    BOOL WINAPI ChangeConfig(BootSettings bootType)
     {
         return ::ChangeServiceConfig(
             _handle,           // handle of service 
@@ -151,7 +149,7 @@ public:
             nullptr);          // display name: no change
     };
 
-    BOOL ChangeConfig2Description(LPCTSTR lpctszServiceDescription)
+    BOOL WINAPI ChangeConfig2Description(LPCTSTR lpctszServiceDescription)
     {
         SERVICE_DESCRIPTION service_description = { (LPTSTR)lpctszServiceDescription };
 
@@ -162,7 +160,7 @@ public:
     }
 
     //! @sa https://togarasi.wordpress.com/2008/05/17/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AE%E8%87%AA%E5%8B%95%E8%B5%B7%E5%8B%95%E3%82%92%E9%81%85%E5%BB%B6%E5%AE%9F%E8%A1%8C%E3%81%AB%E5%A4%89%E6%9B%B4/
-    BOOL ChangeConfig2DelayedAutoStart(BOOL bDelayed = TRUE)
+    BOOL WINAPI ChangeConfig2DelayedAutoStart(BOOL bDelayed = TRUE)
     {
         // 自動（遅延開始）について
         // 通常の自動開始サービスの約２分後に開始されるもの。
@@ -175,7 +173,7 @@ public:
             &service_delayed_auto_start_info);
     }
 
-    BOOL Delete()
+    BOOL WINAPI Delete()
     {
         return ::DeleteService(_handle);
     };
@@ -197,13 +195,13 @@ public:
     ~ServiceStatusHandler()
     {}
 
-    BOOL Init(LPCTSTR lpctszServiceName, LPHANDLER_FUNCTION lpfnCtrlHandler)
+    BOOL WINAPI Init(LPCTSTR lpctszServiceName, LPHANDLER_FUNCTION lpfnCtrlHandler)
     {
         _hService = ::RegisterServiceCtrlHandler(lpctszServiceName, lpfnCtrlHandler);
         return _hService == nullptr ? FALSE : TRUE;
     };
 
-    SERVICE_STATUS_HANDLE GetHandle() { return _hService; };
+    SERVICE_STATUS_HANDLE WINAPI GetHandle() { return _hService; };
 
 private:
     SERVICE_STATUS_HANDLE _hService;
@@ -217,13 +215,13 @@ public:
         _Status = { 0,0,0,0,0,0,0 };
     };
 
-    BOOL ReportStatus(
+    BOOL WINAPI ReportStatus(
         ServiceStatusHandler handler,
         DWORD dwCurrentState,
         DWORD dwWin32ExitCode,
         DWORD dwWaitHint);
 
-    SERVICE_STATUS GetStatus() { return _Status; };
+    SERVICE_STATUS WINAPI GetStatus() { return _Status; };
 
 private:
     SERVICE_STATUS _Status;

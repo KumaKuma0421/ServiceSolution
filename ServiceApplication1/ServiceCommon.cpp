@@ -11,13 +11,13 @@ QueryResponse ServiceControl::QueryStatus(QueryResponse wait)
     BOOL ret;
     SERVICE_STATUS_PROCESS status = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 #pragma warning(disable:28159)
-    CONST DWORD cdwStartTime = GetTickCount();
+    CONST DWORD cdwStartTime = ::GetTickCount();
 #pragma warning(default:28159)
     CONST DWORD cdwTimeout = 30000; // 30-second time-out
 
     DWORD dwWaitTime = 0;
 #pragma warning(disable:28159)
-    DWORD dwStartTickCount = GetTickCount();
+    DWORD dwStartTickCount = ::GetTickCount();
 #pragma warning(default:28159)
     DWORD dwCheckPointBefore = 0;
     BOOL bChecking = FALSE;
@@ -58,14 +58,14 @@ QueryResponse ServiceControl::QueryStatus(QueryResponse wait)
         {
             // Continue to wait and check.
 #pragma warning(disable:28159)
-            dwStartTickCount = GetTickCount();
+            dwStartTickCount = ::GetTickCount();
 #pragma warning(default:28159)
             dwCheckPointBefore = status.dwCheckPoint;
         }
         else
         {
 #pragma warning(disable:28159)
-            if (GetTickCount() - dwStartTickCount > status.dwWaitHint)
+            if (::GetTickCount() - dwStartTickCount > status.dwWaitHint)
 #pragma warning(default:28159)
             {
                 response = QueryResponse::Timeout;
@@ -74,7 +74,7 @@ QueryResponse ServiceControl::QueryStatus(QueryResponse wait)
         }
 
 #pragma warning(disable:28159)
-        if (GetTickCount() - cdwStartTime > cdwTimeout)
+        if (::GetTickCount() - cdwStartTime > cdwTimeout)
 #pragma warning(default:28159)
         {
             response = QueryResponse::Timeout;
