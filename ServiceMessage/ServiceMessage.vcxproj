@@ -51,6 +51,7 @@
     <CustomBuildAfterTargets>
     </CustomBuildAfterTargets>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
