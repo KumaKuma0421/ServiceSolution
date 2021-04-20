@@ -17,7 +17,7 @@
 
 #include "ServiceCommon.hpp"
 
-typedef BOOL (*TemplateMethod)(ServiceControl& sc, LPVOID lpvParam);
+typedef BOOL (WINAPI *TemplateMethod)(ServiceControl& sc, LPVOID lpvParam);
 
 class DECLSPEC ServiceCommand final
 {

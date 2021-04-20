@@ -15,7 +15,7 @@ ServiceCore::ServiceCore(EventLogger& logger)
 ServiceCore::~ServiceCore()
 {}
 
-BOOL ServiceCore::Entry()
+BOOL ServiceCore::Entry(ServiceMain fnServiceMain, ControlHandler fnHandler)
 {
     _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
@@ -23,7 +23,7 @@ BOOL ServiceCore::Entry()
 
     SERVICE_TABLE_ENTRY DispatchTable[] =
     {
-        { (LPTSTR)MY_SERVICE_NAME, SvcMain },
+        { (LPTSTR)MY_SERVICE_NAME, fnServiceMain },
         { nullptr, nullptr }
     };
 
@@ -38,6 +38,8 @@ BOOL ServiceCore::Entry()
             lpctszMsg);
         _tprintf(_T("%sÇ™é∏îsÇµÇ‹ÇµÇΩÅB\n"), lpctszMsg);
     }
+
+    _fnHandler = fnHandler;
 
     _logger.TraceFinish(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
     return ret;
@@ -240,7 +242,7 @@ BOOL ServiceCore::Init()
 
     do
     {
-        ret = _handler.Init(MY_SERVICE_NAME, CtrlHandler);
+        ret = _handler.Init(MY_SERVICE_NAME, _fnHandler);
         if (!ret)
         {
             _logger.ApiError(

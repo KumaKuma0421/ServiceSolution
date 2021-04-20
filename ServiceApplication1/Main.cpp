@@ -13,7 +13,7 @@ static ServiceCore __core(__logger);
 // 
 // パラメータがある場合は、コマンド起動と解釈します。
 // 
-int _tmain(int argc, TCHAR** argv)
+int WINAPI _tmain(int argc, TCHAR** argv)
 {
 	BOOL ret;
 
@@ -35,7 +35,7 @@ int _tmain(int argc, TCHAR** argv)
 		}
 		else
 		{
-			__core.Entry();
+			__core.Entry(&SvcMain, &CtrlHandler);
 		}
 
 		ret = __logger.Exit();
