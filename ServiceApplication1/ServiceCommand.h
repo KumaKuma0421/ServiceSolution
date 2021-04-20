@@ -42,7 +42,6 @@ private:
 		LPVOID lpvParam = nullptr);
     VOID WINAPI ShowCurrentStatus(QueryResponse response);
     BOOL WINAPI StopDependentServices(
-        ServiceControlManager& scm,
         ServiceControl& sc,
         LPVOID lpvParam);
 };

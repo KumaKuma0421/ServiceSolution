@@ -5,6 +5,55 @@
 #include "pch.h"
 #include "ServiceCommon.hpp"
 
+VOID WINAPI PrintMessage(
+    LPCTSTR lpctszMessage,
+    DWORD dwErrorCode,
+    LPCTSTR lpctszOption)
+{
+    if (dwErrorCode == NO_ERROR)
+    {
+        if (lpctszOption == nullptr)
+        {
+            _tprintf(_T("%s\n"), lpctszMessage);
+        }
+        else
+        {
+            _tprintf(_T("%s\n %s\n"), lpctszMessage, lpctszOption);
+        }
+    }
+    else
+    {
+        DWORD dwFlags = FORMAT_MESSAGE_ALLOCATE_BUFFER |
+            FORMAT_MESSAGE_IGNORE_INSERTS |
+            FORMAT_MESSAGE_FROM_SYSTEM;
+        LPCVOID lpcvSource = nullptr;
+        DWORD dwLanguageId = MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT);
+        LPTSTR lptszBuffer = nullptr;
+        DWORD dwSize = 0;
+        va_list arguments = nullptr;
+
+        DWORD dwRet = ::FormatMessage(
+            dwFlags,
+            lpcvSource,
+            dwErrorCode,
+            dwLanguageId,
+            (LPTSTR)&lptszBuffer,
+            dwSize,
+            &arguments);
+
+        if (lpctszOption == nullptr)
+        {
+            _tprintf(_T("Failed:%s [%d]%s\n"), lpctszMessage, dwErrorCode, lptszBuffer);
+        }
+        else
+        {
+            _tprintf(_T("Failed:%s %s\n[%d]%s\n"), lpctszMessage, lpctszOption, dwErrorCode, lptszBuffer);
+        }
+
+        ::LocalFree(lptszBuffer);
+    }
+}
+
 QueryResponse ServiceControl::QueryStatus(QueryResponse wait)
 {
     QueryResponse response = QueryResponse::Error;

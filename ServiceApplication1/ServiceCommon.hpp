@@ -11,6 +11,11 @@
 #define MAX_MESSAGE_LEN 256
 #define MAX_STATE_TRANSITION_TIME 3000
 
+VOID WINAPI PrintMessage(
+    LPCTSTR lpctszMessage,
+    DWORD dwErrorCode = GetLastError(),
+    LPCTSTR lpctszOption = nullptr);
+
 enum class BootSettings
 {
     OnDemand = SERVICE_DEMAND_START,
@@ -74,8 +79,7 @@ class ServiceControl final : public ServiceHandler
 public:
     ServiceControl(ServiceControlManager& manager, LPCTSTR lpctszServiceName)
         : _manager(manager)
-    {
-    };
+    {    };
 
     BOOL WINAPI Create(LPCTSTR lpctszFilePath, BOOL bAutoStart = TRUE)
     {
@@ -177,6 +181,8 @@ public:
     {
         return ::DeleteService(_handle);
     };
+
+    ServiceControlManager& GetManager() { return _manager; }
 
 private:
     ServiceControl();
