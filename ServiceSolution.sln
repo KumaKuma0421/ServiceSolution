@@ -41,6 +41,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EventViewerTest", "EventVie
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceMessage", "ServiceMessage\ServiceMessage.vcxproj", "{3E29FEFA-CC8E-4ED1-A029-C2D993835486}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceLogics", "ServiceLogics\ServiceLogics.vcxproj", "{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3E29FEFA-CC8E-4ED1-A029-C2D993835486} = {3E29FEFA-CC8E-4ED1-A029-C2D993835486}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +116,12 @@ Global
 		{3E29FEFA-CC8E-4ED1-A029-C2D993835486}.Release|x64.ActiveCfg = Release|x64
 		{3E29FEFA-CC8E-4ED1-A029-C2D993835486}.Release|x64.Build.0 = Release|x64
 		{3E29FEFA-CC8E-4ED1-A029-C2D993835486}.Release|x86.ActiveCfg = Release|x64
+		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}.Debug|x64.ActiveCfg = Debug|x64
+		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}.Debug|x64.Build.0 = Debug|x64
+		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}.Debug|x86.ActiveCfg = Debug|x64
+		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}.Release|x64.ActiveCfg = Release|x64
+		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}.Release|x64.Build.0 = Release|x64
+		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
