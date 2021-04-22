@@ -4,10 +4,11 @@
 
 #include "pch.h"
 #include "ServiceCommand.h"
+#include "Registry.h"
 
 BOOL ServiceCommand::Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption)
 {
-	BOOL ret = TRUE;
+	BOOL ret = FALSE;
 
 	if (_tcscmp(lpctszCommand, COMMAND_INSTALL) == 0)
 	{
@@ -18,48 +19,57 @@ BOOL ServiceCommand::Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption)
 			PrintMessage(_T("GetModuleFileName()"));
 		}
 		else
-			Install(tszPath);
+		{
+			for (int i = (int)_tcslen(tszPath); i >= 0; i--)
+			{
+				if (tszPath[i] == '\\')
+				{
+					tszPath[i] = '\0';
+					break;
+				}
+			}
+			ret = Install(tszPath);
+		}
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_STATUS) == 0)
 	{
-		Status();
+		ret = Status();
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_REMOVE) == 0)
 	{
-		Remove();
+		ret = Remove();
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_ENABLE) == 0)
 	{
-		Enable(TRUE);
+		ret = Enable(TRUE);
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_ONDEMAND) == 0)
 	{
-		Enable(FALSE);
+		ret = Enable(FALSE);
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_DISABLE) == 0)
 	{
-		Disable();
+		ret = Disable();
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_CHANGE_DESCRIPTION) == 0)
 	{
-		ChangeConfig2Description(lpctszOption);
+		ret = ChangeConfig2Description(lpctszOption);
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_CHANGE_DELAYED_AUTO_START) == 0)
 	{
-		ChangeConfig2DelayedAutoStart();
+		ret = ChangeConfig2DelayedAutoStart();
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_START) == 0)
 	{
-		Start();
+		ret = Start();
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_STOP) == 0)
 	{
-		Stop();
+		ret = Stop();
 	}
 	else
 	{
 		PrintMessage(_T("不明なコマンドです。"), NO_ERROR, lpctszCommand);
-		ret = FALSE;
 	}
 
 	return ret;
@@ -78,11 +88,192 @@ BOOL ServiceCommand::Install(LPCTSTR lpctszModulePath)
 		return ret;
 	};
 
-	return TemplateAction(
-		0,
-		InstallAction,
-		_T("サービスをインストールしました。"),
-		(LPVOID)lpctszModulePath);
+	//
+	// @note 「アプリケーションとサービスログ」の直下に独自の
+	// 	     イベントビューアーログを生成した後は、システムの再起動が
+	// 	   　必要です。
+	//
+	// HKEY_LOCAL_MACHINE
+	// └SYSTEM
+	//   └CurrentControlSet
+	//     └Services
+	//       └EventLog
+	//         └ServiceApplication
+	//           ・MaxSize:REG_DWORD(0x1400000)
+	//           ・Retention:REG_DWORD(0x0)
+	//           ・File:REG_EXPAND_SZ:"%SystemRoot%\System32\Winevt\Logs\ServiceApplication.evtx"
+	//
+
+	BOOL ret;
+	HKEY hKeyRoot = HKEY_LOCAL_MACHINE;
+	BOOL bFirstSetting = FALSE;
+
+	do
+	{
+		Registry registry1;
+
+		ret = registry1.Open(hKeyRoot, LOG_ROOT);
+		if (!ret)
+		{
+			ret = registry1.Create(hKeyRoot, LOG_ROOT);
+			if (!ret)
+			{
+				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), LOG_ROOT);
+				break;
+			}
+
+			bFirstSetting = TRUE;
+		}
+
+		DWORD dwMaxSize = 0;
+
+		ret = registry1.QueryValue(ENTRY_MAX_SIZE, RegistryValueTypes::DWORD, (LPBYTE)&dwMaxSize, sizeof(dwMaxSize));
+		if (!ret || dwMaxSize != LOG_MAX_SIZE)
+		{
+			dwMaxSize = LOG_MAX_SIZE;
+			ret = registry1.SetValue(ENTRY_MAX_SIZE, RegistryValueTypes::DWORD, (LPBYTE)&dwMaxSize, sizeof(dwMaxSize));
+			if (!ret)
+			{
+				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), ENTRY_MAX_SIZE);
+				break;
+			}
+
+			bFirstSetting = TRUE;
+		}
+
+		DWORD dwRetention = 0xFFFFFFFF;
+
+		ret = registry1.QueryValue(ENTRY_RETENTION, RegistryValueTypes::DWORD, (LPBYTE)&dwRetention, sizeof(dwRetention));
+		if (!ret || dwRetention != LOG_RETENTION)
+		{
+			dwRetention = LOG_RETENTION;
+			ret = registry1.SetValue(ENTRY_RETENTION, RegistryValueTypes::DWORD, (LPBYTE)&dwRetention, sizeof(dwRetention));
+			if (!ret)
+			{
+				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), ENTRY_RETENTION);
+				break;
+			}
+
+			bFirstSetting = TRUE;
+		}
+
+		TCHAR tszFile[MAX_PATH] = { 0 };
+
+		ret = registry1.QueryValue(ENTRY_FILE, RegistryValueTypes::EXPAND_SZ, (LPBYTE)tszFile, MAX_PATH * sizeof(TCHAR));
+		if (!ret || _tcscmp(tszFile, LOG_FILE) != 0)
+		{
+			ret = registry1.SetValue(ENTRY_FILE, RegistryValueTypes::EXPAND_SZ, (LPBYTE)LOG_FILE, (DWORD)(_tcslen(LOG_FILE) * sizeof(TCHAR)));
+			if (!ret)
+			{
+				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), ENTRY_FILE);
+				break;
+			}
+
+			bFirstSetting = TRUE;
+		}
+	} while (0);
+
+	if (bFirstSetting)
+	{
+		PrintMessage(_T("イベントビューアーのログファイル設定を行いましたので、システムの再起動を行ってください。"));
+		return TRUE;
+	}
+
+	//
+	// HKEY_LOCAL_MACHINE
+	// └SYSTEM
+	//   └CurrentControlSet
+	//     └Services
+	//       └EventLog
+	//         └ServiceApplication
+	//           └ServiceApplication1
+	//             ・CategoryCount:REG_DWORD(0x4)
+	//             ・CategoryMessageFile:REG_SZ:"C:\Users\User01\source\repos\ServiceSolution\x64\Debug\ServiceMessage.dll"
+	//             ・EventMessageFile:REG_SZ:"C:\Users\User01\source\repos\ServiceSolution\x64\Debug\ServiceMessage.dll"
+	//             ・TypesSupported:REG_DWORD(0x7)
+	//
+
+	do
+	{
+		Registry registry2;
+
+		ret = registry2.Open(hKeyRoot, EVENT_ROOT1);
+		if (!ret)
+		{
+			ret = registry2.Create(hKeyRoot, EVENT_ROOT1);
+			if (!ret)
+			{
+				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), EVENT_ROOT1);
+				break;
+			}
+		}
+
+		DWORD dwCategoryCount = 0;
+
+		ret = registry2.QueryValue(ENTRY_CATEGORY_COUNT, RegistryValueTypes::DWORD, (LPBYTE)&dwCategoryCount, sizeof(dwCategoryCount));
+		if (!ret || dwCategoryCount != EVENT_CATEGORY_COUNT)
+		{
+			dwCategoryCount = EVENT_CATEGORY_COUNT;
+			ret = registry2.SetValue(ENTRY_CATEGORY_COUNT, RegistryValueTypes::DWORD, (LPBYTE)&dwCategoryCount, sizeof(dwCategoryCount));
+			if (!ret)
+			{
+				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), ENTRY_CATEGORY_COUNT);
+				break;
+			}
+		}
+
+		DWORD dwTypesSupported = 0;
+
+		ret = registry2.QueryValue(ENTRY_TYPES_SUPPORTED, RegistryValueTypes::DWORD, (LPBYTE)&dwTypesSupported, sizeof(dwTypesSupported));
+		if (!ret || dwTypesSupported != EVENT_TYPES_SUPPORTED)
+		{
+			dwTypesSupported = EVENT_TYPES_SUPPORTED;
+			ret = registry2.SetValue(ENTRY_TYPES_SUPPORTED, RegistryValueTypes::DWORD, (LPBYTE)&dwTypesSupported, sizeof(dwTypesSupported));
+			if (!ret)
+			{
+				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), ENTRY_TYPES_SUPPORTED);
+				break;
+			}
+		}
+
+		TCHAR tszRequiredFilePath[MAX_PATH] = { 0 };
+		wsprintf(tszRequiredFilePath, _T("%s\\%s"), lpctszModulePath, EVENT_CATEGORY_MESSAGE_FILE);
+
+		TCHAR tszCategoryMessageFile[MAX_PATH] = { 0 };
+
+		ret = registry2.QueryValue(ENTRY_CATEGORY_MESSAGE_FILE, RegistryValueTypes::SZ, (LPBYTE)tszCategoryMessageFile, (DWORD)(sizeof(tszCategoryMessageFile)));
+		if (!ret || _tcscmp(tszCategoryMessageFile, tszRequiredFilePath) != 0)
+		{
+			ret = registry2.SetValue(ENTRY_CATEGORY_MESSAGE_FILE, RegistryValueTypes::SZ, (LPBYTE)tszRequiredFilePath, (DWORD)(_tcslen(tszRequiredFilePath) * sizeof(TCHAR)));
+			if (!ret)
+			{
+				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), ENTRY_CATEGORY_MESSAGE_FILE);
+				break;
+			}
+		}
+
+		TCHAR tszEventMessageFile[MAX_PATH] = { 0 };
+
+		ret = registry2.QueryValue(ENTRY_EVENT_MESSAGE_FILE, RegistryValueTypes::SZ, (LPBYTE)tszEventMessageFile, (DWORD(sizeof(tszEventMessageFile))));
+		if (!ret || _tcscmp(tszEventMessageFile, tszRequiredFilePath) != 0)
+		{
+			ret = registry2.SetValue(ENTRY_EVENT_MESSAGE_FILE, RegistryValueTypes::SZ, (LPBYTE)tszRequiredFilePath, (DWORD)(_tcslen(tszRequiredFilePath) * sizeof(TCHAR)));
+			if (!ret)
+			{
+				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), ENTRY_EVENT_MESSAGE_FILE);
+				break;
+			}
+		}
+
+		ret = TemplateAction(
+			0,
+			InstallAction,
+			_T("サービスをインストールしました。"),
+			(LPVOID)lpctszModulePath);
+
+	} while (0);
+
+	return ret;
 }
 
 BOOL ServiceCommand::Status()
@@ -90,7 +281,7 @@ BOOL ServiceCommand::Status()
 	auto StatusAction = [](ServiceControl& sc, void* lpvParam)
 	{
 		SERVICE_STATUS_PROCESS status = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-		BOOL ret = sc.QueryService(status);
+		BOOL ret = sc.QueryStatusEx(status);
 		if (!ret)
 		{
 			PrintMessage(_T("QueryServiceStatusEx()"));
@@ -184,11 +375,32 @@ BOOL ServiceCommand::Status()
 			_tprintf(_T("ServiceFlags=%u\n"), status.dwServiceFlags);
 		}
 
+		LPQUERY_SERVICE_CONFIG lpQueryServiceConfig = nullptr;
+		ret = sc.QueryConfig(lpQueryServiceConfig);
+		if (!ret || lpQueryServiceConfig == nullptr)
+		{
+			PrintMessage(_T("QueryServiceConfig()"));
+		}
+		else
+		{
+			_tprintf(_T("dwServiceType:%d\n"), lpQueryServiceConfig->dwServiceType);
+			_tprintf(_T("dwStartType:%d\n"), lpQueryServiceConfig->dwStartType);
+			_tprintf(_T("dwErrorControl:%d\n"), lpQueryServiceConfig->dwErrorControl);
+			_tprintf(_T("lpBinaryPathName:%s\n"), lpQueryServiceConfig->lpBinaryPathName);
+			_tprintf(_T("lpLoadOrderGroup:%s\n"), lpQueryServiceConfig->lpLoadOrderGroup);
+			_tprintf(_T("dwTagId:%d\n"), lpQueryServiceConfig->dwTagId);
+			_tprintf(_T("lpDependencies:%s\n"), lpQueryServiceConfig->lpDependencies);
+			_tprintf(_T("lpServiceStartName:%s\n"), lpQueryServiceConfig->lpServiceStartName);
+			_tprintf(_T("lpDisplayName:%s\n"), lpQueryServiceConfig->lpDisplayName);
+
+			LocalFree(lpQueryServiceConfig);
+		}
+
 		return ret;
 	};
 
 	return TemplateAction(
-		SERVICE_QUERY_STATUS,
+		SERVICE_QUERY_STATUS | SERVICE_QUERY_CONFIG,
 		StatusAction,
 		nullptr);
 }

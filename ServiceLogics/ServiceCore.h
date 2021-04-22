@@ -10,9 +10,6 @@
 #include "Event.hpp"
 #include "EventLogger.h"
 
-typedef VOID (WINAPI *ServiceMain)(DWORD dwArgc, LPTSTR* lptszArgv);
-typedef VOID (WINAPI *ControlHandler)(DWORD dwControlCode);
-
 class DECLSPEC ServiceCore final
 {
 public:
@@ -20,8 +17,8 @@ public:
     ~ServiceCore();
 
     BOOL WINAPI Entry(
-        ServiceMain fnServiceMain,
-        ControlHandler fnHandler);
+        LPSERVICE_MAIN_FUNCTION fnServiceMain,
+        LPHANDLER_FUNCTION fnHandler);
     VOID WINAPI Main(DWORD dwArgc, LPTSTR* lptszArgv);
     VOID WINAPI Handler(DWORD dwControlCode);
 
@@ -46,6 +43,6 @@ private:
     Event _event;
     EventLogger& _logger;
 
-    ControlHandler _fnHandler;
+    LPHANDLER_FUNCTION _fnHandler;
 };
 

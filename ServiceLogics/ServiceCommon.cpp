@@ -79,7 +79,7 @@ QueryResponse ServiceControl::QueryStatus(QueryResponse wait)
 
         Sleep(dwWaitTime);
 
-        ret = QueryService(status);
+        ret = QueryStatusEx(status);
         if (ret == FALSE)
         {
             response = QueryResponse::Error;

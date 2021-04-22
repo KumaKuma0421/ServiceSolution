@@ -27,6 +27,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RegistryAccess", "RegistryA
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceApplication1", "ServiceApplication1\ServiceApplication1.vcxproj", "{5D430E3F-1406-4592-A06B-7D865C5F0DA4}"
 	ProjectSection(ProjectDependencies) = postProject
+		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3} = {D19FDF64-4DD3-46B2-BECC-B475D9B097D3}
 		{3E29FEFA-CC8E-4ED1-A029-C2D993835486} = {3E29FEFA-CC8E-4ED1-A029-C2D993835486}
 	EndProjectSection
 EndProject

@@ -24,7 +24,7 @@ int WINAPI _tmain(int argc, TCHAR** argv)
 		ret = __logger.Init(MY_SERVICE_NAME);
 		if (!ret)
 		{
-			_tprintf(_T("EventLogger initialize failed.\n"));
+			_tprintf(_T("EventLogger の初期化に失敗しました。\n"));
 			break;
 		}
 
@@ -35,15 +35,15 @@ int WINAPI _tmain(int argc, TCHAR** argv)
 		}
 		else
 		{
-			__core.Entry(&SvcMain, &CtrlHandler);
+			ret = __core.Entry(SvcMain, CtrlHandler);
 		}
 
+		if (!ret) break;
+
 		ret = __logger.Exit();
-		if (!ret)
-			_tprintf(_T("EventLogger closing failed.\n"));
+		if (!ret) _tprintf(_T("EventLogger の終了処理に失敗しました。\n"));
 
 	} while (0);
-
 
 	return ret == TRUE ? ERROR_SUCCESS : -1;
 }

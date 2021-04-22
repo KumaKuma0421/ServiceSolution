@@ -8,6 +8,33 @@
 #define MY_SERVICE_DISPLAY_NAME _T("サンプルのサービス")
 #define MY_SERVICE_DESCRIPTION _T("これはサンプルのサービスプログラムです。")
 
+#define LOG_ROOT _T("SYSTEM\\CurrentControlSet\\Services\\EventLog\\ServiceApplication")
+
+#define ENTRY_MAX_SIZE _T("MaxSize")
+#define LOG_MAX_SIZE 0x1400000
+
+#define ENTRY_RETENTION _T("Retention")
+#define LOG_RETENTION 0
+
+#define ENTRY_FILE _T("File")
+#define LOG_FILE _T("%SystemRoot%\\System32\\Winevt\\Logs\\ServiceApplication.evtx")
+
+#define EVENT_ROOT1 _T("SYSTEM\\CurrentControlSet\\Services\\EventLog\\ServiceApplication\\ServiceApplication1")
+
+#define ENTRY_CATEGORY_COUNT _T("CategoryCount")
+#define EVENT_CATEGORY_COUNT 4
+
+#define ENTRY_CATEGORY_MESSAGE_FILE _T("CategoryMessageFile")
+#define EVENT_CATEGORY_MESSAGE_FILE _T("ServiceMessage.dll")
+
+#define ENTRY_EVENT_MESSAGE_FILE _T("EventMessageFile")
+#define EVENT_EVENT_MESSAGE_FILE _T("ServiceMessage.dll")
+
+#define ENTRY_TYPES_SUPPORTED _T("TypesSupported")
+#define EVENT_TYPES_SUPPORTED 7
+
+#define ERROR_REGISTRY_REGISTER _T("レジストリの登録に失敗しました。")
+
 #define MAX_MESSAGE_LEN 256
 #define MAX_STATE_TRANSITION_TIME 3000
 
@@ -111,7 +138,22 @@ public:
         return _handle == nullptr ? FALSE : TRUE;
     };
 
-    BOOL WINAPI QueryService(SERVICE_STATUS_PROCESS& status)
+    BOOL WINAPI QueryConfig(LPQUERY_SERVICE_CONFIG& lpQueryServiceConfig)
+    {
+        BOOL ret;
+        DWORD dwBytesNeeded = 0;
+
+        ret = ::QueryServiceConfig(_handle, nullptr, 0, &dwBytesNeeded);
+        if (!ret && dwBytesNeeded)
+        {
+            lpQueryServiceConfig = (LPQUERY_SERVICE_CONFIG)LocalAlloc(LPTR, dwBytesNeeded);
+            ret = ::QueryServiceConfig(_handle, lpQueryServiceConfig, dwBytesNeeded, &dwBytesNeeded);
+        }
+
+        return ret;
+    }
+
+    BOOL WINAPI QueryStatusEx(SERVICE_STATUS_PROCESS& status)
     {
         DWORD dwBytesNeeded;
 

@@ -10,16 +10,21 @@ ServiceCore::ServiceCore(EventLogger& logger)
     :_logger(logger)
 {
     _dwControlCode = 0;
+    _fnHandler = nullptr;
 }
 
 ServiceCore::~ServiceCore()
 {}
 
-BOOL ServiceCore::Entry(ServiceMain fnServiceMain, ControlHandler fnHandler)
+BOOL ServiceCore::Entry(
+    LPSERVICE_MAIN_FUNCTION fnServiceMain,
+    LPHANDLER_FUNCTION fnHandler)
 {
     _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
     BOOL ret = FALSE;
+
+    _fnHandler = fnHandler;
 
     SERVICE_TABLE_ENTRY DispatchTable[] =
     {
@@ -27,6 +32,10 @@ BOOL ServiceCore::Entry(ServiceMain fnServiceMain, ControlHandler fnHandler)
         { nullptr, nullptr }
     };
 
+    //! @note StartServiceCtrlDispatcher()が呼び出されると、
+    //! サービスメイン関数がコールバックされます。
+    //! その後、この関数はここで停止し、サービスが終了する
+    //! まで、ブロックされます。
     ret = ::StartServiceCtrlDispatcher(DispatchTable);
     if (!ret)
     {
@@ -38,8 +47,6 @@ BOOL ServiceCore::Entry(ServiceMain fnServiceMain, ControlHandler fnHandler)
             lpctszMsg);
         _tprintf(_T("%sが失敗しました。\n"), lpctszMsg);
     }
-
-    _fnHandler = fnHandler;
 
     _logger.TraceFinish(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
     return ret;
