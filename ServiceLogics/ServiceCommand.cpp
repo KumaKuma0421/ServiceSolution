@@ -115,7 +115,7 @@ BOOL ServiceCommand::Install(LPCTSTR lpctszModulePath)
 		ret = registry1.Open(hKeyRoot, LOG_ROOT);
 		if (!ret)
 		{
-			ret = registry1.Create(hKeyRoot, LOG_ROOT);
+			ret = registry1.Create(hKeyRoot, LOG_ROOT, FALSE);
 			if (!ret)
 			{
 				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), LOG_ROOT);
@@ -265,11 +265,14 @@ BOOL ServiceCommand::Install(LPCTSTR lpctszModulePath)
 			}
 		}
 
+		TCHAR tszInstallModulePath[MAX_PATH] = { 0 }; // TODO:main()で抜いて、ここで付けて、ではせわしい。
+		wsprintf(tszInstallModulePath, _T("%s\\%s.%s"), lpctszModulePath, MY_SERVICE_NAME, _T("exe"));
+
 		ret = TemplateAction(
 			0,
 			InstallAction,
 			_T("サービスをインストールしました。"),
-			(LPVOID)lpctszModulePath);
+			(LPVOID)tszInstallModulePath);
 
 	} while (0);
 
@@ -598,7 +601,7 @@ BOOL ServiceCommand::Stop()
 				ret = sc.Stop();
 				if (!ret)
 				{
-					PrintMessage(_T("StartService()"));
+					PrintMessage(_T("StopService()"));
 					break;
 				}
 

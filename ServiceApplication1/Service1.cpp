@@ -1,15 +1,41 @@
 //
-// Service.cpp
+// Service1.cpp
 //
 
 #include "pch.h"
-#include "Service.h"
+#include "Service1.h"
 
-Service::Service(EventLogger& logger)
-    :Thread(logger)
-{}
+Service1::Service1(EventLogger& logger)
+    :_logger(logger)
+{
+}
 
-BOOL Service::Run()
+BOOL Service1::Start()
+{
+    return Thread::Start();
+}
+
+BOOL Service1::Suspend()
+{
+    return Thread::Suspend();
+}
+
+BOOL Service1::Resume()
+{
+    return Thread::Resume();
+}
+
+BOOL Service1::Stop()
+{
+    return Thread::Stop();
+}
+
+BOOL Service1::Wait()
+{
+    return Thread::Wait();
+}
+
+BOOL Service1::Run()
 {
     _logger.TraceStart(CATEGORY_SERVICE, __FUNCTIONW__);
     

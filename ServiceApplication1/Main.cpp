@@ -4,6 +4,7 @@
 
 #include "pch.h"
 #include "Main.h"
+#include "Service1.h"
 
 static EventLogger __logger;
 static ServiceCore __core(__logger);
@@ -35,7 +36,8 @@ int WINAPI _tmain(int argc, TCHAR** argv)
 		}
 		else
 		{
-			ret = __core.Entry(SvcMain, CtrlHandler);
+			IService* pService = new Service1(__logger);
+			ret = __core.Entry(SvcMain, CtrlHandler, pService);
 		}
 
 		if (!ret) break;

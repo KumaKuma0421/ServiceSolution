@@ -90,9 +90,9 @@
     <ClInclude Include="Event.hpp" />
     <ClInclude Include="EventLogger.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="IService.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Registry.h" />
-    <ClInclude Include="Service.h" />
     <ClInclude Include="ServiceCommand.h" />
     <ClInclude Include="ServiceCommon.hpp" />
     <ClInclude Include="ServiceCore.h" />
@@ -106,7 +106,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Registry.cpp" />
-    <ClCompile Include="Service.cpp" />
     <ClCompile Include="ServiceCommand.cpp" />
     <ClCompile Include="ServiceCommon.cpp" />
     <ClCompile Include="ServiceCore.cpp" />

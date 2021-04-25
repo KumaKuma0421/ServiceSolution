@@ -27,9 +27,6 @@
     <ClInclude Include="EventLogger.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Thread.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="ServiceCore.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -39,10 +36,13 @@
     <ClInclude Include="ServiceCommon.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Service.h">
+    <ClInclude Include="Registry.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Registry.h">
+    <ClInclude Include="IService.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
@@ -56,9 +56,6 @@
     <ClCompile Include="EventLogger.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Thread.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="ServiceCore.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -68,10 +65,10 @@
     <ClCompile Include="ServiceCommon.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Service.cpp">
+    <ClCompile Include="Registry.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Registry.cpp">
+    <ClCompile Include="Thread.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

@@ -4,13 +4,13 @@
 
 #include "pch.h"
 #include "ServiceCore.h"
-#include "Service.h"
 
 ServiceCore::ServiceCore(EventLogger& logger)
     :_logger(logger)
 {
     _dwControlCode = 0;
     _fnHandler = nullptr;
+    _pService = nullptr;
 }
 
 ServiceCore::~ServiceCore()
@@ -18,13 +18,15 @@ ServiceCore::~ServiceCore()
 
 BOOL ServiceCore::Entry(
     LPSERVICE_MAIN_FUNCTION fnServiceMain,
-    LPHANDLER_FUNCTION fnHandler)
+    LPHANDLER_FUNCTION fnHandler,
+    IService* pService)
 {
     _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
     BOOL ret = FALSE;
 
     _fnHandler = fnHandler;
+    _pService = pService;
 
     SERVICE_TABLE_ENTRY DispatchTable[] =
     {
@@ -61,8 +63,7 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
     ret = Init();
     if (!ret) return;
 
-    Service service(_logger);
-    ret = service.Start(STOP_EVENT);
+    ret = _pService->Start();
     if (!ret)
     {
         LPCTSTR lpctszMsg = _T("サービスの実行に失敗しました。終了します。");
@@ -110,7 +111,7 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
         {
             case SERVICE_CONTROL_STOP:
             case SERVICE_CONTROL_SHUTDOWN:
-                service.Stop();
+                _pService->Stop();
                 Stop();
                 bLoop = FALSE; // この関数を終了します。
                 break;
@@ -118,13 +119,13 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
             case SERVICE_CONTROL_PAUSE:
             case SERVICE_CONTROL_PRESHUTDOWN:
                 ReportStatus(SERVICE_PAUSE_PENDING);
-                service.Suspend();
+                _pService->Suspend();
                 Suspend();
                 break;
 
             case SERVICE_CONTROL_CONTINUE:
                 ReportStatus(SERVICE_CONTINUE_PENDING);
-                service.Resume();
+                _pService->Resume();
                 Resume();
                 break;
 
@@ -150,7 +151,7 @@ VOID ServiceCore::Main(DWORD dwArgc, LPTSTR* lptszArgv)
 
     ReportStatus(SERVICE_STOP_PENDING, NO_ERROR);
 
-    ret = service.Wait();
+    ret = _pService->Wait();
     if (!ret)
     {
         LPCTSTR lpctszMsg = _T("WaitForSingleObject()");
@@ -260,7 +261,7 @@ BOOL ServiceCore::Init()
             break;
         }
 
-        ret = _event.Create(EVENT_STOP);
+        ret = _event.Create();
         if (!ret)
         {
             _logger.ApiError(

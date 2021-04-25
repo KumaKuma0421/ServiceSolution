@@ -9,6 +9,7 @@
 #include "ServiceCommon.hpp"
 #include "Event.hpp"
 #include "EventLogger.h"
+#include "IService.h"
 
 class DECLSPEC ServiceCore final
 {
@@ -18,7 +19,8 @@ public:
 
     BOOL WINAPI Entry(
         LPSERVICE_MAIN_FUNCTION fnServiceMain,
-        LPHANDLER_FUNCTION fnHandler);
+        LPHANDLER_FUNCTION fnHandler,
+        IService* pService);
     VOID WINAPI Main(DWORD dwArgc, LPTSTR* lptszArgv);
     VOID WINAPI Handler(DWORD dwControlCode);
 
@@ -44,5 +46,6 @@ private:
     EventLogger& _logger;
 
     LPHANDLER_FUNCTION _fnHandler;
+    IService* _pService;
 };
 

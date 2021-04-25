@@ -19,13 +19,13 @@ public:
         if (_hEvent == nullptr) Close();
     }
 
-    BOOL WINAPI Create(LPCTSTR lpctszEventName)
+    BOOL WINAPI Create()
     {
         _hEvent = ::CreateEvent(
             nullptr,
             TRUE,  // manual reset event
             FALSE, // not signaled
-            lpctszEventName);
+            nullptr);
 
         return _hEvent == nullptr ? FALSE : TRUE;
     };

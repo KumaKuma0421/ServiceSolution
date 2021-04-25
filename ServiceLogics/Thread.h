@@ -4,19 +4,15 @@
 
 #pragma once
 
-#define STOP_EVENT _T("STOP_MY_SERVICE_EVENT")
-
 #include "Event.hpp"
-#include "EventLogger.h"
-#include "ServiceMessage.h"
 
 class DECLSPEC Thread
 {
 public:
-    Thread(EventLogger& logger);
+    Thread();
     virtual ~Thread();
 
-    virtual BOOL Start(LPCTSTR lpctszStopEvent);
+    virtual BOOL Start();
     virtual BOOL Stop();
     virtual BOOL Suspend();
     virtual BOOL Resume();
@@ -26,10 +22,8 @@ public:
 
 protected:
     Event _event;
-    EventLogger& _logger;
 
 private:
-    Thread();
     static DWORD ThreadFunction(LPVOID lpvParam);
 
     HANDLE _hThread;
