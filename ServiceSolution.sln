@@ -28,7 +28,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceApplication1", "ServiceApplication1\ServiceApplication1.vcxproj", "{5D430E3F-1406-4592-A06B-7D865C5F0DA4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3} = {D19FDF64-4DD3-46B2-BECC-B475D9B097D3}
-		{3E29FEFA-CC8E-4ED1-A029-C2D993835486} = {3E29FEFA-CC8E-4ED1-A029-C2D993835486}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MessageResource1", "MessageResource1\MessageResource1.vcxproj", "{8C2CB7D2-0B9E-4A5F-876E-80E81E889610}"
@@ -45,6 +44,11 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceLogics", "ServiceLogics\ServiceLogics.vcxproj", "{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3E29FEFA-CC8E-4ED1-A029-C2D993835486} = {3E29FEFA-CC8E-4ED1-A029-C2D993835486}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceApplication2", "ServiceApplication2\ServiceApplication2.vcxproj", "{E9176B15-36FE-47E8-B09B-EC4FCC1AE471}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3} = {D19FDF64-4DD3-46B2-BECC-B475D9B097D3}
 	EndProjectSection
 EndProject
 Global
@@ -123,6 +127,12 @@ Global
 		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}.Release|x64.ActiveCfg = Release|x64
 		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}.Release|x64.Build.0 = Release|x64
 		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}.Release|x86.ActiveCfg = Release|x64
+		{E9176B15-36FE-47E8-B09B-EC4FCC1AE471}.Debug|x64.ActiveCfg = Debug|x64
+		{E9176B15-36FE-47E8-B09B-EC4FCC1AE471}.Debug|x64.Build.0 = Debug|x64
+		{E9176B15-36FE-47E8-B09B-EC4FCC1AE471}.Debug|x86.ActiveCfg = Debug|x64
+		{E9176B15-36FE-47E8-B09B-EC4FCC1AE471}.Release|x64.ActiveCfg = Release|x64
+		{E9176B15-36FE-47E8-B09B-EC4FCC1AE471}.Release|x64.Build.0 = Release|x64
+		{E9176B15-36FE-47E8-B09B-EC4FCC1AE471}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,6 +11,7 @@ ServiceCore::ServiceCore(EventLogger& logger)
     _dwControlCode = 0;
     _fnHandler = nullptr;
     _pService = nullptr;
+	_pSI = nullptr;
 }
 
 ServiceCore::~ServiceCore()
@@ -19,7 +20,8 @@ ServiceCore::~ServiceCore()
 BOOL ServiceCore::Entry(
     LPSERVICE_MAIN_FUNCTION fnServiceMain,
     LPHANDLER_FUNCTION fnHandler,
-    IService* pService)
+    IService* pService,
+	ServiceInfo* si)
 {
     _logger.TraceStart(CATEGORY_SERVICE_CORE, __FUNCTIONW__);
 
@@ -27,10 +29,11 @@ BOOL ServiceCore::Entry(
 
     _fnHandler = fnHandler;
     _pService = pService;
+	_pSI = si;
 
     SERVICE_TABLE_ENTRY DispatchTable[] =
     {
-        { (LPTSTR)MY_SERVICE_NAME, fnServiceMain },
+        { (LPTSTR)_pSI->GetName(), fnServiceMain },
         { nullptr, nullptr }
     };
 
@@ -250,7 +253,7 @@ BOOL ServiceCore::Init()
 
     do
     {
-        ret = _handler.Init(MY_SERVICE_NAME, _fnHandler);
+        ret = _handler.Init(_pSI->GetName(), _fnHandler);
         if (!ret)
         {
             _logger.ApiError(

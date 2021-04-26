@@ -4,12 +4,11 @@
 
 #pragma once
 
-#define EVENT_STOP _T("SERVICE_STOP_EVENT")
-
 #include "ServiceCommon.hpp"
 #include "Event.hpp"
 #include "EventLogger.h"
 #include "IService.h"
+#include "ServiceInfo.h"
 
 class DECLSPEC ServiceCore final
 {
@@ -20,7 +19,8 @@ public:
     BOOL WINAPI Entry(
         LPSERVICE_MAIN_FUNCTION fnServiceMain,
         LPHANDLER_FUNCTION fnHandler,
-        IService* pService);
+        IService* pService,
+		ServiceInfo* si);
     VOID WINAPI Main(DWORD dwArgc, LPTSTR* lptszArgv);
     VOID WINAPI Handler(DWORD dwControlCode);
 
@@ -47,5 +47,6 @@ private:
 
     LPHANDLER_FUNCTION _fnHandler;
     IService* _pService;
+	ServiceInfo* _pSI;
 };
 

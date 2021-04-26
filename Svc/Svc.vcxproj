@@ -63,7 +63,7 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
-      <Command>$(ProjectDir)MakeDll.bat</Command>
+      <Command>"$(ProjectDir)MakeDll.bat"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Now making resource from message file.</Message>
@@ -87,7 +87,7 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
-      <Command>$(ProjectDir)MakeDll.bat</Command>
+      <Command>"$(ProjectDir)MakeDll.bat"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Now making resource from message file.</Message>

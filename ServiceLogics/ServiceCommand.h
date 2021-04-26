@@ -4,6 +4,9 @@
 
 #pragma once
 
+#include "ServiceCommon.hpp"
+#include "ServiceInfo.h"
+
 #define COMMAND_INSTALL                   _T("/install")
 #define COMMAND_STATUS                    _T("/status")
 #define COMMAND_REMOVE                    _T("/remove")
@@ -15,26 +18,26 @@
 #define COMMAND_STOP                      _T("/stop")
 #define COMMAND_CHANGE_DESCRIPTION        _T("/description")
 
-#include "ServiceCommon.hpp"
-
 typedef BOOL (WINAPI *TemplateMethod)(ServiceControl& sc, LPVOID lpvParam);
 
 class DECLSPEC ServiceCommand final
 {
 public:
+	ServiceCommand(ServiceInfo& si);
     BOOL WINAPI Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption = nullptr);
 
-    BOOL WINAPI Install(LPCTSTR lpctszModulePath);
+    BOOL WINAPI Install();
     BOOL WINAPI Status();
     BOOL WINAPI Remove();
     BOOL WINAPI Enable(BOOL bAuto);
     BOOL WINAPI Disable();
-    BOOL WINAPI ChangeConfig2Description(LPCTSTR lpctszDescription);
+    BOOL WINAPI ChangeConfig2Description();
     BOOL WINAPI ChangeConfig2DelayedAutoStart();
     BOOL WINAPI Start();
     BOOL WINAPI Stop();
 
 private:
+	ServiceCommand();
 	BOOL WINAPI TemplateAction(
 		DWORD dwOpenParam,
 		TemplateMethod method,
@@ -44,5 +47,7 @@ private:
     BOOL WINAPI StopDependentServices(
         ServiceControl& sc,
         LPVOID lpvParam);
+	
+	ServiceInfo& _si;
 };
 

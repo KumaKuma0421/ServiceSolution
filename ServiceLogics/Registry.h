@@ -7,9 +7,6 @@
 
 #define MAX_KEY_LENGTH 1024
 
-//#include "framework.h"
-//#include "WindowsLibrary.h"
-
 enum class RegistryValueTypes
 {
     NONE = REG_NONE,

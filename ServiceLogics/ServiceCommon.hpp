@@ -4,9 +4,7 @@
 
 #pragma once
 
-#define MY_SERVICE_NAME _T("ServiceApplication1")
-#define MY_SERVICE_DISPLAY_NAME _T("サンプルのサービス")
-#define MY_SERVICE_DESCRIPTION _T("これはサンプルのサービスプログラムです。")
+#include "ServiceInfo.h"
 
 #define LOG_ROOT _T("SYSTEM\\CurrentControlSet\\Services\\EventLog\\ServiceApplication")
 
@@ -19,7 +17,7 @@
 #define ENTRY_FILE _T("File")
 #define LOG_FILE _T("%SystemRoot%\\System32\\Winevt\\Logs\\ServiceApplication.evtx")
 
-#define EVENT_ROOT1 _T("SYSTEM\\CurrentControlSet\\Services\\EventLog\\ServiceApplication\\ServiceApplication1")
+#define EVENT_ROOT _T("SYSTEM\\CurrentControlSet\\Services\\EventLog\\ServiceApplication")
 
 #define ENTRY_CATEGORY_COUNT _T("CategoryCount")
 #define EVENT_CATEGORY_COUNT 4
@@ -104,16 +102,17 @@ public:
 class DECLSPEC ServiceControl final : public ServiceHandler
 {
 public:
-    ServiceControl(ServiceControlManager& manager, LPCTSTR lpctszServiceName)
-        : _manager(manager)
-    {    };
+    ServiceControl(ServiceControlManager& manager, ServiceInfo& si)
+        : _manager(manager), _si(si)
+    {
+	};
 
     BOOL WINAPI Create(LPCTSTR lpctszFilePath, BOOL bAutoStart = TRUE)
     {
         _handle = ::CreateService(
             _manager.GetHandle(),
-            MY_SERVICE_NAME,
-            MY_SERVICE_DISPLAY_NAME,
+            _si.GetName(),
+            _si.GetDisplayName(),
             SERVICE_ALL_ACCESS,
             SERVICE_WIN32_OWN_PROCESS,
             bAutoStart ? SERVICE_AUTO_START : SERVICE_DEMAND_START,
@@ -132,7 +131,7 @@ public:
     {
         _handle = ::OpenService(
             _manager.GetHandle(),
-            MY_SERVICE_NAME,
+            _si.GetName(),
             dwDesiredAccess);
 
         return _handle == nullptr ? FALSE : TRUE;
@@ -195,9 +194,9 @@ public:
             nullptr);          // display name: no change
     };
 
-    BOOL WINAPI ChangeConfig2Description(LPCTSTR lpctszServiceDescription)
+    BOOL WINAPI ChangeConfig2Description()
     {
-        SERVICE_DESCRIPTION service_description = { (LPTSTR)lpctszServiceDescription };
+		SERVICE_DESCRIPTION service_description = { (LPTSTR)_si.GetDescription() };
 
         return ::ChangeServiceConfig2(
             _handle,
@@ -230,6 +229,7 @@ private:
     ServiceControl();
 
     ServiceControlManager& _manager;
+	ServiceInfo& _si;
 };
 
 class DECLSPEC ServiceStatusHandler final

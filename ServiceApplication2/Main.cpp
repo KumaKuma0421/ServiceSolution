@@ -1,4 +1,4 @@
-ï»¿//
+//
 // Main.cpp
 //
 
@@ -11,9 +11,9 @@ static EventLogger __logger;
 static ServiceCore __core(__logger);
 
 //
-// SCMã‹ã‚‰èµ·å‹•æ™‚ã«å‘¼ã°ã‚Œã¾ã™ã€‚
+// SCM‚©‚ç‹N“®‚ÉŒÄ‚Î‚ê‚Ü‚·B
 // 
-// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãŒã‚ã‚‹å ´åˆã¯ã€ã‚³ãƒãƒ³ãƒ‰èµ·å‹•ã¨è§£é‡ˆã—ã¾ã™ã€‚
+// ƒpƒ‰ƒ[ƒ^‚ª‚ ‚éê‡‚ÍAƒRƒ}ƒ“ƒh‹N“®‚Æ‰ğß‚µ‚Ü‚·B
 // 
 int WINAPI _tmain(int argc, TCHAR** argv)
 {
@@ -25,7 +25,7 @@ int WINAPI _tmain(int argc, TCHAR** argv)
 	DWORD dwRet = ::GetModuleFileName(nullptr, tszPath, MAX_PATH);
 	if (!dwRet)
 	{
-		_tprintf(_T("GetModuleFileName()ãŒå¤±æ•—ã—ã¾ã—ãŸã€‚\n"));
+		_tprintf(_T("GetModuleFileName()‚ª¸”s‚µ‚Ü‚µ‚½B\n"));
 		return -1;
 	}
 	else
@@ -47,7 +47,7 @@ int WINAPI _tmain(int argc, TCHAR** argv)
 		ret = __logger.Init(si.GetName());
 		if (!ret)
 		{
-			_tprintf(_T("EventLogger ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\n"));
+			_tprintf(_T("EventLogger ‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½B\n"));
 			break;
 		}
 
@@ -65,7 +65,7 @@ int WINAPI _tmain(int argc, TCHAR** argv)
 		if (!ret) break;
 
 		ret = __logger.Exit();
-		if (!ret) _tprintf(_T("EventLogger ã®çµ‚äº†å‡¦ç†ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\n"));
+		if (!ret) _tprintf(_T("EventLogger ‚ÌI—¹ˆ—‚É¸”s‚µ‚Ü‚µ‚½B\n"));
 
 	} while (0);
 
@@ -73,7 +73,7 @@ int WINAPI _tmain(int argc, TCHAR** argv)
 }
 
 //
-// SCMã‹ã‚‰ã‚µãƒ¼ãƒ“ã‚¹é–‹å§‹æ™‚ã«å‘¼ã°ã‚Œã¾ã™ã€‚
+// SCM‚©‚çƒT[ƒrƒXŠJn‚ÉŒÄ‚Î‚ê‚Ü‚·B
 //
 VOID WINAPI SvcMain(DWORD dwArgc, LPTSTR* lptszArgv)
 {
@@ -81,7 +81,7 @@ VOID WINAPI SvcMain(DWORD dwArgc, LPTSTR* lptszArgv)
 }
 
 //
-// SCMã‹ã‚‰åœæ­¢å‡¦ç†ãªã©ã®åˆ¶å¾¡å‡¦ç†è¦æ±‚æ™‚ã«å‘¼ã°ã‚Œã¾ã™ã€‚
+// SCM‚©‚ç’â~ˆ—‚È‚Ç‚Ì§Œäˆ——v‹‚ÉŒÄ‚Î‚ê‚Ü‚·B
 //
 VOID WINAPI CtrlHandler(DWORD dwControlCode)
 {

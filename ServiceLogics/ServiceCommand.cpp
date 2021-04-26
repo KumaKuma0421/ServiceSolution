@@ -6,30 +6,19 @@
 #include "ServiceCommand.h"
 #include "Registry.h"
 
+ServiceCommand::ServiceCommand(ServiceInfo& si)
+	:_si(si)
+{
+
+}
+
 BOOL ServiceCommand::Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption)
 {
 	BOOL ret = FALSE;
 
 	if (_tcscmp(lpctszCommand, COMMAND_INSTALL) == 0)
 	{
-		TCHAR tszPath[MAX_PATH] = { 0 };
-		DWORD dwRet = ::GetModuleFileName(nullptr, tszPath, MAX_PATH);
-		if (!dwRet)
-		{
-			PrintMessage(_T("GetModuleFileName()"));
-		}
-		else
-		{
-			for (int i = (int)_tcslen(tszPath); i >= 0; i--)
-			{
-				if (tszPath[i] == '\\')
-				{
-					tszPath[i] = '\0';
-					break;
-				}
-			}
-			ret = Install(tszPath);
-		}
+		ret = Install();
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_STATUS) == 0)
 	{
@@ -53,7 +42,7 @@ BOOL ServiceCommand::Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption)
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_CHANGE_DESCRIPTION) == 0)
 	{
-		ret = ChangeConfig2Description(lpctszOption);
+		ret = ChangeConfig2Description();
 	}
 	else if (_tcscmp(lpctszCommand, COMMAND_CHANGE_DELAYED_AUTO_START) == 0)
 	{
@@ -75,11 +64,11 @@ BOOL ServiceCommand::Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption)
 	return ret;
 }
 
-BOOL ServiceCommand::Install(LPCTSTR lpctszModulePath)
+BOOL ServiceCommand::Install()
 {
 	auto InstallAction = [](ServiceControl& sc, void* lpvParam)
 	{
-		BOOL ret = sc.ChangeConfig2Description(MY_SERVICE_DESCRIPTION);
+		BOOL ret = sc.ChangeConfig2Description();
 		if (!ret)
 		{
 			PrintMessage(_T("ChangeServiceConfig2()"));
@@ -186,7 +175,7 @@ BOOL ServiceCommand::Install(LPCTSTR lpctszModulePath)
 	//     └Services
 	//       └EventLog
 	//         └ServiceApplication
-	//           └ServiceApplication1
+	//           └<サービス名>
 	//             ・CategoryCount:REG_DWORD(0x4)
 	//             ・CategoryMessageFile:REG_SZ:"C:\Users\User01\source\repos\ServiceSolution\x64\Debug\ServiceMessage.dll"
 	//             ・EventMessageFile:REG_SZ:"C:\Users\User01\source\repos\ServiceSolution\x64\Debug\ServiceMessage.dll"
@@ -196,14 +185,17 @@ BOOL ServiceCommand::Install(LPCTSTR lpctszModulePath)
 	do
 	{
 		Registry registry2;
+		TCHAR tszRootKey[MAX_PATH];
+		
+		wsprintf(tszRootKey, _T("%s\\%s"), EVENT_ROOT, _si.GetName());
 
-		ret = registry2.Open(hKeyRoot, EVENT_ROOT1);
+		ret = registry2.Open(hKeyRoot, tszRootKey);
 		if (!ret)
 		{
-			ret = registry2.Create(hKeyRoot, EVENT_ROOT1);
+			ret = registry2.Create(hKeyRoot, tszRootKey);
 			if (!ret)
 			{
-				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), EVENT_ROOT1);
+				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), tszRootKey);
 				break;
 			}
 		}
@@ -237,7 +229,7 @@ BOOL ServiceCommand::Install(LPCTSTR lpctszModulePath)
 		}
 
 		TCHAR tszRequiredFilePath[MAX_PATH] = { 0 };
-		wsprintf(tszRequiredFilePath, _T("%s\\%s"), lpctszModulePath, EVENT_CATEGORY_MESSAGE_FILE);
+		wsprintf(tszRequiredFilePath, _T("%s\\%s"), _si.GetWorkDirectory(), EVENT_CATEGORY_MESSAGE_FILE);
 
 		TCHAR tszCategoryMessageFile[MAX_PATH] = { 0 };
 
@@ -266,7 +258,7 @@ BOOL ServiceCommand::Install(LPCTSTR lpctszModulePath)
 		}
 
 		TCHAR tszInstallModulePath[MAX_PATH] = { 0 }; // TODO:main()で抜いて、ここで付けて、ではせわしい。
-		wsprintf(tszInstallModulePath, _T("%s\\%s.%s"), lpctszModulePath, MY_SERVICE_NAME, _T("exe"));
+		wsprintf(tszInstallModulePath, _T("%s\\%s.%s"), _si.GetWorkDirectory(), _si.GetName(), _T("exe"));
 
 		ret = TemplateAction(
 			0,
@@ -366,8 +358,8 @@ BOOL ServiceCommand::Status()
 					_tprintf(_T("  TIMECHANGE\n"));
 				if (status.dwControlsAccepted & SERVICE_ACCEPT_TRIGGEREVENT)
 					_tprintf(_T("  TRIGGEREVENT\n"));
-				if (status.dwControlsAccepted & SERVICE_ACCEPT_USER_LOGOFF)
-					_tprintf(_T("  USER_LOGOFF\n"));
+				//if (status.dwControlsAccepted & SERVICE_ACCEPT_USER_LOGOFF)
+				//	_tprintf(_T("  USER_LOGOFF\n"));
 			}
 
 			_tprintf(_T("Win32ExitCode=%u\n"), status.dwWin32ExitCode);
@@ -495,13 +487,13 @@ BOOL ServiceCommand::Disable()
 		_T("サービスを無効にしました。"));
 }
 
-BOOL ServiceCommand::ChangeConfig2Description(LPCTSTR lpctszDescription)
+BOOL ServiceCommand::ChangeConfig2Description()
 {
 	auto DescriptionAction = [](ServiceControl& sc, void* lpvParam)
 	{
 		LPCTSTR lpctszDescription = (LPCTSTR)lpvParam;
 
-		BOOL ret = sc.ChangeConfig2Description(lpctszDescription);
+		BOOL ret = sc.ChangeConfig2Description();
 		if (!ret)
 		{
 			PrintMessage(_T("ChangeServiceConfig2()"));
@@ -513,8 +505,7 @@ BOOL ServiceCommand::ChangeConfig2Description(LPCTSTR lpctszDescription)
 	return TemplateAction(
 		SERVICE_CHANGE_CONFIG,
 		DescriptionAction,
-		_T("サービスの説明を変更しました。"),
-		(LPVOID)lpctszDescription);
+		_T("サービスの説明を変更しました。"));
 }
 
 BOOL ServiceCommand::ChangeConfig2DelayedAutoStart()
@@ -639,7 +630,7 @@ BOOL ServiceCommand::TemplateAction(
 {
 	BOOL ret = FALSE;
 	ServiceControlManager scm;
-	ServiceControl sc(scm, MY_SERVICE_NAME);
+	ServiceControl sc(scm, _si);
 
 	do
 	{
@@ -784,7 +775,8 @@ BOOL ServiceCommand::StopDependentServices(ServiceControl& sc, LPVOID lpvParam)
 			for (i = 0; i < dwCount; i++)
 			{
 				enumServiceStatus = *(lpNumServiceStatus + i);
-				ServiceControl dependentSC(sc.GetManager(), enumServiceStatus.lpServiceName);
+				ServiceInfo si(_si.GetWorkDirectory(), enumServiceStatus.lpServiceName, nullptr, nullptr); // TODO:本当なら、ちゃんと調査した値を使うべきか…
+				ServiceControl dependentSC(sc.GetManager(), si);
 				ret = dependentSC.Open(SERVICE_STOP | SERVICE_QUERY_STATUS);
 				if (!ret)
 				{
