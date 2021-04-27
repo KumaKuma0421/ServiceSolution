@@ -6,31 +6,34 @@
 
 #include "pch.h"
 
+#define INITIAL_FILE _T("ServiceConfig.ini")
+
 class DECLSPEC ServiceInfo
 {
 public:
-	ServiceInfo(
-		LPCTSTR lpctszWorkDirectory,
-		LPCTSTR lpctszServiceName,
-		LPCTSTR lpctszServiceDisplayName,
-		LPCTSTR lpctszServiceDescription)
+	ServiceInfo();
+	ServiceInfo(LPCTSTR lpctszServiceName);
+
+	BOOL Initialize(LPCTSTR lpctszSectionName);
+
+	LPCTSTR GetWorkDirectory()		{ return _tszWorkDirectory; };
+	LPCTSTR GetName()				{ return _tszServiceName; };
+	LPCTSTR GetDisplayName()		{ return _tszServiceDisplayName; };
+	LPCTSTR GetDescription()		{ return _tszServiceDescription; };
+	LPCTSTR GetExecutePath()		{ return _tszExecutePath; };
+	LPCTSTR GetDependentService()	{ return _tszDependentService; };
+	DWORD GetStartType()
 	{
-		_lpctszWorkDirectory = lpctszWorkDirectory;
-		_lpctszServiceName = lpctszServiceName;
-		_lpctszServiceDisplayName = lpctszServiceDisplayName;
-		_lpctszServiceDescription = lpctszServiceDescription;
+		return _bAutoStart ? SERVICE_AUTO_START : SERVICE_DEMAND_START;
 	};
 
-	LPCTSTR GetWorkDirectory() { return _lpctszWorkDirectory; };
-	LPCTSTR GetName() { return _lpctszServiceName; };
-	LPCTSTR GetDisplayName() { return _lpctszServiceDisplayName; };
-	LPCTSTR GetDescription() { return _lpctszServiceDescription; };
-
 private:
-	ServiceInfo();
 
-	LPCTSTR _lpctszWorkDirectory;
-	LPCTSTR _lpctszServiceName;
-	LPCTSTR _lpctszServiceDisplayName;
-	LPCTSTR _lpctszServiceDescription;
+	TCHAR _tszWorkDirectory[MAX_PATH];
+	TCHAR _tszServiceName[MAX_PATH];
+	TCHAR _tszServiceDisplayName[MAX_PATH];
+	TCHAR _tszServiceDescription[MAX_PATH];
+	TCHAR _tszExecutePath[MAX_PATH];
+	TCHAR _tszDependentService[MAX_PATH];
+	BOOL _bAutoStart;
 };

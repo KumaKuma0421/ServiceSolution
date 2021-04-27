@@ -107,22 +107,22 @@ public:
     {
 	};
 
-    BOOL WINAPI Create(LPCTSTR lpctszFilePath, BOOL bAutoStart = TRUE)
+    BOOL WINAPI Create()
     {
         _handle = ::CreateService(
-            _manager.GetHandle(),
-            _si.GetName(),
-            _si.GetDisplayName(),
-            SERVICE_ALL_ACCESS,
-            SERVICE_WIN32_OWN_PROCESS,
-            bAutoStart ? SERVICE_AUTO_START : SERVICE_DEMAND_START,
-            SERVICE_ERROR_NORMAL,
-            lpctszFilePath,
-            nullptr,
-            nullptr,
-            nullptr,
-            nullptr,
-            nullptr);
+            _manager.GetHandle(),       // SCM database 
+            _si.GetName(),              // name of service 
+            _si.GetDisplayName(),       // service name to display 
+            SERVICE_ALL_ACCESS,         // desired access 
+            SERVICE_WIN32_OWN_PROCESS,  // service type 
+            _si.GetStartType(),         // start type 
+            SERVICE_ERROR_NORMAL,       // error control type 
+            _si.GetExecutePath(),       // path to service's binary 
+            nullptr,                    // no load ordering group 
+            nullptr,                    // no tag identifier 
+            _si.GetDependentService(),  // dependent service
+            nullptr,                    // LocalSystem account 
+            nullptr);                   // no password 
 
         return _handle == nullptr ? FALSE : TRUE;
     };

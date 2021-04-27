@@ -13,6 +13,7 @@
 #include <processthreadsapi.h>
 #include <locale.h>
 #include <stdarg.h>
+#include <shlwapi.h>
 
 #ifdef SERVICELOGICS_EXPORTS
 #define DECLSPEC __declspec(dllexport)
@@ -22,3 +23,4 @@
 #endif
 
 #pragma comment(lib, "advapi32.lib")
+#pragma comment(lib, "Shlwapi.lib")

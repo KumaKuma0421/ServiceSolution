@@ -110,7 +110,13 @@
     <ClCompile Include="ServiceCommand.cpp" />
     <ClCompile Include="ServiceCommon.cpp" />
     <ClCompile Include="ServiceCore.cpp" />
+    <ClCompile Include="ServiceInfo.cpp" />
     <ClCompile Include="Thread.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="ServiceConfig.ini">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

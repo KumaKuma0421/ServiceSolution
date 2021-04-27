@@ -257,14 +257,10 @@ BOOL ServiceCommand::Install()
 			}
 		}
 
-		TCHAR tszInstallModulePath[MAX_PATH] = { 0 }; // TODO:main()で抜いて、ここで付けて、ではせわしい。
-		wsprintf(tszInstallModulePath, _T("%s\\%s.%s"), _si.GetWorkDirectory(), _si.GetName(), _T("exe"));
-
 		ret = TemplateAction(
 			0,
 			InstallAction,
-			_T("サービスをインストールしました。"),
-			(LPVOID)tszInstallModulePath);
+			_T("サービスをインストールしました。"));
 
 	} while (0);
 
@@ -358,8 +354,8 @@ BOOL ServiceCommand::Status()
 					_tprintf(_T("  TIMECHANGE\n"));
 				if (status.dwControlsAccepted & SERVICE_ACCEPT_TRIGGEREVENT)
 					_tprintf(_T("  TRIGGEREVENT\n"));
-				//if (status.dwControlsAccepted & SERVICE_ACCEPT_USER_LOGOFF)
-				//	_tprintf(_T("  USER_LOGOFF\n"));
+				if (status.dwControlsAccepted & SERVICE_ACCEPT_USER_LOGOFF)
+					_tprintf(_T("  USER_LOGOFF\n"));
 			}
 
 			_tprintf(_T("Win32ExitCode=%u\n"), status.dwWin32ExitCode);
@@ -589,6 +585,8 @@ BOOL ServiceCommand::Stop()
 				response == QueryResponse::Running ||
 				response == QueryResponse::ContinuePending)
 			{
+				me->StopDependentServices(sc, lpvParam);
+
 				ret = sc.Stop();
 				if (!ret)
 				{
@@ -643,7 +641,7 @@ BOOL ServiceCommand::TemplateAction(
 
 		if (dwOpenParam == 0)
 		{
-			ret = sc.Create((LPCTSTR)lpvParam);
+			ret = sc.Create();
 			if (!ret)
 			{
 				PrintMessage(_T("CreateService()"));
@@ -775,7 +773,7 @@ BOOL ServiceCommand::StopDependentServices(ServiceControl& sc, LPVOID lpvParam)
 			for (i = 0; i < dwCount; i++)
 			{
 				enumServiceStatus = *(lpNumServiceStatus + i);
-				ServiceInfo si(_si.GetWorkDirectory(), enumServiceStatus.lpServiceName, nullptr, nullptr); // TODO:本当なら、ちゃんと調査した値を使うべきか…
+				ServiceInfo si(enumServiceStatus.lpServiceName); // TODO:暫定的…
 				ServiceControl dependentSC(sc.GetManager(), si);
 				ret = dependentSC.Open(SERVICE_STOP | SERVICE_QUERY_STATUS);
 				if (!ret)

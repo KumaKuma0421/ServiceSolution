@@ -21,29 +21,16 @@ int WINAPI _tmain(int argc, TCHAR** argv)
 
 	_tsetlocale(LC_ALL, _T("Japanese"));
 
-	TCHAR tszPath[MAX_PATH] = { 0 };
-	DWORD dwRet = ::GetModuleFileName(nullptr, tszPath, MAX_PATH);
-	if (!dwRet)
-	{
-		_tprintf(_T("GetModuleFileName()が失敗しました。\n"));
-		return -1;
-	}
-	else
-	{
-		for (int i = (int)_tcslen(tszPath); i >= 0; i--)
-		{
-			if (tszPath[i] == '\\')
-			{
-				tszPath[i] = '\0';
-				break;
-			}
-		}
-	}
-
-	ServiceInfo si(tszPath, SERVICE_NAME, SERVICE_DISPLAY_NAME, SERVICE_DESCRIPTION);
-
 	do
 	{
+		ServiceInfo si;
+		ret = si.Initialize(_T("Service1"));
+		if (!ret)
+		{
+			_tprintf(_T("ServiceInfo の取得に失敗しました。\n"));
+			break;
+		}
+
 		ret = __logger.Init(si.GetName());
 		if (!ret)
 		{
