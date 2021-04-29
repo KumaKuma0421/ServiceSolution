@@ -1,6 +1,7 @@
-//
-// EventLogger.cpp
-//
+//! @file   EventLogger.cpp
+//! @brief  イベントログに書き込むクラス
+//! @author kumakuma0421@gmail.com
+//! @date   2021.4.29
 
 #include "pch.h"
 #include "EventLogger.h"

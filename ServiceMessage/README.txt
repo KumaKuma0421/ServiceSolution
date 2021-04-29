@@ -24,14 +24,3 @@ TABLE 1
 Value	Type	Description
 EventMessageFile = dll_path	REG_SZ	The path to the resource-only DLL that contains strings that the service can write to the event log.
 TypesSupported = 0x00000007	REG_DWORD	A bit mask that specifies the supported event types. The value 0x000000007 indicates that all types are supported.
-
-
-
-------------------------------------
-Windows Registry Editor Version 5.00
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Application\ServiceApplication1]
-"CategoryCount"=dword:00000003
-"CategoryMessageFile"="C:\\Users\\User01\\source\\repos\\ConsoleSolution\\x64\\Debug\\ServiceLibrary.dll"
-"EventMessageFile"="C:\\Users\\User01\\source\\repos\\ConsoleSolution\\x64\\Debug\\ServiceLibrary.dll"
-"TypesSupported"=dword:00000007

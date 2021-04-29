@@ -1,6 +1,7 @@
-//
-// ServiceCore.cpp
-//
+//! @file   ServiceCore.cpp
+//! @brief  サービス実行クラス
+//! @author kumakuma0421@gmail.com
+//! @date   2021.4.29
 
 #include "pch.h"
 #include "ServiceCore.h"
@@ -15,7 +16,8 @@ ServiceCore::ServiceCore(EventLogger& logger)
 }
 
 ServiceCore::~ServiceCore()
-{}
+{
+}
 
 BOOL ServiceCore::Entry(
     LPSERVICE_MAIN_FUNCTION fnServiceMain,

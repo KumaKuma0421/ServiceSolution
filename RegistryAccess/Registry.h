@@ -1,4 +1,3 @@
-//! @file   Registry.h
 //! @brief  レジストリに関するWindowsAPIを集約したクラス
 //! @author kumakuma0421@gmail.com
 //! @date   2021.03.28
@@ -27,7 +26,6 @@ namespace alt
         LINK = REG_LINK,
     };
 
-    //! @class  Registry
     //! @brief レジストリに関するWindowsAPIを集約したクラス
     class DLL_DECLSPEC Registry
     {

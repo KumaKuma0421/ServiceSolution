@@ -1,9 +1,19 @@
-﻿//
-// dllmain.cpp : DLL アプリケーションのエントリ ポイントを定義します。
-//
+﻿//! @file   dllmain.cpp
+//! @brief	DLL アプリケーションのエントリ ポイントを定義します。
+//! @author	kumakuma0421@gmail.com
+//! @date	2021.4.29
 
 #include "pch.h"
 
+//! @brief DLLエントリーポイント
+//! @param hModule DLLモジュールへのハンドル
+//! @param dwReasonForCall DLLエントリポイント関数が呼び出される理由
+//!   - DLL_PROCESS_ATTACH
+//!   - DLL_THREAD_ATTACH
+//!   - DLL_THREAD_DETACH
+//!   - DLL_PROCESS_DETACH
+//! @param lpvReserved リザーブ
+//! @return TRUE
 BOOL APIENTRY DllMain(HMODULE hModule,
                       DWORD  dwReasonForCall,
                       LPVOID lpvReserved
@@ -20,4 +30,3 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 
     return TRUE;
 }
-

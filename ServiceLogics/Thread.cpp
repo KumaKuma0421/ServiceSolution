@@ -1,6 +1,7 @@
-//
-// Thread.cpp
-//
+//! @file   Thread.cpp
+//! @brief	スレッドに関するWindowsAPIを集約したクラス
+//! @author	kumakuma0421@gmail.com
+//! @date	2021.4.29
 
 #include "pch.h"
 #include "Thread.h"

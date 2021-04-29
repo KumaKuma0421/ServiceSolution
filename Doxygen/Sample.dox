@@ -1,0 +1,101 @@
+/**
+
+@page SamplePage サンプルページ
+
+@tableofcontents
+
+このページはDoxygenの「総合概要」ページでできることを確認するためのページとなります。
+Alternateとは関係がありませんが、テキストだけでどこまでドキュメントとして作り込めるのかを確認するために使用します。
+
+@section Section1 セクション１
+<hr>
+ここはセクション１です。
+
+@subsection SubSection1-1 サブセクション１－１
+
+ここはサブセクション１－１です。
+
+@subsubsection SubSubSection1-1-1 サブサブセクション１－１－１
+
+ここはサブサブセクション１－１－１です。
+
+<table>
+  <tr>
+    <th>No.</th>
+	<th>Name</th>
+	<th>Address</th>
+  </tr>
+  <tr>
+    <td>1</td>
+	<td>kumakuma0421</td>
+	<td>kumakuma0421@gmail.com</td>
+  </tr>
+  <tr>
+    <td>2</td>
+	<td>sample</td>
+	<td>sample@gmail.com</td>
+  </tr>
+</table>
+
+@subsubsection SubSubSection1-1-2 サブサブセクション１－１－２
+
+ここはサブサブセクション１－１－２です。
+
+<blockquote>
+ここはブロッククォートになります。
+文章だけで改行してもつながりますので、注意が必要です。
+改行する場合は＜ｂｒ＞を入れます。＠ｎもありだそうです。<br>
+改行されているはずです。
+</blockquote>
+
+コードのサンプルはdoxygenアノテーションの方がよさそうです。
+@code{.cpp}
+
+#include <stdio.h>
+#include "define.h"
+
+int main(int argc, char** argv)
+{
+	printf("Hallo, World.\n");
+	return 0;
+}
+@endcode
+
+@subsection SubSubSection1-2 サブセクション１－２
+
+ここはサブセクション１－２です。
+
+@attention
+注意事項です。左端に赤いバーが引かれて注意を促します。
+改行はもちろん効きません。<br>
+ここは改行されているはずです。
+
+@warning
+警告ですが、左端に注意事項と同じ赤いバーが引かれています。@n
+どちらが、レベルが高いのかはなんとも言えませんが。
+
+@note
+noteですが、日本語は「メモ」です。ちょっとしたことの記載に使うと思います。@n
+とはいえ、上記のアノテーションとどう使い分けましょうか？
+
+@todo さて、なにをしますか？
+
+@pre 事前条件の説明<br>
+使用前にどのようなことを留意するかを記載します。
+
+@post 事後条件の説明<br>
+使用後にどのようなことを留意するかを記載します。
+
+@invariant 不変条件の説明<br>
+これは言葉自体がわからないですね。
+
+@section Section2 セクション２
+<hr>
+ここはセクション２です。
+
+@section Section3 セクション３
+<hr>
+ここはセクション３です。
+
+
+*/

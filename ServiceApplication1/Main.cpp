@@ -1,6 +1,7 @@
-﻿//
-// Main.cpp
-//
+﻿//! @file	Main.cpp
+//! @brief  サンプルサービス その１
+//! @author kumakuma0421@gmail.com
+//! @date   2021.4.29
 
 #include "pch.h"
 #include "Main.h"
@@ -10,11 +11,6 @@
 static EventLogger __logger;
 static ServiceCore __core(__logger);
 
-//
-// SCMから起動時に呼ばれます。
-// 
-// パラメータがある場合は、コマンド起動と解釈します。
-// 
 int WINAPI _tmain(int argc, TCHAR** argv)
 {
 	BOOL ret;
@@ -46,7 +42,7 @@ int WINAPI _tmain(int argc, TCHAR** argv)
 		else
 		{
 			IService* pService = new Service1(__logger);
-			ret = __core.Entry(SvcMain, CtrlHandler, pService, &si);
+			ret = __core.Entry(ServiceMain, CtrlHandler, pService, &si);
 		}
 
 		if (!ret) break;
@@ -59,17 +55,11 @@ int WINAPI _tmain(int argc, TCHAR** argv)
 	return ret == TRUE ? ERROR_SUCCESS : -1;
 }
 
-//
-// SCMからサービス開始時に呼ばれます。
-//
-VOID WINAPI SvcMain(DWORD dwArgc, LPTSTR* lptszArgv)
+VOID WINAPI ServiceMain(DWORD dwArgc, LPTSTR* lptszArgv)
 {
 	__core.Main(dwArgc, lptszArgv);
 }
 
-//
-// SCMから停止処理などの制御処理要求時に呼ばれます。
-//
 VOID WINAPI CtrlHandler(DWORD dwControlCode)
 {
 	__core.Handler(dwControlCode);

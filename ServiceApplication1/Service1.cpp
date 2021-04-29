@@ -1,6 +1,7 @@
-//
-// Service1.cpp
-//
+//! @file   Service1.cpp
+//! @brief	サービスを提供するクラス
+//! @author	kumakuma0421@gmail.com
+//! @date	2021.4.29
 
 #include "pch.h"
 #include "Service1.h"

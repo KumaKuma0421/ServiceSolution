@@ -51,6 +51,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceApplication2", "Serv
 		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3} = {D19FDF64-4DD3-46B2-BECC-B475D9B097D3}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doxygen", "Doxygen", "{F262954D-F049-4772-9819-2F25EABD762C}"
+	ProjectSection(SolutionItems) = preProject
+		Doxygen\Doxyfile = Doxygen\Doxyfile
+		Doxygen\MainPage.dox = Doxygen\MainPage.dox
+		Doxygen\Sample.dox = Doxygen\Sample.dox
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

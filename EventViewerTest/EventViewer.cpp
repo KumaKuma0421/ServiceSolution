@@ -38,7 +38,7 @@ BOOL EventViewer::Log(
 
 	if (nullptr != _hEventSource)
 	{
-		//! イベントビューアーにメッセージを書き込みます。
+		// イベントビューアーにメッセージを書き込みます。
 		ret = ::ReportEvent(
 			_hEventSource,  // event log handle
 			wEventType,     // event type

@@ -1,0 +1,32 @@
+/**
+
+@mainpage ServiceSolution C++ Windows Service API wrapping library
+
+@tableofcontents
+
+@section about_service_solution ServiceSolutionとは
+
+ServiceSolutionソリューション配下のプロジェクトは以下の構成になっています。
+
+- @ref WindowsLibraryPage
+  - @ref WindowsLibraryTestPage
+  - @ref MemoryLeakCheckPage
+  - @ref PerformanceCheckPage
+- @ref DBLibraryPage
+  - @ref DBLibraryTestPage
+- @ref OSSLibraryPage
+  - @ref OSSLibraryTestPage
+- @ref MiddleLibraryPage
+  - @ref MiddleLibraryTestPage
+- @ref ConsoleDriverPage
+ 
+@section how_to_use_this ServiceSolutionの使い方
+
+このソリューションは、Visual Studio Community 2019版で、スクラッチから作成しています。スタートアッププロジェクトになれるのは、以下の２つです。
+
+- ServiceApplication1
+- ServiceApplication2
+
+ソリューション全体の環境設定ファイル「ServiceConfig.ini」は、ServiceLogicsプロジェクトにあります。設定の変更はこのファイルを使用します。
+
+*/

@@ -1,6 +1,7 @@
-﻿//
-// framework.h
-//
+﻿//! @file framework.h
+//! @brief	このプロジェクトのポーティングに関する情報
+//! @author	kumakuma0421@gmail.com
+//! @date	2021.4.29
 
 #pragma once
 

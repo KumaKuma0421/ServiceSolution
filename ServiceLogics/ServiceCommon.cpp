@@ -1,6 +1,7 @@
-//
-// ServiceCommon.cpp
-//
+//! @file   ServiceCommon.cpp
+//! @brief  サービス制御クラスを集約したファイル
+//! @author kumakuma0421@gmail.com
+//! @date   2021.4.29
 
 #include "pch.h"
 #include "ServiceCommon.hpp"

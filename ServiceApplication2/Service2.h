@@ -1,4 +1,4 @@
-//! @file   Service1.h
+//! @file   Service2.h
 //! @brief	サービスを提供するクラス
 //! @author	kumakuma0421@gmail.com
 //! @date	2021.4.29
@@ -11,12 +11,12 @@
 #include "ServiceMessage.h"
 
 //! @brief サービスを提供するクラス
-class Service1 : public Thread, public IService
+class Service2 : public Thread, public IService
 {
 public:
     //! @brief コンストラクタ
     //! @param logger EventLogger
-    Service1(EventLogger& logger);
+    Service2(EventLogger& logger);
 
     //! @brief サービスを開始します。
     //! @return BOOL
@@ -50,7 +50,7 @@ public:
 
 private:
     //! @brief 隠蔽されたコンストラクタ
-    Service1();
+    Service2();
 
     //! @brief サービス開始関数
     //! @return BOOL
