@@ -1,0 +1,134 @@
+/**
+
+@page ServiceMessagePage ServiceMessage プロジェクトについて
+
+@tableofcontents
+
+ServiceMessageプロジェクトは、Windowsサービスプログラムが使用するイベントビューアーの、メッセージを作成するためのプロジェクトとなります。
+
+@section ServiceMessage_ProjectStructure プロジェクト構成について
+
+このプロジェクトは、以下のファイルで構成されています。ここでは、イベントビューアーへの出力用となる、リソースのみDLLを作成するようにプロジェクトファイルを構成しています。
+
+- @link ServiceMessage.mc @endlink
+- MakeDll.bat（プロジェクトには登録していませんが、このプロジェクトディレクトリに格納されています。)
+
+@section ServiceMessage_mc ServiceMessage.mcファイルについて
+
+イベントビューアーのメッセージ出力には、まずメッセージファイル定義に従ったファイル(MCファイル)が必要になります。このMCファイルはMC.EXEによるコンパイル作業が必要になります。
+
+@subsection about_mc_file MCファイルについて
+
+MCファイルの構造は以下のようになります。
+
+コメントはセミコロンを先頭に、そのあとC言語のコメント形式で記載できます。
+ただ、意図しないところにコメントが作られたりするので、あまり記載はお勧めできません。
+
+@subsubsection Severity_Block Severityブロック
+
+このブロックは、MCファイルとして変更することはありません。
+
+|種別       |説明|
+|-----------|----|
+|Success    |成功を出力する場合、これを使用します。|
+|Warning    |警告を出力する場合、これを使用します。|
+|Error      |エラーを出力する場合、これを使用します。|
+|Information|情報を出力する場合、これを使用します。|
+
+@code
+SeverityNames=(
+    Success=0x0:STATUS_SEVERITY_SUCCESS
+    Information=0x1:STATUS_SEVERITY_INFORMATION
+    Warning=0x2:STATUS_SEVERITY_WARNING
+    Errors=0x3:STATUS_SEVERITY_ERROR
+)
+@endcode
+
+@subsubsection Facility_Block Facilityブロック
+
+このブロックは、エラーの種別に応じて作りこんでいきます。
+
+|種別   |説明|
+|-------|----|
+|System |システムのメッセージの場合、これを使用します。|
+|Runtime|ランタイムのメッセージの場合、これを使用します。|
+|API    |APIのメッセージの場合、これを使用します。|
+|IO     |ファイル等のIO情報を出力する場合、これを使用します。|
+
+@code
+FacilityNames=(
+    System=0x0:FACILITY_SYSTEM
+    Runtime=0x1:FACILITY_RUNTIME
+    API=0x2:FACILITY_API
+    IO=0x3:FACILITY_IO
+    Trace=0xF:FACILITY_TRACE
+)
+@endcode
+
+@subsubsection Language_Block Languageブロック
+
+このブロックは、言語の国情報を設定します。
+基本は自国の言語だけで十分だと思いますが、ここでは日米両方を宣言する場合を考慮して作りこんでみました。
+
+@code
+LanguageNames=(English=0x409:MSG00409)
+LanguageNames=(Japanese=0x411:MSG00411)
+@endcode
+
+@subsubsection Category_Block カテゴリブロック
+
+このブロックは、カテゴリの設定を行います。ただし、現在のイベントビューアーでは、このカテゴリを表示することができません。Windowsのバグのように思われますが、誰も「おかしい」と声を上げていないので、そうでもないのかと諦めています。
+
+ただ、実験して無理やり出力させることができます。CategoryMessageFileの設定をあえて"%SystemRoot%\system32\wevtapi.dll"と違うファイルを指定すると、なぜかイベントビューアーに表示されます。お勧めしませんが。
+
+@code
+MessageIdTypedef=WORD
+
+MessageId=0x1
+SymbolicName=CATEGORY_SERVICE_CORE
+Language=English
+ServiceCore
+.
+
+Language=Japanese
+ServiceCoreクラス
+.
+
+@endcode
+
+@subsubsection Message_Block メッセージブロック
+
+このブロックは、メッセージ本体の設定を行います。ここで、SeverityやFacilityを設定していますが、実際にイベントログに出力する際は、SVC_SUCCESS_SYSTEMとは別に、イベントタイプも設定することになります。つまり、ガチャガチャに設定してしまうとエラーなのか、警告なのかよくわからないメッセージになってしまいます。
+
+@code
+MessageIdTypedef=DWORD
+
+MessageId=0x0000
+Severity=Success
+Facility=System
+SymbolicName=SVC_SUCCESS_SYSTEM
+Language=English
+System succeed.%r
+%1 %2 %3
+.
+
+Language=Japanese
+システムが成功しました。%r
+%1 %2 %3
+.
+
+@endcode
+
+MCファイルのコンパイル後、以下のファイルが作成されます。
+
+- リソースファイル (ServiceMessage.rc)
+- ヘッダーファイル (@link ServiceMessage.h @endlink)
+- メッセージをコンパイルしたバイナリファイル(MSG00409.bin, MSG00411.bin)
+
+次にリソースコンパイラを使用して、RCファイル群をRESファイルに変換します。
+
+最後に、RESファイルからLINK.EXEを使用して、DLLファイルを作成します。
+
+各コマンドの実行にはそれぞれに必要なパラメータがありますが、それらはプロジェクトファイルに設定しています。
+
+*/

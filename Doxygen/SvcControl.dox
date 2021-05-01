@@ -1,0 +1,21 @@
+/**
+
+@page SvcControlPage SvcControl プロジェクトについて
+
+@tableofcontents
+
+SvcConfig プロジェクトはMicrosoft謹製のサービス制御プロジェクトです。
+場所は、[ここ](https://docs.microsoft.com/ja-jp/windows/win32/services/svccontrol-cpp)になります。
+https://docs.microsoft.com/ja-jp/windows/win32/services/svccontrol-cpp
+
+このファイルでは、以下の機能を提供しています。
+
+- @link DoStartSvc() @endlink サービスの開始
+- @link DoUpdateSvcDacl() @endlink サービスのDACL更新(for ゲストアカウント)
+- @link DoStopSvc() @endlink サービスの停止
+
+@link DoStopSvc() @endlinkには、依存するサービスを先に終了させる、@link StopDependentServices() @endlinkがありますが、@link DoStartSvc() @endlinkにはなぜかありません。
+
+依存関係のあるWindowsのサービスプログラムを手動で起動させた場合、先に依存元を起動させようとしますが、このサンプルには入っていません。自分で作れ、ということだと思っています。
+
+*/

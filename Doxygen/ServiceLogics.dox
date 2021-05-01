@@ -1,0 +1,86 @@
+/**
+
+@page ServiceLogicsPage ServiceLogics プロジェクトについて
+
+@tableofcontents
+
+ServiceLogicsプロジェクトは、Windowsサービスプログラムで提供するサービスの制御を実装するためのプロジェクトとなります。
+
+@section ServiceLogics_ProjectStructure プロジェクト構成について
+
+このプロジェクトは、以下のファイルで構成されています。ここでは、サービスプログラムのAPIをグループ化してクラスを構成し、サービスの機能を提供できるようにAPIを網羅しています。
+
+- @link dllmain.cpp @endlink
+  - @link DllMain() @endlink
+- @link Event.hpp @endlink
+  - @link Event @endlinkクラス
+- @link EventLogger.cpp @endlink
+  - @link EventLogger @endlinkクラス
+- @link IService.h @endlink
+  - @link IService @endlinkクラス
+- @link Registry.cpp @endlink
+  - @link Registry @endlinkクラス
+- @link ServiceCommand.cpp @endlink
+  - @link ServiceCommand @endlinkクラス
+- @link ServiceCommon.cpp @endlink
+  - @link ServiceHandler @endlinkクラス
+  - @link ServiceControlManager @endlinkクラス
+  - @link ServiceControl @endlinkクラス
+  - @link ServiceStatus @endlinkクラス
+  - @link BootSettings @endlink enumクラス
+  - @link QueryResponse @endlink enumクラス
+- @link ServiceCore.cpp @endlink
+  - @link ServiceCore @endlinkクラス
+- @link ServiceInfo.cpp @endlink
+  - @link ServiceInfo @endlinkクラス
+- @link Thread.cpp @endlink
+  - @link Thread @endlinkクラス
+
+@section dllmain_cpp dllmain.cppファイルについて
+
+このファイルは、完全にVisual Studioのテンプレート生成から変更していません。DLLプロジェクトを作成すると自動的に作成されるファイルです。
+
+@section Event_hpp Event.hppファイルについて
+
+このファイルは、イベントに関するAPIを集約したものです。本来であれば、ヘッダー/ソースファイルの構成にするところですが、ほぼすべての関数が１行レベルの内容だったので、ヘッダーファイルのみの構成としました。CreateEvent()関数では、名無しのイベントを作成しているため、Open()関数は現在使用していません。
+
+@section EventLogger_cpp EventLogger.cpp/EventLogger.hファイルについて
+
+このファイルは、イベントログに出力するためのクラスです。デバッグ用や、トレース用の関数も用意しています。
+
+@section IService_h IService.hについて
+
+このファイルは、ServiceApplication1、ServiceApplication2で生成したインスタンスを操作するためのインターフェースクラスです。サービス操作となる以下の処理をサービス本体に通知します。
+
+- 開始 @link IService::Resume() @endlink
+- 終了 @link IService::Stop() @endlink
+- 中断 @link IService::Suspend() @endlink
+- 再開 @link IService::Resume() @endlink
+
+また、サービスをスレッド実行するためのインターフェースも用意しています。
+
+@section Registry_cpp Registry.cppファイルについて
+
+このファイルは、レジストリ操作に関するAPIを集約したファイルです。イベントビューアーへの出力には、メッセージファイルをコンパイルして作成したDLLが必要ですが、最後にレジストリによるファイル情報の登録が必要になります。レジストリに関しては、REGファイルによる設定も可能ですが、Debug/Releaseのディレクトリの違いや、ソリューションファイルの配置自体で変わってしまうので、動的に登録できるようにしました。
+
+@section ServiceCommand_cpp ServiceCommand.cppについて
+
+このファイルは、ユーザーのコマンドラインパラメータによるサービス操作を処理するためのクラスです。
+
+@section ServiceCommon_cpp ServiceCommon.cppについて
+
+このファイルは、サービスAPIのサービス処理とコマンド処理の両方で使用するものをクラス化したファイルです。
+
+@section ServiceCore_cpp ServiceCore.cppについて
+
+このファイルは、サービスプログラムとして処理を行うためのクラスです。
+
+@section ServiceInfo_cpp ServiceInfo.cppについて
+
+このファイルは、サービスに関する情報を保持するクラスです。サービス起動、コマンド処理の両方で使用します。
+
+@section Thread_cpp Thread.cppについて
+
+このファイルは、スレッドに関するAPIを集約したファイルです。
+
+*/

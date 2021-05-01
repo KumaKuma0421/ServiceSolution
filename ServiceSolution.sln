@@ -55,7 +55,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doxygen", "Doxygen", "{F262
 	ProjectSection(SolutionItems) = preProject
 		Doxygen\Doxyfile = Doxygen\Doxyfile
 		Doxygen\MainPage.dox = Doxygen\MainPage.dox
-		Doxygen\Sample.dox = Doxygen\Sample.dox
+		Doxygen\ServiceApplication.dox = Doxygen\ServiceApplication.dox
+		Doxygen\ServiceLogics.dox = Doxygen\ServiceLogics.dox
+		Doxygen\ServiceMessage.dox = Doxygen\ServiceMessage.dox
+		Doxygen\Svc.dox = Doxygen\Svc.dox
+		Doxygen\SvcConfig.dox = Doxygen\SvcConfig.dox
+		Doxygen\SvcControl.dox = Doxygen\SvcControl.dox
 	EndProjectSection
 EndProject
 Global
