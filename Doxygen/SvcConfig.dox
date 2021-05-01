@@ -1,0 +1,25 @@
+/**
+
+@page SvcConfigPage SvcConfig プロジェクトについて
+
+@tableofcontents
+
+SvcConfig プロジェクトはMicrosoft謹製のサービス制御プロジェクトです。
+場所は、[ここ](https://docs.microsoft.com/ja-jp/windows/win32/services/svcconfig-cpp)になります。
+https://docs.microsoft.com/ja-jp/windows/win32/services/svcconfig-cpp
+
+このファイルでは、以下の機能を提供しています。
+
+- @link DoQuerySvc() @endlink サービスの状況問い合わせ
+  - QueryServiceConfig()による、サービス状態の表示
+  - QueryServiceConfig2()による、サービスの説明文の表示
+- @link DoUpdateSvcDesc() @endlink サービスの説明文の変更
+  - ChangeServiceConfig2()によるサービスの説明文の変更
+- @link DoDisableSvc() @endlink サービスの無効化
+  - ChangeServiceConfig()によるサービスの無効化
+- @link DoEnableSvc() @endlink サービスの有効化
+  - ChangeServiceConfig()によるサービスの有効化
+- @link DoDeleteSvc() @endlink サービスの削除
+  - DeleteService()によるサービスの削除
+
+*/

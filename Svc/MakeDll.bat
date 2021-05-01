@@ -1,18 +1,31 @@
 @ECHO OFF
 
-SET PATH=%PATH%;"C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64"
-SET PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86"
+SET MC_EXE="C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\mc.exe"
+SET RC_EXE="C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x86\rc.exe"
+SET LINK_EXE="c:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\Hostx64\x86\link.exe"
+SET MODULE_NAME="Sample"
+SET OutDir="C:\Users\User01\source\repos\ServiceSolution\x64\Debug"
 
-DEL MSG00409.bin
-DEL MSG00411.bin
-DEL sample.h
-DEL sample.rc
-DEL sample.res
+if exist MSG00409.bin (
+  DEL MSG00409.bin
+)
 
-mc -U Sample.mc
-rc -r  Sample.rc
-link -dll -noentry -out:Sample.dll Sample.res
+if exist %MODULE_NAME%.h (
+  DEL %MODULE_NAME%.h
+)
 
-COPY Sample.dll "C:\Users\User01\source\repos\ServiceSolution\x64\Debug"
+if exist %MODULE_NAME%.rc (
+  DEL %MODULE_NAME%.rc
+)
+
+if exist %MODULE_NAME%.res (
+  DEL %MODULE_NAME%.res
+)
+
+%MC_EXE% -U %MODULE_NAME%.mc
+%RC_EXE% -r  %MODULE_NAME%.rc
+%LINK_EXE% -dll -noentry -machine:x86 -out:%MODULE_NAME%.dll %MODULE_NAME%.res
+
+XCOPY "%MODULE_NAME%.dll" %OutDir% /Y
 
 ECHO Done.

@@ -1,0 +1,38 @@
+/**
+
+@mainpage ServiceSolution C++ Windows Service API wrapping library
+
+@tableofcontents
+
+@section about_service_solution ServiceSolutionとは
+
+ServiceSolutionは、WindowsのサービスプログラムをMicrosoft謹製のCプログラムからC++に移植したものです。Microsoftサンプルでは、ソースコードしか提供されていませんので、ソリューションレベルに組み上げてみました。
+
+ServiceSolutionソリューション配下のプロジェクトは、以下のプロジェクトで構成されています。各プロジェクトの詳細については、以下のリンクをクリックしてください。
+
+- @ref ServiceApplicationPage
+- @ref ServiceLogicsPage
+- @ref ServiceMessagePage
+
+@section how_to_use_this ServiceSolutionの使い方
+
+このソリューションは、Visual Studio Community 2019版で、スクラッチから作成しています。
+
+サービスプログラムの構造の理解と、サービスプログラムに必要な機能の提供を趣旨としていますので、サービス本体に関しては、以下のプロジェクトに機能を実装していくことになります。
+
+- ServiceApplication1 依存関係なし
+- ServiceApplication2 ServiceApplication1に依存
+
+サービスとして機能させるためのロジックは、ServiceLogicsプロジェクトに実装しています。このプロジェクトはDLLを作成し、ServiceApplication1、ServiceApplication2からローディングされ、共有ロジックとして機能します。
+
+また、サービスプログラムは、コンソール出力がなく、OutputDebugString()のような、デバッグ出力機能も動きません。Microsoftのサンプルでもイベントビューアーへの出力を前提に作成されていますので、ServiceMessageプロジェクトではMCファイルのコンパイル、リソースファイルの作成、DLLの作成を行うように構成しました。
+
+ソリューション全体の環境設定ファイルとして、"ServiceConfig.ini"を作成しています。これはServiceLogicsプロジェクト内にあり、ビルド後に出力先にコピーされます。ServiceApplication1、ServiceApplication2はこのファイルを参照し、実行に必要な情報を設定します。
+
+以下の３つのプロジェクトはMicrosoftからのサンプルをそのままコンパイルできるように、できるだけ無加工の状態でプロジェクトを作成しました。サービスプログラムのリファレンス用として当ソリューションに組み込んでいますが、まったく関連はありません。
+
+- @ref SvcPage
+- @ref SvcConfigPage
+- @ref SvcControlPage
+
+*/

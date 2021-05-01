@@ -1,12 +1,12 @@
-//
-// Thread.cpp
-//
+//! @file   Thread.cpp
+//! @brief	スレッドに関するWindowsAPIを集約したクラス
+//! @author	kumakuma0421@gmail.com
+//! @date	2021.4.29
 
 #include "pch.h"
 #include "Thread.h"
 
-Thread::Thread(EventLogger& logger)
-    :_logger(logger)
+Thread::Thread()
 {
     _hThread = nullptr;
     _dwThread = 0;
@@ -21,14 +21,14 @@ Thread::~Thread()
     }
 }
 
-BOOL Thread::Start(LPCTSTR lpctszStopEvent)
+BOOL Thread::Start()
 {
     BOOL ret = FALSE;
 
     _hThread = ::CreateThread(nullptr, 0, ThreadFunction, this, 0, &_dwThread);
     if (_hThread != nullptr)
     {
-        ret = _event.Create(lpctszStopEvent);
+        ret = _event.Create();
     }
 
     return ret;
@@ -88,6 +88,10 @@ BOOL Thread::Wait(DWORD dwMillisec)
 
     return ret;
 }
+
+// ------------
+// PRIVATE ZONE
+// ------------
 
 DWORD Thread::ThreadFunction(LPVOID lpvParam)
 {

@@ -1,4 +1,3 @@
-//! @file   Registry.h
 //! @brief  レジストリに関するWindowsAPIを集約したクラス
 //! @author kumakuma0421@gmail.com
 //! @date   2021.03.28

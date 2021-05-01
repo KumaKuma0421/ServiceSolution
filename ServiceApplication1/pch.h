@@ -1,16 +1,14 @@
-﻿//
-// pch.h: プリコンパイル済みヘッダー ファイルです。
-//
+﻿//! @file   pch.h
+//! @brief  プリコンパイル済みヘッダー ファイルです。
+//! @note   次のファイルは、その後のビルドのビルド パフォーマンスを向上させるため 1 回だけコンパイルされます。
+//! 		コード補完や多くのコード参照機能などの IntelliSense パフォーマンスにも影響します。
+//! 		ただし、ここに一覧表示されているファイルは、ビルド間でいずれかが更新されると、すべてが再コンパイルされます。
+//! 		頻繁に更新するファイルをここに追加しないでください。追加すると、パフォーマンス上の利点がなくなります。
+//! @author kumakuma0421@gmail.com
+//! @date	2021.4.29
 
 #pragma once
 
 // プリコンパイルするヘッダーをここに追加します
 #include <Windows.h>
 #include <tchar.h>
-#include <winsvc.h>
-#include <libloaderapi.h>
-#include <processthreadsapi.h>
-#include <locale.h>
-#include <stdarg.h>
-
-#pragma comment(lib, "advapi32.lib")

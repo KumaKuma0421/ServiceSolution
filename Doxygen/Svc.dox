@@ -1,0 +1,20 @@
+/**
+
+@page SvcPage Svc プロジェクトについて
+
+@tableofcontents
+
+Svcプロジェクトは、Microsoft謹製のサービスプロジェクトです。
+場所は、[ここ](https://docs.microsoft.com/ja-jp/windows/win32/services/svc-cpp)になります。
+https://docs.microsoft.com/ja-jp/windows/win32/services/svc-cpp
+
+コード説明の日本語は、なんか変な感じですが、下記のとおりです。
+
+> 完全なサービスのサンプルを次に示します。 このコードをテンプレートとして使用する場合は、の前にあるセクションにコードを追加するだけ TO_DO です。
+> サンプルをビルドするときは、必ず Kernel32.dll と Advapi32.dll にリンクしてください。 ファイルサンプル .h は、リソースのみの DLL をビルドするときに生成され、Sample.dll ます。 詳細については、「 Sample.mc」を参照してください。
+
+要約すると、以下のようになります。
+
+> 完全なサービスのサンプルを次に示します。このコードをテンプレートとして使用する場合は、Kernel32.dllとAdvapi32.dllをリンクしてください。Sample.hはMCファイルを"リソースのみのDLL"をビルドすると作成されます。詳細については、"Sample.mc"にを参照してください。
+
+*/

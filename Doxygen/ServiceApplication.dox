@@ -1,0 +1,63 @@
+/**
+
+@page ServiceApplicationPage ServiceApplication1,2 プロジェクトについて
+
+@tableofcontents
+
+ServiceApplication1プロジェクトは、Windowsサービスプログラムで提供するサービスの、サービス本体を実装するためのプロジェクトとなります。同様のプロジェクトとしてServiceApplication2がありますが、こちらはこのServiceApplication1に依存するプログラムとして実装されています。それ以外の違いはありません。
+
+@section ServiceApplication_ProjectStructure プロジェクト構成について
+
+このプロジェクトは、以下のファイルで構成されています。ここでは、Windowsからのサービス制御に対応するための関数提供と、サービス本体を作成するためのプロジェクトとなります。
+
+- @link Main.cpp @endlink
+- @link Service1.cpp @endlink (ServiceApplication1プロジェクト)
+- @link Service2.cpp @endlink (ServiceApplication2プロジェクト)
+
+@section Main_cpp Main.cpp/Main.hファイルについて
+
+@link Main.cpp @endlinkと@link Main.h @endlinkは、各機能のエントリーポイントの提供が主な目的です。
+
+- プログラムのエントリーポイントとなる、@link _tmain() @endlink
+- サービスプログラムのエントリーポイントとなる、@link ServiceMain() @endlink
+- サービス制御のエントリーポイントとなる、@link CtrlHandler() @endlink
+
+@subsection main_function メイン関数について
+
+@link _tmain() @endlink関数は、コンソールベースのアプリケーションの最初に実行される関数です。サービスプログラムもコンソールは使えませんが、「コンソールアプリケーション」として、@link _tmain() @endlink関数から処理を開始します。
+
+Microsoftのサンプル@link Svc.cpp @endlinkでは、サービスの実行に特化した構成となっていますが、インストールやサービスの開始などは、コマンドラインからの指示で実行できると便利ではないかと思い、以下の実装内容にしました。
+
+- 引数がない場合、サービスの実行としてＯＳから起動されたと判断し、サービスの実行を行う。
+- 引数がある場合、サービスの制御に関するコマンドがコンソール起動で実行されたと判断し、引数に応じたコマンドの実行を行う。
+
+サービスの機能が小さい場合は、サービス機能以外がコードとして入ってくると規模が大きくなってしまいますが、サービス機能本体がコードとして入ってくると、このコマンド機能も小さな便利機能としてコンパクトな位置付けになるのではないかと考え、一緒に入れることにしました。
+
+サービスの実行を要求されたとき、@link _tmain() @endlink関数ではServiceLogicsライブラリに渡すためのサービス本体となる、@link Service1 @endlinkクラスのインスタンスを作成し、ServiceLogicsライブラリに渡しします。@link Service1 @endlinkクラスについては、次の章で説明します。
+
+@subsection ServiceMain_function サービスメイン関数について
+
+@link ServiceMain() @endlink関数は、StartServiceCtrlDispatcher()の引数に渡すSERVICE_TABLE_ENTRY構造体に記載した関数であり、関数名に関しては任意の名前を付けることができます。C++に移植する際に、この関数と下記に記載した@link CtrlHandler() @endlink関数に関して、以下の問題が発生しました。
+
+- 引数にスレッド関数のような、ポインタ系引数がない。
+- C++の関数は、static関数以外はそう簡単には渡せない。
+
+色々方法を試してみたのですが、うまい実装方法が見いだせず、プロジェクトとして修正する必要がないファイルという位置付けで、実装すればよいのではないかと半ば諦めの境地で、この形に収まりました。クラスのインスタンスが@link _tmain() @endlinkの外側、グローバルの場所にあることも反則的な手法ですが、現時点で手法による問題は発生していませんので、このまま進めることにしました。
+
+また、StartServiceCtrlDispatcher()をコールすると、@link _tmain() @endlinkの実行中ですが、@link ServiceMain() @endlink関数が実行されます。StartServiceCtrlDispatcher()以降の処理は、サービスが終了するまで実行されないので、この点は実装時に留意する必要があります。
+
+@subsection CtrlHandler_function サービス制御関数について
+
+@link CtrlHandler() @endlink関数は、RegisterServiceCtrlHandler()の引数に渡す関数名であり、関数名に関しては@link ServiceMain() @endlink関数同様、任意の名前を付けることができます。この関数もＯＳからの開始、終了などの指示によって、@link ServiceMain() @endlink関数の実行中に呼び出されます。そのため、@link CtrlHandler() @endlink関数から、@link ServiceMain() @endlink関数への制御の指示はイベント関数を使用しています。
+
+@section Service1_cpp Service1.cpp/Service1.hファイルについて
+
+@link Service1.cpp @endlinkと@link Service1.h @endlinkは、サービスの本体(提供するサービスの実装)を提供するファイルです。このファイルは、@link _tmain()@endlinkでインスタンスを作成し、ServiceLogicsライブラリに提供されるわけですが、クラスの構造はServiceLogicsライブラリから提供される、@link IService @endlinkから継承されたクラスになります。
+
+@subsection service1_function Service1クラスの実装について
+
+@link Service1 @endlinkクラスは、@link IService @endlinkの純粋仮想関数を実装することで、機能を実現していくのですが、C++ルール以外の実装ルールとして、「ＯＳからの制御に応答できなくてはならない。」があります。
+
+サービスアプリケーションでは、ＯＳからの終了指示が関数を通じて呼び出されます。この時に、サービス提供待ちのためのブロック関数を呼び出している状態では、ＯＳからの終了指示に応答することができません。そのため、ブロック関数コールで止まらないようにする必要があります。
+
+*/

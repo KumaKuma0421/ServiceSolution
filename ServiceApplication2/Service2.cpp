@@ -1,15 +1,42 @@
-//
-// Service.cpp
-//
+//! @file   Service2.cpp
+//! @brief	サービスを提供するクラス
+//! @author	kumakuma0421@gmail.com
+//! @date	2021.4.29
 
 #include "pch.h"
-#include "Service.h"
+#include "Service2.h"
 
-Service::Service(EventLogger& logger)
-    :Thread(logger)
-{}
+Service2::Service2(EventLogger& logger)
+    :_logger(logger)
+{
+}
 
-BOOL Service::Run()
+BOOL Service2::Start()
+{
+    return Thread::Start();
+}
+
+BOOL Service2::Suspend()
+{
+    return Thread::Suspend();
+}
+
+BOOL Service2::Resume()
+{
+    return Thread::Resume();
+}
+
+BOOL Service2::Stop()
+{
+    return Thread::Stop();
+}
+
+BOOL Service2::Wait()
+{
+    return Thread::Wait();
+}
+
+BOOL Service2::Run()
 {
     _logger.TraceStart(CATEGORY_SERVICE, __FUNCTIONW__);
     
