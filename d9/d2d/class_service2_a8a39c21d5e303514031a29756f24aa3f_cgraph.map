@@ -1,0 +1,4 @@
+<map id="Service2::Wait" name="Service2::Wait">
+<area shape="rect" id="node1" title="サービスの終了を待機します。" alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node2" href="$d8/d18/class_thread.html#a467740601cd9d7e36f195b491484da3b" title="終了待機" alt="" coords="160,5,256,32"/>
+</map>

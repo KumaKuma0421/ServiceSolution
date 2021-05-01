@@ -1,0 +1,8 @@
+<map id="ServiceControl::ChangeConfig2DelayedAutoStart" name="ServiceControl::ChangeConfig2DelayedAutoStart">
+<area shape="rect" id="node1" title="サービスの遅延開始設定" alt="" coords="620,64,820,105"/>
+<area shape="rect" id="node2" href="$d5/dab/class_service_command.html#adb2281b8acc5ae097060ee6238580dfc" title="自動(遅延）を設定" alt="" coords="353,5,572,47"/>
+<area shape="rect" id="node5" href="$d5/dab/class_service_command.html#a63bdf8c2dbbe32909fb1ae5eeec7154c" title="サービスの無効化" alt="" coords="375,71,550,98"/>
+<area shape="rect" id="node6" href="$d5/dab/class_service_command.html#a786b1ec61b1f7f44ada34ff78836dd80" title="自動開始/手動開始を設定" alt="" coords="377,122,548,149"/>
+<area shape="rect" id="node3" href="$d5/dab/class_service_command.html#aca51fe36ba5620d2ce143b324b23072c" title="コマンド処理のエントリー関数" alt="" coords="115,71,305,98"/>
+<area shape="rect" id="node4" href="$dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,71,67,98"/>
+</map>

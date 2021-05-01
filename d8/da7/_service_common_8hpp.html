@@ -1,0 +1,703 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: ServiceLogics/ServiceCommon.hpp ファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d8/da7/_service_common_8hpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">ServiceCommon.hpp ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>サービス制御クラスを集約したファイル  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d3/d1a/_service_info_8h_source.html">ServiceInfo.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ServiceCommon.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d30/_service_common_8hpp__incl.png" border="0" usemap="#a_service_logics_2_service_common_8hpp" alt=""/></div>
+<map name="_service_logics_2_service_common_8hpp" id="a_service_logics_2_service_common_8hpp">
+<area shape="rect" title="サービス制御クラスを集約したファイル" alt="" coords="305,5,531,32"/>
+<area shape="rect" href="../../d3/d1a/_service_info_8h.html" title="サービス情報クラス" alt="" coords="371,80,465,107"/>
+<area shape="rect" href="../../d4/d07/_service_logics_2pch_8h.html" title="プリコンパイル済みヘッダー ファイルです。" alt="" coords="391,155,445,181"/>
+<area shape="rect" href="../../d6/d29/framework_8h.html" title="このプロジェクトのポーティングに関する情報" alt="" coords="372,229,464,256"/>
+<area shape="rect" title=" " alt="" coords="5,304,92,331"/>
+<area shape="rect" title=" " alt="" coords="116,304,179,331"/>
+<area shape="rect" title=" " alt="" coords="203,304,273,331"/>
+<area shape="rect" title=" " alt="" coords="298,304,397,331"/>
+<area shape="rect" title=" " alt="" coords="421,304,559,331"/>
+<area shape="rect" title=" " alt="" coords="583,304,650,331"/>
+<area shape="rect" title=" " alt="" coords="674,304,743,331"/>
+<area shape="rect" title=" " alt="" coords="768,304,844,331"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/d5b/_service_common_8hpp__dep__incl.png" border="0" usemap="#a_service_logics_2_service_common_8hppdep" alt=""/></div>
+<map name="_service_logics_2_service_common_8hppdep" id="a_service_logics_2_service_common_8hppdep">
+<area shape="rect" title="サービス制御クラスを集約したファイル" alt="" coords="337,5,562,32"/>
+<area shape="rect" href="../../dd/d0d/_service_application1_2_main_8h.html" title="サンプルサービス その１" alt="" coords="230,155,365,196"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html" title="サンプルサービス その２" alt="" coords="389,155,523,196"/>
+<area shape="rect" href="../../d8/d72/_service_command_8h.html" title="サービスに対する操作を集約したクラス" alt="" coords="340,80,559,107"/>
+<area shape="rect" href="../../d0/ddc/_service_common_8cpp.html" title="サービス制御クラスを集約したファイル" alt="" coords="634,80,859,107"/>
+<area shape="rect" href="../../d7/d9b/_service_core_8h.html" title="サービス実行クラス" alt="" coords="79,80,265,107"/>
+<area shape="rect" href="../../d5/dce/_service_application1_2_main_8cpp.html" title="サンプルサービス その１" alt="" coords="230,244,365,285"/>
+<area shape="rect" href="../../d5/db5/_service_application2_2_main_8cpp.html" title="サンプルサービス その２" alt="" coords="389,244,523,285"/>
+<area shape="rect" href="../../d7/d80/_service_command_8cpp.html" title="サービスに対する操作を集約したクラス" alt="" coords="548,162,780,189"/>
+<area shape="rect" href="../../d3/d19/_service_core_8cpp.html" title="サービス実行クラス" alt="" coords="5,162,205,189"/>
+</map>
+</div>
+</div>
+<p><a href="../../d8/da7/_service_common_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0b/class_service_control.html">ServiceControl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">個別のサービスを管理するクラス  <a href="../../d5/d0b/class_service_control.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5e/class_service_control_manager.html">ServiceControlManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">サービスコントロールマネージャ(SCM)の操作用クラス  <a href="../../d0/d5e/class_service_control_manager.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d69/class_service_handler.html">ServiceHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">SC_HANDLERを扱うクラスのスーパークラス  <a href="../../d1/d69/class_service_handler.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbd/class_service_status.html">ServiceStatus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">サービス状態の操作クラス  <a href="../../d1/dbd/class_service_status.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfa/class_service_status_handler.html">ServiceStatusHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">サービス制御関数の登録を行うクラス  <a href="../../d4/dfa/class_service_status_handler.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a95946deb222c0b70382e644ef64f3e8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#a95946deb222c0b70382e644ef64f3e8d">ENTRY_CATEGORY_COUNT</a>&#160;&#160;&#160;_T(&quot;CategoryCount&quot;)</td></tr>
+<tr class="separator:a95946deb222c0b70382e644ef64f3e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc211491f4e77884ea8d39a89ff791e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#abc211491f4e77884ea8d39a89ff791e6">ENTRY_CATEGORY_MESSAGE_FILE</a>&#160;&#160;&#160;_T(&quot;CategoryMessageFile&quot;)</td></tr>
+<tr class="separator:abc211491f4e77884ea8d39a89ff791e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3fc27297031a54d413c76e7e85100d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#ab3fc27297031a54d413c76e7e85100d2">ENTRY_EVENT_MESSAGE_FILE</a>&#160;&#160;&#160;_T(&quot;EventMessageFile&quot;)</td></tr>
+<tr class="separator:ab3fc27297031a54d413c76e7e85100d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2474f18388b170c7778951d77788c22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#ab2474f18388b170c7778951d77788c22">ENTRY_FILE</a>&#160;&#160;&#160;_T(&quot;File&quot;)</td></tr>
+<tr class="separator:ab2474f18388b170c7778951d77788c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2832beac127c4da758580fe4d2d0d80e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#a2832beac127c4da758580fe4d2d0d80e">ENTRY_MAX_SIZE</a>&#160;&#160;&#160;_T(&quot;MaxSize&quot;)</td></tr>
+<tr class="separator:a2832beac127c4da758580fe4d2d0d80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45d3edc463a373e45c3c5caa70e69ded"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#a45d3edc463a373e45c3c5caa70e69ded">ENTRY_RETENTION</a>&#160;&#160;&#160;_T(&quot;Retention&quot;)</td></tr>
+<tr class="separator:a45d3edc463a373e45c3c5caa70e69ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf99fc9989b831cfeac2f2aabf7caef3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#acf99fc9989b831cfeac2f2aabf7caef3">ENTRY_TYPES_SUPPORTED</a>&#160;&#160;&#160;_T(&quot;TypesSupported&quot;)</td></tr>
+<tr class="separator:acf99fc9989b831cfeac2f2aabf7caef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18cac8e74703e09af3559c2bc2a1d2a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#a18cac8e74703e09af3559c2bc2a1d2a3">ERROR_REGISTRY_REGISTER</a>&#160;&#160;&#160;_T(&quot;レジストリの登録に失敗しました。&quot;)</td></tr>
+<tr class="separator:a18cac8e74703e09af3559c2bc2a1d2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1f0fd6f6010c1c4ec5943052f5679d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#add1f0fd6f6010c1c4ec5943052f5679d">EVENT_CATEGORY_COUNT</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:add1f0fd6f6010c1c4ec5943052f5679d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e2a5f336e5a7ca6ae8c53b7ebd29ce7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#a3e2a5f336e5a7ca6ae8c53b7ebd29ce7">EVENT_CATEGORY_MESSAGE_FILE</a>&#160;&#160;&#160;_T(&quot;ServiceMessage.dll&quot;)</td></tr>
+<tr class="separator:a3e2a5f336e5a7ca6ae8c53b7ebd29ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac875fb4db542cba081d9a1c4824fcd36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#ac875fb4db542cba081d9a1c4824fcd36">EVENT_EVENT_MESSAGE_FILE</a>&#160;&#160;&#160;_T(&quot;ServiceMessage.dll&quot;)</td></tr>
+<tr class="separator:ac875fb4db542cba081d9a1c4824fcd36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5f5d7dd67667aab49de3791fb5833c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#a6c5f5d7dd67667aab49de3791fb5833c">EVENT_ROOT</a>&#160;&#160;&#160;_T(&quot;SYSTEM\\CurrentControlSet\\Services\\EventLog\\ServiceApplication&quot;)</td></tr>
+<tr class="separator:a6c5f5d7dd67667aab49de3791fb5833c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9271a66ea51bd730b707730e0784d66"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#ab9271a66ea51bd730b707730e0784d66">EVENT_TYPES_SUPPORTED</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:ab9271a66ea51bd730b707730e0784d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d4676733f5e850f451942b6d901382"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#a69d4676733f5e850f451942b6d901382">LOG_FILE</a>&#160;&#160;&#160;_T(&quot;%SystemRoot%\\System32\\Winevt\\Logs\\ServiceApplication.evtx&quot;)</td></tr>
+<tr class="separator:a69d4676733f5e850f451942b6d901382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae890bbd431aa7d19fcbe247502ce3feb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#ae890bbd431aa7d19fcbe247502ce3feb">LOG_MAX_SIZE</a>&#160;&#160;&#160;0x1400000</td></tr>
+<tr class="separator:ae890bbd431aa7d19fcbe247502ce3feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05009e32c03afa9d8a6f2f112f10c5fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#a05009e32c03afa9d8a6f2f112f10c5fb">LOG_RETENTION</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a05009e32c03afa9d8a6f2f112f10c5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a815033794f04f212545feaf71663819b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#a815033794f04f212545feaf71663819b">LOG_ROOT</a>&#160;&#160;&#160;_T(&quot;SYSTEM\\CurrentControlSet\\Services\\EventLog\\ServiceApplication&quot;)</td></tr>
+<tr class="separator:a815033794f04f212545feaf71663819b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3fbd1b7db5563bc97af47943afa34a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#aa3fbd1b7db5563bc97af47943afa34a4">MAX_MESSAGE_LEN</a>&#160;&#160;&#160;256</td></tr>
+<tr class="separator:aa3fbd1b7db5563bc97af47943afa34a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab755408e363dce5ef273508551b7e3e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#ab755408e363dce5ef273508551b7e3e8">MAX_STATE_TRANSITION_TIME</a>&#160;&#160;&#160;3000</td></tr>
+<tr class="separator:ab755408e363dce5ef273508551b7e3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:ade75e13c1b605e074216b912308b9999"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#ade75e13c1b605e074216b912308b9999">BootSettings</a> { <a class="el" href="../../d8/da7/_service_common_8hpp.html#ade75e13c1b605e074216b912308b9999a46cae788e5d608c931a7adaa8522fa8d">BootSettings::OnDemand</a> = SERVICE_DEMAND_START, 
+<a class="el" href="../../d8/da7/_service_common_8hpp.html#ade75e13c1b605e074216b912308b9999a06b9281e396db002010bde1de57262eb">BootSettings::Auto</a> = SERVICE_AUTO_START, 
+<a class="el" href="../../d8/da7/_service_common_8hpp.html#ade75e13c1b605e074216b912308b9999abcfaccebf745acfd5e75351095a5394a">BootSettings::Disable</a> = SERVICE_DISABLED
+ }</td></tr>
+<tr class="memdesc:ade75e13c1b605e074216b912308b9999"><td class="mdescLeft">&#160;</td><td class="mdescRight">手動、自動、無効の選択肢  <a href="../../d8/da7/_service_common_8hpp.html#ade75e13c1b605e074216b912308b9999">[詳解]</a><br /></td></tr>
+<tr class="separator:ade75e13c1b605e074216b912308b9999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af029beb7334a780d9c2b1611bc8ab9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9">QueryResponse</a> { <br />
+&#160;&#160;<a class="el" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9a902b0d55fddef6f8d651fe1035b7d4bd">QueryResponse::Error</a> = -1, 
+<a class="el" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9ac85a251cc457840f1e032f1b733e9398">QueryResponse::Timeout</a> = 0, 
+<a class="el" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9ac23e2b09ebe6bf4cb5e2a9abe85c0be2">QueryResponse::Stopped</a> = SERVICE_STOPPED, 
+<a class="el" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9a4bd9191c899c97f8fd0b442cc087b4c2">QueryResponse::StartPending</a> = SERVICE_START_PENDING, 
+<br />
+&#160;&#160;<a class="el" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9a83d77bd7f942c42f6d0b50210a281bdf">QueryResponse::StopPending</a> = SERVICE_STOP_PENDING, 
+<a class="el" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9a5bda814c4aedb126839228f1a3d92f09">QueryResponse::Running</a> = SERVICE_RUNNING, 
+<a class="el" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9a78af7480853737810abcd6f3ec2a70de">QueryResponse::ContinuePending</a> = SERVICE_CONTINUE_PENDING, 
+<a class="el" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9a424647df99fc269a03c96a0316727434">QueryResponse::PausePending</a> = SERVICE_PAUSE_PENDING, 
+<br />
+&#160;&#160;<a class="el" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9ae99180abf47a8b3a856e0bcb2656990a">QueryResponse::Paused</a> = SERVICE_PAUSED
+<br />
+ }</td></tr>
+<tr class="memdesc:a2af029beb7334a780d9c2b1611bc8ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">サービスの状態遷移  <a href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9">[詳解]</a><br /></td></tr>
+<tr class="separator:a2af029beb7334a780d9c2b1611bc8ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a16f4c231a00cb8d3f4713b49fc8ebf44"><td class="memItemLeft" align="right" valign="top">VOID WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da7/_service_common_8hpp.html#a16f4c231a00cb8d3f4713b49fc8ebf44">PrintMessage</a> (LPCTSTR lpctszMessage, DWORD dwErrorCode=GetLastError(), LPCTSTR lpctszOption=nullptr)</td></tr>
+<tr class="memdesc:a16f4c231a00cb8d3f4713b49fc8ebf44"><td class="mdescLeft">&#160;</td><td class="mdescRight">メッセージをコンソールに出力します。  <a href="../../d8/da7/_service_common_8hpp.html#a16f4c231a00cb8d3f4713b49fc8ebf44">[詳解]</a><br /></td></tr>
+<tr class="separator:a16f4c231a00cb8d3f4713b49fc8ebf44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>サービス制御クラスを集約したファイル </p>
+<dl class="section author"><dt>著者</dt><dd><a href="#" onclick="location.href='mai'+'lto:'+'kum'+'ak'+'uma'+'04'+'21@'+'gm'+'ail'+'.c'+'om'; return false;">kumak<span style="display: none;">.nosp@m.</span>uma0<span style="display: none;">.nosp@m.</span>421@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a> </dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2021.4.29 </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> に定義があります。</p>
+</div><h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a95946deb222c0b70382e644ef64f3e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95946deb222c0b70382e644ef64f3e8d">&#9670;&nbsp;</a></span>ENTRY_CATEGORY_COUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENTRY_CATEGORY_COUNT&#160;&#160;&#160;_T(&quot;CategoryCount&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abc211491f4e77884ea8d39a89ff791e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc211491f4e77884ea8d39a89ff791e6">&#9670;&nbsp;</a></span>ENTRY_CATEGORY_MESSAGE_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENTRY_CATEGORY_MESSAGE_FILE&#160;&#160;&#160;_T(&quot;CategoryMessageFile&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab3fc27297031a54d413c76e7e85100d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3fc27297031a54d413c76e7e85100d2">&#9670;&nbsp;</a></span>ENTRY_EVENT_MESSAGE_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENTRY_EVENT_MESSAGE_FILE&#160;&#160;&#160;_T(&quot;EventMessageFile&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00029">29</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab2474f18388b170c7778951d77788c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2474f18388b170c7778951d77788c22">&#9670;&nbsp;</a></span>ENTRY_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENTRY_FILE&#160;&#160;&#160;_T(&quot;File&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2832beac127c4da758580fe4d2d0d80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2832beac127c4da758580fe4d2d0d80e">&#9670;&nbsp;</a></span>ENTRY_MAX_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENTRY_MAX_SIZE&#160;&#160;&#160;_T(&quot;MaxSize&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a45d3edc463a373e45c3c5caa70e69ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45d3edc463a373e45c3c5caa70e69ded">&#9670;&nbsp;</a></span>ENTRY_RETENTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENTRY_RETENTION&#160;&#160;&#160;_T(&quot;Retention&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acf99fc9989b831cfeac2f2aabf7caef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf99fc9989b831cfeac2f2aabf7caef3">&#9670;&nbsp;</a></span>ENTRY_TYPES_SUPPORTED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENTRY_TYPES_SUPPORTED&#160;&#160;&#160;_T(&quot;TypesSupported&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a18cac8e74703e09af3559c2bc2a1d2a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18cac8e74703e09af3559c2bc2a1d2a3">&#9670;&nbsp;</a></span>ERROR_REGISTRY_REGISTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_REGISTRY_REGISTER&#160;&#160;&#160;_T(&quot;レジストリの登録に失敗しました。&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="add1f0fd6f6010c1c4ec5943052f5679d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add1f0fd6f6010c1c4ec5943052f5679d">&#9670;&nbsp;</a></span>EVENT_CATEGORY_COUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVENT_CATEGORY_COUNT&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3e2a5f336e5a7ca6ae8c53b7ebd29ce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e2a5f336e5a7ca6ae8c53b7ebd29ce7">&#9670;&nbsp;</a></span>EVENT_CATEGORY_MESSAGE_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVENT_CATEGORY_MESSAGE_FILE&#160;&#160;&#160;_T(&quot;ServiceMessage.dll&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac875fb4db542cba081d9a1c4824fcd36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac875fb4db542cba081d9a1c4824fcd36">&#9670;&nbsp;</a></span>EVENT_EVENT_MESSAGE_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVENT_EVENT_MESSAGE_FILE&#160;&#160;&#160;_T(&quot;ServiceMessage.dll&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6c5f5d7dd67667aab49de3791fb5833c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c5f5d7dd67667aab49de3791fb5833c">&#9670;&nbsp;</a></span>EVENT_ROOT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVENT_ROOT&#160;&#160;&#160;_T(&quot;SYSTEM\\CurrentControlSet\\Services\\EventLog\\ServiceApplication&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab9271a66ea51bd730b707730e0784d66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9271a66ea51bd730b707730e0784d66">&#9670;&nbsp;</a></span>EVENT_TYPES_SUPPORTED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVENT_TYPES_SUPPORTED&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a69d4676733f5e850f451942b6d901382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d4676733f5e850f451942b6d901382">&#9670;&nbsp;</a></span>LOG_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_FILE&#160;&#160;&#160;_T(&quot;%SystemRoot%\\System32\\Winevt\\Logs\\ServiceApplication.evtx&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae890bbd431aa7d19fcbe247502ce3feb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae890bbd431aa7d19fcbe247502ce3feb">&#9670;&nbsp;</a></span>LOG_MAX_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_MAX_SIZE&#160;&#160;&#160;0x1400000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a05009e32c03afa9d8a6f2f112f10c5fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05009e32c03afa9d8a6f2f112f10c5fb">&#9670;&nbsp;</a></span>LOG_RETENTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_RETENTION&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a815033794f04f212545feaf71663819b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a815033794f04f212545feaf71663819b">&#9670;&nbsp;</a></span>LOG_ROOT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_ROOT&#160;&#160;&#160;_T(&quot;SYSTEM\\CurrentControlSet\\Services\\EventLog\\ServiceApplication&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa3fbd1b7db5563bc97af47943afa34a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3fbd1b7db5563bc97af47943afa34a4">&#9670;&nbsp;</a></span>MAX_MESSAGE_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_MESSAGE_LEN&#160;&#160;&#160;256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab755408e363dce5ef273508551b7e3e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab755408e363dce5ef273508551b7e3e8">&#9670;&nbsp;</a></span>MAX_STATE_TRANSITION_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_STATE_TRANSITION_TIME&#160;&#160;&#160;3000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">列挙型詳解</h2>
+<a id="ade75e13c1b605e074216b912308b9999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade75e13c1b605e074216b912308b9999">&#9670;&nbsp;</a></span>BootSettings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d8/da7/_service_common_8hpp.html#ade75e13c1b605e074216b912308b9999">BootSettings</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>手動、自動、無効の選択肢 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="ade75e13c1b605e074216b912308b9999a46cae788e5d608c931a7adaa8522fa8d"></a>OnDemand&#160;</td><td class="fielddoc"><p>手動 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ade75e13c1b605e074216b912308b9999a06b9281e396db002010bde1de57262eb"></a>Auto&#160;</td><td class="fielddoc"><p>自動 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ade75e13c1b605e074216b912308b9999abcfaccebf745acfd5e75351095a5394a"></a>Disable&#160;</td><td class="fielddoc"><p>無効 </p>
+</td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2af029beb7334a780d9c2b1611bc8ab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af029beb7334a780d9c2b1611bc8ab9">&#9670;&nbsp;</a></span>QueryResponse</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9">QueryResponse</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>サービスの状態遷移 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a2af029beb7334a780d9c2b1611bc8ab9a902b0d55fddef6f8d651fe1035b7d4bd"></a>Error&#160;</td><td class="fielddoc"><p>エラー </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2af029beb7334a780d9c2b1611bc8ab9ac85a251cc457840f1e032f1b733e9398"></a>Timeout&#160;</td><td class="fielddoc"><p>タイムアウト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2af029beb7334a780d9c2b1611bc8ab9ac23e2b09ebe6bf4cb5e2a9abe85c0be2"></a>Stopped&#160;</td><td class="fielddoc"><p>停止 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2af029beb7334a780d9c2b1611bc8ab9a4bd9191c899c97f8fd0b442cc087b4c2"></a>StartPending&#160;</td><td class="fielddoc"><p>開始中 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2af029beb7334a780d9c2b1611bc8ab9a83d77bd7f942c42f6d0b50210a281bdf"></a>StopPending&#160;</td><td class="fielddoc"><p>停止中 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2af029beb7334a780d9c2b1611bc8ab9a5bda814c4aedb126839228f1a3d92f09"></a>Running&#160;</td><td class="fielddoc"><p>実行中 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2af029beb7334a780d9c2b1611bc8ab9a78af7480853737810abcd6f3ec2a70de"></a>ContinuePending&#160;</td><td class="fielddoc"><p>再開中 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2af029beb7334a780d9c2b1611bc8ab9a424647df99fc269a03c96a0316727434"></a>PausePending&#160;</td><td class="fielddoc"><p>中断中 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2af029beb7334a780d9c2b1611bc8ab9ae99180abf47a8b3a856e0bcb2656990a"></a>Paused&#160;</td><td class="fielddoc"><p>中断 </p>
+</td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a> の <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00064">64</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a16f4c231a00cb8d3f4713b49fc8ebf44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f4c231a00cb8d3f4713b49fc8ebf44">&#9670;&nbsp;</a></span>PrintMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID WINAPI PrintMessage </td>
+          <td>(</td>
+          <td class="paramtype">LPCTSTR&#160;</td>
+          <td class="paramname"><em>lpctszMessage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwErrorCode</em> = <code>GetLastError()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCTSTR&#160;</td>
+          <td class="paramname"><em>lpctszOption</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>メッセージをコンソールに出力します。 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lpctszMessage</td><td>出力するメッセージ </td></tr>
+    <tr><td class="paramname">dwErrorCode</td><td>GetLastError()の出力地 </td></tr>
+    <tr><td class="paramname">lpctszOption</td><td>追加のメッセージ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d0/ddc/_service_common_8cpp_source.html">ServiceCommon.cpp</a> の <a class="el" href="../../d0/ddc/_service_common_8cpp_source.html#l00009">9</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00508">ServiceCommand::ChangeConfig2DelayedAutoStart()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00487">ServiceCommand::ChangeConfig2Description()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00016">ServiceCommand::Command()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00455">ServiceCommand::Disable()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00419">ServiceCommand::Enable()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00068">ServiceCommand::Install()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00400">ServiceCommand::Remove()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00689">ServiceCommand::ShowCurrentStatus()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00527">ServiceCommand::Start()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00271">ServiceCommand::Status()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00572">ServiceCommand::Stop()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00727">ServiceCommand::StopDependentServices()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00624">ServiceCommand::TemplateAction()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/da7/_service_common_8hpp_a16f4c231a00cb8d3f4713b49fc8ebf44_icgraph.png" border="0" usemap="#ad8/da7/_service_common_8hpp_a16f4c231a00cb8d3f4713b49fc8ebf44_icgraph" alt=""/></div>
+<map name="d8/da7/_service_common_8hpp_a16f4c231a00cb8d3f4713b49fc8ebf44_icgraph" id="ad8/da7/_service_common_8hpp_a16f4c231a00cb8d3f4713b49fc8ebf44_icgraph">
+<area shape="rect" title="メッセージをコンソールに出力します。" alt="" coords="888,272,991,299"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#adb2281b8acc5ae097060ee6238580dfc" title="自動(遅延）を設定" alt="" coords="353,40,572,81"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#aca51fe36ba5620d2ce143b324b23072c" title="コマンド処理のエントリー関数" alt="" coords="115,247,305,274"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#ae44c05a975611a488e2a69ddc665551b" title="サービスの説明文言を変更" alt="" coords="353,105,572,146"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a63bdf8c2dbbe32909fb1ae5eeec7154c" title="サービスの無効化" alt="" coords="375,171,550,198"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a786b1ec61b1f7f44ada34ff78836dd80" title="自動開始/手動開始を設定" alt="" coords="377,222,548,248"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a6cd22a5653232d4414388142f175a2a6" title="サービスのインストール処理" alt="" coords="380,272,545,299"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a503f246d749a81e0e6a28413cdfee917" title="サービスの削除処理" alt="" coords="374,323,551,350"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a55065b0fb3fac09a671411945dd743d8" title="現在のサービスステータスを出力します。" alt="" coords="627,484,833,525"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#aeae1bd08cf2ce42c722d4976f30d5c6b" title="サービスの開始" alt="" coords="383,428,542,455"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a9f87084cfeec504c6e0560670765ea5d" title="サービスの終了" alt="" coords="383,491,542,518"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#abee6dc910a1f35e59789e9cdfdd9caf5" title="サービスの状態表示" alt="" coords="378,374,547,400"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a9401b28216d7fea9eb2a89382cabb574" title="このサービスに依存しているサービスの停止処理" alt="" coords="620,549,840,590"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a1b16f038ff452c39c9f4e13af91c4e11" title="コマンド操作のプロローグとエピローグ" alt="" coords="638,265,822,306"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,247,67,274"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_c743f16faffac54afbe845f2f43d11d8.html">ServiceLogics</a></li><li class="navelem"><a class="el" href="../../d8/da7/_service_common_8hpp.html">ServiceCommon.hpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

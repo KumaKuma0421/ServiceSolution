@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: SvcConfig プロジェクトについて</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d1/da8/_svc_config_page.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">SvcConfig プロジェクトについて </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>SvcConfig プロジェクトはMicrosoft謹製のサービス制御プロジェクトです。 場所は、<a href="https://docs.microsoft.com/ja-jp/windows/win32/services/svcconfig-cpp">ここ</a>になります。 <a href="https://docs.microsoft.com/ja-jp/windows/win32/services/svcconfig-cpp">https://docs.microsoft.com/ja-jp/windows/win32/services/svcconfig-cpp</a></p>
+<p>このファイルでは、以下の機能を提供しています。</p>
+<ul>
+<li><a class="el" href="../../da/d7e/_svc_config_8cpp.html#a1586056bc6cf620c0662bdbe3340f279">DoQuerySvc()</a> サービスの状況問い合わせ<ul>
+<li>QueryServiceConfig()による、サービス状態の表示</li>
+<li>QueryServiceConfig2()による、サービスの説明文の表示</li>
+</ul>
+</li>
+<li><a class="el" href="../../da/d7e/_svc_config_8cpp.html#a145f6c53425b3893527b7260639a295d">DoUpdateSvcDesc()</a> サービスの説明文の変更<ul>
+<li>ChangeServiceConfig2()によるサービスの説明文の変更</li>
+</ul>
+</li>
+<li><a class="el" href="../../da/d7e/_svc_config_8cpp.html#aa042f092cbd6a2eaa1e65b3b14898f75">DoDisableSvc()</a> サービスの無効化<ul>
+<li>ChangeServiceConfig()によるサービスの無効化</li>
+</ul>
+</li>
+<li><a class="el" href="../../da/d7e/_svc_config_8cpp.html#a2f8113dae4a1557e10b860c1eb8cb99e">DoEnableSvc()</a> サービスの有効化<ul>
+<li>ChangeServiceConfig()によるサービスの有効化</li>
+</ul>
+</li>
+<li><a class="el" href="../../da/d7e/_svc_config_8cpp.html#a0a020581fdd04bd6d7e6768f44e31ec5">DoDeleteSvc()</a> サービスの削除<ul>
+<li>DeleteService()によるサービスの削除 </li>
+</ul>
+</li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

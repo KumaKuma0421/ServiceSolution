@@ -1,0 +1,12 @@
+<map id="ServiceCore::Handler" name="ServiceCore::Handler">
+<area shape="rect" id="node1" title="サービス制御関数からの呼び出しに対応する関数" alt="" coords="5,132,148,159"/>
+<area shape="rect" id="node2" href="$d8/d91/class_event_logger.html#a390cb635df4ba6ed5e68ed2c6226e06e" title="APIエラーのログ出力用" alt="" coords="438,107,586,133"/>
+<area shape="rect" id="node3" href="$d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="665,132,788,159"/>
+<area shape="rect" id="node4" href="$dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="196,208,371,235"/>
+<area shape="rect" id="node8" href="$d1/da9/class_event.html#a7eaa87a5df5f8c9180d5aa10faf8e668" title="イベントをセット(シグナル状態に)します。" alt="" coords="242,259,325,285"/>
+<area shape="rect" id="node9" href="$d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="428,5,596,32"/>
+<area shape="rect" id="node10" href="$d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="203,157,364,184"/>
+<area shape="rect" id="node5" href="$d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="419,309,605,336"/>
+<area shape="rect" id="node7" href="$d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="445,208,579,235"/>
+<area shape="rect" id="node6" href="$d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="653,302,800,343"/>
+</map>

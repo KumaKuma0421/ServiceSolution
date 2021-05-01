@@ -1,0 +1,16 @@
+<map id="ServiceCommand::Stop" name="ServiceCommand::Stop">
+<area shape="rect" id="node1" title="サービスの終了" alt="" coords="5,138,164,165"/>
+<area shape="rect" id="node2" href="$d0/ddc/_service_common_8cpp.html#a8b8a254d92aa12af09217d7d20fa00ab" title="メッセージをコンソールに出力します。" alt="" coords="522,19,625,46"/>
+<area shape="rect" id="node3" href="$d5/d0b/class_service_control.html#aaf58bfedac72f89fd3da24af9a6a7ca8" title="サービスの状態取得" alt="" coords="480,70,667,97"/>
+<area shape="rect" id="node5" href="$d5/dab/class_service_command.html#a55065b0fb3fac09a671411945dd743d8" title="現在のサービスステータスを出力します。" alt="" coords="219,43,425,84"/>
+<area shape="rect" id="node6" href="$d5/d0b/class_service_control.html#a7d0721a48ef9db310979ed351c4ee3a8" title="サービスの停止" alt="" coords="503,222,643,249"/>
+<area shape="rect" id="node7" href="$d5/dab/class_service_command.html#a9401b28216d7fea9eb2a89382cabb574" title="このサービスに依存しているサービスの停止処理" alt="" coords="212,160,432,201"/>
+<area shape="rect" id="node12" href="$d5/dab/class_service_command.html#a1b16f038ff452c39c9f4e13af91c4e11" title="コマンド操作のプロローグとエピローグ" alt="" coords="230,297,414,339"/>
+<area shape="rect" id="node4" href="$d5/d0b/class_service_control.html#a21c564956c73bc6b8cfd4ebe6a4d8d83" title="サービスの状態取得" alt="" coords="715,70,917,97"/>
+<area shape="rect" id="node8" href="$d1/d69/class_service_handler.html#a82b249089271ffb76a008c4c2feb0343" title="クローズ処理" alt="" coords="499,323,648,350"/>
+<area shape="rect" id="node9" href="$d1/d69/class_service_handler.html#a64e8d5b544fc28fe04a5ebd4b8b1ccc2" title="ハンドル取得" alt="" coords="485,171,662,198"/>
+<area shape="rect" id="node10" href="$d5/d0b/class_service_control.html#ab1034729db0814bb0ff0ae01d23ee202" title="このサービスに紐づくSCMのハンドルを取得" alt="" coords="481,121,665,147"/>
+<area shape="rect" id="node11" href="$d5/d0b/class_service_control.html#a1944ec3b59c35839aa6539506aeeb57f" title="サービスのオープン" alt="" coords="501,273,645,299"/>
+<area shape="rect" id="node13" href="$d5/d0b/class_service_control.html#a57bc65cfb38c18ce594158bc7953e2b7" title="サービスの作成" alt="" coords="498,441,649,467"/>
+<area shape="rect" id="node14" href="$d0/d5e/class_service_control_manager.html#a044d96579b5112838192d865517057cb" title="SCMのオープン" alt="" coords="496,375,651,416"/>
+</map>

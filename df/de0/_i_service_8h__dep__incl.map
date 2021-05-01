@@ -1,0 +1,13 @@
+<map id="ServiceLogics/IService.h" name="ServiceLogics/IService.h">
+<area shape="rect" id="node1" title="サービス提供プロジェクトへのインターフェースクラス" alt="" coords="361,5,523,32"/>
+<area shape="rect" id="node2" href="$de/d81/_service1_8h.html" title="サービスを提供するクラス" alt="" coords="111,80,245,121"/>
+<area shape="rect" id="node5" href="$dc/d86/_service2_8h.html" title="サービスを提供するクラス" alt="" coords="759,80,893,121"/>
+<area shape="rect" id="node8" href="$d7/d9b/_service_core_8h.html" title="サービス実行クラス" alt="" coords="349,87,535,114"/>
+<area shape="rect" id="node3" href="$d5/dce/_service_application1_2_main_8cpp.html" title="サンプルサービス その１" alt="" coords="189,259,324,300"/>
+<area shape="rect" id="node4" href="$de/d36/_service1_8cpp.html" title="サービスを提供するクラス" alt="" coords="5,169,140,211"/>
+<area shape="rect" id="node6" href="$d5/db5/_service_application2_2_main_8cpp.html" title="サンプルサービス その２" alt="" coords="400,259,535,300"/>
+<area shape="rect" id="node7" href="$df/d52/_service2_8cpp.html" title="サービスを提供するクラス" alt="" coords="759,169,893,211"/>
+<area shape="rect" id="node9" href="$dd/d0d/_service_application1_2_main_8h.html" title="サンプルサービス その１" alt="" coords="216,169,351,211"/>
+<area shape="rect" id="node10" href="$dd/d1a/_service_application2_2_main_8h.html" title="サンプルサービス その２" alt="" coords="375,169,509,211"/>
+<area shape="rect" id="node11" href="$d3/d19/_service_core_8cpp.html" title="サービス実行クラス" alt="" coords="534,177,734,203"/>
+</map>

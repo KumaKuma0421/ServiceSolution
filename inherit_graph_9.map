@@ -1,0 +1,6 @@
+<map id="クラス階層図" name="クラス階層図">
+<area shape="rect" id="node1" href="$d5/ddc/class_i_service.html" title="サービス提供プロジェクトへのインターフェースクラス" alt="" coords="5,5,72,32"/>
+<area shape="rect" id="node2" href="$df/d9d/class_service1.html" title="サービスを提供するクラス" alt="" coords="120,5,191,32"/>
+<area shape="rect" id="node3" href="$d9/d2d/class_service2.html" title="サービスを提供するクラス" alt="" coords="120,56,191,83"/>
+<area shape="rect" id="node4" href="$d8/d18/class_thread.html" title="スレッドに関するWindowsAPIを集約したクラス" alt="" coords="8,56,69,83"/>
+</map>

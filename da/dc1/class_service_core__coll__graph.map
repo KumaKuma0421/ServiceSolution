@@ -1,0 +1,9 @@
+<map id="ServiceCore" name="ServiceCore">
+<area shape="rect" id="node1" title="サービス実行クラス" alt="" coords="396,365,520,619"/>
+<area shape="rect" id="node2" href="$d4/dfa/class_service_status_handler.html" title="サービス制御関数の登録を行うクラス" alt="" coords="5,93,180,215"/>
+<area shape="rect" id="node3" href="$d5/ddc/class_i_service.html" title="サービス提供プロジェクトへのインターフェースクラス" alt="" coords="204,71,299,237"/>
+<area shape="rect" id="node4" href="$d1/dbd/class_service_status.html" title="サービス状態の操作クラス" alt="" coords="323,101,446,207"/>
+<area shape="rect" id="node5" href="$d8/d91/class_event_logger.html" title="イベントログ書き込みクラス" alt="" coords="471,57,592,251"/>
+<area shape="rect" id="node6" href="$d1/da9/class_event.html" title="イベントに関するWindowsAPIを集約したクラス" alt="" coords="617,64,699,244"/>
+<area shape="rect" id="node7" href="$de/dbd/class_service_info.html" title="サービス情報クラス" alt="" coords="724,5,899,303"/>
+</map>

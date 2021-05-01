@@ -1,0 +1,4 @@
+<map id="EventLogger::ApiError" name="EventLogger::ApiError">
+<area shape="rect" id="node1" title="APIエラーのログ出力用" alt="" coords="5,5,153,32"/>
+<area shape="rect" id="node2" href="$d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="201,5,324,32"/>
+</map>

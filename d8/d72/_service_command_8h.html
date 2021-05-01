@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: ServiceLogics/ServiceCommand.h ファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d8/d72/_service_command_8h.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#typedef-members">型定義</a>  </div>
+  <div class="headertitle">
+<div class="title">ServiceCommand.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>サービスに対する操作を集約したクラス  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/d1a/_service_info_8h_source.html">ServiceInfo.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ServiceCommand.h の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d6a/_service_command_8h__incl.png" border="0" usemap="#a_service_logics_2_service_command_8h" alt=""/></div>
+<map name="_service_logics_2_service_command_8h" id="a_service_logics_2_service_command_8h">
+<area shape="rect" title="サービスに対する操作を集約したクラス" alt="" coords="309,5,527,32"/>
+<area shape="rect" href="../../d8/da7/_service_common_8hpp.html" title="サービス制御クラスを集約したファイル" alt="" coords="294,80,435,107"/>
+<area shape="rect" href="../../d3/d1a/_service_info_8h.html" title="サービス情報クラス" alt="" coords="371,155,465,181"/>
+<area shape="rect" href="../../d4/d07/_service_logics_2pch_8h.html" title="プリコンパイル済みヘッダー ファイルです。" alt="" coords="391,229,445,256"/>
+<area shape="rect" href="../../d6/d29/framework_8h.html" title="このプロジェクトのポーティングに関する情報" alt="" coords="372,304,464,331"/>
+<area shape="rect" title=" " alt="" coords="5,379,92,405"/>
+<area shape="rect" title=" " alt="" coords="116,379,179,405"/>
+<area shape="rect" title=" " alt="" coords="203,379,273,405"/>
+<area shape="rect" title=" " alt="" coords="298,379,397,405"/>
+<area shape="rect" title=" " alt="" coords="421,379,559,405"/>
+<area shape="rect" title=" " alt="" coords="583,379,650,405"/>
+<area shape="rect" title=" " alt="" coords="674,379,743,405"/>
+<area shape="rect" title=" " alt="" coords="768,379,844,405"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dcf/_service_command_8h__dep__incl.png" border="0" usemap="#a_service_logics_2_service_command_8hdep" alt=""/></div>
+<map name="_service_logics_2_service_command_8hdep" id="a_service_logics_2_service_command_8hdep">
+<area shape="rect" title="サービスに対する操作を集約したクラス" alt="" coords="122,5,341,32"/>
+<area shape="rect" href="../../dd/d0d/_service_application1_2_main_8h.html" title="サンプルサービス その１" alt="" coords="5,80,140,121"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html" title="サンプルサービス その２" alt="" coords="164,80,299,121"/>
+<area shape="rect" href="../../d7/d80/_service_command_8cpp.html" title="サービスに対する操作を集約したクラス" alt="" coords="323,87,555,114"/>
+<area shape="rect" href="../../d5/dce/_service_application1_2_main_8cpp.html" title="サンプルサービス その１" alt="" coords="5,169,140,211"/>
+<area shape="rect" href="../../d5/db5/_service_application2_2_main_8cpp.html" title="サンプルサービス その２" alt="" coords="164,169,299,211"/>
+</map>
+</div>
+</div>
+<p><a href="../../d8/d72/_service_command_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dab/class_service_command.html">ServiceCommand</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">サービスに対する操作を集約したクラス  <a href="../../d5/dab/class_service_command.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:adb3eb6a05ba7f586e26cbc9b061d6357"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d72/_service_command_8h.html#adb3eb6a05ba7f586e26cbc9b061d6357">COMMAND_CHANGE_DELAYED_AUTO_START</a>&#160;&#160;&#160;_T(&quot;/delayed&quot;)</td></tr>
+<tr class="separator:adb3eb6a05ba7f586e26cbc9b061d6357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3227247f4584b06fd6ea8b34fb60a2c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d72/_service_command_8h.html#a3227247f4584b06fd6ea8b34fb60a2c8">COMMAND_CHANGE_DESCRIPTION</a>&#160;&#160;&#160;_T(&quot;/description&quot;)</td></tr>
+<tr class="separator:a3227247f4584b06fd6ea8b34fb60a2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a63d84244d7fce21b0f333a4c3215f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d72/_service_command_8h.html#a26a63d84244d7fce21b0f333a4c3215f">COMMAND_DISABLE</a>&#160;&#160;&#160;_T(&quot;/disable&quot;)</td></tr>
+<tr class="separator:a26a63d84244d7fce21b0f333a4c3215f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4181dc798a7df8fae3203918f1a7d87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d72/_service_command_8h.html#ab4181dc798a7df8fae3203918f1a7d87">COMMAND_ENABLE</a>&#160;&#160;&#160;_T(&quot;/enable&quot;)</td></tr>
+<tr class="separator:ab4181dc798a7df8fae3203918f1a7d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacd8e055198cac16674ea5cddc12b111"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d72/_service_command_8h.html#aacd8e055198cac16674ea5cddc12b111">COMMAND_INSTALL</a>&#160;&#160;&#160;_T(&quot;/install&quot;)</td></tr>
+<tr class="separator:aacd8e055198cac16674ea5cddc12b111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95cff6ba85e2284a6dcdbe2225a75d0c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d72/_service_command_8h.html#a95cff6ba85e2284a6dcdbe2225a75d0c">COMMAND_ONDEMAND</a>&#160;&#160;&#160;_T(&quot;/ondemand&quot;)</td></tr>
+<tr class="separator:a95cff6ba85e2284a6dcdbe2225a75d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601d71b3a2989c6c2de8a505df241586"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d72/_service_command_8h.html#a601d71b3a2989c6c2de8a505df241586">COMMAND_REMOVE</a>&#160;&#160;&#160;_T(&quot;/remove&quot;)</td></tr>
+<tr class="separator:a601d71b3a2989c6c2de8a505df241586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6547da940a1c63d92d200f92f5509884"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d72/_service_command_8h.html#a6547da940a1c63d92d200f92f5509884">COMMAND_START</a>&#160;&#160;&#160;_T(&quot;/start&quot;)</td></tr>
+<tr class="separator:a6547da940a1c63d92d200f92f5509884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625384257d101c5e64ba3018422dd055"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d72/_service_command_8h.html#a625384257d101c5e64ba3018422dd055">COMMAND_STATUS</a>&#160;&#160;&#160;_T(&quot;/status&quot;)</td></tr>
+<tr class="separator:a625384257d101c5e64ba3018422dd055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b66389416f72046f80d9c2c1a77d63f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d72/_service_command_8h.html#a6b66389416f72046f80d9c2c1a77d63f">COMMAND_STOP</a>&#160;&#160;&#160;_T(&quot;/stop&quot;)</td></tr>
+<tr class="separator:a6b66389416f72046f80d9c2c1a77d63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:a5c60e46d18d48d7a68ec553dfcf071ee"><td class="memItemLeft" align="right" valign="top">typedef BOOL(WINAPI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d72/_service_command_8h.html#a5c60e46d18d48d7a68ec553dfcf071ee">TemplateMethod</a>) (<a class="el" href="../../d5/d0b/class_service_control.html">ServiceControl</a> &amp;sc, LPVOID lpvParam)</td></tr>
+<tr class="memdesc:a5c60e46d18d48d7a68ec553dfcf071ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">TemplateAction()内部で使用する関数ポインタ  <a href="../../d8/d72/_service_command_8h.html#a5c60e46d18d48d7a68ec553dfcf071ee">[詳解]</a><br /></td></tr>
+<tr class="separator:a5c60e46d18d48d7a68ec553dfcf071ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>サービスに対する操作を集約したクラス </p>
+<dl class="section author"><dt>著者</dt><dd><a href="#" onclick="location.href='mai'+'lto:'+'kum'+'ak'+'uma'+'04'+'21@'+'gm'+'ail'+'.c'+'om'; return false;">kumak<span style="display: none;">.nosp@m.</span>uma0<span style="display: none;">.nosp@m.</span>421@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a> </dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2021.4.29 </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> に定義があります。</p>
+</div><h2 class="groupheader">マクロ定義詳解</h2>
+<a id="adb3eb6a05ba7f586e26cbc9b061d6357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb3eb6a05ba7f586e26cbc9b061d6357">&#9670;&nbsp;</a></span>COMMAND_CHANGE_DELAYED_AUTO_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_CHANGE_DELAYED_AUTO_START&#160;&#160;&#160;_T(&quot;/delayed&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> の <a class="el" href="../../d8/d72/_service_command_8h_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3227247f4584b06fd6ea8b34fb60a2c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3227247f4584b06fd6ea8b34fb60a2c8">&#9670;&nbsp;</a></span>COMMAND_CHANGE_DESCRIPTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_CHANGE_DESCRIPTION&#160;&#160;&#160;_T(&quot;/description&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> の <a class="el" href="../../d8/d72/_service_command_8h_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a26a63d84244d7fce21b0f333a4c3215f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26a63d84244d7fce21b0f333a4c3215f">&#9670;&nbsp;</a></span>COMMAND_DISABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_DISABLE&#160;&#160;&#160;_T(&quot;/disable&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> の <a class="el" href="../../d8/d72/_service_command_8h_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab4181dc798a7df8fae3203918f1a7d87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4181dc798a7df8fae3203918f1a7d87">&#9670;&nbsp;</a></span>COMMAND_ENABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_ENABLE&#160;&#160;&#160;_T(&quot;/enable&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> の <a class="el" href="../../d8/d72/_service_command_8h_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aacd8e055198cac16674ea5cddc12b111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacd8e055198cac16674ea5cddc12b111">&#9670;&nbsp;</a></span>COMMAND_INSTALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_INSTALL&#160;&#160;&#160;_T(&quot;/install&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> の <a class="el" href="../../d8/d72/_service_command_8h_source.html#l00011">11</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a95cff6ba85e2284a6dcdbe2225a75d0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95cff6ba85e2284a6dcdbe2225a75d0c">&#9670;&nbsp;</a></span>COMMAND_ONDEMAND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_ONDEMAND&#160;&#160;&#160;_T(&quot;/ondemand&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> の <a class="el" href="../../d8/d72/_service_command_8h_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a601d71b3a2989c6c2de8a505df241586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a601d71b3a2989c6c2de8a505df241586">&#9670;&nbsp;</a></span>COMMAND_REMOVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_REMOVE&#160;&#160;&#160;_T(&quot;/remove&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> の <a class="el" href="../../d8/d72/_service_command_8h_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6547da940a1c63d92d200f92f5509884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6547da940a1c63d92d200f92f5509884">&#9670;&nbsp;</a></span>COMMAND_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_START&#160;&#160;&#160;_T(&quot;/start&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> の <a class="el" href="../../d8/d72/_service_command_8h_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a625384257d101c5e64ba3018422dd055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625384257d101c5e64ba3018422dd055">&#9670;&nbsp;</a></span>COMMAND_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_STATUS&#160;&#160;&#160;_T(&quot;/status&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> の <a class="el" href="../../d8/d72/_service_command_8h_source.html#l00012">12</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6b66389416f72046f80d9c2c1a77d63f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b66389416f72046f80d9c2c1a77d63f">&#9670;&nbsp;</a></span>COMMAND_STOP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_STOP&#160;&#160;&#160;_T(&quot;/stop&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> の <a class="el" href="../../d8/d72/_service_command_8h_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">型定義詳解</h2>
+<a id="a5c60e46d18d48d7a68ec553dfcf071ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c60e46d18d48d7a68ec553dfcf071ee">&#9670;&nbsp;</a></span>TemplateMethod</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef BOOL(WINAPI * TemplateMethod) (<a class="el" href="../../d5/d0b/class_service_control.html">ServiceControl</a> &amp;sc, LPVOID lpvParam)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TemplateAction()内部で使用する関数ポインタ </p>
+
+<p class="definition"> <a class="el" href="../../d8/d72/_service_command_8h_source.html">ServiceCommand.h</a> の <a class="el" href="../../d8/d72/_service_command_8h_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_c743f16faffac54afbe845f2f43d11d8.html">ServiceLogics</a></li><li class="navelem"><a class="el" href="../../d8/d72/_service_command_8h.html">ServiceCommand.h</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

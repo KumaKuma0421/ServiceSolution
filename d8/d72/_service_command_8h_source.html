@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: ServiceLogics/ServiceCommand.h ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d8/d72/_service_command_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ServiceCommand.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/d72/_service_command_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/da7/_service_common_8hpp.html">ServiceCommon.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d1a/_service_info_8h.html">ServiceInfo.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d8/d72/_service_command_8h.html#aacd8e055198cac16674ea5cddc12b111">   11</a></span>&#160;<span class="preprocessor">#define COMMAND_INSTALL                   _T(&quot;/install&quot;)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d8/d72/_service_command_8h.html#a625384257d101c5e64ba3018422dd055">   12</a></span>&#160;<span class="preprocessor">#define COMMAND_STATUS                    _T(&quot;/status&quot;)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d8/d72/_service_command_8h.html#a601d71b3a2989c6c2de8a505df241586">   13</a></span>&#160;<span class="preprocessor">#define COMMAND_REMOVE                    _T(&quot;/remove&quot;)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d8/d72/_service_command_8h.html#ab4181dc798a7df8fae3203918f1a7d87">   14</a></span>&#160;<span class="preprocessor">#define COMMAND_ENABLE                    _T(&quot;/enable&quot;)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d8/d72/_service_command_8h.html#a95cff6ba85e2284a6dcdbe2225a75d0c">   15</a></span>&#160;<span class="preprocessor">#define COMMAND_ONDEMAND                  _T(&quot;/ondemand&quot;)</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d8/d72/_service_command_8h.html#a26a63d84244d7fce21b0f333a4c3215f">   16</a></span>&#160;<span class="preprocessor">#define COMMAND_DISABLE                   _T(&quot;/disable&quot;)</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d8/d72/_service_command_8h.html#adb3eb6a05ba7f586e26cbc9b061d6357">   17</a></span>&#160;<span class="preprocessor">#define COMMAND_CHANGE_DELAYED_AUTO_START _T(&quot;/delayed&quot;)</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d8/d72/_service_command_8h.html#a6547da940a1c63d92d200f92f5509884">   18</a></span>&#160;<span class="preprocessor">#define COMMAND_START                     _T(&quot;/start&quot;)</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d8/d72/_service_command_8h.html#a6b66389416f72046f80d9c2c1a77d63f">   19</a></span>&#160;<span class="preprocessor">#define COMMAND_STOP                      _T(&quot;/stop&quot;)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d8/d72/_service_command_8h.html#a3227247f4584b06fd6ea8b34fb60a2c8">   20</a></span>&#160;<span class="preprocessor">#define COMMAND_CHANGE_DESCRIPTION        _T(&quot;/description&quot;)</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d8/d72/_service_command_8h.html#a5c60e46d18d48d7a68ec553dfcf071ee">   23</a></span>&#160;<span class="keyword">typedef</span> BOOL (WINAPI *<a class="code" href="../../d8/d72/_service_command_8h.html#a5c60e46d18d48d7a68ec553dfcf071ee">TemplateMethod</a>)(<a class="code" href="../../d5/d0b/class_service_control.html">ServiceControl</a>&amp; sc, LPVOID lpvParam);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d5/dab/class_service_command.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d29/framework_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code" href="../../d5/dab/class_service_command.html">ServiceCommand</a> final</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="../../d5/dab/class_service_command.html">ServiceCommand</a>(<a class="code" href="../../de/dbd/class_service_info.html">ServiceInfo</a>&amp; si);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    BOOL WINAPI Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    BOOL WINAPI Install();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    BOOL WINAPI Status();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    BOOL WINAPI Remove();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    BOOL WINAPI Enable(BOOL bAuto);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    BOOL WINAPI <a class="code" href="../../d8/da7/_service_common_8hpp.html#ade75e13c1b605e074216b912308b9999a46cae788e5d608c931a7adaa8522fa8d">Disable</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    BOOL WINAPI ChangeConfig2Description();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    BOOL WINAPI ChangeConfig2DelayedAutoStart();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    BOOL WINAPI Start();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    BOOL WINAPI Stop();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../d5/dab/class_service_command.html#adc407163270224d4ccdf53da3a023e4a">  100</a></span>&#160;    <a class="code" href="../../d5/dab/class_service_command.html#adc407163270224d4ccdf53da3a023e4a">ServiceCommand</a>();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    BOOL WINAPI TemplateAction(</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        DWORD dwOpenParam,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="../../d8/d72/_service_command_8h.html#a5c60e46d18d48d7a68ec553dfcf071ee">TemplateMethod</a> method,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        LPCTSTR lpctszLastMessage,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        LPVOID lpvParam = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    VOID WINAPI ShowCurrentStatus(<a class="code" href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9">QueryResponse</a> response);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    BOOL WINAPI <a class="code" href="../../dd/de3/_svc_control_8cpp.html#a03da76d1114f8dace11a0ab9c680e4af">StopDependentServices</a>(</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="../../d5/d0b/class_service_control.html">ServiceControl</a>&amp; sc,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        LPVOID lpvParam);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    </div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="../../d5/dab/class_service_command.html#ac4630d82ea2ed38f54fa4c6a24e9e63f">  131</a></span>&#160;    <a class="code" href="../../de/dbd/class_service_info.html">ServiceInfo</a>&amp; <a class="code" href="../../d5/dab/class_service_command.html#ac4630d82ea2ed38f54fa4c6a24e9e63f">_si</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_service_command_html"><div class="ttname"><a href="../../d5/dab/class_service_command.html">ServiceCommand</a></div><div class="ttdoc">サービスに対する操作を集約したクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d72/_service_command_8h_source.html#l00026">ServiceCommand.h:27</a></div></div>
+<div class="ttc" id="aclass_service_control_html"><div class="ttname"><a href="../../d5/d0b/class_service_control.html">ServiceControl</a></div><div class="ttdoc">個別のサービスを管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00147">ServiceCommon.hpp:148</a></div></div>
+<div class="ttc" id="a_service_common_8hpp_html_a2af029beb7334a780d9c2b1611bc8ab9"><div class="ttname"><a href="../../d8/da7/_service_common_8hpp.html#a2af029beb7334a780d9c2b1611bc8ab9">QueryResponse</a></div><div class="ttdeci">QueryResponse</div><div class="ttdoc">サービスの状態遷移</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00064">ServiceCommon.hpp:65</a></div></div>
+<div class="ttc" id="aclass_service_info_html"><div class="ttname"><a href="../../de/dbd/class_service_info.html">ServiceInfo</a></div><div class="ttdoc">サービス情報クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d1a/_service_info_8h_source.html#l00013">ServiceInfo.h:14</a></div></div>
+<div class="ttc" id="aframework_8h_html_aa4c7a931f4a968f818b2a1b10a432185"><div class="ttname"><a href="../../d6/d29/framework_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a></div><div class="ttdeci">#define DECLSPEC</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d29/framework_8h_source.html#l00022">framework.h:22</a></div></div>
+<div class="ttc" id="a_svc_control_8cpp_html_a03da76d1114f8dace11a0ab9c680e4af"><div class="ttname"><a href="../../dd/de3/_svc_control_8cpp.html#a03da76d1114f8dace11a0ab9c680e4af">StopDependentServices</a></div><div class="ttdeci">BOOL __stdcall StopDependentServices(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de3/_svc_control_8cpp_source.html#l00596">SvcControl.cpp:596</a></div></div>
+<div class="ttc" id="a_service_common_8hpp_html_ade75e13c1b605e074216b912308b9999a46cae788e5d608c931a7adaa8522fa8d"><div class="ttname"><a href="../../d8/da7/_service_common_8hpp.html#ade75e13c1b605e074216b912308b9999a46cae788e5d608c931a7adaa8522fa8d">BootSettings::OnDemand</a></div><div class="ttdeci">@ OnDemand</div><div class="ttdoc">手動</div></div>
+<div class="ttc" id="a_service_command_8h_html_a5c60e46d18d48d7a68ec553dfcf071ee"><div class="ttname"><a href="../../d8/d72/_service_command_8h.html#a5c60e46d18d48d7a68ec553dfcf071ee">TemplateMethod</a></div><div class="ttdeci">BOOL(WINAPI * TemplateMethod)(ServiceControl &amp;sc, LPVOID lpvParam)</div><div class="ttdoc">TemplateAction()内部で使用する関数ポインタ</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d72/_service_command_8h_source.html#l00023">ServiceCommand.h:23</a></div></div>
+<div class="ttc" id="aclass_service_command_html_adc407163270224d4ccdf53da3a023e4a"><div class="ttname"><a href="../../d5/dab/class_service_command.html#adc407163270224d4ccdf53da3a023e4a">ServiceCommand::ServiceCommand</a></div><div class="ttdeci">ServiceCommand()</div><div class="ttdoc">隠蔽されたコンストラクタ</div></div>
+<div class="ttc" id="aclass_service_command_html_ac4630d82ea2ed38f54fa4c6a24e9e63f"><div class="ttname"><a href="../../d5/dab/class_service_command.html#ac4630d82ea2ed38f54fa4c6a24e9e63f">ServiceCommand::_si</a></div><div class="ttdeci">ServiceInfo &amp; _si</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d72/_service_command_8h_source.html#l00131">ServiceCommand.h:131</a></div></div>
+<div class="ttc" id="a_service_common_8hpp_html"><div class="ttname"><a href="../../d8/da7/_service_common_8hpp.html">ServiceCommon.hpp</a></div><div class="ttdoc">サービス制御クラスを集約したファイル</div></div>
+<div class="ttc" id="a_service_info_8h_html"><div class="ttname"><a href="../../d3/d1a/_service_info_8h.html">ServiceInfo.h</a></div><div class="ttdoc">サービス情報クラス</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_c743f16faffac54afbe845f2f43d11d8.html">ServiceLogics</a></li><li class="navelem"><a class="el" href="../../d8/d72/_service_command_8h.html">ServiceCommand.h</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

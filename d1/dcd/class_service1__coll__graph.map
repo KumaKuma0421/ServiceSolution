@@ -1,0 +1,7 @@
+<map id="Service1" name="Service1">
+<area shape="rect" id="node1" title="サービスを提供するクラス" alt="" coords="157,520,250,700"/>
+<area shape="rect" id="node2" href="$d8/d18/class_thread.html" title="スレッドに関するWindowsAPIを集約したクラス" alt="" coords="5,248,132,457"/>
+<area shape="rect" id="node3" href="$d1/da9/class_event.html" title="イベントに関するWindowsAPIを集約したクラス" alt="" coords="27,5,110,185"/>
+<area shape="rect" id="node4" href="$d5/ddc/class_i_service.html" title="サービス提供プロジェクトへのインターフェースクラス" alt="" coords="156,270,251,435"/>
+<area shape="rect" id="node5" href="$d8/d91/class_event_logger.html" title="イベントログ書き込みクラス" alt="" coords="275,255,396,450"/>
+</map>

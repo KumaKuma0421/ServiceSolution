@@ -1,0 +1,4 @@
+<map id="Service1::Suspend" name="Service1::Suspend">
+<area shape="rect" id="node1" title="サービスを停止します。" alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node2" href="$d8/d18/class_thread.html#aa625cf1b6f52a8ddf3b6a11e040e77dd" title="スレッドの中断" alt="" coords="184,5,304,32"/>
+</map>

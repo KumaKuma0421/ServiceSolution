@@ -1,0 +1,669 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: ServiceMessage/ServiceMessage.h ファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d7/d18/_service_message_8h.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle">
+<div class="title">ServiceMessage.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d1e/_service_message_8h__dep__incl.png" border="0" usemap="#a_service_message_2_service_message_8hdep" alt=""/></div>
+<map name="_service_message_2_service_message_8hdep" id="a_service_message_2_service_message_8hdep">
+<area shape="rect" title=" " alt="" coords="363,5,590,32"/>
+<area shape="rect" href="../../de/d81/_service1_8h.html" title="サービスを提供するクラス" alt="" coords="85,155,220,196"/>
+<area shape="rect" href="../../dc/d86/_service2_8h.html" title="サービスを提供するクラス" alt="" coords="784,155,919,196"/>
+<area shape="rect" href="../../df/d9c/_event_logger_8h.html" title="イベントログに書き込むクラス" alt="" coords="383,80,571,107"/>
+<area shape="rect" href="../../d5/dce/_service_application1_2_main_8cpp.html" title="サンプルサービス その１" alt="" coords="164,333,299,375"/>
+<area shape="rect" href="../../de/d36/_service1_8cpp.html" title="サービスを提供するクラス" alt="" coords="5,244,140,285"/>
+<area shape="rect" href="../../d5/db5/_service_application2_2_main_8cpp.html" title="サンプルサービス その２" alt="" coords="757,333,892,375"/>
+<area shape="rect" href="../../df/d52/_service2_8cpp.html" title="サービスを提供するクラス" alt="" coords="784,244,919,285"/>
+<area shape="rect" href="../../dd/d0d/_service_application1_2_main_8h.html" title="サンプルサービス その１" alt="" coords="216,244,351,285"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html" title="サンプルサービス その２" alt="" coords="625,244,760,285"/>
+<area shape="rect" href="../../df/d10/_event_logger_8cpp.html" title="イベントログに書き込むクラス" alt="" coords="295,162,498,189"/>
+<area shape="rect" href="../../d7/d9b/_service_core_8h.html" title="サービス実行クラス" alt="" coords="522,162,709,189"/>
+<area shape="rect" href="../../d3/d19/_service_core_8cpp.html" title="サービス実行クラス" alt="" coords="401,251,601,278"/>
+</map>
+</div>
+</div>
+<p><a href="../../d7/d18/_service_message_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a7d235744b17fddd146f2f99d5367f9eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a7d235744b17fddd146f2f99d5367f9eb">CATEGORY_SERVICE</a>&#160;&#160;&#160;((WORD)0x00000004L)</td></tr>
+<tr class="separator:a7d235744b17fddd146f2f99d5367f9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7781ea95067fa306801481c2effe5419"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a7781ea95067fa306801481c2effe5419">CATEGORY_SERVICE_CONTROL</a>&#160;&#160;&#160;((WORD)0x00000003L)</td></tr>
+<tr class="separator:a7781ea95067fa306801481c2effe5419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289a9e80e56bd1597963d07889cec9bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a289a9e80e56bd1597963d07889cec9bb">CATEGORY_SERVICE_CORE</a>&#160;&#160;&#160;((WORD)0x00000001L)</td></tr>
+<tr class="separator:a289a9e80e56bd1597963d07889cec9bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3772c80987d100389625be6e5f403a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#af3772c80987d100389625be6e5f403a0">CATEGORY_SERVICE_MANAGER</a>&#160;&#160;&#160;((WORD)0x00000002L)</td></tr>
+<tr class="separator:af3772c80987d100389625be6e5f403a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78ce5a69e761a8607fbde61219a67d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#af78ce5a69e761a8607fbde61219a67d6">FACILITY_API</a>&#160;&#160;&#160;0x2</td></tr>
+<tr class="separator:af78ce5a69e761a8607fbde61219a67d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eaa5ae53858090b34c2e09c36cc5458"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a2eaa5ae53858090b34c2e09c36cc5458">FACILITY_IO</a>&#160;&#160;&#160;0x3</td></tr>
+<tr class="separator:a2eaa5ae53858090b34c2e09c36cc5458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22845b196c86422c0976f1e73bef580b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a22845b196c86422c0976f1e73bef580b">FACILITY_RUNTIME</a>&#160;&#160;&#160;0x1</td></tr>
+<tr class="separator:a22845b196c86422c0976f1e73bef580b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f42ea0c911a4d4437ec62048019833"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a22f42ea0c911a4d4437ec62048019833">FACILITY_SYSTEM</a>&#160;&#160;&#160;0x0</td></tr>
+<tr class="separator:a22f42ea0c911a4d4437ec62048019833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79358a6bbd2fe8d1a4deb25714ff7195"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a79358a6bbd2fe8d1a4deb25714ff7195">FACILITY_TRACE</a>&#160;&#160;&#160;0xF</td></tr>
+<tr class="separator:a79358a6bbd2fe8d1a4deb25714ff7195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a377c1ee798fa944879949be5a4cf2efb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a377c1ee798fa944879949be5a4cf2efb">STATUS_SEVERITY_ERROR</a>&#160;&#160;&#160;0x3</td></tr>
+<tr class="separator:a377c1ee798fa944879949be5a4cf2efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c9a4ad772b4cd7631767b15d883b57"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a75c9a4ad772b4cd7631767b15d883b57">STATUS_SEVERITY_INFORMATION</a>&#160;&#160;&#160;0x1</td></tr>
+<tr class="separator:a75c9a4ad772b4cd7631767b15d883b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93220fefb1da42a9b5031beba39228ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a93220fefb1da42a9b5031beba39228ed">STATUS_SEVERITY_SUCCESS</a>&#160;&#160;&#160;0x0</td></tr>
+<tr class="separator:a93220fefb1da42a9b5031beba39228ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a082601cd98e9a05c929049f4052b671d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a082601cd98e9a05c929049f4052b671d">STATUS_SEVERITY_WARNING</a>&#160;&#160;&#160;0x2</td></tr>
+<tr class="separator:a082601cd98e9a05c929049f4052b671d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb1817917d2c6fc09e09390f154a8029"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#acb1817917d2c6fc09e09390f154a8029">SVC_ERROR_API</a>&#160;&#160;&#160;((DWORD)0xC0020000L)</td></tr>
+<tr class="separator:acb1817917d2c6fc09e09390f154a8029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a044d8fcfca00b6360f589233c1ba71"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a0a044d8fcfca00b6360f589233c1ba71">SVC_ERROR_IO</a>&#160;&#160;&#160;((DWORD)0xC0030000L)</td></tr>
+<tr class="separator:a0a044d8fcfca00b6360f589233c1ba71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac77158c0ddc56c0b22e0680dd44d84c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#ac77158c0ddc56c0b22e0680dd44d84c7">SVC_ERROR_RUNTIME</a>&#160;&#160;&#160;((DWORD)0xC0010000L)</td></tr>
+<tr class="separator:ac77158c0ddc56c0b22e0680dd44d84c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bff194e02a6f3c3e6b0b8e19560b3a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a8bff194e02a6f3c3e6b0b8e19560b3a4">SVC_ERROR_SYSTEM</a>&#160;&#160;&#160;((DWORD)0xC0000000L)</td></tr>
+<tr class="separator:a8bff194e02a6f3c3e6b0b8e19560b3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61ad62626728593a6dfe3b329b49443c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a61ad62626728593a6dfe3b329b49443c">SVC_INFO_API</a>&#160;&#160;&#160;((DWORD)0x40020000L)</td></tr>
+<tr class="separator:a61ad62626728593a6dfe3b329b49443c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09176dbdf3770a00646c2a6546c0cee2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a09176dbdf3770a00646c2a6546c0cee2">SVC_INFO_IO</a>&#160;&#160;&#160;((DWORD)0x40030000L)</td></tr>
+<tr class="separator:a09176dbdf3770a00646c2a6546c0cee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6eb755229814197c03a62e767a5e171"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#ac6eb755229814197c03a62e767a5e171">SVC_INFO_RUNTIME</a>&#160;&#160;&#160;((DWORD)0x40010000L)</td></tr>
+<tr class="separator:ac6eb755229814197c03a62e767a5e171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af501ca9cf0eb7357884657c569ee25d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#af501ca9cf0eb7357884657c569ee25d7">SVC_INFO_SYSTEM</a>&#160;&#160;&#160;((DWORD)0x40000000L)</td></tr>
+<tr class="separator:af501ca9cf0eb7357884657c569ee25d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe4e7f38c6241628bbd507c3089d11a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#adbe4e7f38c6241628bbd507c3089d11a">SVC_INFO_TRACE</a>&#160;&#160;&#160;((DWORD)0x400FFFFFL)</td></tr>
+<tr class="separator:adbe4e7f38c6241628bbd507c3089d11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d15ebf783261a70f48fe16952a741c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a41d15ebf783261a70f48fe16952a741c">SVC_SUCCESS_API</a>&#160;&#160;&#160;((DWORD)0x00020000L)</td></tr>
+<tr class="separator:a41d15ebf783261a70f48fe16952a741c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5617c9c52b410bd8c393536daa224a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#af5617c9c52b410bd8c393536daa224a3">SVC_SUCCESS_IO</a>&#160;&#160;&#160;((DWORD)0x00030000L)</td></tr>
+<tr class="separator:af5617c9c52b410bd8c393536daa224a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf39ffd188d0932bf63bd9a3d9f91507"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#adf39ffd188d0932bf63bd9a3d9f91507">SVC_SUCCESS_RUNTIME</a>&#160;&#160;&#160;((DWORD)0x00010000L)</td></tr>
+<tr class="separator:adf39ffd188d0932bf63bd9a3d9f91507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33ae99afe245490146fcab28b2fdb0a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a33ae99afe245490146fcab28b2fdb0a5">SVC_SUCCESS_SYSTEM</a>&#160;&#160;&#160;((DWORD)0x00000000L)</td></tr>
+<tr class="separator:a33ae99afe245490146fcab28b2fdb0a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a088202f84226ae2b3473d93f8e56dbb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a088202f84226ae2b3473d93f8e56dbb2">SVC_WARNING_API</a>&#160;&#160;&#160;((DWORD)0x80020000L)</td></tr>
+<tr class="separator:a088202f84226ae2b3473d93f8e56dbb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f7f34bf7b3bb1c4d692b7760cbf6e93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a7f7f34bf7b3bb1c4d692b7760cbf6e93">SVC_WARNING_IO</a>&#160;&#160;&#160;((DWORD)0x80030000L)</td></tr>
+<tr class="separator:a7f7f34bf7b3bb1c4d692b7760cbf6e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79414418a4bd7ff786d7e4dc4145f54a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a79414418a4bd7ff786d7e4dc4145f54a">SVC_WARNING_RUNTIME</a>&#160;&#160;&#160;((DWORD)0x80010000L)</td></tr>
+<tr class="separator:a79414418a4bd7ff786d7e4dc4145f54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0937f66d90491e030178f379605bd41a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d18/_service_message_8h.html#a0937f66d90491e030178f379605bd41a">SVC_WARNING_SYSTEM</a>&#160;&#160;&#160;((DWORD)0x80000000L)</td></tr>
+<tr class="separator:a0937f66d90491e030178f379605bd41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a7d235744b17fddd146f2f99d5367f9eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d235744b17fddd146f2f99d5367f9eb">&#9670;&nbsp;</a></span>CATEGORY_SERVICE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CATEGORY_SERVICE&#160;&#160;&#160;((WORD)0x00000004L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00080">80</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7781ea95067fa306801481c2effe5419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7781ea95067fa306801481c2effe5419">&#9670;&nbsp;</a></span>CATEGORY_SERVICE_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CATEGORY_SERVICE_CONTROL&#160;&#160;&#160;((WORD)0x00000003L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00071">71</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a289a9e80e56bd1597963d07889cec9bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a289a9e80e56bd1597963d07889cec9bb">&#9670;&nbsp;</a></span>CATEGORY_SERVICE_CORE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CATEGORY_SERVICE_CORE&#160;&#160;&#160;((WORD)0x00000001L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00053">53</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af3772c80987d100389625be6e5f403a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3772c80987d100389625be6e5f403a0">&#9670;&nbsp;</a></span>CATEGORY_SERVICE_MANAGER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CATEGORY_SERVICE_MANAGER&#160;&#160;&#160;((WORD)0x00000002L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00062">62</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af78ce5a69e761a8607fbde61219a67d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af78ce5a69e761a8607fbde61219a67d6">&#9670;&nbsp;</a></span>FACILITY_API</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FACILITY_API&#160;&#160;&#160;0x2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2eaa5ae53858090b34c2e09c36cc5458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eaa5ae53858090b34c2e09c36cc5458">&#9670;&nbsp;</a></span>FACILITY_IO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FACILITY_IO&#160;&#160;&#160;0x3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a22845b196c86422c0976f1e73bef580b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22845b196c86422c0976f1e73bef580b">&#9670;&nbsp;</a></span>FACILITY_RUNTIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FACILITY_RUNTIME&#160;&#160;&#160;0x1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a22f42ea0c911a4d4437ec62048019833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f42ea0c911a4d4437ec62048019833">&#9670;&nbsp;</a></span>FACILITY_SYSTEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FACILITY_SYSTEM&#160;&#160;&#160;0x0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a79358a6bbd2fe8d1a4deb25714ff7195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79358a6bbd2fe8d1a4deb25714ff7195">&#9670;&nbsp;</a></span>FACILITY_TRACE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FACILITY_TRACE&#160;&#160;&#160;0xF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a377c1ee798fa944879949be5a4cf2efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a377c1ee798fa944879949be5a4cf2efb">&#9670;&nbsp;</a></span>STATUS_SEVERITY_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STATUS_SEVERITY_ERROR&#160;&#160;&#160;0x3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00043">43</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a75c9a4ad772b4cd7631767b15d883b57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75c9a4ad772b4cd7631767b15d883b57">&#9670;&nbsp;</a></span>STATUS_SEVERITY_INFORMATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STATUS_SEVERITY_INFORMATION&#160;&#160;&#160;0x1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00042">42</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a93220fefb1da42a9b5031beba39228ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93220fefb1da42a9b5031beba39228ed">&#9670;&nbsp;</a></span>STATUS_SEVERITY_SUCCESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STATUS_SEVERITY_SUCCESS&#160;&#160;&#160;0x0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a082601cd98e9a05c929049f4052b671d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a082601cd98e9a05c929049f4052b671d">&#9670;&nbsp;</a></span>STATUS_SEVERITY_WARNING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STATUS_SEVERITY_WARNING&#160;&#160;&#160;0x2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00041">41</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acb1817917d2c6fc09e09390f154a8029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb1817917d2c6fc09e09390f154a8029">&#9670;&nbsp;</a></span>SVC_ERROR_API</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_ERROR_API&#160;&#160;&#160;((DWORD)0xC0020000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00325">325</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0a044d8fcfca00b6360f589233c1ba71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a044d8fcfca00b6360f589233c1ba71">&#9670;&nbsp;</a></span>SVC_ERROR_IO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_ERROR_IO&#160;&#160;&#160;((DWORD)0xC0030000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00340">340</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac77158c0ddc56c0b22e0680dd44d84c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac77158c0ddc56c0b22e0680dd44d84c7">&#9670;&nbsp;</a></span>SVC_ERROR_RUNTIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_ERROR_RUNTIME&#160;&#160;&#160;((DWORD)0xC0010000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00310">310</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8bff194e02a6f3c3e6b0b8e19560b3a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bff194e02a6f3c3e6b0b8e19560b3a4">&#9670;&nbsp;</a></span>SVC_ERROR_SYSTEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_ERROR_SYSTEM&#160;&#160;&#160;((DWORD)0xC0000000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00295">295</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a61ad62626728593a6dfe3b329b49443c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61ad62626728593a6dfe3b329b49443c">&#9670;&nbsp;</a></span>SVC_INFO_API</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_INFO_API&#160;&#160;&#160;((DWORD)0x40020000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00190">190</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a09176dbdf3770a00646c2a6546c0cee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09176dbdf3770a00646c2a6546c0cee2">&#9670;&nbsp;</a></span>SVC_INFO_IO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_INFO_IO&#160;&#160;&#160;((DWORD)0x40030000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00205">205</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac6eb755229814197c03a62e767a5e171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6eb755229814197c03a62e767a5e171">&#9670;&nbsp;</a></span>SVC_INFO_RUNTIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_INFO_RUNTIME&#160;&#160;&#160;((DWORD)0x40010000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00175">175</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af501ca9cf0eb7357884657c569ee25d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af501ca9cf0eb7357884657c569ee25d7">&#9670;&nbsp;</a></span>SVC_INFO_SYSTEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_INFO_SYSTEM&#160;&#160;&#160;((DWORD)0x40000000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00160">160</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adbe4e7f38c6241628bbd507c3089d11a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbe4e7f38c6241628bbd507c3089d11a">&#9670;&nbsp;</a></span>SVC_INFO_TRACE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_INFO_TRACE&#160;&#160;&#160;((DWORD)0x400FFFFFL)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00220">220</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a41d15ebf783261a70f48fe16952a741c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d15ebf783261a70f48fe16952a741c">&#9670;&nbsp;</a></span>SVC_SUCCESS_API</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_SUCCESS_API&#160;&#160;&#160;((DWORD)0x00020000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00130">130</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af5617c9c52b410bd8c393536daa224a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5617c9c52b410bd8c393536daa224a3">&#9670;&nbsp;</a></span>SVC_SUCCESS_IO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_SUCCESS_IO&#160;&#160;&#160;((DWORD)0x00030000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00145">145</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adf39ffd188d0932bf63bd9a3d9f91507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf39ffd188d0932bf63bd9a3d9f91507">&#9670;&nbsp;</a></span>SVC_SUCCESS_RUNTIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_SUCCESS_RUNTIME&#160;&#160;&#160;((DWORD)0x00010000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00115">115</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a33ae99afe245490146fcab28b2fdb0a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33ae99afe245490146fcab28b2fdb0a5">&#9670;&nbsp;</a></span>SVC_SUCCESS_SYSTEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_SUCCESS_SYSTEM&#160;&#160;&#160;((DWORD)0x00000000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00100">100</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a088202f84226ae2b3473d93f8e56dbb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a088202f84226ae2b3473d93f8e56dbb2">&#9670;&nbsp;</a></span>SVC_WARNING_API</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_WARNING_API&#160;&#160;&#160;((DWORD)0x80020000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00265">265</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7f7f34bf7b3bb1c4d692b7760cbf6e93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f7f34bf7b3bb1c4d692b7760cbf6e93">&#9670;&nbsp;</a></span>SVC_WARNING_IO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_WARNING_IO&#160;&#160;&#160;((DWORD)0x80030000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00280">280</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a79414418a4bd7ff786d7e4dc4145f54a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79414418a4bd7ff786d7e4dc4145f54a">&#9670;&nbsp;</a></span>SVC_WARNING_RUNTIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_WARNING_RUNTIME&#160;&#160;&#160;((DWORD)0x80010000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00250">250</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0937f66d90491e030178f379605bd41a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0937f66d90491e030178f379605bd41a">&#9670;&nbsp;</a></span>SVC_WARNING_SYSTEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVC_WARNING_SYSTEM&#160;&#160;&#160;((DWORD)0x80000000L)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d18/_service_message_8h_source.html">ServiceMessage.h</a> の <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00235">235</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_f6e855f962c77a310d58ec042222b7ee.html">ServiceMessage</a></li><li class="navelem"><a class="el" href="../../d7/d18/_service_message_8h.html">ServiceMessage.h</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: ServiceCore クラス</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('dd/d44/class_service_core.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="../../d9/d5a/class_service_core-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">ServiceCore クラス<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>サービス実行クラス  
+ <a href="../../dd/d44/class_service_core.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d7/d9b/_service_core_8h_source.html">ServiceCore.h</a>&gt;</code></p>
+<div class="dynheader">
+ServiceCore 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dc1/class_service_core__coll__graph.png" border="0" usemap="#a_service_core_coll__map" alt="Collaboration graph"/></div>
+<map name="_service_core_coll__map" id="a_service_core_coll__map">
+<area shape="rect" title="サービス実行クラス" alt="" coords="396,365,520,619"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html" title="サービス制御関数の登録を行うクラス" alt="" coords="5,93,180,215"/>
+<area shape="rect" href="../../d5/ddc/class_i_service.html" title="サービス提供プロジェクトへのインターフェースクラス" alt="" coords="204,71,299,237"/>
+<area shape="rect" href="../../d1/dbd/class_service_status.html" title="サービス状態の操作クラス" alt="" coords="323,101,446,207"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html" title="イベントログ書き込みクラス" alt="" coords="471,57,592,251"/>
+<area shape="rect" href="../../d1/da9/class_event.html" title="イベントに関するWindowsAPIを集約したクラス" alt="" coords="617,64,699,244"/>
+<area shape="rect" href="../../de/dbd/class_service_info.html" title="サービス情報クラス" alt="" coords="724,5,899,303"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ac42055e8303621e69ddbd9bd27ab393b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#ac42055e8303621e69ddbd9bd27ab393b">ServiceCore</a> (<a class="el" href="../../d8/d91/class_event_logger.html">EventLogger</a> &amp;logger)</td></tr>
+<tr class="memdesc:ac42055e8303621e69ddbd9bd27ab393b"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="../../dd/d44/class_service_core.html#ac42055e8303621e69ddbd9bd27ab393b">[詳解]</a><br /></td></tr>
+<tr class="separator:ac42055e8303621e69ddbd9bd27ab393b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2baa62b9a7cbdbd619ad15bdcdab78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#aeb2baa62b9a7cbdbd619ad15bdcdab78">~ServiceCore</a> ()</td></tr>
+<tr class="memdesc:aeb2baa62b9a7cbdbd619ad15bdcdab78"><td class="mdescLeft">&#160;</td><td class="mdescRight">　デストラクタ  <a href="../../dd/d44/class_service_core.html#aeb2baa62b9a7cbdbd619ad15bdcdab78">[詳解]</a><br /></td></tr>
+<tr class="separator:aeb2baa62b9a7cbdbd619ad15bdcdab78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73b7cdef55900e54b5b45ff34adeedf"><td class="memItemLeft" align="right" valign="top">BOOL WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#ae73b7cdef55900e54b5b45ff34adeedf">Entry</a> (LPSERVICE_MAIN_FUNCTION fnServiceMain, LPHANDLER_FUNCTION fnHandler, <a class="el" href="../../d5/ddc/class_i_service.html">IService</a> *pService, <a class="el" href="../../de/dbd/class_service_info.html">ServiceInfo</a> *si)</td></tr>
+<tr class="memdesc:ae73b7cdef55900e54b5b45ff34adeedf"><td class="mdescLeft">&#160;</td><td class="mdescRight">main()からの呼び出しに対応する関数  <a href="../../dd/d44/class_service_core.html#ae73b7cdef55900e54b5b45ff34adeedf">[詳解]</a><br /></td></tr>
+<tr class="separator:ae73b7cdef55900e54b5b45ff34adeedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177b3521bf8fe9fb57decf2bf25fcc78"><td class="memItemLeft" align="right" valign="top">VOID WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#a177b3521bf8fe9fb57decf2bf25fcc78">Handler</a> (DWORD dwControlCode)</td></tr>
+<tr class="memdesc:a177b3521bf8fe9fb57decf2bf25fcc78"><td class="mdescLeft">&#160;</td><td class="mdescRight">サービス制御関数からの呼び出しに対応する関数  <a href="../../dd/d44/class_service_core.html#a177b3521bf8fe9fb57decf2bf25fcc78">[詳解]</a><br /></td></tr>
+<tr class="separator:a177b3521bf8fe9fb57decf2bf25fcc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaf11f98443c40cdbbf26b91765ccdb2"><td class="memItemLeft" align="right" valign="top">VOID WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#afaf11f98443c40cdbbf26b91765ccdb2">Main</a> (DWORD dwArgc, LPTSTR *lptszArgv)</td></tr>
+<tr class="memdesc:afaf11f98443c40cdbbf26b91765ccdb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">サービスメイン関数からの呼び出しに対応する関数  <a href="../../dd/d44/class_service_core.html#afaf11f98443c40cdbbf26b91765ccdb2">[詳解]</a><br /></td></tr>
+<tr class="separator:afaf11f98443c40cdbbf26b91765ccdb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a10c56f83231c9e54eeef1906dcb06583"><td class="memItemLeft" align="right" valign="top">BOOL WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#a10c56f83231c9e54eeef1906dcb06583">Exit</a> ()</td></tr>
+<tr class="memdesc:a10c56f83231c9e54eeef1906dcb06583"><td class="mdescLeft">&#160;</td><td class="mdescRight">終了処理  <a href="../../dd/d44/class_service_core.html#a10c56f83231c9e54eeef1906dcb06583">[詳解]</a><br /></td></tr>
+<tr class="separator:a10c56f83231c9e54eeef1906dcb06583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef6520363b7fc1b784723d3f8822c02"><td class="memItemLeft" align="right" valign="top">BOOL WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#a0ef6520363b7fc1b784723d3f8822c02">Init</a> ()</td></tr>
+<tr class="memdesc:a0ef6520363b7fc1b784723d3f8822c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化処理  <a href="../../dd/d44/class_service_core.html#a0ef6520363b7fc1b784723d3f8822c02">[詳解]</a><br /></td></tr>
+<tr class="separator:a0ef6520363b7fc1b784723d3f8822c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e4e1370aec1f7335af3555b92931bec"><td class="memItemLeft" align="right" valign="top">BOOL WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec">ReportStatus</a> (DWORD dwCurrentState, DWORD dwWin32ExitCode=NO_ERROR, DWORD dwWaitHint=<a class="el" href="../../d8/da7/_service_common_8hpp.html#ab755408e363dce5ef273508551b7e3e8">MAX_STATE_TRANSITION_TIME</a>)</td></tr>
+<tr class="memdesc:a5e4e1370aec1f7335af3555b92931bec"><td class="mdescLeft">&#160;</td><td class="mdescRight">サービスの現在の状態を設定  <a href="../../dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec">[詳解]</a><br /></td></tr>
+<tr class="separator:a5e4e1370aec1f7335af3555b92931bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a077ee6ffbe84d8124911d7765c0e6d98"><td class="memItemLeft" align="right" valign="top">BOOL WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#a077ee6ffbe84d8124911d7765c0e6d98">Resume</a> ()</td></tr>
+<tr class="memdesc:a077ee6ffbe84d8124911d7765c0e6d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">再開処理  <a href="../../dd/d44/class_service_core.html#a077ee6ffbe84d8124911d7765c0e6d98">[詳解]</a><br /></td></tr>
+<tr class="separator:a077ee6ffbe84d8124911d7765c0e6d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45d87e822ebabe45d2ff99c68183b486"><td class="memItemLeft" align="right" valign="top">BOOL WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#a45d87e822ebabe45d2ff99c68183b486">Start</a> ()</td></tr>
+<tr class="memdesc:a45d87e822ebabe45d2ff99c68183b486"><td class="mdescLeft">&#160;</td><td class="mdescRight">開始処理  <a href="../../dd/d44/class_service_core.html#a45d87e822ebabe45d2ff99c68183b486">[詳解]</a><br /></td></tr>
+<tr class="separator:a45d87e822ebabe45d2ff99c68183b486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2578abe199956beb40b681a084c1205"><td class="memItemLeft" align="right" valign="top">BOOL WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#ac2578abe199956beb40b681a084c1205">Stop</a> ()</td></tr>
+<tr class="memdesc:ac2578abe199956beb40b681a084c1205"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止処理  <a href="../../dd/d44/class_service_core.html#ac2578abe199956beb40b681a084c1205">[詳解]</a><br /></td></tr>
+<tr class="separator:ac2578abe199956beb40b681a084c1205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f933947ef72ced692dadf2323bc8eca"><td class="memItemLeft" align="right" valign="top">BOOL WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#a8f933947ef72ced692dadf2323bc8eca">Suspend</a> ()</td></tr>
+<tr class="memdesc:a8f933947ef72ced692dadf2323bc8eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">中断処理  <a href="../../dd/d44/class_service_core.html#a8f933947ef72ced692dadf2323bc8eca">[詳解]</a><br /></td></tr>
+<tr class="separator:a8f933947ef72ced692dadf2323bc8eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a8c5e1d00c90d46afb19fec2daa9ec0d3"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#a8c5e1d00c90d46afb19fec2daa9ec0d3">_dwControlCode</a></td></tr>
+<tr class="memdesc:a8c5e1d00c90d46afb19fec2daa9ec0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">サービス制御関数からの制御コード  <a href="../../dd/d44/class_service_core.html#a8c5e1d00c90d46afb19fec2daa9ec0d3">[詳解]</a><br /></td></tr>
+<tr class="separator:a8c5e1d00c90d46afb19fec2daa9ec0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8ca7278ce34087f9d74d882c4fac162"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/da9/class_event.html">Event</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#ae8ca7278ce34087f9d74d882c4fac162">_event</a></td></tr>
+<tr class="separator:ae8ca7278ce34087f9d74d882c4fac162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81777e0c3da616e0beb7acec7713efd4"><td class="memItemLeft" align="right" valign="top">LPHANDLER_FUNCTION&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#a81777e0c3da616e0beb7acec7713efd4">_fnHandler</a></td></tr>
+<tr class="memdesc:a81777e0c3da616e0beb7acec7713efd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">サービス制御関数  <a href="../../dd/d44/class_service_core.html#a81777e0c3da616e0beb7acec7713efd4">[詳解]</a><br /></td></tr>
+<tr class="separator:a81777e0c3da616e0beb7acec7713efd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d42f3c45ddcb15bd1cf23cc9db00f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dfa/class_service_status_handler.html">ServiceStatusHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#ae4d42f3c45ddcb15bd1cf23cc9db00f9">_handler</a></td></tr>
+<tr class="separator:ae4d42f3c45ddcb15bd1cf23cc9db00f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae53470c7eb0ac1c093dfc104473e404"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d91/class_event_logger.html">EventLogger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#aae53470c7eb0ac1c093dfc104473e404">_logger</a></td></tr>
+<tr class="separator:aae53470c7eb0ac1c093dfc104473e404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c6db1d2cc8819bb55b2fe92822b697"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/ddc/class_i_service.html">IService</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#ac7c6db1d2cc8819bb55b2fe92822b697">_pService</a></td></tr>
+<tr class="separator:ac7c6db1d2cc8819bb55b2fe92822b697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceeef86a7218d662cf4a1bb8276bfe3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dbd/class_service_info.html">ServiceInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#aceeef86a7218d662cf4a1bb8276bfe3b">_pSI</a></td></tr>
+<tr class="separator:aceeef86a7218d662cf4a1bb8276bfe3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a38d30b9e44a566ce5e6ba5faece84d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dbd/class_service_status.html">ServiceStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d44/class_service_core.html#a5a38d30b9e44a566ce5e6ba5faece84d">_status</a></td></tr>
+<tr class="separator:a5a38d30b9e44a566ce5e6ba5faece84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>サービス実行クラス </p>
+
+<p class="definition"> <a class="el" href="../../d7/d9b/_service_core_8h_source.html">ServiceCore.h</a> の <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00015">15</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ac42055e8303621e69ddbd9bd27ab393b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac42055e8303621e69ddbd9bd27ab393b">&#9670;&nbsp;</a></span>ServiceCore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServiceCore::ServiceCore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d91/class_event_logger.html">EventLogger</a> &amp;&#160;</td>
+          <td class="paramname"><em>logger</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>EventLoggerクラス </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00009">9</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00114">_dwControlCode</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00123">_fnHandler</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00125">_pService</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00126">_pSI</a>.</p>
+
+</div>
+</div>
+<a id="aeb2baa62b9a7cbdbd619ad15bdcdab78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb2baa62b9a7cbdbd619ad15bdcdab78">&#9670;&nbsp;</a></span>~ServiceCore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServiceCore::~ServiceCore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>　デストラクタ </p>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ae73b7cdef55900e54b5b45ff34adeedf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae73b7cdef55900e54b5b45ff34adeedf">&#9670;&nbsp;</a></span>Entry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL ServiceCore::Entry </td>
+          <td>(</td>
+          <td class="paramtype">LPSERVICE_MAIN_FUNCTION&#160;</td>
+          <td class="paramname"><em>fnServiceMain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPHANDLER_FUNCTION&#160;</td>
+          <td class="paramname"><em>fnHandler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/ddc/class_i_service.html">IService</a> *&#160;</td>
+          <td class="paramname"><em>pService</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dbd/class_service_info.html">ServiceInfo</a> *&#160;</td>
+          <td class="paramname"><em>si</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>main()からの呼び出しに対応する関数 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fnServiceMain</td><td>サービスメイン関数 </td></tr>
+    <tr><td class="paramname">fnHandler</td><td>サービス制御関数 </td></tr>
+    <tr><td class="paramname">pService</td><td>提供サービスクラス </td></tr>
+    <tr><td class="paramname">si</td><td>サービスに関数情報構造体 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>BOOL </dd></dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE(成功)</td><td></td></tr>
+    <tr><td class="paramname">FALSE(失敗)</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>覚え書き</dt><dd>StartServiceCtrlDispatcher()が呼び出されると、 サービスメイン関数がコールバックされます。 その後、この関数はここで停止し、サービスが終了する まで、ブロックされます。</dd></dl>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00022">22</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00123">_fnHandler</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00120">_logger</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00125">_pService</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00126">_pSI</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00058">EventLogger::ApiError()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00053">CATEGORY_SERVICE_CORE</a>, <a class="el" href="../../d3/d1a/_service_info_8h_source.html#l00036">ServiceInfo::GetName()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00111">EventLogger::TraceFinish()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00096">EventLogger::TraceStart()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d5/dce/_service_application1_2_main_8cpp_source.html#l00014">_tmain()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_ae73b7cdef55900e54b5b45ff34adeedf_cgraph.png" border="0" usemap="#add/d44/class_service_core_ae73b7cdef55900e54b5b45ff34adeedf_cgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_ae73b7cdef55900e54b5b45ff34adeedf_cgraph" id="add/d44/class_service_core_ae73b7cdef55900e54b5b45ff34adeedf_cgraph">
+<area shape="rect" title="main()からの呼び出しに対応する関数" alt="" coords="5,81,136,108"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a390cb635df4ba6ed5e68ed2c6226e06e" title="APIエラーのログ出力用" alt="" coords="194,5,342,32"/>
+<area shape="rect" href="../../de/dbd/class_service_info.html#a4987a4aa3a243041f789e9b83486ed7c" title="サービス名を取得" alt="" coords="195,56,341,83"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="184,107,352,133"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="187,157,349,184"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="400,107,523,133"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_ae73b7cdef55900e54b5b45ff34adeedf_icgraph.png" border="0" usemap="#add/d44/class_service_core_ae73b7cdef55900e54b5b45ff34adeedf_icgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_ae73b7cdef55900e54b5b45ff34adeedf_icgraph" id="add/d44/class_service_core_ae73b7cdef55900e54b5b45ff34adeedf_icgraph">
+<area shape="rect" title="main()からの呼び出しに対応する関数" alt="" coords="115,5,245,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a10c56f83231c9e54eeef1906dcb06583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10c56f83231c9e54eeef1906dcb06583">&#9670;&nbsp;</a></span>Exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL ServiceCore::Exit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>終了処理 </p>
+<dl class="section return"><dt>戻り値</dt><dd>BOOL </dd></dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE(成功)</td><td></td></tr>
+    <tr><td class="paramname">FALSE(失敗)</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00402">402</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00119">_event</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00120">_logger</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00058">EventLogger::ApiError()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00053">CATEGORY_SERVICE_CORE</a>, <a class="el" href="../../d6/dc3/_event_8hpp_source.html#l00087">Event::Close()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00021">EventLogger::Log()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">ReportStatus()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00100">SVC_SUCCESS_SYSTEM</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00111">EventLogger::TraceFinish()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00096">EventLogger::TraceStart()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">Main()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a10c56f83231c9e54eeef1906dcb06583_cgraph.png" border="0" usemap="#add/d44/class_service_core_a10c56f83231c9e54eeef1906dcb06583_cgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a10c56f83231c9e54eeef1906dcb06583_cgraph" id="add/d44/class_service_core_a10c56f83231c9e54eeef1906dcb06583_cgraph">
+<area shape="rect" title="終了処理" alt="" coords="5,132,128,159"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a390cb635df4ba6ed5e68ed2c6226e06e" title="APIエラーのログ出力用" alt="" coords="418,107,566,133"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="645,132,768,159"/>
+<area shape="rect" href="../../d1/da9/class_event.html#ac9591c372885864da8b66fa5b5f3488c" title="ハンドルをクローズします。" alt="" coords="216,259,311,285"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="176,208,351,235"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="408,5,576,32"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="183,157,344,184"/>
+<area shape="rect" href="../../d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="399,309,585,336"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="425,208,559,235"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="633,302,780,343"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a10c56f83231c9e54eeef1906dcb06583_icgraph.png" border="0" usemap="#add/d44/class_service_core_a10c56f83231c9e54eeef1906dcb06583_icgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a10c56f83231c9e54eeef1906dcb06583_icgraph" id="add/d44/class_service_core_a10c56f83231c9e54eeef1906dcb06583_icgraph">
+<area shape="rect" title="終了処理" alt="" coords="429,5,552,32"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#afaf11f98443c40cdbbf26b91765ccdb2" title="サービスメイン関数からの呼び出しに対応する関数" alt="" coords="255,5,381,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a9dfca7ec3e747016197fa731903c0848" title="サービス関数" alt="" coords="115,5,207,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a177b3521bf8fe9fb57decf2bf25fcc78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177b3521bf8fe9fb57decf2bf25fcc78">&#9670;&nbsp;</a></span>Handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID ServiceCore::Handler </td>
+          <td>(</td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwControlCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サービス制御関数からの呼び出しに対応する関数 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dwControlCode</td><td>制御コード </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>VOID </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00177">177</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00114">_dwControlCode</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00119">_event</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00120">_logger</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00058">EventLogger::ApiError()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00053">CATEGORY_SERVICE_CORE</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00021">EventLogger::Log()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">ReportStatus()</a>, <a class="el" href="../../d6/dc3/_event_8hpp_source.html#l00056">Event::Set()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00100">SVC_SUCCESS_SYSTEM</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00111">EventLogger::TraceFinish()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00096">EventLogger::TraceStart()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d5/dce/_service_application1_2_main_8cpp_source.html#l00063">CtrlHandler()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a177b3521bf8fe9fb57decf2bf25fcc78_cgraph.png" border="0" usemap="#add/d44/class_service_core_a177b3521bf8fe9fb57decf2bf25fcc78_cgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a177b3521bf8fe9fb57decf2bf25fcc78_cgraph" id="add/d44/class_service_core_a177b3521bf8fe9fb57decf2bf25fcc78_cgraph">
+<area shape="rect" title="サービス制御関数からの呼び出しに対応する関数" alt="" coords="5,132,148,159"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a390cb635df4ba6ed5e68ed2c6226e06e" title="APIエラーのログ出力用" alt="" coords="438,107,586,133"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="665,132,788,159"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="196,208,371,235"/>
+<area shape="rect" href="../../d1/da9/class_event.html#a7eaa87a5df5f8c9180d5aa10faf8e668" title="イベントをセット(シグナル状態に)します。" alt="" coords="242,259,325,285"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="428,5,596,32"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="203,157,364,184"/>
+<area shape="rect" href="../../d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="419,309,605,336"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="445,208,579,235"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="653,302,800,343"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a177b3521bf8fe9fb57decf2bf25fcc78_icgraph.png" border="0" usemap="#add/d44/class_service_core_a177b3521bf8fe9fb57decf2bf25fcc78_icgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a177b3521bf8fe9fb57decf2bf25fcc78_icgraph" id="add/d44/class_service_core_a177b3521bf8fe9fb57decf2bf25fcc78_icgraph">
+<area shape="rect" title="サービス制御関数からの呼び出しに対応する関数" alt="" coords="249,5,392,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#aea68d398ffe5443b9ae1f388a1ae039d" title="サービス制御関数" alt="" coords="115,5,201,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0ef6520363b7fc1b784723d3f8822c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef6520363b7fc1b784723d3f8822c02">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL ServiceCore::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初期化処理 </p>
+<dl class="section return"><dt>戻り値</dt><dd>BOOL </dd></dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE(成功)</td><td></td></tr>
+    <tr><td class="paramname">FALSE(失敗)</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00250">250</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00119">_event</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00123">_fnHandler</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00116">_handler</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00120">_logger</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00126">_pSI</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00058">EventLogger::ApiError()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00053">CATEGORY_SERVICE_CORE</a>, <a class="el" href="../../d6/dc3/_event_8hpp_source.html#l00031">Event::Create()</a>, <a class="el" href="../../d3/d1a/_service_info_8h_source.html#l00036">ServiceInfo::GetName()</a>, <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00353">ServiceStatusHandler::Init()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00021">EventLogger::Log()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">ReportStatus()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00100">SVC_SUCCESS_SYSTEM</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00111">EventLogger::TraceFinish()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00096">EventLogger::TraceStart()</a> (計15項目).</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">Main()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a0ef6520363b7fc1b784723d3f8822c02_cgraph.png" border="0" usemap="#add/d44/class_service_core_a0ef6520363b7fc1b784723d3f8822c02_cgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a0ef6520363b7fc1b784723d3f8822c02_cgraph" id="add/d44/class_service_core_a0ef6520363b7fc1b784723d3f8822c02_cgraph">
+<area shape="rect" title="初期化処理" alt="" coords="5,183,121,209"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a390cb635df4ba6ed5e68ed2c6226e06e" title="APIエラーのログ出力用" alt="" coords="411,107,559,133"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="639,132,761,159"/>
+<area shape="rect" href="../../d1/da9/class_event.html#a465cab85f59d36ef2d4c483dfe7a0cfc" title="イベントを作成します。" alt="" coords="207,259,307,285"/>
+<area shape="rect" href="../../de/dbd/class_service_info.html#a4987a4aa3a243041f789e9b83486ed7c" title="サービス名を取得" alt="" coords="183,309,330,336"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html#a8730c8d1ea75c183c58f211705f3c66e" title="サービス制御関数の登録処理" alt="" coords="183,361,330,402"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="169,208,344,235"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="401,5,569,32"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="405,157,566,184"/>
+<area shape="rect" href="../../d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="392,309,579,336"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="419,208,552,235"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="627,302,773,343"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a0ef6520363b7fc1b784723d3f8822c02_icgraph.png" border="0" usemap="#add/d44/class_service_core_a0ef6520363b7fc1b784723d3f8822c02_icgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a0ef6520363b7fc1b784723d3f8822c02_icgraph" id="add/d44/class_service_core_a0ef6520363b7fc1b784723d3f8822c02_icgraph">
+<area shape="rect" title="初期化処理" alt="" coords="429,5,545,32"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#afaf11f98443c40cdbbf26b91765ccdb2" title="サービスメイン関数からの呼び出しに対応する関数" alt="" coords="255,5,381,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a9dfca7ec3e747016197fa731903c0848" title="サービス関数" alt="" coords="115,5,207,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afaf11f98443c40cdbbf26b91765ccdb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaf11f98443c40cdbbf26b91765ccdb2">&#9670;&nbsp;</a></span>Main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID ServiceCore::Main </td>
+          <td>(</td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwArgc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPTSTR *&#160;</td>
+          <td class="paramname"><em>lptszArgv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>サービスメイン関数からの呼び出しに対応する関数 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dwArgc</td><td>サービスコール時の引数の数 </td></tr>
+    <tr><td class="paramname">lptszArgv</td><td>サービスコール時の引数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>BOOL </dd></dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE(成功)</td><td></td></tr>
+    <tr><td class="paramname">FALSE(失敗)</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">62</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00114">_dwControlCode</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00119">_event</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00120">_logger</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00125">_pService</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00058">EventLogger::ApiError()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00053">CATEGORY_SERVICE_CORE</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00402">Exit()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00250">Init()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00021">EventLogger::Log()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">ReportStatus()</a>, <a class="el" href="../../d6/dc3/_event_8hpp_source.html#l00065">Event::Reset()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00376">Resume()</a>, <a class="el" href="../../d5/ddc/class_i_service.html#af21b7c3f2bc72d219bfb4a6c269f468f">IService::Resume()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00298">Start()</a>, <a class="el" href="../../d5/ddc/class_i_service.html#ad140d101c5890c1780dac10345fdce0c">IService::Start()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00324">Stop()</a>, <a class="el" href="../../d5/ddc/class_i_service.html#ac38a8208e033979944437544abe4b703">IService::Stop()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00350">Suspend()</a>, <a class="el" href="../../d5/ddc/class_i_service.html#a80da758e3abdcd14b457f9f94e6c517b">IService::Suspend()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00310">SVC_ERROR_RUNTIME</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00115">SVC_SUCCESS_RUNTIME</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00111">EventLogger::TraceFinish()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00096">EventLogger::TraceStart()</a>, <a class="el" href="../../d5/ddc/class_i_service.html#a714f878aab3b553c8bee36fc0d4f8063">IService::Wait()</a>, <a class="el" href="../../d6/dc3/_event_8hpp_source.html#l00078">Event::Wait()</a> (計25項目).</p>
+
+<p class="reference">参照元 <a class="el" href="../../d5/dce/_service_application1_2_main_8cpp_source.html#l00058">ServiceMain()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_afaf11f98443c40cdbbf26b91765ccdb2_cgraph.png" border="0" usemap="#add/d44/class_service_core_afaf11f98443c40cdbbf26b91765ccdb2_cgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_afaf11f98443c40cdbbf26b91765ccdb2_cgraph" id="add/d44/class_service_core_afaf11f98443c40cdbbf26b91765ccdb2_cgraph">
+<area shape="rect" title="サービスメイン関数からの呼び出しに対応する関数" alt="" coords="5,592,132,619"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a390cb635df4ba6ed5e68ed2c6226e06e" title="APIエラーのログ出力用" alt="" coords="392,146,540,172"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="848,491,971,518"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a10c56f83231c9e54eeef1906dcb06583" title="終了処理" alt="" coords="194,263,317,290"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="379,643,553,670"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="382,466,550,492"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="385,567,547,594"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a0ef6520363b7fc1b784723d3f8822c02" title="初期化処理" alt="" coords="197,314,313,340"/>
+<area shape="rect" href="../../d1/da9/class_event.html#ade73e0cc906f96ec66ebf7a0c571f15f" title="イベントをリセット(非シグナル状態に)します。" alt="" coords="207,516,303,543"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a077ee6ffbe84d8124911d7765c0e6d98" title="再開処理" alt="" coords="182,466,329,492"/>
+<area shape="rect" href="../../d5/ddc/class_i_service.html#af21b7c3f2bc72d219bfb4a6c269f468f" title="処理再開インターフェース" alt="" coords="194,618,317,644"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a45d87e822ebabe45d2ff99c68183b486" title="開始処理" alt="" coords="192,770,319,796"/>
+<area shape="rect" href="../../d5/ddc/class_i_service.html#ad140d101c5890c1780dac10345fdce0c" title="処理開始インターフェース" alt="" coords="204,719,307,746"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#ac2578abe199956beb40b681a084c1205" title="停止処理" alt="" coords="192,668,319,695"/>
+<area shape="rect" href="../../d5/ddc/class_i_service.html#ac38a8208e033979944437544abe4b703" title="処理終了インターフェース" alt="" coords="204,820,307,847"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a8f933947ef72ced692dadf2323bc8eca" title="中断処理" alt="" coords="180,415,331,442"/>
+<area shape="rect" href="../../d5/ddc/class_i_service.html#a80da758e3abdcd14b457f9f94e6c517b" title="処理中断インターフェース" alt="" coords="192,922,319,948"/>
+<area shape="rect" href="../../d5/ddc/class_i_service.html#a714f878aab3b553c8bee36fc0d4f8063" title="処理終了待機インターフェース" alt="" coords="204,972,307,999"/>
+<area shape="rect" href="../../d1/da9/class_event.html#af4694345529393e773b4f9598fdc064f" title="シグナル状態になるとブロックを解除します。" alt="" coords="211,1023,300,1050"/>
+<area shape="rect" href="../../d1/da9/class_event.html#ac9591c372885864da8b66fa5b5f3488c" title="ハンドルをクローズします。" alt="" coords="419,44,513,71"/>
+<area shape="rect" href="../../d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="601,719,788,746"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="628,668,761,695"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="836,712,983,753"/>
+<area shape="rect" href="../../d1/da9/class_event.html#a465cab85f59d36ef2d4c483dfe7a0cfc" title="イベントを作成します。" alt="" coords="416,263,516,290"/>
+<area shape="rect" href="../../de/dbd/class_service_info.html#a4987a4aa3a243041f789e9b83486ed7c" title="サービス名を取得" alt="" coords="393,364,539,391"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html#a8730c8d1ea75c183c58f211705f3c66e" title="サービス制御関数の登録処理" alt="" coords="393,197,539,238"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_afaf11f98443c40cdbbf26b91765ccdb2_icgraph.png" border="0" usemap="#add/d44/class_service_core_afaf11f98443c40cdbbf26b91765ccdb2_icgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_afaf11f98443c40cdbbf26b91765ccdb2_icgraph" id="add/d44/class_service_core_afaf11f98443c40cdbbf26b91765ccdb2_icgraph">
+<area shape="rect" title="サービスメイン関数からの呼び出しに対応する関数" alt="" coords="255,5,381,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a9dfca7ec3e747016197fa731903c0848" title="サービス関数" alt="" coords="115,5,207,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5e4e1370aec1f7335af3555b92931bec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e4e1370aec1f7335af3555b92931bec">&#9670;&nbsp;</a></span>ReportStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL ServiceCore::ReportStatus </td>
+          <td>(</td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwCurrentState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwWin32ExitCode</em> = <code>NO_ERROR</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwWaitHint</em> = <code><a class="el" href="../../d8/da7/_service_common_8hpp.html#ab755408e363dce5ef273508551b7e3e8">MAX_STATE_TRANSITION_TIME</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>サービスの現在の状態を設定 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dwCurrentState</td><td>これから遷移させるステータス<ul>
+<li>SERVICE_STOPPED(1)</li>
+<li>SERVICE_START_PENDING(2)</li>
+<li>SERVICE_STOP_PENDING(3)</li>
+<li>SERVICE_RUNNING(4)</li>
+<li>SERVICE_CONTINUE_PENDING(5)</li>
+<li>SERVICE_PAUSE_PENDING(6)</li>
+<li>SERVICE_PAUSED(7) </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">dwWin32ExitCode</td><td>サービスが開始または停止しているときに 発生するエラーを報告するために使用する エラーコード </td></tr>
+    <tr><td class="paramname">dwWaitHint</td><td>保留中の開始、停止、一時停止、または継続の 操作に必要な推定時間 (ミリ秒単位) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>BOOL </dd></dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE(成功)</td><td></td></tr>
+    <tr><td class="paramname">FALSE(失敗)</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">439</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00116">_handler</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00120">_logger</a>, <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00117">_status</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00053">CATEGORY_SERVICE_CORE</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00021">EventLogger::Log()</a>, <a class="el" href="../../d8/da7/_service_common_8hpp_source.html#l00037">MAX_MESSAGE_LEN</a>, <a class="el" href="../../d0/ddc/_service_common_8cpp_source.html#l00143">ServiceStatus::ReportStatus()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00325">SVC_ERROR_API</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00126">EventLogger::Trace()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00402">Exit()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00177">Handler()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00250">Init()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">Main()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00376">Resume()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00298">Start()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00324">Stop()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00350">Suspend()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a5e4e1370aec1f7335af3555b92931bec_cgraph.png" border="0" usemap="#add/d44/class_service_core_a5e4e1370aec1f7335af3555b92931bec_cgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a5e4e1370aec1f7335af3555b92931bec_cgraph" id="add/d44/class_service_core_a5e4e1370aec1f7335af3555b92931bec_cgraph">
+<area shape="rect" title="サービスの現在の状態を設定" alt="" coords="5,35,180,61"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="475,5,597,32"/>
+<area shape="rect" href="../../d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="228,85,415,112"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="255,35,388,61"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="463,78,609,119"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a5e4e1370aec1f7335af3555b92931bec_icgraph.png" border="0" usemap="#add/d44/class_service_core_a5e4e1370aec1f7335af3555b92931bec_icgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a5e4e1370aec1f7335af3555b92931bec_icgraph" id="add/d44/class_service_core_a5e4e1370aec1f7335af3555b92931bec_icgraph">
+<area shape="rect" title="サービスの現在の状態を設定" alt="" coords="644,183,819,209"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a10c56f83231c9e54eeef1906dcb06583" title="終了処理" alt="" coords="459,5,582,32"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#afaf11f98443c40cdbbf26b91765ccdb2" title="サービスメイン関数からの呼び出しに対応する関数" alt="" coords="263,183,389,209"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a177b3521bf8fe9fb57decf2bf25fcc78" title="サービス制御関数からの呼び出しに対応する関数" alt="" coords="255,321,397,348"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a0ef6520363b7fc1b784723d3f8822c02" title="初期化処理" alt="" coords="463,107,579,133"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a077ee6ffbe84d8124911d7765c0e6d98" title="再開処理" alt="" coords="447,157,594,184"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a45d87e822ebabe45d2ff99c68183b486" title="開始処理" alt="" coords="457,208,584,235"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#ac2578abe199956beb40b681a084c1205" title="停止処理" alt="" coords="457,259,584,285"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a8f933947ef72ced692dadf2323bc8eca" title="中断処理" alt="" coords="445,309,596,336"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a9dfca7ec3e747016197fa731903c0848" title="サービス関数" alt="" coords="115,233,207,260"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,272,67,299"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#aea68d398ffe5443b9ae1f388a1ae039d" title="サービス制御関数" alt="" coords="117,309,204,336"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a077ee6ffbe84d8124911d7765c0e6d98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077ee6ffbe84d8124911d7765c0e6d98">&#9670;&nbsp;</a></span>Resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL ServiceCore::Resume </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>再開処理 </p>
+<dl class="section return"><dt>戻り値</dt><dd>BOOL </dd></dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE(成功)</td><td></td></tr>
+    <tr><td class="paramname">FALSE(失敗)</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00376">376</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00120">_logger</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00053">CATEGORY_SERVICE_CORE</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00021">EventLogger::Log()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">ReportStatus()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00100">SVC_SUCCESS_SYSTEM</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00111">EventLogger::TraceFinish()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00096">EventLogger::TraceStart()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">Main()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a077ee6ffbe84d8124911d7765c0e6d98_cgraph.png" border="0" usemap="#add/d44/class_service_core_a077ee6ffbe84d8124911d7765c0e6d98_cgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a077ee6ffbe84d8124911d7765c0e6d98_cgraph" id="add/d44/class_service_core_a077ee6ffbe84d8124911d7765c0e6d98_cgraph">
+<area shape="rect" title="再開処理" alt="" coords="5,81,152,108"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="669,107,792,133"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="200,183,375,209"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="432,5,600,32"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="207,56,368,83"/>
+<area shape="rect" href="../../d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="423,259,609,285"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="449,208,583,235"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="657,251,804,293"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a077ee6ffbe84d8124911d7765c0e6d98_icgraph.png" border="0" usemap="#add/d44/class_service_core_a077ee6ffbe84d8124911d7765c0e6d98_icgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a077ee6ffbe84d8124911d7765c0e6d98_icgraph" id="add/d44/class_service_core_a077ee6ffbe84d8124911d7765c0e6d98_icgraph">
+<area shape="rect" title="再開処理" alt="" coords="429,5,576,32"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#afaf11f98443c40cdbbf26b91765ccdb2" title="サービスメイン関数からの呼び出しに対応する関数" alt="" coords="255,5,381,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a9dfca7ec3e747016197fa731903c0848" title="サービス関数" alt="" coords="115,5,207,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a45d87e822ebabe45d2ff99c68183b486"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45d87e822ebabe45d2ff99c68183b486">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL ServiceCore::Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>開始処理 </p>
+<dl class="section return"><dt>戻り値</dt><dd>BOOL </dd></dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE(成功)</td><td></td></tr>
+    <tr><td class="paramname">FALSE(失敗)</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00298">298</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00120">_logger</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00053">CATEGORY_SERVICE_CORE</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00021">EventLogger::Log()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">ReportStatus()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00100">SVC_SUCCESS_SYSTEM</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00111">EventLogger::TraceFinish()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00096">EventLogger::TraceStart()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">Main()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a45d87e822ebabe45d2ff99c68183b486_cgraph.png" border="0" usemap="#add/d44/class_service_core_a45d87e822ebabe45d2ff99c68183b486_cgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a45d87e822ebabe45d2ff99c68183b486_cgraph" id="add/d44/class_service_core_a45d87e822ebabe45d2ff99c68183b486_cgraph">
+<area shape="rect" title="開始処理" alt="" coords="5,81,132,108"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="649,107,772,133"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="180,183,355,209"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="412,5,580,32"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="187,56,348,83"/>
+<area shape="rect" href="../../d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="403,259,589,285"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="429,208,563,235"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="637,251,784,293"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a45d87e822ebabe45d2ff99c68183b486_icgraph.png" border="0" usemap="#add/d44/class_service_core_a45d87e822ebabe45d2ff99c68183b486_icgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a45d87e822ebabe45d2ff99c68183b486_icgraph" id="add/d44/class_service_core_a45d87e822ebabe45d2ff99c68183b486_icgraph">
+<area shape="rect" title="開始処理" alt="" coords="429,5,556,32"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#afaf11f98443c40cdbbf26b91765ccdb2" title="サービスメイン関数からの呼び出しに対応する関数" alt="" coords="255,5,381,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a9dfca7ec3e747016197fa731903c0848" title="サービス関数" alt="" coords="115,5,207,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac2578abe199956beb40b681a084c1205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2578abe199956beb40b681a084c1205">&#9670;&nbsp;</a></span>Stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL ServiceCore::Stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>停止処理 </p>
+<dl class="section return"><dt>戻り値</dt><dd>BOOL </dd></dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE(成功)</td><td></td></tr>
+    <tr><td class="paramname">FALSE(失敗)</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00324">324</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00120">_logger</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00053">CATEGORY_SERVICE_CORE</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00021">EventLogger::Log()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">ReportStatus()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00100">SVC_SUCCESS_SYSTEM</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00111">EventLogger::TraceFinish()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00096">EventLogger::TraceStart()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">Main()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_ac2578abe199956beb40b681a084c1205_cgraph.png" border="0" usemap="#add/d44/class_service_core_ac2578abe199956beb40b681a084c1205_cgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_ac2578abe199956beb40b681a084c1205_cgraph" id="add/d44/class_service_core_ac2578abe199956beb40b681a084c1205_cgraph">
+<area shape="rect" title="停止処理" alt="" coords="5,81,132,108"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="649,107,772,133"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="180,183,355,209"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="412,5,580,32"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="187,56,348,83"/>
+<area shape="rect" href="../../d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="403,259,589,285"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="429,208,563,235"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="637,251,784,293"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_ac2578abe199956beb40b681a084c1205_icgraph.png" border="0" usemap="#add/d44/class_service_core_ac2578abe199956beb40b681a084c1205_icgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_ac2578abe199956beb40b681a084c1205_icgraph" id="add/d44/class_service_core_ac2578abe199956beb40b681a084c1205_icgraph">
+<area shape="rect" title="停止処理" alt="" coords="429,5,556,32"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#afaf11f98443c40cdbbf26b91765ccdb2" title="サービスメイン関数からの呼び出しに対応する関数" alt="" coords="255,5,381,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a9dfca7ec3e747016197fa731903c0848" title="サービス関数" alt="" coords="115,5,207,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8f933947ef72ced692dadf2323bc8eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f933947ef72ced692dadf2323bc8eca">&#9670;&nbsp;</a></span>Suspend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL ServiceCore::Suspend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>中断処理 </p>
+<dl class="section return"><dt>戻り値</dt><dd>BOOL </dd></dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE(成功)</td><td></td></tr>
+    <tr><td class="paramname">FALSE(失敗)</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a> の <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00350">350</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00120">_logger</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00053">CATEGORY_SERVICE_CORE</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00021">EventLogger::Log()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">ReportStatus()</a>, <a class="el" href="../../d7/d18/_service_message_8h_source.html#l00100">SVC_SUCCESS_SYSTEM</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00111">EventLogger::TraceFinish()</a>, <a class="el" href="../../df/d10/_event_logger_8cpp_source.html#l00096">EventLogger::TraceStart()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">Main()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a8f933947ef72ced692dadf2323bc8eca_cgraph.png" border="0" usemap="#add/d44/class_service_core_a8f933947ef72ced692dadf2323bc8eca_cgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a8f933947ef72ced692dadf2323bc8eca_cgraph" id="add/d44/class_service_core_a8f933947ef72ced692dadf2323bc8eca_cgraph">
+<area shape="rect" title="中断処理" alt="" coords="5,81,156,108"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="673,107,796,133"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="204,183,379,209"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="436,5,604,32"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="211,56,372,83"/>
+<area shape="rect" href="../../d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="427,259,613,285"/>
+<area shape="rect" href="../../d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="453,208,587,235"/>
+<area shape="rect" href="../../d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="661,251,808,293"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d44/class_service_core_a8f933947ef72ced692dadf2323bc8eca_icgraph.png" border="0" usemap="#add/d44/class_service_core_a8f933947ef72ced692dadf2323bc8eca_icgraph" alt=""/></div>
+<map name="dd/d44/class_service_core_a8f933947ef72ced692dadf2323bc8eca_icgraph" id="add/d44/class_service_core_a8f933947ef72ced692dadf2323bc8eca_icgraph">
+<area shape="rect" title="中断処理" alt="" coords="429,5,580,32"/>
+<area shape="rect" href="../../dd/d44/class_service_core.html#afaf11f98443c40cdbbf26b91765ccdb2" title="サービスメイン関数からの呼び出しに対応する関数" alt="" coords="255,5,381,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a9dfca7ec3e747016197fa731903c0848" title="サービス関数" alt="" coords="115,5,207,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a8c5e1d00c90d46afb19fec2daa9ec0d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c5e1d00c90d46afb19fec2daa9ec0d3">&#9670;&nbsp;</a></span>_dwControlCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD ServiceCore::_dwControlCode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>サービス制御関数からの制御コード </p>
+
+<p class="definition"> <a class="el" href="../../d7/d9b/_service_core_8h_source.html">ServiceCore.h</a> の <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00114">114</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00009">ServiceCore()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00177">Handler()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">Main()</a>.</p>
+
+</div>
+</div>
+<a id="ae8ca7278ce34087f9d74d882c4fac162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ca7278ce34087f9d74d882c4fac162">&#9670;&nbsp;</a></span>_event</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/da9/class_event.html">Event</a> ServiceCore::_event</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d9b/_service_core_8h_source.html">ServiceCore.h</a> の <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00119">119</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00402">Exit()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00177">Handler()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00250">Init()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">Main()</a>.</p>
+
+</div>
+</div>
+<a id="a81777e0c3da616e0beb7acec7713efd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81777e0c3da616e0beb7acec7713efd4">&#9670;&nbsp;</a></span>_fnHandler</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LPHANDLER_FUNCTION ServiceCore::_fnHandler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>サービス制御関数 </p>
+
+<p class="definition"> <a class="el" href="../../d7/d9b/_service_core_8h_source.html">ServiceCore.h</a> の <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00123">123</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00009">ServiceCore()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00022">Entry()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00250">Init()</a>.</p>
+
+</div>
+</div>
+<a id="ae4d42f3c45ddcb15bd1cf23cc9db00f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4d42f3c45ddcb15bd1cf23cc9db00f9">&#9670;&nbsp;</a></span>_handler</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dfa/class_service_status_handler.html">ServiceStatusHandler</a> ServiceCore::_handler</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d9b/_service_core_8h_source.html">ServiceCore.h</a> の <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00116">116</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00250">Init()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">ReportStatus()</a>.</p>
+
+</div>
+</div>
+<a id="aae53470c7eb0ac1c093dfc104473e404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae53470c7eb0ac1c093dfc104473e404">&#9670;&nbsp;</a></span>_logger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d91/class_event_logger.html">EventLogger</a>&amp; ServiceCore::_logger</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d9b/_service_core_8h_source.html">ServiceCore.h</a> の <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00120">120</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00022">Entry()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00402">Exit()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00177">Handler()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00250">Init()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">Main()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">ReportStatus()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00376">Resume()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00298">Start()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00324">Stop()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00350">Suspend()</a>.</p>
+
+</div>
+</div>
+<a id="ac7c6db1d2cc8819bb55b2fe92822b697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7c6db1d2cc8819bb55b2fe92822b697">&#9670;&nbsp;</a></span>_pService</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/ddc/class_i_service.html">IService</a>* ServiceCore::_pService</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d9b/_service_core_8h_source.html">ServiceCore.h</a> の <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00125">125</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00009">ServiceCore()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00022">Entry()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00062">Main()</a>.</p>
+
+</div>
+</div>
+<a id="aceeef86a7218d662cf4a1bb8276bfe3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceeef86a7218d662cf4a1bb8276bfe3b">&#9670;&nbsp;</a></span>_pSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dbd/class_service_info.html">ServiceInfo</a>* ServiceCore::_pSI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d9b/_service_core_8h_source.html">ServiceCore.h</a> の <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00126">126</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00009">ServiceCore()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00022">Entry()</a>, <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00250">Init()</a>.</p>
+
+</div>
+</div>
+<a id="a5a38d30b9e44a566ce5e6ba5faece84d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a38d30b9e44a566ce5e6ba5faece84d">&#9670;&nbsp;</a></span>_status</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/dbd/class_service_status.html">ServiceStatus</a> ServiceCore::_status</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d7/d9b/_service_core_8h_source.html">ServiceCore.h</a> の <a class="el" href="../../d7/d9b/_service_core_8h_source.html#l00117">117</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d3/d19/_service_core_8cpp_source.html#l00439">ReportStatus()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>ServiceLogics/<a class="el" href="../../d7/d9b/_service_core_8h_source.html">ServiceCore.h</a></li>
+<li>ServiceLogics/<a class="el" href="../../d3/d19/_service_core_8cpp_source.html">ServiceCore.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dd/d44/class_service_core.html">ServiceCore</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

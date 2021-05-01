@@ -1,0 +1,543 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: Svc/Svc.cpp ファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d2/dc2/_svc_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle">
+<div class="title">Svc.cpp ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;windows.h&gt;</code><br />
+<code>#include &lt;tchar.h&gt;</code><br />
+<code>#include &lt;strsafe.h&gt;</code><br />
+<code>#include &quot;sample.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Svc.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d64/_svc_8cpp__incl.png" border="0" usemap="#a_svc_2_svc_8cpp" alt=""/></div>
+<map name="_svc_2_svc_8cpp" id="a_svc_2_svc_8cpp">
+<area shape="rect" title=" " alt="" coords="143,5,236,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,88,107"/>
+<area shape="rect" title=" " alt="" coords="113,80,175,107"/>
+<area shape="rect" title=" " alt="" coords="200,80,272,107"/>
+<area shape="rect" title=" " alt="" coords="296,80,371,107"/>
+</map>
+</div>
+</div>
+<p><a href="../../d2/dc2/_svc_8cpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a1c23f913719dd0f24a8f77500c6a5a44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc2/_svc_8cpp.html#a1c23f913719dd0f24a8f77500c6a5a44">SVCNAME</a>&#160;&#160;&#160;TEXT(&quot;SvcName&quot;)</td></tr>
+<tr class="separator:a1c23f913719dd0f24a8f77500c6a5a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a30117fb6ea485f0d04c2281fc7138714"><td class="memItemLeft" align="right" valign="top">int __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc2/_svc_8cpp.html#a30117fb6ea485f0d04c2281fc7138714">_tmain</a> (int argc, TCHAR *argv[])</td></tr>
+<tr class="separator:a30117fb6ea485f0d04c2281fc7138714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae799aa37771b6dfaa738f4c7a985e20d"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc2/_svc_8cpp.html#ae799aa37771b6dfaa738f4c7a985e20d">ReportSvcStatus</a> (DWORD, DWORD, DWORD)</td></tr>
+<tr class="separator:ae799aa37771b6dfaa738f4c7a985e20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d66032c9dbb36f15e4ab879f321bec"><td class="memItemLeft" align="right" valign="top">VOID WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc2/_svc_8cpp.html#a05d66032c9dbb36f15e4ab879f321bec">SvcCtrlHandler</a> (DWORD)</td></tr>
+<tr class="separator:a05d66032c9dbb36f15e4ab879f321bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc2/_svc_8cpp.html#a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8">SvcInit</a> (DWORD, LPTSTR *)</td></tr>
+<tr class="separator:a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa62bc0d3fc0aba63a46ccc17fa5ace"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc2/_svc_8cpp.html#a0aa62bc0d3fc0aba63a46ccc17fa5ace">SvcInstall</a> (void)</td></tr>
+<tr class="separator:a0aa62bc0d3fc0aba63a46ccc17fa5ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad22574d77bb8f7affd01d401295f19a0"><td class="memItemLeft" align="right" valign="top">VOID WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc2/_svc_8cpp.html#ad22574d77bb8f7affd01d401295f19a0">SvcMain</a> (DWORD, LPTSTR *)</td></tr>
+<tr class="separator:ad22574d77bb8f7affd01d401295f19a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ebd77b3a5c8a51b1b09ad7d27f2558"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc2/_svc_8cpp.html#a98ebd77b3a5c8a51b1b09ad7d27f2558">SvcReportEvent</a> (LPTSTR)</td></tr>
+<tr class="separator:a98ebd77b3a5c8a51b1b09ad7d27f2558"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a9297976e5137d094660ad256e135831e"><td class="memItemLeft" align="right" valign="top">HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc2/_svc_8cpp.html#a9297976e5137d094660ad256e135831e">ghSvcStopEvent</a> = NULL</td></tr>
+<tr class="separator:a9297976e5137d094660ad256e135831e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9855c4e5f003cef1cd62b82a2a15c4ad"><td class="memItemLeft" align="right" valign="top">SERVICE_STATUS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc2/_svc_8cpp.html#a9855c4e5f003cef1cd62b82a2a15c4ad">gSvcStatus</a></td></tr>
+<tr class="separator:a9855c4e5f003cef1cd62b82a2a15c4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade800af1634b67d914ee6dc8b67311ed"><td class="memItemLeft" align="right" valign="top">SERVICE_STATUS_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc2/_svc_8cpp.html#ade800af1634b67d914ee6dc8b67311ed">gSvcStatusHandle</a></td></tr>
+<tr class="separator:ade800af1634b67d914ee6dc8b67311ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a1c23f913719dd0f24a8f77500c6a5a44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c23f913719dd0f24a8f77500c6a5a44">&#9670;&nbsp;</a></span>SVCNAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SVCNAME&#160;&#160;&#160;TEXT(&quot;SvcName&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/dc2/_svc_8cpp_source.html">Svc.cpp</a> の <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00008">8</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a30117fb6ea485f0d04c2281fc7138714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30117fb6ea485f0d04c2281fc7138714">&#9670;&nbsp;</a></span>_tmain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int __cdecl _tmain </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TCHAR *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/dc2/_svc_8cpp_source.html">Svc.cpp</a> の <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00033">33</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00070">SvcInstall()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00137">SvcMain()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00008">SVCNAME</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00304">SvcReportEvent()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dc2/_svc_8cpp_a30117fb6ea485f0d04c2281fc7138714_cgraph.png" border="0" usemap="#ad2/dc2/_svc_8cpp_a30117fb6ea485f0d04c2281fc7138714_cgraph" alt=""/></div>
+<map name="d2/dc2/_svc_8cpp_a30117fb6ea485f0d04c2281fc7138714_cgraph" id="ad2/dc2/_svc_8cpp_a30117fb6ea485f0d04c2281fc7138714_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,67,108"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a0aa62bc0d3fc0aba63a46ccc17fa5ace" title=" " alt="" coords="115,30,192,57"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#ad22574d77bb8f7affd01d401295f19a0" title=" " alt="" coords="118,81,189,108"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a98ebd77b3a5c8a51b1b09ad7d27f2558" title=" " alt="" coords="240,132,353,158"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#ae799aa37771b6dfaa738f4c7a985e20d" title=" " alt="" coords="401,30,520,57"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a05d66032c9dbb36f15e4ab879f321bec" title=" " alt="" coords="243,30,350,57"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8" title=" " alt="" coords="267,81,327,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae799aa37771b6dfaa738f4c7a985e20d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae799aa37771b6dfaa738f4c7a985e20d">&#9670;&nbsp;</a></span>ReportSvcStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID ReportSvcStatus </td>
+          <td>(</td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwCurrentState</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwWin32ExitCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwWaitHint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/dc2/_svc_8cpp_source.html">Svc.cpp</a> の <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00230">230</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00010">gSvcStatus</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00011">gSvcStatusHandle</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00266">SvcCtrlHandler()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00178">SvcInit()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00137">SvcMain()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dc2/_svc_8cpp_ae799aa37771b6dfaa738f4c7a985e20d_icgraph.png" border="0" usemap="#ad2/dc2/_svc_8cpp_ae799aa37771b6dfaa738f4c7a985e20d_icgraph" alt=""/></div>
+<map name="d2/dc2/_svc_8cpp_ae799aa37771b6dfaa738f4c7a985e20d_icgraph" id="ad2/dc2/_svc_8cpp_ae799aa37771b6dfaa738f4c7a985e20d_icgraph">
+<area shape="rect" title=" " alt="" coords="388,56,507,83"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a05d66032c9dbb36f15e4ab879f321bec" title=" " alt="" coords="233,5,340,32"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#ad22574d77bb8f7affd01d401295f19a0" title=" " alt="" coords="115,56,185,83"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8" title=" " alt="" coords="257,107,317,133"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a30117fb6ea485f0d04c2281fc7138714" title=" " alt="" coords="5,56,67,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a05d66032c9dbb36f15e4ab879f321bec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d66032c9dbb36f15e4ab879f321bec">&#9670;&nbsp;</a></span>SvcCtrlHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID WINAPI SvcCtrlHandler </td>
+          <td>(</td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwCtrl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/dc2/_svc_8cpp_source.html">Svc.cpp</a> の <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00266">266</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00012">ghSvcStopEvent</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00010">gSvcStatus</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00230">ReportSvcStatus()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00137">SvcMain()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dc2/_svc_8cpp_a05d66032c9dbb36f15e4ab879f321bec_cgraph.png" border="0" usemap="#ad2/dc2/_svc_8cpp_a05d66032c9dbb36f15e4ab879f321bec_cgraph" alt=""/></div>
+<map name="d2/dc2/_svc_8cpp_a05d66032c9dbb36f15e4ab879f321bec_cgraph" id="ad2/dc2/_svc_8cpp_a05d66032c9dbb36f15e4ab879f321bec_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,112,32"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#ae799aa37771b6dfaa738f4c7a985e20d" title=" " alt="" coords="160,5,279,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dc2/_svc_8cpp_a05d66032c9dbb36f15e4ab879f321bec_icgraph.png" border="0" usemap="#ad2/dc2/_svc_8cpp_a05d66032c9dbb36f15e4ab879f321bec_icgraph" alt=""/></div>
+<map name="d2/dc2/_svc_8cpp_a05d66032c9dbb36f15e4ab879f321bec_icgraph" id="ad2/dc2/_svc_8cpp_a05d66032c9dbb36f15e4ab879f321bec_icgraph">
+<area shape="rect" title=" " alt="" coords="233,5,340,32"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#ad22574d77bb8f7affd01d401295f19a0" title=" " alt="" coords="115,5,185,32"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a30117fb6ea485f0d04c2281fc7138714" title=" " alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8">&#9670;&nbsp;</a></span>SvcInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SvcInit </td>
+          <td>(</td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwArgc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPTSTR *&#160;</td>
+          <td class="paramname"><em>lpszArgv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/dc2/_svc_8cpp_source.html">Svc.cpp</a> の <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00178">178</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00012">ghSvcStopEvent</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00230">ReportSvcStatus()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00137">SvcMain()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dc2/_svc_8cpp_a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8_cgraph.png" border="0" usemap="#ad2/dc2/_svc_8cpp_a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8_cgraph" alt=""/></div>
+<map name="d2/dc2/_svc_8cpp_a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8_cgraph" id="ad2/dc2/_svc_8cpp_a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,65,32"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#ae799aa37771b6dfaa738f4c7a985e20d" title=" " alt="" coords="113,5,232,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dc2/_svc_8cpp_a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8_icgraph.png" border="0" usemap="#ad2/dc2/_svc_8cpp_a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8_icgraph" alt=""/></div>
+<map name="d2/dc2/_svc_8cpp_a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8_icgraph" id="ad2/dc2/_svc_8cpp_a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8_icgraph">
+<area shape="rect" title=" " alt="" coords="233,5,293,32"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#ad22574d77bb8f7affd01d401295f19a0" title=" " alt="" coords="115,5,185,32"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a30117fb6ea485f0d04c2281fc7138714" title=" " alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0aa62bc0d3fc0aba63a46ccc17fa5ace"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aa62bc0d3fc0aba63a46ccc17fa5ace">&#9670;&nbsp;</a></span>SvcInstall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SvcInstall </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/dc2/_svc_8cpp_source.html">Svc.cpp</a> の <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00070">70</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../dd/de3/_svc_control_8cpp_source.html#l00012">schSCManager</a>, <a class="el" href="../../dd/de3/_svc_control_8cpp_source.html#l00013">schService</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00008">SVCNAME</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00033">_tmain()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dc2/_svc_8cpp_a0aa62bc0d3fc0aba63a46ccc17fa5ace_icgraph.png" border="0" usemap="#ad2/dc2/_svc_8cpp_a0aa62bc0d3fc0aba63a46ccc17fa5ace_icgraph" alt=""/></div>
+<map name="d2/dc2/_svc_8cpp_a0aa62bc0d3fc0aba63a46ccc17fa5ace_icgraph" id="ad2/dc2/_svc_8cpp_a0aa62bc0d3fc0aba63a46ccc17fa5ace_icgraph">
+<area shape="rect" title=" " alt="" coords="115,5,192,32"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a30117fb6ea485f0d04c2281fc7138714" title=" " alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad22574d77bb8f7affd01d401295f19a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad22574d77bb8f7affd01d401295f19a0">&#9670;&nbsp;</a></span>SvcMain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID WINAPI SvcMain </td>
+          <td>(</td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwArgc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPTSTR *&#160;</td>
+          <td class="paramname"><em>lpszArgv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/dc2/_svc_8cpp_source.html">Svc.cpp</a> の <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00137">137</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00010">gSvcStatus</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00011">gSvcStatusHandle</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00230">ReportSvcStatus()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00266">SvcCtrlHandler()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00178">SvcInit()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00008">SVCNAME</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00304">SvcReportEvent()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00033">_tmain()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dc2/_svc_8cpp_ad22574d77bb8f7affd01d401295f19a0_cgraph.png" border="0" usemap="#ad2/dc2/_svc_8cpp_ad22574d77bb8f7affd01d401295f19a0_cgraph" alt=""/></div>
+<map name="d2/dc2/_svc_8cpp_ad22574d77bb8f7affd01d401295f19a0_cgraph" id="ad2/dc2/_svc_8cpp_ad22574d77bb8f7affd01d401295f19a0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,51,76,77"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#ae799aa37771b6dfaa738f4c7a985e20d" title=" " alt="" coords="285,25,404,52"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a05d66032c9dbb36f15e4ab879f321bec" title=" " alt="" coords="127,25,234,52"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8" title=" " alt="" coords="151,76,211,103"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a98ebd77b3a5c8a51b1b09ad7d27f2558" title=" " alt="" coords="124,127,237,153"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dc2/_svc_8cpp_ad22574d77bb8f7affd01d401295f19a0_icgraph.png" border="0" usemap="#ad2/dc2/_svc_8cpp_ad22574d77bb8f7affd01d401295f19a0_icgraph" alt=""/></div>
+<map name="d2/dc2/_svc_8cpp_ad22574d77bb8f7affd01d401295f19a0_icgraph" id="ad2/dc2/_svc_8cpp_ad22574d77bb8f7affd01d401295f19a0_icgraph">
+<area shape="rect" title=" " alt="" coords="115,5,185,32"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a30117fb6ea485f0d04c2281fc7138714" title=" " alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a98ebd77b3a5c8a51b1b09ad7d27f2558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ebd77b3a5c8a51b1b09ad7d27f2558">&#9670;&nbsp;</a></span>SvcReportEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SvcReportEvent </td>
+          <td>(</td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>szFunction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/dc2/_svc_8cpp_source.html">Svc.cpp</a> の <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00304">304</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../dd/d42/_sample_8h_source.html#l00053">SVC_ERROR</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00008">SVCNAME</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00033">_tmain()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00137">SvcMain()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dc2/_svc_8cpp_a98ebd77b3a5c8a51b1b09ad7d27f2558_icgraph.png" border="0" usemap="#ad2/dc2/_svc_8cpp_a98ebd77b3a5c8a51b1b09ad7d27f2558_icgraph" alt=""/></div>
+<map name="d2/dc2/_svc_8cpp_a98ebd77b3a5c8a51b1b09ad7d27f2558_icgraph" id="ad2/dc2/_svc_8cpp_a98ebd77b3a5c8a51b1b09ad7d27f2558_icgraph">
+<area shape="rect" title=" " alt="" coords="233,5,347,32"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#a30117fb6ea485f0d04c2281fc7138714" title=" " alt="" coords="5,5,67,32"/>
+<area shape="rect" href="../../d2/dc2/_svc_8cpp.html#ad22574d77bb8f7affd01d401295f19a0" title=" " alt="" coords="115,31,185,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="a9297976e5137d094660ad256e135831e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9297976e5137d094660ad256e135831e">&#9670;&nbsp;</a></span>ghSvcStopEvent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE ghSvcStopEvent = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/dc2/_svc_8cpp_source.html">Svc.cpp</a> の <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00012">12</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00266">SvcCtrlHandler()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00178">SvcInit()</a>.</p>
+
+</div>
+</div>
+<a id="a9855c4e5f003cef1cd62b82a2a15c4ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9855c4e5f003cef1cd62b82a2a15c4ad">&#9670;&nbsp;</a></span>gSvcStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SERVICE_STATUS gSvcStatus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/dc2/_svc_8cpp_source.html">Svc.cpp</a> の <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00010">10</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00230">ReportSvcStatus()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00266">SvcCtrlHandler()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00137">SvcMain()</a>.</p>
+
+</div>
+</div>
+<a id="ade800af1634b67d914ee6dc8b67311ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade800af1634b67d914ee6dc8b67311ed">&#9670;&nbsp;</a></span>gSvcStatusHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SERVICE_STATUS_HANDLE gSvcStatusHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d2/dc2/_svc_8cpp_source.html">Svc.cpp</a> の <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00011">11</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00230">ReportSvcStatus()</a>, <a class="el" href="../../d2/dc2/_svc_8cpp_source.html#l00137">SvcMain()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_5a5011284398685ffa1265751a46ea1a.html">Svc</a></li><li class="navelem"><a class="el" href="../../d2/dc2/_svc_8cpp.html">Svc.cpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

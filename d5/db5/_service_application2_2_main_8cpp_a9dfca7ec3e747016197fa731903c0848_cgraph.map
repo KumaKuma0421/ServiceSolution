@@ -1,0 +1,29 @@
+<map id="ServiceMain" name="ServiceMain">
+<area shape="rect" id="node1" title="サービス関数" alt="" coords="5,592,97,619"/>
+<area shape="rect" id="node2" href="$dd/d44/class_service_core.html#afaf11f98443c40cdbbf26b91765ccdb2" title="サービスメイン関数からの呼び出しに対応する関数" alt="" coords="145,592,272,619"/>
+<area shape="rect" id="node3" href="$d8/d91/class_event_logger.html#a390cb635df4ba6ed5e68ed2c6226e06e" title="APIエラーのログ出力用" alt="" coords="532,146,680,172"/>
+<area shape="rect" id="node4" href="$d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="988,491,1111,518"/>
+<area shape="rect" id="node5" href="$dd/d44/class_service_core.html#a10c56f83231c9e54eeef1906dcb06583" title="終了処理" alt="" coords="334,263,457,290"/>
+<area shape="rect" id="node7" href="$dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="519,643,693,670"/>
+<area shape="rect" id="node11" href="$d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="522,466,690,492"/>
+<area shape="rect" id="node12" href="$d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="525,567,687,594"/>
+<area shape="rect" id="node13" href="$dd/d44/class_service_core.html#a0ef6520363b7fc1b784723d3f8822c02" title="初期化処理" alt="" coords="337,314,453,340"/>
+<area shape="rect" id="node17" href="$d1/da9/class_event.html#ade73e0cc906f96ec66ebf7a0c571f15f" title="イベントをリセット(非シグナル状態に)します。" alt="" coords="347,516,443,543"/>
+<area shape="rect" id="node18" href="$dd/d44/class_service_core.html#a077ee6ffbe84d8124911d7765c0e6d98" title="再開処理" alt="" coords="322,466,469,492"/>
+<area shape="rect" id="node19" href="$d5/ddc/class_i_service.html#af21b7c3f2bc72d219bfb4a6c269f468f" title="処理再開インターフェース" alt="" coords="334,618,457,644"/>
+<area shape="rect" id="node20" href="$dd/d44/class_service_core.html#a45d87e822ebabe45d2ff99c68183b486" title="開始処理" alt="" coords="332,770,459,796"/>
+<area shape="rect" id="node21" href="$d5/ddc/class_i_service.html#ad140d101c5890c1780dac10345fdce0c" title="処理開始インターフェース" alt="" coords="344,719,447,746"/>
+<area shape="rect" id="node22" href="$dd/d44/class_service_core.html#ac2578abe199956beb40b681a084c1205" title="停止処理" alt="" coords="332,668,459,695"/>
+<area shape="rect" id="node23" href="$d5/ddc/class_i_service.html#ac38a8208e033979944437544abe4b703" title="処理終了インターフェース" alt="" coords="344,820,447,847"/>
+<area shape="rect" id="node24" href="$dd/d44/class_service_core.html#a8f933947ef72ced692dadf2323bc8eca" title="中断処理" alt="" coords="320,415,471,442"/>
+<area shape="rect" id="node25" href="$d5/ddc/class_i_service.html#a80da758e3abdcd14b457f9f94e6c517b" title="処理中断インターフェース" alt="" coords="332,922,459,948"/>
+<area shape="rect" id="node26" href="$d5/ddc/class_i_service.html#a714f878aab3b553c8bee36fc0d4f8063" title="処理終了待機インターフェース" alt="" coords="344,972,447,999"/>
+<area shape="rect" id="node27" href="$d1/da9/class_event.html#af4694345529393e773b4f9598fdc064f" title="シグナル状態になるとブロックを解除します。" alt="" coords="351,1023,440,1050"/>
+<area shape="rect" id="node6" href="$d1/da9/class_event.html#ac9591c372885864da8b66fa5b5f3488c" title="ハンドルをクローズします。" alt="" coords="559,44,653,71"/>
+<area shape="rect" id="node8" href="$d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="741,719,928,746"/>
+<area shape="rect" id="node10" href="$d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="768,668,901,695"/>
+<area shape="rect" id="node9" href="$d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="976,712,1123,753"/>
+<area shape="rect" id="node14" href="$d1/da9/class_event.html#a465cab85f59d36ef2d4c483dfe7a0cfc" title="イベントを作成します。" alt="" coords="556,263,656,290"/>
+<area shape="rect" id="node15" href="$de/dbd/class_service_info.html#a4987a4aa3a243041f789e9b83486ed7c" title="サービス名を取得" alt="" coords="533,364,679,391"/>
+<area shape="rect" id="node16" href="$d4/dfa/class_service_status_handler.html#a8730c8d1ea75c183c58f211705f3c66e" title="サービス制御関数の登録処理" alt="" coords="533,197,679,238"/>
+</map>

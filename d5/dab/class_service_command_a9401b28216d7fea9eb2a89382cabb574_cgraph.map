@@ -1,0 +1,11 @@
+<map id="ServiceCommand::StopDependentServices" name="ServiceCommand::StopDependentServices">
+<area shape="rect" id="node1" title="このサービスに依存しているサービスの停止処理" alt="" coords="5,150,225,191"/>
+<area shape="rect" id="node2" href="$d1/d69/class_service_handler.html#a82b249089271ffb76a008c4c2feb0343" title="クローズ処理" alt="" coords="292,5,441,32"/>
+<area shape="rect" id="node3" href="$d1/d69/class_service_handler.html#a64e8d5b544fc28fe04a5ebd4b8b1ccc2" title="ハンドル取得" alt="" coords="278,56,455,83"/>
+<area shape="rect" id="node4" href="$d5/d0b/class_service_control.html#ab1034729db0814bb0ff0ae01d23ee202" title="このサービスに紐づくSCMのハンドルを取得" alt="" coords="275,107,459,133"/>
+<area shape="rect" id="node5" href="$d5/d0b/class_service_control.html#a1944ec3b59c35839aa6539506aeeb57f" title="サービスのオープン" alt="" coords="295,157,439,184"/>
+<area shape="rect" id="node6" href="$d0/ddc/_service_common_8cpp.html#a8b8a254d92aa12af09217d7d20fa00ab" title="メッセージをコンソールに出力します。" alt="" coords="315,208,418,235"/>
+<area shape="rect" id="node7" href="$d5/d0b/class_service_control.html#aaf58bfedac72f89fd3da24af9a6a7ca8" title="サービスの状態取得" alt="" coords="273,259,460,285"/>
+<area shape="rect" id="node9" href="$d5/d0b/class_service_control.html#a7d0721a48ef9db310979ed351c4ee3a8" title="サービスの停止" alt="" coords="297,309,437,336"/>
+<area shape="rect" id="node8" href="$d5/d0b/class_service_control.html#a21c564956c73bc6b8cfd4ebe6a4d8d83" title="サービスの状態取得" alt="" coords="508,259,711,285"/>
+</map>

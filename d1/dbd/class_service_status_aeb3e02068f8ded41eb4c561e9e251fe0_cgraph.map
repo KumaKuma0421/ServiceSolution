@@ -1,0 +1,4 @@
+<map id="ServiceStatus::ReportStatus" name="ServiceStatus::ReportStatus">
+<area shape="rect" id="node1" title="サービスの現在の状態を設定" alt="" coords="5,13,192,39"/>
+<area shape="rect" id="node2" href="$d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="240,5,387,47"/>
+</map>

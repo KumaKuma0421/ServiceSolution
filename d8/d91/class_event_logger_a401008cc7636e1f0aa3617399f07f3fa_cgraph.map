@@ -1,0 +1,4 @@
+<map id="EventLogger::Trace" name="EventLogger::Trace">
+<area shape="rect" id="node1" title="汎用トレースログ出力用" alt="" coords="5,5,139,32"/>
+<area shape="rect" id="node2" href="$d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="187,5,309,32"/>
+</map>

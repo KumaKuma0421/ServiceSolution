@@ -1,0 +1,6 @@
+<map id="ServiceControl" name="ServiceControl">
+<area shape="rect" id="node1" title="個別のサービスを管理するクラス" alt="" coords="55,536,249,819"/>
+<area shape="rect" id="node2" href="$d1/d69/class_service_handler.html" title="SC_HANDLERを扱うクラスのスーパークラス" alt="" coords="5,5,141,127"/>
+<area shape="rect" id="node4" href="$d0/d5e/class_service_control_manager.html" title="サービスコントロールマネージャ(SCM)の操作用クラス" alt="" coords="75,286,229,363"/>
+<area shape="rect" id="node3" href="$de/dbd/class_service_info.html" title="サービス情報クラス" alt="" coords="254,176,429,473"/>
+</map>

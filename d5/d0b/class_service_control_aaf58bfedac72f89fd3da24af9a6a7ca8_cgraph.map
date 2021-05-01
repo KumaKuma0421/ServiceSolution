@@ -1,0 +1,4 @@
+<map id="ServiceControl::QueryStatus" name="ServiceControl::QueryStatus">
+<area shape="rect" id="node1" title="サービスの状態取得" alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node2" href="$d5/d0b/class_service_control.html#a21c564956c73bc6b8cfd4ebe6a4d8d83" title="サービスの状態取得" alt="" coords="240,5,443,32"/>
+</map>

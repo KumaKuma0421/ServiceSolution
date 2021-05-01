@@ -1,0 +1,4 @@
+<map id="ServiceCommand::ShowCurrentStatus" name="ServiceCommand::ShowCurrentStatus">
+<area shape="rect" id="node1" title="現在のサービスステータスを出力します。" alt="" coords="5,5,211,47"/>
+<area shape="rect" id="node2" href="$d0/ddc/_service_common_8cpp.html#a8b8a254d92aa12af09217d7d20fa00ab" title="メッセージをコンソールに出力します。" alt="" coords="259,13,361,39"/>
+</map>

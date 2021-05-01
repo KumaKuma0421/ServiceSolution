@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: ServiceLogics/ServiceCommon.cpp ファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d0/ddc/_service_common_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">ServiceCommon.cpp ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>サービス制御クラスを集約したファイル  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d4/d07/_service_logics_2pch_8h_source.html">pch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/da7/_service_common_8hpp_source.html">ServiceCommon.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ServiceCommon.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/dca/_service_common_8cpp__incl.png" border="0" usemap="#a_service_logics_2_service_common_8cpp" alt=""/></div>
+<map name="_service_logics_2_service_common_8cpp" id="a_service_logics_2_service_common_8cpp">
+<area shape="rect" title="サービス制御クラスを集約したファイル" alt="" coords="311,5,536,32"/>
+<area shape="rect" href="../../d4/d07/_service_logics_2pch_8h.html" title="プリコンパイル済みヘッダー ファイルです。" alt="" coords="391,229,445,256"/>
+<area shape="rect" href="../../d8/da7/_service_common_8hpp.html" title="サービス制御クラスを集約したファイル" alt="" coords="407,80,549,107"/>
+<area shape="rect" href="../../d6/d29/framework_8h.html" title="このプロジェクトのポーティングに関する情報" alt="" coords="372,304,464,331"/>
+<area shape="rect" title=" " alt="" coords="5,379,92,405"/>
+<area shape="rect" title=" " alt="" coords="116,379,179,405"/>
+<area shape="rect" title=" " alt="" coords="203,379,273,405"/>
+<area shape="rect" title=" " alt="" coords="298,379,397,405"/>
+<area shape="rect" title=" " alt="" coords="421,379,559,405"/>
+<area shape="rect" title=" " alt="" coords="583,379,650,405"/>
+<area shape="rect" title=" " alt="" coords="674,379,743,405"/>
+<area shape="rect" title=" " alt="" coords="768,379,844,405"/>
+<area shape="rect" href="../../d3/d1a/_service_info_8h.html" title="サービス情報クラス" alt="" coords="419,155,513,181"/>
+</map>
+</div>
+</div>
+<p><a href="../../d0/ddc/_service_common_8cpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a8b8a254d92aa12af09217d7d20fa00ab"><td class="memItemLeft" align="right" valign="top">VOID WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/ddc/_service_common_8cpp.html#a8b8a254d92aa12af09217d7d20fa00ab">PrintMessage</a> (LPCTSTR lpctszMessage, DWORD dwErrorCode, LPCTSTR lpctszOption)</td></tr>
+<tr class="memdesc:a8b8a254d92aa12af09217d7d20fa00ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">メッセージをコンソールに出力します。  <a href="../../d0/ddc/_service_common_8cpp.html#a8b8a254d92aa12af09217d7d20fa00ab">[詳解]</a><br /></td></tr>
+<tr class="separator:a8b8a254d92aa12af09217d7d20fa00ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>サービス制御クラスを集約したファイル </p>
+<dl class="section author"><dt>著者</dt><dd><a href="#" onclick="location.href='mai'+'lto:'+'kum'+'ak'+'uma'+'04'+'21@'+'gm'+'ail'+'.c'+'om'; return false;">kumak<span style="display: none;">.nosp@m.</span>uma0<span style="display: none;">.nosp@m.</span>421@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a> </dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2021.4.29 </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d0/ddc/_service_common_8cpp_source.html">ServiceCommon.cpp</a> に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a8b8a254d92aa12af09217d7d20fa00ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b8a254d92aa12af09217d7d20fa00ab">&#9670;&nbsp;</a></span>PrintMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID WINAPI PrintMessage </td>
+          <td>(</td>
+          <td class="paramtype">LPCTSTR&#160;</td>
+          <td class="paramname"><em>lpctszMessage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwErrorCode</em> = <code>GetLastError()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCTSTR&#160;</td>
+          <td class="paramname"><em>lpctszOption</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>メッセージをコンソールに出力します。 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lpctszMessage</td><td>出力するメッセージ </td></tr>
+    <tr><td class="paramname">dwErrorCode</td><td>GetLastError()の出力地 </td></tr>
+    <tr><td class="paramname">lpctszOption</td><td>追加のメッセージ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd><br  />
+ </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d0/ddc/_service_common_8cpp_source.html">ServiceCommon.cpp</a> の <a class="el" href="../../d0/ddc/_service_common_8cpp_source.html#l00009">9</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00508">ServiceCommand::ChangeConfig2DelayedAutoStart()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00487">ServiceCommand::ChangeConfig2Description()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00016">ServiceCommand::Command()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00455">ServiceCommand::Disable()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00419">ServiceCommand::Enable()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00068">ServiceCommand::Install()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00400">ServiceCommand::Remove()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00689">ServiceCommand::ShowCurrentStatus()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00527">ServiceCommand::Start()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00271">ServiceCommand::Status()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00572">ServiceCommand::Stop()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00727">ServiceCommand::StopDependentServices()</a>, <a class="el" href="../../d7/d80/_service_command_8cpp_source.html#l00624">ServiceCommand::TemplateAction()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/ddc/_service_common_8cpp_a8b8a254d92aa12af09217d7d20fa00ab_icgraph.png" border="0" usemap="#ad0/ddc/_service_common_8cpp_a8b8a254d92aa12af09217d7d20fa00ab_icgraph" alt=""/></div>
+<map name="d0/ddc/_service_common_8cpp_a8b8a254d92aa12af09217d7d20fa00ab_icgraph" id="ad0/ddc/_service_common_8cpp_a8b8a254d92aa12af09217d7d20fa00ab_icgraph">
+<area shape="rect" title="メッセージをコンソールに出力します。" alt="" coords="888,272,991,299"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#adb2281b8acc5ae097060ee6238580dfc" title="自動(遅延）を設定" alt="" coords="353,40,572,81"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#aca51fe36ba5620d2ce143b324b23072c" title="コマンド処理のエントリー関数" alt="" coords="115,247,305,274"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#ae44c05a975611a488e2a69ddc665551b" title="サービスの説明文言を変更" alt="" coords="353,105,572,146"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a63bdf8c2dbbe32909fb1ae5eeec7154c" title="サービスの無効化" alt="" coords="375,171,550,198"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a786b1ec61b1f7f44ada34ff78836dd80" title="自動開始/手動開始を設定" alt="" coords="377,222,548,248"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a6cd22a5653232d4414388142f175a2a6" title="サービスのインストール処理" alt="" coords="380,272,545,299"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a503f246d749a81e0e6a28413cdfee917" title="サービスの削除処理" alt="" coords="374,323,551,350"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a55065b0fb3fac09a671411945dd743d8" title="現在のサービスステータスを出力します。" alt="" coords="627,484,833,525"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#aeae1bd08cf2ce42c722d4976f30d5c6b" title="サービスの開始" alt="" coords="383,428,542,455"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a9f87084cfeec504c6e0560670765ea5d" title="サービスの終了" alt="" coords="383,491,542,518"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#abee6dc910a1f35e59789e9cdfdd9caf5" title="サービスの状態表示" alt="" coords="378,374,547,400"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a9401b28216d7fea9eb2a89382cabb574" title="このサービスに依存しているサービスの停止処理" alt="" coords="620,549,840,590"/>
+<area shape="rect" href="../../d5/dab/class_service_command.html#a1b16f038ff452c39c9f4e13af91c4e11" title="コマンド操作のプロローグとエピローグ" alt="" coords="638,265,822,306"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,247,67,274"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_c743f16faffac54afbe845f2f43d11d8.html">ServiceLogics</a></li><li class="navelem"><a class="el" href="../../d0/ddc/_service_common_8cpp.html">ServiceCommon.cpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

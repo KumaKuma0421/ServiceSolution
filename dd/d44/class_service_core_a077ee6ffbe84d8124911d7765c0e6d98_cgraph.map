@@ -1,0 +1,10 @@
+<map id="ServiceCore::Resume" name="ServiceCore::Resume">
+<area shape="rect" id="node1" title="再開処理" alt="" coords="5,81,152,108"/>
+<area shape="rect" id="node2" href="$d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="669,107,792,133"/>
+<area shape="rect" id="node3" href="$dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="200,183,375,209"/>
+<area shape="rect" id="node7" href="$d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="432,5,600,32"/>
+<area shape="rect" id="node8" href="$d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="207,56,368,83"/>
+<area shape="rect" id="node4" href="$d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="423,259,609,285"/>
+<area shape="rect" id="node6" href="$d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="449,208,583,235"/>
+<area shape="rect" id="node5" href="$d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="657,251,804,293"/>
+</map>

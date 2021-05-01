@@ -1,0 +1,5 @@
+<map id="Service1::Stop" name="Service1::Stop">
+<area shape="rect" id="node1" title="サービスを停止します。" alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node2" href="$d8/d18/class_thread.html#a54dadf4f4f2cec215873f06d5775c734" title="スレッドの停止" alt="" coords="160,5,256,32"/>
+<area shape="rect" id="node3" href="$d1/da9/class_event.html#a7eaa87a5df5f8c9180d5aa10faf8e668" title="イベントをセット(シグナル状態に)します。" alt="" coords="304,5,387,32"/>
+</map>

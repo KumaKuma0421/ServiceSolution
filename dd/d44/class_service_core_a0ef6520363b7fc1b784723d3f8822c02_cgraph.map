@@ -1,0 +1,14 @@
+<map id="ServiceCore::Init" name="ServiceCore::Init">
+<area shape="rect" id="node1" title="初期化処理" alt="" coords="5,183,121,209"/>
+<area shape="rect" id="node2" href="$d8/d91/class_event_logger.html#a390cb635df4ba6ed5e68ed2c6226e06e" title="APIエラーのログ出力用" alt="" coords="411,107,559,133"/>
+<area shape="rect" id="node3" href="$d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657" title="汎用的なログ出力処理" alt="" coords="639,132,761,159"/>
+<area shape="rect" id="node4" href="$d1/da9/class_event.html#a465cab85f59d36ef2d4c483dfe7a0cfc" title="イベントを作成します。" alt="" coords="207,259,307,285"/>
+<area shape="rect" id="node5" href="$de/dbd/class_service_info.html#a4987a4aa3a243041f789e9b83486ed7c" title="サービス名を取得" alt="" coords="183,309,330,336"/>
+<area shape="rect" id="node6" href="$d4/dfa/class_service_status_handler.html#a8730c8d1ea75c183c58f211705f3c66e" title="サービス制御関数の登録処理" alt="" coords="183,361,330,402"/>
+<area shape="rect" id="node7" href="$dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec" title="サービスの現在の状態を設定" alt="" coords="169,208,344,235"/>
+<area shape="rect" id="node11" href="$d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e" title="処理終了ログ出力用" alt="" coords="401,5,569,32"/>
+<area shape="rect" id="node12" href="$d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a" title="処理開始ログ出力用" alt="" coords="405,157,566,184"/>
+<area shape="rect" id="node8" href="$d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0" title="サービスの現在の状態を設定" alt="" coords="392,309,579,336"/>
+<area shape="rect" id="node10" href="$d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa" title="汎用トレースログ出力用" alt="" coords="419,208,552,235"/>
+<area shape="rect" id="node9" href="$d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25" title="サービス制御関数登録時のハンドルを取得" alt="" coords="627,302,773,343"/>
+</map>
