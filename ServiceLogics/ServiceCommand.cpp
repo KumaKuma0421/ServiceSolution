@@ -96,6 +96,7 @@ BOOL ServiceCommand::Install()
 
 	BOOL ret;
 	HKEY hKeyRoot = HKEY_LOCAL_MACHINE;
+	RegistryValueTypes eType;
 	BOOL bFirstSetting = FALSE;
 
 	do
@@ -105,7 +106,7 @@ BOOL ServiceCommand::Install()
 		ret = registry1.Open(hKeyRoot, LOG_ROOT);
 		if (!ret)
 		{
-			ret = registry1.Create(hKeyRoot, LOG_ROOT, FALSE);
+			ret = registry1.Create(hKeyRoot, LOG_ROOT);
 			if (!ret)
 			{
 				PrintMessage(ERROR_REGISTRY_REGISTER, GetLastError(), LOG_ROOT);
@@ -117,7 +118,7 @@ BOOL ServiceCommand::Install()
 
 		DWORD dwMaxSize = 0;
 
-		ret = registry1.QueryValue(ENTRY_MAX_SIZE, RegistryValueTypes::DWORD, (LPBYTE)&dwMaxSize, sizeof(dwMaxSize));
+		ret = registry1.QueryValue(ENTRY_MAX_SIZE, eType, (LPBYTE)&dwMaxSize, sizeof(dwMaxSize));
 		if (!ret || dwMaxSize != LOG_MAX_SIZE)
 		{
 			dwMaxSize = LOG_MAX_SIZE;
@@ -133,7 +134,7 @@ BOOL ServiceCommand::Install()
 
 		DWORD dwRetention = 0xFFFFFFFF;
 
-		ret = registry1.QueryValue(ENTRY_RETENTION, RegistryValueTypes::DWORD, (LPBYTE)&dwRetention, sizeof(dwRetention));
+		ret = registry1.QueryValue(ENTRY_RETENTION, eType, (LPBYTE)&dwRetention, sizeof(dwRetention));
 		if (!ret || dwRetention != LOG_RETENTION)
 		{
 			dwRetention = LOG_RETENTION;
@@ -149,7 +150,7 @@ BOOL ServiceCommand::Install()
 
 		TCHAR tszFile[MAX_PATH] = { 0 };
 
-		ret = registry1.QueryValue(ENTRY_FILE, RegistryValueTypes::EXPAND_SZ, (LPBYTE)tszFile, MAX_PATH * sizeof(TCHAR));
+		ret = registry1.QueryValue(ENTRY_FILE, eType, (LPBYTE)tszFile, MAX_PATH * sizeof(TCHAR));
 		if (!ret || _tcscmp(tszFile, LOG_FILE) != 0)
 		{
 			ret = registry1.SetValue(ENTRY_FILE, RegistryValueTypes::EXPAND_SZ, (LPBYTE)LOG_FILE, (DWORD)(_tcslen(LOG_FILE) * sizeof(TCHAR)));
@@ -203,7 +204,7 @@ BOOL ServiceCommand::Install()
 
 		DWORD dwCategoryCount = 0;
 
-		ret = registry2.QueryValue(ENTRY_CATEGORY_COUNT, RegistryValueTypes::DWORD, (LPBYTE)&dwCategoryCount, sizeof(dwCategoryCount));
+		ret = registry2.QueryValue(ENTRY_CATEGORY_COUNT, eType, (LPBYTE)&dwCategoryCount, sizeof(dwCategoryCount));
 		if (!ret || dwCategoryCount != EVENT_CATEGORY_COUNT)
 		{
 			dwCategoryCount = EVENT_CATEGORY_COUNT;
@@ -217,7 +218,7 @@ BOOL ServiceCommand::Install()
 
 		DWORD dwTypesSupported = 0;
 
-		ret = registry2.QueryValue(ENTRY_TYPES_SUPPORTED, RegistryValueTypes::DWORD, (LPBYTE)&dwTypesSupported, sizeof(dwTypesSupported));
+		ret = registry2.QueryValue(ENTRY_TYPES_SUPPORTED, eType, (LPBYTE)&dwTypesSupported, sizeof(dwTypesSupported));
 		if (!ret || dwTypesSupported != EVENT_TYPES_SUPPORTED)
 		{
 			dwTypesSupported = EVENT_TYPES_SUPPORTED;
@@ -230,11 +231,12 @@ BOOL ServiceCommand::Install()
 		}
 
 		TCHAR tszRequiredFilePath[MAX_PATH] = { 0 };
+		TCHAR tszCategoryMessageFile[MAX_PATH] = { 0 };
+		TCHAR tszEventMessageFile[MAX_PATH] = { 0 };
+
 		wsprintf(tszRequiredFilePath, _T("%s\\%s"), _si.GetWorkDirectory(), EVENT_CATEGORY_MESSAGE_FILE);
 
-		TCHAR tszCategoryMessageFile[MAX_PATH] = { 0 };
-
-		ret = registry2.QueryValue(ENTRY_CATEGORY_MESSAGE_FILE, RegistryValueTypes::SZ, (LPBYTE)tszCategoryMessageFile, (DWORD)(sizeof(tszCategoryMessageFile)));
+		ret = registry2.QueryValue(ENTRY_CATEGORY_MESSAGE_FILE, eType, (LPBYTE)tszCategoryMessageFile, (DWORD)(sizeof(tszCategoryMessageFile)));
 		if (!ret || _tcscmp(tszCategoryMessageFile, tszRequiredFilePath) != 0)
 		{
 			ret = registry2.SetValue(ENTRY_CATEGORY_MESSAGE_FILE, RegistryValueTypes::SZ, (LPBYTE)tszRequiredFilePath, (DWORD)(_tcslen(tszRequiredFilePath) * sizeof(TCHAR)));
@@ -245,9 +247,9 @@ BOOL ServiceCommand::Install()
 			}
 		}
 
-		TCHAR tszEventMessageFile[MAX_PATH] = { 0 };
+		wsprintf(tszRequiredFilePath, _T("%s\\%s"), _si.GetWorkDirectory(), EVENT_EVENT_MESSAGE_FILE);
 
-		ret = registry2.QueryValue(ENTRY_EVENT_MESSAGE_FILE, RegistryValueTypes::SZ, (LPBYTE)tszEventMessageFile, (DWORD(sizeof(tszEventMessageFile))));
+		ret = registry2.QueryValue(ENTRY_EVENT_MESSAGE_FILE, eType, (LPBYTE)tszEventMessageFile, (DWORD(sizeof(tszEventMessageFile))));
 		if (!ret || _tcscmp(tszEventMessageFile, tszRequiredFilePath) != 0)
 		{
 			ret = registry2.SetValue(ENTRY_EVENT_MESSAGE_FILE, RegistryValueTypes::SZ, (LPBYTE)tszRequiredFilePath, (DWORD)(_tcslen(tszRequiredFilePath) * sizeof(TCHAR)));

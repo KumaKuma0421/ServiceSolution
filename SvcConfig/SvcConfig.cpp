@@ -408,7 +408,7 @@ VOID __stdcall DoDeleteSvc()
 {
     SC_HANDLE schSCManager;
     SC_HANDLE schService;
-    SERVICE_STATUS ssStatus; 
+    //SERVICE_STATUS ssStatus; commented by me.
 
     // Get a handle to the SCM database. 
  

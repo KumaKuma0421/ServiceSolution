@@ -1,3 +1,4 @@
+//! @file   Registry.cpp
 //! @brief  レジストリに関するWindowsAPIを集約したクラス
 //! @author kumakuma0421@gmail.com
 //! @date   2021.03.28
@@ -5,18 +6,18 @@
 #include "pch.h"
 #include "Registry.h"
 
-alt::Registry::Registry()
+Registry::Registry()
 {
     _hkRoot = nullptr;
     _hkTarget = nullptr;
 }
 
-alt::Registry::~Registry()
+Registry::~Registry()
 {
     if (_hkTarget != nullptr) Close();
 }
 
-BOOL alt::Registry::Create(HKEY hkRoot, LPCTSTR lpctszSubKey, BOOL bVoratile)
+BOOL Registry::Create(HKEY hkRoot, LPCTSTR lpctszSubKey, BOOL bVoratile)
 {
     LSTATUS ret;
     DWORD dwReserved = 0;
@@ -46,11 +47,10 @@ BOOL alt::Registry::Create(HKEY hkRoot, LPCTSTR lpctszSubKey, BOOL bVoratile)
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
 
-BOOL alt::Registry::Open(HKEY hkRoot, LPCTSTR lpctszSubKey)
+BOOL Registry::Open(HKEY hkRoot, LPCTSTR lpctszSubKey, REGSAM samDesired)
 {
     LSTATUS ret;
     DWORD dwOptions = 0;
-    REGSAM samDesired = KEY_ALL_ACCESS;
 
     ret = ::RegOpenKeyEx(
         hkRoot,
@@ -67,7 +67,7 @@ BOOL alt::Registry::Open(HKEY hkRoot, LPCTSTR lpctszSubKey)
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
 
-BOOL alt::Registry::Query()
+BOOL Registry::Query()
 {
     LSTATUS ret;
 
@@ -211,14 +211,14 @@ BOOL alt::Registry::Query()
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
 
-BOOL alt::Registry::QueryValue(
+BOOL Registry::QueryValue(
     LPCTSTR lpctszEntry,
-    alt::RegistryValueTypes eType,
+    RegistryValueTypes& eType,
     LPBYTE lpbyData,
     DWORD dwDataLen)
 {
     LSTATUS ret;
-    DWORD dwType = (DWORD)eType;
+    DWORD dwType = 0;
     LPDWORD lpdwReserved = nullptr;
 
     ret = ::RegQueryValueEx(
@@ -229,12 +229,14 @@ BOOL alt::Registry::QueryValue(
         lpbyData,
         &dwDataLen);
 
+    if (ret == ERROR_SUCCESS) eType = (RegistryValueTypes)dwType;
+
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
 
-BOOL alt::Registry::SetValue(
+BOOL Registry::SetValue(
     LPCTSTR lpctszEntry,
-    alt::RegistryValueTypes eType,
+    RegistryValueTypes eType,
     LPBYTE lpbyData,
     DWORD dwDataLen)
 {
@@ -253,14 +255,14 @@ BOOL alt::Registry::SetValue(
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
 
-BOOL alt::Registry::DeleteTree(LPCTSTR lpctszSubKey)
+BOOL Registry::DeleteTree(LPCTSTR lpctszSubKey)
 {
     LSTATUS ret = ::RegDeleteTree(_hkTarget, lpctszSubKey);
 
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
 
-BOOL alt::Registry::DeleteKey(LPCTSTR lpctszSubKey)
+BOOL Registry::DeleteKey(LPCTSTR lpctszSubKey)
 {
     REGSAM samDesired = 0;
     DWORD dwReserved = 0;
@@ -270,23 +272,24 @@ BOOL alt::Registry::DeleteKey(LPCTSTR lpctszSubKey)
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
 
-BOOL alt::Registry::DeleteValue(LPCTSTR lpctszEntry)
+BOOL Registry::DeleteValue(LPCTSTR lpctszEntry)
 {
     LSTATUS ret = ::RegDeleteValue(_hkTarget, lpctszEntry);
 
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
 
-BOOL alt::Registry::Flush()
+BOOL Registry::Flush()
 {
     LSTATUS ret = ::RegFlushKey(_hkTarget);
 
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
 
-BOOL alt::Registry::Close()
+BOOL Registry::Close()
 {
     LSTATUS ret = ::RegCloseKey(_hkTarget);
+    _hkTarget = nullptr;
 
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }

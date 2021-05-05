@@ -47,11 +47,10 @@ BOOL Registry::Create(HKEY hkRoot, LPCTSTR lpctszSubKey, BOOL bVoratile)
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
 
-BOOL Registry::Open(HKEY hkRoot, LPCTSTR lpctszSubKey)
+BOOL Registry::Open(HKEY hkRoot, LPCTSTR lpctszSubKey, REGSAM samDesired)
 {
     LSTATUS ret;
     DWORD dwOptions = 0;
-    REGSAM samDesired = KEY_ALL_ACCESS;
 
     ret = ::RegOpenKeyEx(
         hkRoot,
@@ -214,12 +213,12 @@ BOOL Registry::Query()
 
 BOOL Registry::QueryValue(
     LPCTSTR lpctszEntry,
-    RegistryValueTypes eType,
+    RegistryValueTypes& eType,
     LPBYTE lpbyData,
     DWORD dwDataLen)
 {
     LSTATUS ret;
-    DWORD dwType = (DWORD)eType;
+    DWORD dwType = 0;
     LPDWORD lpdwReserved = nullptr;
 
     ret = ::RegQueryValueEx(
@@ -229,6 +228,8 @@ BOOL Registry::QueryValue(
         &dwType,
         lpbyData,
         &dwDataLen);
+
+    if (ret == ERROR_SUCCESS) eType = (RegistryValueTypes)dwType;
 
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
@@ -288,6 +289,7 @@ BOOL Registry::Flush()
 BOOL Registry::Close()
 {
     LSTATUS ret = ::RegCloseKey(_hkTarget);
+    _hkTarget = nullptr;
 
     return ret == ERROR_SUCCESS ? TRUE : FALSE;
 }
