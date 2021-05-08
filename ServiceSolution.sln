@@ -29,11 +29,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MessageResource1", "Message
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MessageDriver1", "MessageDriver1\MessageDriver1.vcxproj", "{780225EC-CBD9-4F23-95D3-9D3ACF19D1B1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EventViewerTest", "EventViewerTest\EventViewerTest.vcxproj", "{4F333AA1-79A3-4E9D-89E6-6B1623569989}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3E29FEFA-CC8E-4ED1-A029-C2D993835486} = {3E29FEFA-CC8E-4ED1-A029-C2D993835486}
-	EndProjectSection
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceMessage", "ServiceMessage\ServiceMessage.vcxproj", "{3E29FEFA-CC8E-4ED1-A029-C2D993835486}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceLogics", "ServiceLogics\ServiceLogics.vcxproj", "{D19FDF64-4DD3-46B2-BECC-B475D9B097D3}"
@@ -60,6 +55,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doxygen", "Doxygen", "{F262
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServiceLogicsDummy", "ServiceLogicsDummy\ServiceLogicsDummy.vcxproj", "{1C50228B-8F30-4013-ABBA-33B704068BAC}"
 	ProjectSection(ProjectDependencies) = postProject
+		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3} = {D19FDF64-4DD3-46B2-BECC-B475D9B097D3}
 		{3E29FEFA-CC8E-4ED1-A029-C2D993835486} = {3E29FEFA-CC8E-4ED1-A029-C2D993835486}
 	EndProjectSection
 EndProject
@@ -73,6 +69,11 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Registry", "Registry\Registry.vcxproj", "{988437DA-F7B6-4AF5-9592-E202892109D2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EventLogDump", "EventLogDump\EventLogDump.vcxproj", "{332F459D-D8A7-4A0D-A4A8-D684FF4F26B8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D19FDF64-4DD3-46B2-BECC-B475D9B097D3} = {D19FDF64-4DD3-46B2-BECC-B475D9B097D3}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EventViewerSample", "EventViewerSample\EventViewerSample.vcxproj", "{4F333AA1-79A3-4E9D-89E6-6B1623569989}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,10 +109,6 @@ Global
 		{780225EC-CBD9-4F23-95D3-9D3ACF19D1B1}.Debug|x64.Build.0 = Debug|x64
 		{780225EC-CBD9-4F23-95D3-9D3ACF19D1B1}.Release|x64.ActiveCfg = Release|x64
 		{780225EC-CBD9-4F23-95D3-9D3ACF19D1B1}.Release|x64.Build.0 = Release|x64
-		{4F333AA1-79A3-4E9D-89E6-6B1623569989}.Debug|x64.ActiveCfg = Debug|x64
-		{4F333AA1-79A3-4E9D-89E6-6B1623569989}.Debug|x64.Build.0 = Debug|x64
-		{4F333AA1-79A3-4E9D-89E6-6B1623569989}.Release|x64.ActiveCfg = Release|x64
-		{4F333AA1-79A3-4E9D-89E6-6B1623569989}.Release|x64.Build.0 = Release|x64
 		{3E29FEFA-CC8E-4ED1-A029-C2D993835486}.Debug|x64.ActiveCfg = Debug|x64
 		{3E29FEFA-CC8E-4ED1-A029-C2D993835486}.Debug|x64.Build.0 = Debug|x64
 		{3E29FEFA-CC8E-4ED1-A029-C2D993835486}.Release|x64.ActiveCfg = Release|x64
@@ -144,6 +141,10 @@ Global
 		{332F459D-D8A7-4A0D-A4A8-D684FF4F26B8}.Debug|x64.Build.0 = Debug|x64
 		{332F459D-D8A7-4A0D-A4A8-D684FF4F26B8}.Release|x64.ActiveCfg = Release|x64
 		{332F459D-D8A7-4A0D-A4A8-D684FF4F26B8}.Release|x64.Build.0 = Release|x64
+		{4F333AA1-79A3-4E9D-89E6-6B1623569989}.Debug|x64.ActiveCfg = Debug|x64
+		{4F333AA1-79A3-4E9D-89E6-6B1623569989}.Debug|x64.Build.0 = Debug|x64
+		{4F333AA1-79A3-4E9D-89E6-6B1623569989}.Release|x64.ActiveCfg = Release|x64
+		{4F333AA1-79A3-4E9D-89E6-6B1623569989}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

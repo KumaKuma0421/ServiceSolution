@@ -9,39 +9,47 @@ Searching for dot files...
 Searching for msc files...
 Searching for dia files...
 Searching for files to exclude
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/EventViewerTest
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/EventViewerTest/x64
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/EventViewerTest/x64/Debug
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/EventViewerTest/x64/Debug/EventViewerTest.tlog
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ConsoleApplication1
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ConsoleApplication1/x64
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ConsoleApplication1/x64/Debug
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ConsoleApplication1/x64/Debug/ConsoleA.7912faa0.tlog
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/EventViewerSample
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/EventViewerSample/x64
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/EventViewerSample/x64/Debug
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/EventViewerSample/x64/Debug/EventVie.4f333aa1.tlog
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageDriver1
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageDriver1/x64
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageDriver1/x64/Debug
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageDriver1/x64/Debug/MessageDriver1.tlog
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageResource0
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/RegistryAccess
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/RegistryAccess/x64
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/RegistryAccess/x64/Debug
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/RegistryAccess/x64/Debug/RegistryAccess.tlog
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ConsoleApplication1
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ConsoleApplication1/x64
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ConsoleApplication1/x64/Debug
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ConsoleApplication1/x64/Debug/ConsoleA.7912faa0.tlog
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageResource1
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageResource1/x64
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageResource1/x64/Debug
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageResource1/x64/Debug/MessageResource1.tlog
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceApplicationDummy
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceApplicationDummy/x64
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceApplicationDummy/x64/Debug
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceApplicationDummy/x64/Debug/ServiceA.f7c09ab0.tlog
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceLogicsDummy
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceLogicsDummy/x64
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceLogicsDummy/x64/Debug
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceLogicsDummy/x64/Debug/ServiceL.1c50228b.tlog
 Searching INPUT for files to process...
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ConsoleApplication1
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/Doxygen
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/EventViewerTest
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/EventLogDump
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/EventViewerSample
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageDriver1
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageResource0
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/MessageResource1
-Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/RegistryAccess
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/Monitoring1
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/Registry
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceApplication1
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceApplication2
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceApplicationDummy
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceLogics
+Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceLogicsDummy
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/ServiceMessage
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/Svc
 Searching for files in directory C:/Users/User01/source/repos/ServiceSolution/SvcConfig
@@ -64,6 +72,30 @@ Preprocessing C:/Users/User01/source/repos/ServiceSolution/Doxygen/SvcConfig.dox
 Parsing file C:/Users/User01/source/repos/ServiceSolution/Doxygen/SvcConfig.dox...
 Preprocessing C:/Users/User01/source/repos/ServiceSolution/Doxygen/SvcControl.dox...
 Parsing file C:/Users/User01/source/repos/ServiceSolution/Doxygen/SvcControl.dox...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/EventLogDump/Main.cpp...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/EventLogDump/Main.cpp...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/EventLogDump/Main.h...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/EventLogDump/Main.h...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/EventLogDump/pch.cpp...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/EventLogDump/pch.cpp...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/EventLogDump/pch.h...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/EventLogDump/pch.h...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/Monitoring1/Monitoring1.cpp...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/Monitoring1/Monitoring1.cpp...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/Monitoring1/PerformanceMonitor.cpp...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/Monitoring1/PerformanceMonitor.cpp...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/Monitoring1/PerformanceMonitor.h...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/Monitoring1/PerformanceMonitor.h...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/Registry/Main.cpp...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/Registry/Main.cpp...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/Registry/pch.cpp...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/Registry/pch.cpp...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/Registry/pch.h...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/Registry/pch.h...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/Registry/Registry.cpp...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/Registry/Registry.cpp...
+Preprocessing C:/Users/User01/source/repos/ServiceSolution/Registry/Registry.h...
+Parsing file C:/Users/User01/source/repos/ServiceSolution/Registry/Registry.h...
 Preprocessing C:/Users/User01/source/repos/ServiceSolution/ServiceApplication1/Main.cpp...
 Parsing file C:/Users/User01/source/repos/ServiceSolution/ServiceApplication1/Main.cpp...
 Preprocessing C:/Users/User01/source/repos/ServiceSolution/ServiceApplication1/Main.h...
@@ -215,16 +247,30 @@ Parsing code for file Doxygen/ServiceMessage.dox...
 Parsing code for file Doxygen/Svc.dox...
 Parsing code for file Doxygen/SvcConfig.dox...
 Parsing code for file Doxygen/SvcControl.dox...
+Generating code for file EventLogDump/Main.cpp...
+Generating code for file Registry/Main.cpp...
 Generating code for file ServiceApplication1/Main.cpp...
 Generating code for file ServiceApplication2/Main.cpp...
+Generating code for file EventLogDump/Main.h...
 Generating code for file ServiceApplication1/Main.h...
 Generating code for file ServiceApplication2/Main.h...
+Generating code for file EventLogDump/pch.cpp...
+Generating code for file Registry/pch.cpp...
 Generating code for file ServiceApplication1/pch.cpp...
 Generating code for file ServiceApplication2/pch.cpp...
 Generating code for file ServiceLogics/pch.cpp...
+Generating code for file EventLogDump/pch.h...
+Generating code for file Registry/pch.h...
 Generating code for file ServiceApplication1/pch.h...
 Generating code for file ServiceApplication2/pch.h...
 Generating code for file ServiceLogics/pch.h...
+Generating code for file Monitoring1/Monitoring1.cpp...
+Generating code for file Monitoring1/PerformanceMonitor.cpp...
+Generating code for file Monitoring1/PerformanceMonitor.h...
+Generating code for file Registry/Registry.cpp...
+Generating code for file ServiceLogics/Registry.cpp...
+Generating code for file Registry/Registry.h...
+Generating code for file ServiceLogics/Registry.h...
 Generating code for file ServiceApplication1/resource.h...
 Generating code for file ServiceApplication2/resource.h...
 Generating code for file ServiceApplication1/Service1.cpp...
@@ -237,8 +283,6 @@ Generating code for file ServiceLogics/EventLogger.cpp...
 Generating code for file ServiceLogics/EventLogger.h...
 Generating code for file ServiceLogics/framework.h...
 Generating code for file ServiceLogics/IService.h...
-Generating code for file ServiceLogics/Registry.cpp...
-Generating code for file ServiceLogics/Registry.h...
 Generating code for file ServiceLogics/ServiceCommand.cpp...
 Generating code for file ServiceLogics/ServiceCommand.h...
 Generating code for file ServiceLogics/ServiceCommon.cpp...
@@ -269,13 +313,38 @@ Generating docs for file Doxygen/ServiceMessage.dox...
 Generating docs for file Doxygen/Svc.dox...
 Generating docs for file Doxygen/SvcConfig.dox...
 Generating docs for file Doxygen/SvcControl.dox...
+Generating docs for file EventLogDump/Main.cpp...
+Generating call graph for function ApplyParameterStringsToMessage
+Generating caller graph for function ApplyParameterStringsToMessage
+Generating call graph for function DumpRecordsInBuffer
+Generating caller graph for function DumpRecordsInBuffer
+Generating caller graph for function GetEventTypeName
+Generating caller graph for function GetMessageResources
+Generating caller graph for function GetMessageString
+Generating call graph for function GetResourceFiles
+Generating caller graph for function GetResourceFiles
+Generating caller graph for function GetTimeStamp
+Generating docs for file Registry/Main.cpp...
+Generating call graph for function _tmain
 Generating docs for file ServiceApplication1/Main.cpp...
+Generating call graph for function _tmain
 Generating caller graph for function CtrlHandler
 Generating caller graph for function ServiceMain
 Generating docs for file ServiceApplication2/Main.cpp...
 Generating call graph for function _tmain
 Generating call graph for function CtrlHandler
 Generating call graph for function ServiceMain
+Generating docs for file EventLogDump/Main.h...
+Generating call graph for function ApplyParameterStringsToMessage
+Generating caller graph for function ApplyParameterStringsToMessage
+Generating call graph for function DumpRecordsInBuffer
+Generating caller graph for function DumpRecordsInBuffer
+Generating caller graph for function GetEventTypeName
+Generating caller graph for function GetMessageResources
+Generating caller graph for function GetMessageString
+Generating call graph for function GetResourceFiles
+Generating caller graph for function GetResourceFiles
+Generating caller graph for function GetTimeStamp
 Generating docs for file ServiceApplication1/Main.h...
 Generating docs for file ServiceApplication2/Main.h...
 Generating call graph for function _tmain
@@ -283,12 +352,26 @@ Generating call graph for function CtrlHandler
 Generating caller graph for function CtrlHandler
 Generating call graph for function ServiceMain
 Generating caller graph for function ServiceMain
+Generating docs for file EventLogDump/pch.cpp...
+Generating docs for file Registry/pch.cpp...
 Generating docs for file ServiceApplication1/pch.cpp...
 Generating docs for file ServiceApplication2/pch.cpp...
 Generating docs for file ServiceLogics/pch.cpp...
+Generating docs for file EventLogDump/pch.h...
+Generating docs for file Registry/pch.h...
 Generating docs for file ServiceApplication1/pch.h...
 Generating docs for file ServiceApplication2/pch.h...
 Generating docs for file ServiceLogics/pch.h...
+Generating docs for file Monitoring1/Monitoring1.cpp...
+Generating call graph for function main
+Generating call graph for function ShowCounter
+Generating caller graph for function ShowCounter
+Generating docs for file Monitoring1/PerformanceMonitor.cpp...
+Generating docs for file Monitoring1/PerformanceMonitor.h...
+Generating docs for file Registry/Registry.cpp...
+Generating docs for file ServiceLogics/Registry.cpp...
+Generating docs for file Registry/Registry.h...
+Generating docs for file ServiceLogics/Registry.h...
 Generating docs for file ServiceApplication1/resource.h...
 Generating docs for file ServiceApplication2/resource.h...
 Generating docs for file ServiceApplication1/Service1.cpp...
@@ -301,8 +384,6 @@ Generating docs for file ServiceLogics/EventLogger.cpp...
 Generating docs for file ServiceLogics/EventLogger.h...
 Generating docs for file ServiceLogics/framework.h...
 Generating docs for file ServiceLogics/IService.h...
-Generating docs for file ServiceLogics/Registry.cpp...
-Generating docs for file ServiceLogics/Registry.h...
 Generating docs for file ServiceLogics/ServiceCommand.cpp...
 Generating docs for file ServiceLogics/ServiceCommand.h...
 Generating docs for file ServiceLogics/ServiceCommon.cpp...
@@ -383,11 +464,29 @@ Generating caller graph for function IService::Start
 Generating caller graph for function IService::Stop
 Generating caller graph for function IService::Suspend
 Generating caller graph for function IService::Wait
+Generating docs for compound PerformanceCounter...
+Generating call graph for function PerformanceCounter::PerformanceCounter
+Generating caller graph for function PerformanceCounter::GetTitleLength
+Generating caller graph for function PerformanceCounter::GetValues
+Generating call graph for function PerformanceCounter::OutputFile
+Generating call graph for function PerformanceCounter::OutputString
+Generating caller graph for function PerformanceCounter::ParseInformation
+Generating docs for compound PerformanceMonitor...
+Generating caller graph for function PerformanceMonitor::Close
+Generating caller graph for function PerformanceMonitor::CreateCounter
+Generating caller graph for function PerformanceMonitor::Open
+Generating caller graph for function PerformanceMonitor::Query
 Generating docs for compound Registry...
 Generating call graph for function Registry::~Registry
 Generating caller graph for function Registry::Close
 Generating caller graph for function Registry::Create
+Generating caller graph for function Registry::DeleteKey
+Generating caller graph for function Registry::DeleteTree
+Generating caller graph for function Registry::DeleteValue
+Generating caller graph for function Registry::Flush
+Generating caller graph for function Registry::GetKey
 Generating caller graph for function Registry::Open
+Generating caller graph for function Registry::Query
 Generating caller graph for function Registry::QueryValue
 Generating caller graph for function Registry::SetValue
 Generating docs for compound Service1...
@@ -497,6 +596,7 @@ Generating caller graph for function Thread::Wait
 Generating namespace index...
 Generating graph info page...
 Generating directory documentation...
+Generating dependency graph for directory EventLogDump
 Generating dependency graph for directory ServiceApplication1
 Generating dependency graph for directory ServiceApplication2
 Generating dependency graph for directory ServiceLogics
@@ -518,305 +618,382 @@ writing tag file...
 Running plantuml with JAVA...
 Running dot...
 Generating dot graphs using 5 parallel threads...
-Running dot for graph 1/244
-Running dot for graph 2/244
-Running dot for graph 3/244
-Running dot for graph 4/244
-Running dot for graph 5/244
-Running dot for graph 6/244
-Running dot for graph 7/244
-Running dot for graph 8/244
-Running dot for graph 9/244
-Running dot for graph 10/244
-Running dot for graph 11/244
-Running dot for graph 12/244
-Running dot for graph 13/244
-Running dot for graph 14/244
-Running dot for graph 15/244
-Running dot for graph 16/244
-Running dot for graph 17/244
-Running dot for graph 18/244
-Running dot for graph 19/244
-Running dot for graph 20/244
-Running dot for graph 21/244
-Running dot for graph 22/244
-Running dot for graph 23/244
-Running dot for graph 24/244
-Running dot for graph 25/244
-Running dot for graph 26/244
-Running dot for graph 27/244
-Running dot for graph 28/244
-Running dot for graph 29/244
-Running dot for graph 30/244
-Running dot for graph 31/244
-Running dot for graph 32/244
-Running dot for graph 33/244
-Running dot for graph 34/244
-Running dot for graph 35/244
-Running dot for graph 36/244
-Running dot for graph 37/244
-Running dot for graph 38/244
-Running dot for graph 39/244
-Running dot for graph 40/244
-Running dot for graph 41/244
-Running dot for graph 42/244
-Running dot for graph 43/244
-Running dot for graph 44/244
-Running dot for graph 45/244
-Running dot for graph 46/244
-Running dot for graph 47/244
-Running dot for graph 48/244
-Running dot for graph 49/244
-Running dot for graph 50/244
-Running dot for graph 51/244
-Running dot for graph 52/244
-Running dot for graph 53/244
-Running dot for graph 54/244
-Running dot for graph 55/244
-Running dot for graph 56/244
-Running dot for graph 57/244
-Running dot for graph 58/244
-Running dot for graph 59/244
-Running dot for graph 60/244
-Running dot for graph 61/244
-Running dot for graph 62/244
-Running dot for graph 63/244
-Running dot for graph 64/244
-Running dot for graph 65/244
-Running dot for graph 66/244
-Running dot for graph 67/244
-Running dot for graph 68/244
-Running dot for graph 69/244
-Running dot for graph 70/244
-Running dot for graph 71/244
-Running dot for graph 72/244
-Running dot for graph 73/244
-Running dot for graph 74/244
-Running dot for graph 75/244
-Running dot for graph 76/244
-Running dot for graph 77/244
-Running dot for graph 78/244
-Running dot for graph 79/244
-Running dot for graph 80/244
-Running dot for graph 81/244
-Running dot for graph 82/244
-Running dot for graph 83/244
-Running dot for graph 84/244
-Running dot for graph 85/244
-Running dot for graph 86/244
-Running dot for graph 87/244
-Running dot for graph 88/244
-Running dot for graph 89/244
-Running dot for graph 90/244
-Running dot for graph 91/244
-Running dot for graph 92/244
-Running dot for graph 93/244
-Running dot for graph 94/244
-Running dot for graph 95/244
-Running dot for graph 96/244
-Running dot for graph 97/244
-Running dot for graph 98/244
-Running dot for graph 99/244
-Running dot for graph 100/244
-Running dot for graph 101/244
-Running dot for graph 102/244
-Running dot for graph 103/244
-Running dot for graph 104/244
-Running dot for graph 105/244
-Running dot for graph 106/244
-Running dot for graph 107/244
-Running dot for graph 108/244
-Running dot for graph 109/244
-Running dot for graph 110/244
-Running dot for graph 111/244
-Running dot for graph 112/244
-Running dot for graph 113/244
-Running dot for graph 114/244
-Running dot for graph 115/244
-Running dot for graph 116/244
-Running dot for graph 117/244
-Running dot for graph 118/244
-Running dot for graph 119/244
-Running dot for graph 120/244
-Running dot for graph 121/244
-Running dot for graph 122/244
-Running dot for graph 123/244
-Running dot for graph 124/244
-Running dot for graph 125/244
-Running dot for graph 126/244
-Running dot for graph 127/244
-Running dot for graph 128/244
-Running dot for graph 129/244
-Running dot for graph 130/244
-Running dot for graph 131/244
-Running dot for graph 132/244
-Running dot for graph 133/244
-Running dot for graph 134/244
-Running dot for graph 135/244
-Running dot for graph 136/244
-Running dot for graph 137/244
-Running dot for graph 138/244
-Running dot for graph 139/244
-Running dot for graph 140/244
-Running dot for graph 141/244
-Running dot for graph 142/244
-Running dot for graph 143/244
-Running dot for graph 144/244
-Running dot for graph 145/244
-Running dot for graph 146/244
-Running dot for graph 147/244
-Running dot for graph 148/244
-Running dot for graph 149/244
-Running dot for graph 150/244
-Running dot for graph 151/244
-Running dot for graph 152/244
-Running dot for graph 153/244
-Running dot for graph 154/244
-Running dot for graph 155/244
-Running dot for graph 156/244
-Running dot for graph 157/244
-Running dot for graph 158/244
-Running dot for graph 159/244
-Running dot for graph 160/244
-Running dot for graph 161/244
-Running dot for graph 162/244
-Running dot for graph 163/244
-Running dot for graph 164/244
-Running dot for graph 165/244
-Running dot for graph 166/244
-Running dot for graph 167/244
-Running dot for graph 168/244
-Running dot for graph 169/244
-Running dot for graph 170/244
-Running dot for graph 171/244
-Running dot for graph 172/244
-Running dot for graph 173/244
-Running dot for graph 174/244
-Running dot for graph 175/244
-Running dot for graph 176/244
-Running dot for graph 177/244
-Running dot for graph 178/244
-Running dot for graph 179/244
-Running dot for graph 180/244
-Running dot for graph 181/244
-Running dot for graph 182/244
-Running dot for graph 183/244
-Running dot for graph 184/244
-Running dot for graph 185/244
-Running dot for graph 186/244
-Running dot for graph 187/244
-Running dot for graph 188/244
-Running dot for graph 189/244
-Running dot for graph 190/244
-Running dot for graph 191/244
-Running dot for graph 192/244
-Running dot for graph 193/244
-Running dot for graph 194/244
-Running dot for graph 195/244
-Running dot for graph 196/244
-Running dot for graph 197/244
-Running dot for graph 198/244
-Running dot for graph 199/244
-Running dot for graph 200/244
-Running dot for graph 201/244
-Running dot for graph 202/244
-Running dot for graph 203/244
-Running dot for graph 204/244
-Running dot for graph 205/244
-Running dot for graph 206/244
-Running dot for graph 207/244
-Running dot for graph 208/244
-Running dot for graph 209/244
-Running dot for graph 210/244
-Running dot for graph 211/244
-Running dot for graph 212/244
-Running dot for graph 213/244
-Running dot for graph 214/244
-Running dot for graph 215/244
-Running dot for graph 216/244
-Running dot for graph 217/244
-Running dot for graph 218/244
-Running dot for graph 219/244
-Running dot for graph 220/244
-Running dot for graph 221/244
-Running dot for graph 222/244
-Running dot for graph 223/244
-Running dot for graph 224/244
-Running dot for graph 225/244
-Running dot for graph 226/244
-Running dot for graph 227/244
-Running dot for graph 228/244
-Running dot for graph 229/244
-Running dot for graph 230/244
-Running dot for graph 231/244
-Running dot for graph 232/244
-Running dot for graph 233/244
-Running dot for graph 234/244
-Running dot for graph 235/244
-Running dot for graph 236/244
-Running dot for graph 237/244
-Running dot for graph 238/244
-Running dot for graph 239/244
-Running dot for graph 240/244
-Running dot for graph 241/244
-Running dot for graph 242/244
-Running dot for graph 243/244
-Running dot for graph 244/244
-Patching output file 1/55
-Patching output file 2/55
-Patching output file 3/55
-Patching output file 4/55
-Patching output file 5/55
-Patching output file 6/55
-Patching output file 7/55
-Patching output file 8/55
-Patching output file 9/55
-Patching output file 10/55
-Patching output file 11/55
-Patching output file 12/55
-Patching output file 13/55
-Patching output file 14/55
-Patching output file 15/55
-Patching output file 16/55
-Patching output file 17/55
-Patching output file 18/55
-Patching output file 19/55
-Patching output file 20/55
-Patching output file 21/55
-Patching output file 22/55
-Patching output file 23/55
-Patching output file 24/55
-Patching output file 25/55
-Patching output file 26/55
-Patching output file 27/55
-Patching output file 28/55
-Patching output file 29/55
-Patching output file 30/55
-Patching output file 31/55
-Patching output file 32/55
-Patching output file 33/55
-Patching output file 34/55
-Patching output file 35/55
-Patching output file 36/55
-Patching output file 37/55
-Patching output file 38/55
-Patching output file 39/55
-Patching output file 40/55
-Patching output file 41/55
-Patching output file 42/55
-Patching output file 43/55
-Patching output file 44/55
-Patching output file 45/55
-Patching output file 46/55
-Patching output file 47/55
-Patching output file 48/55
-Patching output file 49/55
-Patching output file 50/55
-Patching output file 51/55
-Patching output file 52/55
-Patching output file 53/55
-Patching output file 54/55
-Patching output file 55/55
-lookup cache used 776/65536 hits=4084 misses=865
+Running dot for graph 1/306
+Running dot for graph 2/306
+Running dot for graph 3/306
+Running dot for graph 4/306
+Running dot for graph 5/306
+Running dot for graph 6/306
+Running dot for graph 7/306
+Running dot for graph 8/306
+Running dot for graph 9/306
+Running dot for graph 10/306
+Running dot for graph 11/306
+Running dot for graph 12/306
+Running dot for graph 13/306
+Running dot for graph 14/306
+Running dot for graph 15/306
+Running dot for graph 16/306
+Running dot for graph 17/306
+Running dot for graph 18/306
+Running dot for graph 19/306
+Running dot for graph 20/306
+Running dot for graph 21/306
+Running dot for graph 22/306
+Running dot for graph 23/306
+Running dot for graph 24/306
+Running dot for graph 25/306
+Running dot for graph 26/306
+Running dot for graph 27/306
+Running dot for graph 28/306
+Running dot for graph 29/306
+Running dot for graph 30/306
+Running dot for graph 31/306
+Running dot for graph 32/306
+Running dot for graph 33/306
+Running dot for graph 34/306
+Running dot for graph 35/306
+Running dot for graph 36/306
+Running dot for graph 37/306
+Running dot for graph 38/306
+Running dot for graph 39/306
+Running dot for graph 40/306
+Running dot for graph 41/306
+Running dot for graph 42/306
+Running dot for graph 43/306
+Running dot for graph 44/306
+Running dot for graph 45/306
+Running dot for graph 46/306
+Running dot for graph 47/306
+Running dot for graph 48/306
+Running dot for graph 49/306
+Running dot for graph 50/306
+Running dot for graph 51/306
+Running dot for graph 52/306
+Running dot for graph 53/306
+Running dot for graph 54/306
+Running dot for graph 55/306
+Running dot for graph 56/306
+Running dot for graph 57/306
+Running dot for graph 58/306
+Running dot for graph 59/306
+Running dot for graph 60/306
+Running dot for graph 61/306
+Running dot for graph 62/306
+Running dot for graph 63/306
+Running dot for graph 64/306
+Running dot for graph 65/306
+Running dot for graph 66/306
+Running dot for graph 67/306
+Running dot for graph 68/306
+Running dot for graph 69/306
+Running dot for graph 70/306
+Running dot for graph 71/306
+Running dot for graph 72/306
+Running dot for graph 73/306
+Running dot for graph 74/306
+Running dot for graph 75/306
+Running dot for graph 76/306
+Running dot for graph 77/306
+Running dot for graph 78/306
+Running dot for graph 79/306
+Running dot for graph 80/306
+Running dot for graph 81/306
+Running dot for graph 82/306
+Running dot for graph 83/306
+Running dot for graph 84/306
+Running dot for graph 85/306
+Running dot for graph 86/306
+Running dot for graph 87/306
+Running dot for graph 88/306
+Running dot for graph 89/306
+Running dot for graph 90/306
+Running dot for graph 91/306
+Running dot for graph 92/306
+Running dot for graph 93/306
+Running dot for graph 94/306
+Running dot for graph 95/306
+Running dot for graph 96/306
+Running dot for graph 97/306
+Running dot for graph 98/306
+Running dot for graph 99/306
+Running dot for graph 100/306
+Running dot for graph 101/306
+Running dot for graph 102/306
+Running dot for graph 103/306
+Running dot for graph 104/306
+Running dot for graph 105/306
+Running dot for graph 106/306
+Running dot for graph 107/306
+Running dot for graph 108/306
+Running dot for graph 109/306
+Running dot for graph 110/306
+Running dot for graph 111/306
+Running dot for graph 112/306
+Running dot for graph 113/306
+Running dot for graph 114/306
+Running dot for graph 115/306
+Running dot for graph 116/306
+Running dot for graph 117/306
+Running dot for graph 118/306
+Running dot for graph 119/306
+Running dot for graph 120/306
+Running dot for graph 121/306
+Running dot for graph 122/306
+Running dot for graph 123/306
+Running dot for graph 124/306
+Running dot for graph 125/306
+Running dot for graph 126/306
+Running dot for graph 127/306
+Running dot for graph 128/306
+Running dot for graph 129/306
+Running dot for graph 130/306
+Running dot for graph 131/306
+Running dot for graph 132/306
+Running dot for graph 133/306
+Running dot for graph 134/306
+Running dot for graph 135/306
+Running dot for graph 136/306
+Running dot for graph 137/306
+Running dot for graph 138/306
+Running dot for graph 139/306
+Running dot for graph 140/306
+Running dot for graph 141/306
+Running dot for graph 142/306
+Running dot for graph 143/306
+Running dot for graph 144/306
+Running dot for graph 145/306
+Running dot for graph 146/306
+Running dot for graph 147/306
+Running dot for graph 148/306
+Running dot for graph 149/306
+Running dot for graph 150/306
+Running dot for graph 151/306
+Running dot for graph 152/306
+Running dot for graph 153/306
+Running dot for graph 154/306
+Running dot for graph 155/306
+Running dot for graph 156/306
+Running dot for graph 157/306
+Running dot for graph 158/306
+Running dot for graph 159/306
+Running dot for graph 160/306
+Running dot for graph 161/306
+Running dot for graph 162/306
+Running dot for graph 163/306
+Running dot for graph 164/306
+Running dot for graph 165/306
+Running dot for graph 166/306
+Running dot for graph 167/306
+Running dot for graph 168/306
+Running dot for graph 169/306
+Running dot for graph 170/306
+Running dot for graph 171/306
+Running dot for graph 172/306
+Running dot for graph 173/306
+Running dot for graph 174/306
+Running dot for graph 175/306
+Running dot for graph 176/306
+Running dot for graph 177/306
+Running dot for graph 178/306
+Running dot for graph 179/306
+Running dot for graph 180/306
+Running dot for graph 181/306
+Running dot for graph 182/306
+Running dot for graph 183/306
+Running dot for graph 184/306
+Running dot for graph 185/306
+Running dot for graph 186/306
+Running dot for graph 187/306
+Running dot for graph 188/306
+Running dot for graph 189/306
+Running dot for graph 190/306
+Running dot for graph 191/306
+Running dot for graph 192/306
+Running dot for graph 193/306
+Running dot for graph 194/306
+Running dot for graph 195/306
+Running dot for graph 196/306
+Running dot for graph 197/306
+Running dot for graph 198/306
+Running dot for graph 199/306
+Running dot for graph 200/306
+Running dot for graph 201/306
+Running dot for graph 202/306
+Running dot for graph 203/306
+Running dot for graph 204/306
+Running dot for graph 205/306
+Running dot for graph 206/306
+Running dot for graph 207/306
+Running dot for graph 208/306
+Running dot for graph 209/306
+Running dot for graph 210/306
+Running dot for graph 211/306
+Running dot for graph 212/306
+Running dot for graph 213/306
+Running dot for graph 214/306
+Running dot for graph 215/306
+Running dot for graph 216/306
+Running dot for graph 217/306
+Running dot for graph 218/306
+Running dot for graph 219/306
+Running dot for graph 220/306
+Running dot for graph 221/306
+Running dot for graph 222/306
+Running dot for graph 223/306
+Running dot for graph 224/306
+Running dot for graph 225/306
+Running dot for graph 226/306
+Running dot for graph 227/306
+Running dot for graph 228/306
+Running dot for graph 229/306
+Running dot for graph 230/306
+Running dot for graph 231/306
+Running dot for graph 232/306
+Running dot for graph 233/306
+Running dot for graph 234/306
+Running dot for graph 235/306
+Running dot for graph 236/306
+Running dot for graph 237/306
+Running dot for graph 238/306
+Running dot for graph 239/306
+Running dot for graph 240/306
+Running dot for graph 241/306
+Running dot for graph 242/306
+Running dot for graph 243/306
+Running dot for graph 244/306
+Running dot for graph 245/306
+Running dot for graph 246/306
+Running dot for graph 247/306
+Running dot for graph 248/306
+Running dot for graph 249/306
+Running dot for graph 250/306
+Running dot for graph 251/306
+Running dot for graph 252/306
+Running dot for graph 253/306
+Running dot for graph 254/306
+Running dot for graph 255/306
+Running dot for graph 256/306
+Running dot for graph 257/306
+Running dot for graph 258/306
+Running dot for graph 259/306
+Running dot for graph 260/306
+Running dot for graph 261/306
+Running dot for graph 262/306
+Running dot for graph 263/306
+Running dot for graph 264/306
+Running dot for graph 265/306
+Running dot for graph 266/306
+Running dot for graph 267/306
+Running dot for graph 268/306
+Running dot for graph 269/306
+Running dot for graph 270/306
+Running dot for graph 271/306
+Running dot for graph 272/306
+Running dot for graph 273/306
+Running dot for graph 274/306
+Running dot for graph 275/306
+Running dot for graph 276/306
+Running dot for graph 277/306
+Running dot for graph 278/306
+Running dot for graph 279/306
+Running dot for graph 280/306
+Running dot for graph 281/306
+Running dot for graph 282/306
+Running dot for graph 283/306
+Running dot for graph 284/306
+Running dot for graph 285/306
+Running dot for graph 286/306
+Running dot for graph 287/306
+Running dot for graph 288/306
+Running dot for graph 289/306
+Running dot for graph 290/306
+Running dot for graph 291/306
+Running dot for graph 292/306
+Running dot for graph 293/306
+Running dot for graph 294/306
+Running dot for graph 295/306
+Running dot for graph 296/306
+Running dot for graph 297/306
+Running dot for graph 298/306
+Running dot for graph 299/306
+Running dot for graph 300/306
+Running dot for graph 301/306
+Running dot for graph 302/306
+Running dot for graph 303/306
+Running dot for graph 304/306
+Running dot for graph 305/306
+Running dot for graph 306/306
+Patching output file 1/70
+Patching output file 2/70
+Patching output file 3/70
+Patching output file 4/70
+Patching output file 5/70
+Patching output file 6/70
+Patching output file 7/70
+Patching output file 8/70
+Patching output file 9/70
+Patching output file 10/70
+Patching output file 11/70
+Patching output file 12/70
+Patching output file 13/70
+Patching output file 14/70
+Patching output file 15/70
+Patching output file 16/70
+Patching output file 17/70
+Patching output file 18/70
+Patching output file 19/70
+Patching output file 20/70
+Patching output file 21/70
+Patching output file 22/70
+Patching output file 23/70
+Patching output file 24/70
+Patching output file 25/70
+Patching output file 26/70
+Patching output file 27/70
+Patching output file 28/70
+Patching output file 29/70
+Patching output file 30/70
+Patching output file 31/70
+Patching output file 32/70
+Patching output file 33/70
+Patching output file 34/70
+Patching output file 35/70
+Patching output file 36/70
+Patching output file 37/70
+Patching output file 38/70
+Patching output file 39/70
+Patching output file 40/70
+Patching output file 41/70
+Patching output file 42/70
+Patching output file 43/70
+Patching output file 44/70
+Patching output file 45/70
+Patching output file 46/70
+Patching output file 47/70
+Patching output file 48/70
+Patching output file 49/70
+Patching output file 50/70
+Patching output file 51/70
+Patching output file 52/70
+Patching output file 53/70
+Patching output file 54/70
+Patching output file 55/70
+Patching output file 56/70
+Patching output file 57/70
+Patching output file 58/70
+Patching output file 59/70
+Patching output file 60/70
+Patching output file 61/70
+Patching output file 62/70
+Patching output file 63/70
+Patching output file 64/70
+Patching output file 65/70
+Patching output file 66/70
+Patching output file 67/70
+Patching output file 68/70
+Patching output file 69/70
+Patching output file 70/70
+lookup cache used 859/65536 hits=5133 misses=948
 finished...
 *** Doxygen has finished
