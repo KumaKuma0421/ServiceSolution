@@ -5,7 +5,8 @@
 #pragma once
 
 // プリコンパイルするヘッダーをここに追加します
-#include <Windows.h>
+#include <windows.h>
 #include <tchar.h>
-#include <locale.h>
-#include <assert.h>
+#include <stdio.h>
+#include <strsafe.h>
+#include <clocale>
