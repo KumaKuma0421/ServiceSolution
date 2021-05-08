@@ -1,0 +1,567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: EventLogDump/Main.cpp ファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('de/d67/_event_log_dump_2_main_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle">
+<div class="title">Main.cpp ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d5/db6/_event_log_dump_2pch_8h_source.html">pch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/dfd/_event_log_dump_2_main_8h_source.html">Main.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Main.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d0a/_event_log_dump_2_main_8cpp__incl.png" border="0" usemap="#a_event_log_dump_2_main_8cpp" alt=""/></div>
+<map name="_event_log_dump_2_main_8cpp" id="a_event_log_dump_2_main_8cpp">
+<area shape="rect" title=" " alt="" coords="297,5,463,32"/>
+<area shape="rect" href="../../d5/db6/_event_log_dump_2pch_8h.html" title=" " alt="" coords="211,80,266,107"/>
+<area shape="rect" href="../../d4/dfd/_event_log_dump_2_main_8h.html" title=" " alt="" coords="447,80,508,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,88,181"/>
+<area shape="rect" title=" " alt="" coords="94,229,157,256"/>
+<area shape="rect" title=" " alt="" coords="163,155,224,181"/>
+<area shape="rect" title=" " alt="" coords="248,155,320,181"/>
+<area shape="rect" title=" " alt="" coords="345,155,407,181"/>
+<area shape="rect" href="../../d6/d29/framework_8h.html" title="このプロジェクトのポーティングに関する情報" alt="" coords="431,155,523,181"/>
+<area shape="rect" title=" " alt="" coords="547,155,629,181"/>
+<area shape="rect" title=" " alt="" coords="181,229,267,256"/>
+<area shape="rect" title=" " alt="" coords="291,229,362,256"/>
+<area shape="rect" title=" " alt="" coords="387,229,485,256"/>
+<area shape="rect" title=" " alt="" coords="509,229,648,256"/>
+<area shape="rect" title=" " alt="" coords="672,229,739,256"/>
+<area shape="rect" title=" " alt="" coords="763,229,832,256"/>
+<area shape="rect" title=" " alt="" coords="857,229,933,256"/>
+</map>
+</div>
+</div>
+<p><a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a2fc1f493acf321f87b269920b858666d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a2fc1f493acf321f87b269920b858666d">_tmain</a> (int argc, TCHAR **argv)</td></tr>
+<tr class="memdesc:a2fc1f493acf321f87b269920b858666d"><td class="mdescLeft">&#160;</td><td class="mdescRight">メイン関数  <a href="../../de/d67/_event_log_dump_2_main_8cpp.html#a2fc1f493acf321f87b269920b858666d">[詳解]</a><br /></td></tr>
+<tr class="separator:a2fc1f493acf321f87b269920b858666d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5460ae83bc0f5388774bcbf744a90e"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a7f5460ae83bc0f5388774bcbf744a90e">ApplyParameterStringsToMessage</a> (LPCTSTR lptszMessage, LPTSTR &amp;lptszFinalMessage)</td></tr>
+<tr class="separator:a7f5460ae83bc0f5388774bcbf744a90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7866d0a054032a4b940bbde142b90131"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a7866d0a054032a4b940bbde142b90131">DumpRecordsInBuffer</a> (LPBYTE lpbyBuffer, DWORD dwBytesRead)</td></tr>
+<tr class="separator:a7866d0a054032a4b940bbde142b90131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a533817dd907420ff6eb9f2b536b53126"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a533817dd907420ff6eb9f2b536b53126">GetEventTypeName</a> (DWORD dwEventType)</td></tr>
+<tr class="separator:a533817dd907420ff6eb9f2b536b53126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab46c7ee37a145710df9833cf4e2de31"><td class="memItemLeft" align="right" valign="top">HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aab46c7ee37a145710df9833cf4e2de31">GetMessageResources</a> (LPCTSTR lpctszResourceFile)</td></tr>
+<tr class="separator:aab46c7ee37a145710df9833cf4e2de31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e7dad9533bd29631da680a3f7a4001"><td class="memItemLeft" align="right" valign="top">LPTSTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a59e7dad9533bd29631da680a3f7a4001">GetMessageString</a> (HANDLE hResource, DWORD dwMessageID, DWORD dwArgc, LPTSTR lptszArgv)</td></tr>
+<tr class="separator:a59e7dad9533bd29631da680a3f7a4001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83312b09827daf2607b2038891c3721"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aa83312b09827daf2607b2038891c3721">GetResourceFiles</a> (LPTSTR lptszCategoryMessageFile, LPTSTR lptszEventMessageFile)</td></tr>
+<tr class="separator:aa83312b09827daf2607b2038891c3721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88443b796d6422c6bcf490301216cc7"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac88443b796d6422c6bcf490301216cc7">GetTimeStamp</a> (const DWORD cdwTime, TCHAR tszDisplayString[])</td></tr>
+<tr class="separator:ac88443b796d6422c6bcf490301216cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:ac57f8458bbc141863e878ee0046b86f6"><td class="memItemLeft" align="right" valign="top">HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac57f8458bbc141863e878ee0046b86f6">g_hCategoryResource</a> = nullptr</td></tr>
+<tr class="separator:ac57f8458bbc141863e878ee0046b86f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaef4e285e43eed756e050513d7e0d6cb"><td class="memItemLeft" align="right" valign="top">HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aaef4e285e43eed756e050513d7e0d6cb">g_hMessageResource</a> = nullptr</td></tr>
+<tr class="separator:aaef4e285e43eed756e050513d7e0d6cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a2fc1f493acf321f87b269920b858666d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fc1f493acf321f87b269920b858666d">&#9670;&nbsp;</a></span>_tmain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _tmain </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TCHAR **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>メイン関数 </p>
+<p>ＯＳからのサービス起動も、コマンドプロンプトからのサービス制御も この関数から開始します。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>引数の数 </td></tr>
+    <tr><td class="paramname">argv</td><td>引数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>BOOL </dd></dl>
+<dl class="retval"><dt>戻り値</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ERROR_SUCCESS(成功)</td><td></td></tr>
+    <tr><td class="paramname">-1(失敗)</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html">Main.cpp</a> の <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00011">11</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7f5460ae83bc0f5388774bcbf744a90e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f5460ae83bc0f5388774bcbf744a90e">&#9670;&nbsp;</a></span>ApplyParameterStringsToMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD ApplyParameterStringsToMessage </td>
+          <td>(</td>
+          <td class="paramtype">LPCTSTR&#160;</td>
+          <td class="paramname"><em>lptszMessage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPTSTR &amp;&#160;</td>
+          <td class="paramname"><em>lptszFinalMessage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html">Main.cpp</a> の <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00360">360</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00009">g_hMessageResource</a>, <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00302">GetMessageString()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00201">DumpRecordsInBuffer()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d67/_event_log_dump_2_main_8cpp_a7f5460ae83bc0f5388774bcbf744a90e_cgraph.png" border="0" usemap="#ade/d67/_event_log_dump_2_main_8cpp_a7f5460ae83bc0f5388774bcbf744a90e_cgraph" alt=""/></div>
+<map name="de/d67/_event_log_dump_2_main_8cpp_a7f5460ae83bc0f5388774bcbf744a90e_cgraph" id="ade/d67/_event_log_dump_2_main_8cpp_a7f5460ae83bc0f5388774bcbf744a90e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,228,32"/>
+<area shape="rect" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a59e7dad9533bd29631da680a3f7a4001" title=" " alt="" coords="276,5,407,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d67/_event_log_dump_2_main_8cpp_a7f5460ae83bc0f5388774bcbf744a90e_icgraph.png" border="0" usemap="#ade/d67/_event_log_dump_2_main_8cpp_a7f5460ae83bc0f5388774bcbf744a90e_icgraph" alt=""/></div>
+<map name="de/d67/_event_log_dump_2_main_8cpp_a7f5460ae83bc0f5388774bcbf744a90e_icgraph" id="ade/d67/_event_log_dump_2_main_8cpp_a7f5460ae83bc0f5388774bcbf744a90e_icgraph">
+<area shape="rect" title=" " alt="" coords="309,5,532,32"/>
+<area shape="rect" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a7866d0a054032a4b940bbde142b90131" title=" " alt="" coords="115,5,261,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7866d0a054032a4b940bbde142b90131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7866d0a054032a4b940bbde142b90131">&#9670;&nbsp;</a></span>DumpRecordsInBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD DumpRecordsInBuffer </td>
+          <td>(</td>
+          <td class="paramtype">LPBYTE&#160;</td>
+          <td class="paramname"><em>lpbyBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwBytesRead</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html">Main.cpp</a> の <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00201">201</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00360">ApplyParameterStringsToMessage()</a>, <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00008">g_hCategoryResource</a>, <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00009">g_hMessageResource</a>, <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00270">GetEventTypeName()</a>, <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00302">GetMessageString()</a>, <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00540">GetTimeStamp()</a>, <a class="el" href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00029">lptszEventTypeNames</a>, <a class="el" href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00014">MAX_TIMESTAMP_LEN</a>, <a class="el" href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00013">PROVIDER_NAME</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00011">_tmain()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d67/_event_log_dump_2_main_8cpp_a7866d0a054032a4b940bbde142b90131_cgraph.png" border="0" usemap="#ade/d67/_event_log_dump_2_main_8cpp_a7866d0a054032a4b940bbde142b90131_cgraph" alt=""/></div>
+<map name="de/d67/_event_log_dump_2_main_8cpp_a7866d0a054032a4b940bbde142b90131_cgraph" id="ade/d67/_event_log_dump_2_main_8cpp_a7866d0a054032a4b940bbde142b90131_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,152,108"/>
+<area shape="rect" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a7f5460ae83bc0f5388774bcbf744a90e" title=" " alt="" coords="200,5,423,32"/>
+<area shape="rect" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a59e7dad9533bd29631da680a3f7a4001" title=" " alt="" coords="471,31,601,57"/>
+<area shape="rect" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a533817dd907420ff6eb9f2b536b53126" title=" " alt="" coords="243,107,380,133"/>
+<area shape="rect" href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac88443b796d6422c6bcf490301216cc7" title=" " alt="" coords="257,157,366,184"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d67/_event_log_dump_2_main_8cpp_a7866d0a054032a4b940bbde142b90131_icgraph.png" border="0" usemap="#ade/d67/_event_log_dump_2_main_8cpp_a7866d0a054032a4b940bbde142b90131_icgraph" alt=""/></div>
+<map name="de/d67/_event_log_dump_2_main_8cpp_a7866d0a054032a4b940bbde142b90131_icgraph" id="ade/d67/_event_log_dump_2_main_8cpp_a7866d0a054032a4b940bbde142b90131_icgraph">
+<area shape="rect" title=" " alt="" coords="115,5,261,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a533817dd907420ff6eb9f2b536b53126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a533817dd907420ff6eb9f2b536b53126">&#9670;&nbsp;</a></span>GetEventTypeName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD GetEventTypeName </td>
+          <td>(</td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwEventType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html">Main.cpp</a> の <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00270">270</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00201">DumpRecordsInBuffer()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d67/_event_log_dump_2_main_8cpp_a533817dd907420ff6eb9f2b536b53126_icgraph.png" border="0" usemap="#ade/d67/_event_log_dump_2_main_8cpp_a533817dd907420ff6eb9f2b536b53126_icgraph" alt=""/></div>
+<map name="de/d67/_event_log_dump_2_main_8cpp_a533817dd907420ff6eb9f2b536b53126_icgraph" id="ade/d67/_event_log_dump_2_main_8cpp_a533817dd907420ff6eb9f2b536b53126_icgraph">
+<area shape="rect" title=" " alt="" coords="309,5,447,32"/>
+<area shape="rect" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a7866d0a054032a4b940bbde142b90131" title=" " alt="" coords="115,5,261,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab46c7ee37a145710df9833cf4e2de31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab46c7ee37a145710df9833cf4e2de31">&#9670;&nbsp;</a></span>GetMessageResources()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE GetMessageResources </td>
+          <td>(</td>
+          <td class="paramtype">LPCTSTR&#160;</td>
+          <td class="paramname"><em>lpctszResourceFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html">Main.cpp</a> の <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00185">185</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00011">_tmain()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d67/_event_log_dump_2_main_8cpp_aab46c7ee37a145710df9833cf4e2de31_icgraph.png" border="0" usemap="#ade/d67/_event_log_dump_2_main_8cpp_aab46c7ee37a145710df9833cf4e2de31_icgraph" alt=""/></div>
+<map name="de/d67/_event_log_dump_2_main_8cpp_aab46c7ee37a145710df9833cf4e2de31_icgraph" id="ade/d67/_event_log_dump_2_main_8cpp_aab46c7ee37a145710df9833cf4e2de31_icgraph">
+<area shape="rect" title=" " alt="" coords="115,5,273,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a59e7dad9533bd29631da680a3f7a4001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59e7dad9533bd29631da680a3f7a4001">&#9670;&nbsp;</a></span>GetMessageString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LPTSTR GetMessageString </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>hResource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwMessageID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwArgc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>lptszArgv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html">Main.cpp</a> の <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00302">302</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00360">ApplyParameterStringsToMessage()</a>, <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00201">DumpRecordsInBuffer()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d67/_event_log_dump_2_main_8cpp_a59e7dad9533bd29631da680a3f7a4001_icgraph.png" border="0" usemap="#ade/d67/_event_log_dump_2_main_8cpp_a59e7dad9533bd29631da680a3f7a4001_icgraph" alt=""/></div>
+<map name="de/d67/_event_log_dump_2_main_8cpp_a59e7dad9533bd29631da680a3f7a4001_icgraph" id="ade/d67/_event_log_dump_2_main_8cpp_a59e7dad9533bd29631da680a3f7a4001_icgraph">
+<area shape="rect" title=" " alt="" coords="580,31,711,57"/>
+<area shape="rect" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a7f5460ae83bc0f5388774bcbf744a90e" title=" " alt="" coords="309,5,532,32"/>
+<area shape="rect" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a7866d0a054032a4b940bbde142b90131" title=" " alt="" coords="115,31,261,57"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,31,67,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa83312b09827daf2607b2038891c3721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa83312b09827daf2607b2038891c3721">&#9670;&nbsp;</a></span>GetResourceFiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL GetResourceFiles </td>
+          <td>(</td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>lptszCategoryMessageFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>lptszEventMessageFile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html">Main.cpp</a> の <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00136">136</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00018">ENTRY_CATEGORY_MESSAGE_FILE</a>, <a class="el" href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00019">ENTRY_EVENT_MESSAGE_FILE</a>, <a class="el" href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00017">EVENT_ROOT</a>, <a class="el" href="../../d0/d54/_registry_2_registry_8cpp_source.html#l00050">Registry::Open()</a>, <a class="el" href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00013">PROVIDER_NAME</a>, <a class="el" href="../../d0/d54/_registry_2_registry_8cpp_source.html#l00214">Registry::QueryValue()</a>, <a class="el" href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00012">SOURCE_NAME</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00011">_tmain()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d67/_event_log_dump_2_main_8cpp_aa83312b09827daf2607b2038891c3721_cgraph.png" border="0" usemap="#ade/d67/_event_log_dump_2_main_8cpp_aa83312b09827daf2607b2038891c3721_cgraph" alt=""/></div>
+<map name="de/d67/_event_log_dump_2_main_8cpp_aa83312b09827daf2607b2038891c3721_cgraph" id="ade/d67/_event_log_dump_2_main_8cpp_aa83312b09827daf2607b2038891c3721_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,132,57"/>
+<area shape="rect" href="../../d4/d78/class_registry.html#ae09f2a9cb7e848886848c22e9065db38" title="レジストリキーをオープンします。" alt="" coords="199,5,308,32"/>
+<area shape="rect" href="../../d4/d78/class_registry.html#ac25e698794a4085ccedcdb1d9a51f1bb" title="エントリ名に設定された値を取得します。" alt="" coords="180,56,327,83"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d67/_event_log_dump_2_main_8cpp_aa83312b09827daf2607b2038891c3721_icgraph.png" border="0" usemap="#ade/d67/_event_log_dump_2_main_8cpp_aa83312b09827daf2607b2038891c3721_icgraph" alt=""/></div>
+<map name="de/d67/_event_log_dump_2_main_8cpp_aa83312b09827daf2607b2038891c3721_icgraph" id="ade/d67/_event_log_dump_2_main_8cpp_aa83312b09827daf2607b2038891c3721_icgraph">
+<area shape="rect" title=" " alt="" coords="115,5,241,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac88443b796d6422c6bcf490301216cc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac88443b796d6422c6bcf490301216cc7">&#9670;&nbsp;</a></span>GetTimeStamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID GetTimeStamp </td>
+          <td>(</td>
+          <td class="paramtype">const DWORD&#160;</td>
+          <td class="paramname"><em>cdwTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TCHAR&#160;</td>
+          <td class="paramname"><em>tszDisplayString</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html">Main.cpp</a> の <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00540">540</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00014">MAX_TIMESTAMP_LEN</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00201">DumpRecordsInBuffer()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d67/_event_log_dump_2_main_8cpp_ac88443b796d6422c6bcf490301216cc7_icgraph.png" border="0" usemap="#ade/d67/_event_log_dump_2_main_8cpp_ac88443b796d6422c6bcf490301216cc7_icgraph" alt=""/></div>
+<map name="de/d67/_event_log_dump_2_main_8cpp_ac88443b796d6422c6bcf490301216cc7_icgraph" id="ade/d67/_event_log_dump_2_main_8cpp_ac88443b796d6422c6bcf490301216cc7_icgraph">
+<area shape="rect" title=" " alt="" coords="309,5,419,32"/>
+<area shape="rect" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a7866d0a054032a4b940bbde142b90131" title=" " alt="" coords="115,5,261,32"/>
+<area shape="rect" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7" title="メイン関数" alt="" coords="5,5,67,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="ac57f8458bbc141863e878ee0046b86f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac57f8458bbc141863e878ee0046b86f6">&#9670;&nbsp;</a></span>g_hCategoryResource</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE g_hCategoryResource = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html">Main.cpp</a> の <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00008">8</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00011">_tmain()</a>, <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00201">DumpRecordsInBuffer()</a>.</p>
+
+</div>
+</div>
+<a id="aaef4e285e43eed756e050513d7e0d6cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaef4e285e43eed756e050513d7e0d6cb">&#9670;&nbsp;</a></span>g_hMessageResource</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE g_hMessageResource = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html">Main.cpp</a> の <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00009">9</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00011">_tmain()</a>, <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00360">ApplyParameterStringsToMessage()</a>, <a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00201">DumpRecordsInBuffer()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_592375a4b7512d26ca24a6e58b25ffec.html">EventLogDump</a></li><li class="navelem"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html">Main.cpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

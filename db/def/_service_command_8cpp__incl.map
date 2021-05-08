@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title="サービスに対する操作を集約したクラス" alt="" coords="357,5,589,32"/>
 <area shape="rect" id="node2" href="$d4/d07/_service_logics_2pch_8h.html" title="プリコンパイル済みヘッダー ファイルです。" alt="" coords="391,304,445,331"/>
 <area shape="rect" id="node12" href="$d8/d72/_service_command_8h.html" title="サービスに対する操作を集約したクラス" alt="" coords="405,80,540,107"/>
-<area shape="rect" id="node15" href="$d3/d5c/_registry_8h.html" title="レジストリに関するWindowsAPIを集約したクラス" alt="" coords="564,80,645,107"/>
+<area shape="rect" id="node15" href="$d7/df7/_service_logics_2_registry_8h.html" title="レジストリに関するWindowsAPIを集約したクラス" alt="" coords="564,80,645,107"/>
 <area shape="rect" id="node3" href="$d6/d29/framework_8h.html" title="このプロジェクトのポーティングに関する情報" alt="" coords="372,379,464,405"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,453,92,480"/>
 <area shape="rect" id="node5" title=" " alt="" coords="116,453,179,480"/>

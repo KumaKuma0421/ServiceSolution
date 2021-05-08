@@ -3,6 +3,8 @@ var annotated_dup =
     [ "Event", "d1/da9/class_event.html", "d1/da9/class_event" ],
     [ "EventLogger", "d8/d91/class_event_logger.html", "d8/d91/class_event_logger" ],
     [ "IService", "d5/ddc/class_i_service.html", "d5/ddc/class_i_service" ],
+    [ "PerformanceCounter", "d8/de6/class_performance_counter.html", "d8/de6/class_performance_counter" ],
+    [ "PerformanceMonitor", "d9/d3e/class_performance_monitor.html", "d9/d3e/class_performance_monitor" ],
     [ "Registry", "d4/d78/class_registry.html", "d4/d78/class_registry" ],
     [ "Service1", "df/d9d/class_service1.html", "df/d9d/class_service1" ],
     [ "Service2", "d9/d2d/class_service2.html", "d9/d2d/class_service2" ],

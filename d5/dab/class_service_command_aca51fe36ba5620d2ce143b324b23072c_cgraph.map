@@ -18,11 +18,11 @@
 <area shape="rect" id="node9" href="$d5/d0b/class_service_control.html#a1944ec3b59c35839aa6539506aeeb57f" title="サービスのオープン" alt="" coords="800,1343,944,1369"/>
 <area shape="rect" id="node11" href="$d5/d0b/class_service_control.html#a5061650ea500fc0fc856f9f7edbccedc" title="サービスの説明文章の変更" alt="" coords="521,563,721,605"/>
 <area shape="rect" id="node13" href="$d5/d0b/class_service_control.html#a20812f4b530d45903a5af17c75bb6c60" title="サービスの設定変更" alt="" coords="524,461,717,488"/>
-<area shape="rect" id="node16" href="$d4/d78/class_registry.html#aae4924c288a7939960abc58feb25783a" title="レジストリキーを新規に作成します。" alt="" coords="563,259,679,285"/>
+<area shape="rect" id="node16" href="$d4/d78/class_registry.html#a22b28d62d29d35c98413189b44b3945c" title="レジストリキーを新規に作成します。" alt="" coords="563,259,679,285"/>
 <area shape="rect" id="node17" href="$de/dbd/class_service_info.html#a4987a4aa3a243041f789e9b83486ed7c" title="サービス名を取得" alt="" coords="547,5,694,32"/>
 <area shape="rect" id="node18" href="$de/dbd/class_service_info.html#a5821bc4529f4fbad51cbf9adddd957d2" title="現在の稼働しているモジュールのあるディレクトリ名を取得" alt="" coords="523,56,719,83"/>
-<area shape="rect" id="node19" href="$d4/d78/class_registry.html#aaea2a63dff7b99d6f77b0a97823021c7" title="レジストリキーをオープンします。" alt="" coords="566,107,675,133"/>
-<area shape="rect" id="node20" href="$d4/d78/class_registry.html#a53fb7807427dd310959846820b920a0c" title="エントリ名に設定された値を取得します。" alt="" coords="547,157,694,184"/>
+<area shape="rect" id="node19" href="$d4/d78/class_registry.html#ae09f2a9cb7e848886848c22e9065db38" title="レジストリキーをオープンします。" alt="" coords="566,107,675,133"/>
+<area shape="rect" id="node20" href="$d4/d78/class_registry.html#ac25e698794a4085ccedcdb1d9a51f1bb" title="エントリ名に設定された値を取得します。" alt="" coords="547,157,694,184"/>
 <area shape="rect" id="node21" href="$d4/d78/class_registry.html#a9269237772f1c3a372c104b746c11379" title="エントリ名に値を設定します。" alt="" coords="555,208,686,235"/>
 <area shape="rect" id="node23" href="$d5/d0b/class_service_control.html#a7754c15525e54b991d362556e2a08dd3" title="サービスの削除" alt="" coords="545,913,696,940"/>
 <area shape="rect" id="node25" href="$d5/d0b/class_service_control.html#aaf58bfedac72f89fd3da24af9a6a7ca8" title="サービスの状態取得" alt="" coords="779,1393,965,1420"/>

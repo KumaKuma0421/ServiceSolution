@@ -7,7 +7,7 @@
 <area shape="rect" id="node16" href="$df/d10/_event_logger_8cpp.html" title="イベントログに書き込むクラス" alt="" coords="490,80,693,107"/>
 <area shape="rect" id="node17" href="$dd/d50/_i_service_8h.html" title="サービス提供プロジェクトへのインターフェースクラス" alt="" coords="510,155,673,181"/>
 <area shape="rect" id="node18" href="$d7/d46/_service_logics_2pch_8cpp.html" title="プリコンパイル済みヘッダーに対応するソース" alt="" coords="767,80,919,107"/>
-<area shape="rect" id="node19" href="$d7/d22/_registry_8cpp.html" title="レジストリに関するWindowsAPIを集約したクラス" alt="" coords="943,80,1122,107"/>
+<area shape="rect" id="node19" href="$d7/d29/_service_logics_2_registry_8cpp.html" title="レジストリに関するWindowsAPIを集約したクラス" alt="" coords="943,80,1122,107"/>
 <area shape="rect" id="node20" href="$d7/d80/_service_command_8cpp.html" title="サービスに対する操作を集約したクラス" alt="" coords="1521,326,1753,353"/>
 <area shape="rect" id="node21" href="$d0/ddc/_service_common_8cpp.html" title="サービス制御クラスを集約したファイル" alt="" coords="979,237,1204,263"/>
 <area shape="rect" id="node22" href="$d5/de8/_service_info_8cpp.html" title="サービス情報クラス" alt="" coords="1003,155,1196,181"/>

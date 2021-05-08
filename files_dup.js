@@ -1,6 +1,9 @@
 var files_dup =
 [
     [ "Doxygen", "dir_1148ebc2b25b55095aebf6f4cbb6efca.html", null ],
+    [ "EventLogDump", "dir_592375a4b7512d26ca24a6e58b25ffec.html", "dir_592375a4b7512d26ca24a6e58b25ffec" ],
+    [ "Monitoring1", "dir_b85ae5cf4e4f64e14aa0ef25bcc3e63e.html", "dir_b85ae5cf4e4f64e14aa0ef25bcc3e63e" ],
+    [ "Registry", "dir_050dbe9f83839be7359d3d2e52808557.html", "dir_050dbe9f83839be7359d3d2e52808557" ],
     [ "ServiceApplication1", "dir_d72600cb2ac8191ba85f9263b431d850.html", "dir_d72600cb2ac8191ba85f9263b431d850" ],
     [ "ServiceApplication2", "dir_c310894bc8ef550741f3160dd4c2ecf7.html", "dir_c310894bc8ef550741f3160dd4c2ecf7" ],
     [ "ServiceLogics", "dir_c743f16faffac54afbe845f2f43d11d8.html", "dir_c743f16faffac54afbe845f2f43d11d8" ],

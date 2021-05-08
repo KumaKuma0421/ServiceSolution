@@ -1,30 +1,4 @@
 var searchData=
 [
-  ['service_5fdescription_552',['SERVICE_DESCRIPTION',['../dd/d0d/_service_application1_2_main_8h.html#a9e09fabb520506d7ddedefd5384174e3',1,'SERVICE_DESCRIPTION():&#160;Main.h'],['../dd/d1a/_service_application2_2_main_8h.html#a9e09fabb520506d7ddedefd5384174e3',1,'SERVICE_DESCRIPTION():&#160;Main.h']]],
-  ['service_5fdisplay_5fname_553',['SERVICE_DISPLAY_NAME',['../dd/d0d/_service_application1_2_main_8h.html#a943fc087c8634104230a990a10c138f7',1,'SERVICE_DISPLAY_NAME():&#160;Main.h'],['../dd/d1a/_service_application2_2_main_8h.html#a943fc087c8634104230a990a10c138f7',1,'SERVICE_DISPLAY_NAME():&#160;Main.h']]],
-  ['service_5fname_554',['SERVICE_NAME',['../dd/d0d/_service_application1_2_main_8h.html#a5ecc06b4fbeedd8edd0692663fb76489',1,'SERVICE_NAME():&#160;Main.h'],['../dd/d1a/_service_application2_2_main_8h.html#a5ecc06b4fbeedd8edd0692663fb76489',1,'SERVICE_NAME():&#160;Main.h']]],
-  ['status_5fseverity_5ferror_555',['STATUS_SEVERITY_ERROR',['../d7/d18/_service_message_8h.html#a377c1ee798fa944879949be5a4cf2efb',1,'STATUS_SEVERITY_ERROR():&#160;ServiceMessage.h'],['../dd/d42/_sample_8h.html#a377c1ee798fa944879949be5a4cf2efb',1,'STATUS_SEVERITY_ERROR():&#160;Sample.h']]],
-  ['status_5fseverity_5finformation_556',['STATUS_SEVERITY_INFORMATION',['../d7/d18/_service_message_8h.html#a75c9a4ad772b4cd7631767b15d883b57',1,'ServiceMessage.h']]],
-  ['status_5fseverity_5finformational_557',['STATUS_SEVERITY_INFORMATIONAL',['../dd/d42/_sample_8h.html#a7b7051e8f3e539455f607157e1534875',1,'Sample.h']]],
-  ['status_5fseverity_5fsuccess_558',['STATUS_SEVERITY_SUCCESS',['../d7/d18/_service_message_8h.html#a93220fefb1da42a9b5031beba39228ed',1,'STATUS_SEVERITY_SUCCESS():&#160;ServiceMessage.h'],['../dd/d42/_sample_8h.html#a93220fefb1da42a9b5031beba39228ed',1,'STATUS_SEVERITY_SUCCESS():&#160;Sample.h']]],
-  ['status_5fseverity_5fwarning_559',['STATUS_SEVERITY_WARNING',['../d7/d18/_service_message_8h.html#a082601cd98e9a05c929049f4052b671d',1,'STATUS_SEVERITY_WARNING():&#160;ServiceMessage.h'],['../dd/d42/_sample_8h.html#a082601cd98e9a05c929049f4052b671d',1,'STATUS_SEVERITY_WARNING():&#160;Sample.h']]],
-  ['svc_5ferror_560',['SVC_ERROR',['../dd/d42/_sample_8h.html#ae656a7b08995607d21244cc5fdc3dad6',1,'Sample.h']]],
-  ['svc_5ferror_5fapi_561',['SVC_ERROR_API',['../d7/d18/_service_message_8h.html#acb1817917d2c6fc09e09390f154a8029',1,'ServiceMessage.h']]],
-  ['svc_5ferror_5fio_562',['SVC_ERROR_IO',['../d7/d18/_service_message_8h.html#a0a044d8fcfca00b6360f589233c1ba71',1,'ServiceMessage.h']]],
-  ['svc_5ferror_5fruntime_563',['SVC_ERROR_RUNTIME',['../d7/d18/_service_message_8h.html#ac77158c0ddc56c0b22e0680dd44d84c7',1,'ServiceMessage.h']]],
-  ['svc_5ferror_5fsystem_564',['SVC_ERROR_SYSTEM',['../d7/d18/_service_message_8h.html#a8bff194e02a6f3c3e6b0b8e19560b3a4',1,'ServiceMessage.h']]],
-  ['svc_5finfo_5fapi_565',['SVC_INFO_API',['../d7/d18/_service_message_8h.html#a61ad62626728593a6dfe3b329b49443c',1,'ServiceMessage.h']]],
-  ['svc_5finfo_5fio_566',['SVC_INFO_IO',['../d7/d18/_service_message_8h.html#a09176dbdf3770a00646c2a6546c0cee2',1,'ServiceMessage.h']]],
-  ['svc_5finfo_5fruntime_567',['SVC_INFO_RUNTIME',['../d7/d18/_service_message_8h.html#ac6eb755229814197c03a62e767a5e171',1,'ServiceMessage.h']]],
-  ['svc_5finfo_5fsystem_568',['SVC_INFO_SYSTEM',['../d7/d18/_service_message_8h.html#af501ca9cf0eb7357884657c569ee25d7',1,'ServiceMessage.h']]],
-  ['svc_5finfo_5ftrace_569',['SVC_INFO_TRACE',['../d7/d18/_service_message_8h.html#adbe4e7f38c6241628bbd507c3089d11a',1,'ServiceMessage.h']]],
-  ['svc_5fsuccess_5fapi_570',['SVC_SUCCESS_API',['../d7/d18/_service_message_8h.html#a41d15ebf783261a70f48fe16952a741c',1,'ServiceMessage.h']]],
-  ['svc_5fsuccess_5fio_571',['SVC_SUCCESS_IO',['../d7/d18/_service_message_8h.html#af5617c9c52b410bd8c393536daa224a3',1,'ServiceMessage.h']]],
-  ['svc_5fsuccess_5fruntime_572',['SVC_SUCCESS_RUNTIME',['../d7/d18/_service_message_8h.html#adf39ffd188d0932bf63bd9a3d9f91507',1,'ServiceMessage.h']]],
-  ['svc_5fsuccess_5fsystem_573',['SVC_SUCCESS_SYSTEM',['../d7/d18/_service_message_8h.html#a33ae99afe245490146fcab28b2fdb0a5',1,'ServiceMessage.h']]],
-  ['svc_5fwarning_5fapi_574',['SVC_WARNING_API',['../d7/d18/_service_message_8h.html#a088202f84226ae2b3473d93f8e56dbb2',1,'ServiceMessage.h']]],
-  ['svc_5fwarning_5fio_575',['SVC_WARNING_IO',['../d7/d18/_service_message_8h.html#a7f7f34bf7b3bb1c4d692b7760cbf6e93',1,'ServiceMessage.h']]],
-  ['svc_5fwarning_5fruntime_576',['SVC_WARNING_RUNTIME',['../d7/d18/_service_message_8h.html#a79414418a4bd7ff786d7e4dc4145f54a',1,'ServiceMessage.h']]],
-  ['svc_5fwarning_5fsystem_577',['SVC_WARNING_SYSTEM',['../d7/d18/_service_message_8h.html#a0937f66d90491e030178f379605bd41a',1,'ServiceMessage.h']]],
-  ['svcname_578',['SVCNAME',['../d2/dc2/_svc_8cpp.html#a1c23f913719dd0f24a8f77500c6a5a44',1,'Svc.cpp']]]
+  ['provider_5fname_632',['PROVIDER_NAME',['../d4/dfd/_event_log_dump_2_main_8h.html#a95e27f40eff67ab99562a02abddc080b',1,'Main.h']]]
 ];

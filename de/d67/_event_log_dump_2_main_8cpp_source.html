@@ -1,0 +1,801 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: EventLogDump/Main.cpp ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('de/d67/_event_log_dump_2_main_8cpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/d67/_event_log_dump_2_main_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Main.cpp : このファイルには &#39;main&#39; 関数が含まれています。</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// ------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d4/d07/_service_logics_2pch_8h.html">pch.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/d1a/_service_application2_2_main_8h.html">Main.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac57f8458bbc141863e878ee0046b86f6">    8</a></span>&#160;HANDLE <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac57f8458bbc141863e878ee0046b86f6">g_hCategoryResource</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aaef4e285e43eed756e050513d7e0d6cb">    9</a></span>&#160;HANDLE <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aaef4e285e43eed756e050513d7e0d6cb">g_hMessageResource</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../dd/d1a/_service_application2_2_main_8h.html#a61575509389365facce10b2f3f5b55b7">   11</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a2fc1f493acf321f87b269920b858666d">_tmain</a>(<span class="keywordtype">int</span> argc, TCHAR** argv)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    UNREFERENCED_PARAMETER(argc);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    UNREFERENCED_PARAMETER(argv);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    _tsetlocale(LC_ALL, _T(<span class="stringliteral">&quot;Japanese&quot;</span>));</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    HANDLE hEventLog = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    DWORD dwStatus = ERROR_SUCCESS;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    DWORD dwBytesToRead = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    DWORD dwBytesRead = 0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    DWORD dwMinimumBytesToRead = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    LPBYTE lpbyBuffer = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    LPBYTE lpbyTemp = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    TCHAR tszCategoryMessageFile[MAX_PATH] = { 0 };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    TCHAR tszEventMessageFile[MAX_PATH] = { 0 };</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    BOOL ret;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// The source name (provider) must exist as a subkey of Application.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    hEventLog = ::OpenEventLog(<span class="keyword">nullptr</span>, <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a651e5b9251b0d79de4e2038d069764c3">SOURCE_NAME</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == hEventLog)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        _tprintf(_T(<span class="stringliteral">&quot;OpenEventLog failed with 0x%x.\n&quot;</span>), ::GetLastError());</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    ret = <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aa83312b09827daf2607b2038891c3721">GetResourceFiles</a>(tszCategoryMessageFile, tszEventMessageFile);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (!ret)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        _tprintf(_T(<span class="stringliteral">&quot;GetMessageResourceFile failed.\n&quot;</span>));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Get the DLL that contains the string resources for the provider.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (_tcslen(tszCategoryMessageFile) &gt; 0)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac57f8458bbc141863e878ee0046b86f6">g_hCategoryResource</a> = <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aab46c7ee37a145710df9833cf4e2de31">GetMessageResources</a>(tszCategoryMessageFile);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac57f8458bbc141863e878ee0046b86f6">g_hCategoryResource</a>)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            _tprintf(_T(<span class="stringliteral">&quot;GetMessageResources failed.\n&quot;</span>));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Get the DLL that contains the string resources for the provider.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (_tcslen(tszEventMessageFile) &gt; 0)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aaef4e285e43eed756e050513d7e0d6cb">g_hMessageResource</a> = <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aab46c7ee37a145710df9833cf4e2de31">GetMessageResources</a>(tszEventMessageFile);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aaef4e285e43eed756e050513d7e0d6cb">g_hMessageResource</a>)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            _tprintf(_T(<span class="stringliteral">&quot;GetMessageResources failed.\n&quot;</span>));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Allocate an initial block of memory used to read event records. The number </span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// of records read into the buffer will vary depending on the size of each event.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// The size of each event will vary based on the size of the user-defined</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// data included with each event, the number and length of insertion </span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// strings, and other data appended to the end of the event record.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    dwBytesToRead = <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a2dae984f4965bfa5ed586e3871540ce7">MAX_RECORD_BUFFER_SIZE</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    lpbyBuffer = (LPBYTE)::malloc(dwBytesToRead);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == lpbyBuffer)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        _tprintf(_T(<span class="stringliteral">&quot;Failed to allocate the initial memory for the record buffer.\n&quot;</span>));</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Read blocks of records until you reach the end of the log or an </span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// error occurs. The records are read from newest to oldest. If the buffer</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// is not big enough to hold a complete event record, reallocate the buffer.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">while</span> (ERROR_SUCCESS == dwStatus)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (!::ReadEventLog(hEventLog,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            EVENTLOG_SEQUENTIAL_READ | EVENTLOG_BACKWARDS_READ,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            0,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            lpbyBuffer,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            dwBytesToRead,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            &amp;dwBytesRead,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            &amp;dwMinimumBytesToRead))</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            dwStatus = ::GetLastError();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (ERROR_INSUFFICIENT_BUFFER == dwStatus)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                dwStatus = ERROR_SUCCESS;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                lpbyTemp = (PBYTE)::realloc(lpbyBuffer, dwMinimumBytesToRead);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == lpbyTemp)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    _tprintf(_T(<span class="stringliteral">&quot;Failed to reallocate the memory for the record buffer (%d bytes).\n&quot;</span>), dwMinimumBytesToRead);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                lpbyBuffer = lpbyTemp;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                dwBytesToRead = dwMinimumBytesToRead;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">if</span> (ERROR_HANDLE_EOF != dwStatus)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    _tprintf(_T(<span class="stringliteral">&quot;ReadEventLog failed with %lu.\n&quot;</span>), dwStatus);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="comment">// Print the contents of each record in the buffer.</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a7866d0a054032a4b940bbde142b90131">DumpRecordsInBuffer</a>(lpbyBuffer, dwBytesRead);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;cleanup:</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (hEventLog)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        ::CloseEventLog(hEventLog);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span> (lpbyBuffer)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        ::free(lpbyBuffer);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">// レジストリからメッセージリソースDLLのファイル名を取得します。</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">// </span></div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#aa83312b09827daf2607b2038891c3721">  136</a></span>&#160;BOOL <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aa83312b09827daf2607b2038891c3721">GetResourceFiles</a>(LPTSTR lptszCategoryMessageFile, LPTSTR lptszEventMessageFile)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <a class="code" href="../../d4/d78/class_registry.html">Registry</a> registry1;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    HKEY hKeyRoot = HKEY_LOCAL_MACHINE;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    TCHAR tszRootKey[MAX_PATH];</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    TCHAR tszPath[MAX_PATH];</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="../../dc/d71/_registry_2_registry_8h.html#a1cf569187eb354edc61baddd3a5acbec">RegistryValueTypes</a> eType;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    BOOL ret;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    wsprintf(tszRootKey, _T(<span class="stringliteral">&quot;%s\\%s\\%s&quot;</span>), <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a6c5f5d7dd67667aab49de3791fb5833c">EVENT_ROOT</a>, <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a651e5b9251b0d79de4e2038d069764c3">SOURCE_NAME</a>, <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a95e27f40eff67ab99562a02abddc080b">PROVIDER_NAME</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    ret = registry1.<a class="code" href="../../d4/d78/class_registry.html#ae09f2a9cb7e848886848c22e9065db38">Open</a>(hKeyRoot, tszRootKey, KEY_READ);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">if</span> (!ret) <span class="keywordflow">return</span> FALSE;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    ret = registry1.<a class="code" href="../../d4/d78/class_registry.html#ac25e698794a4085ccedcdb1d9a51f1bb">QueryValue</a>(<a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#abc211491f4e77884ea8d39a89ff791e6">ENTRY_CATEGORY_MESSAGE_FILE</a>, eType, (LPBYTE)tszPath, MAX_PATH);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span> (!ret) <span class="keywordflow">return</span> FALSE;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">if</span> (eType == RegistryValueTypes::EXPAND_SZ)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        ::ExpandEnvironmentStrings(tszPath, lptszCategoryMessageFile, MAX_PATH);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        _tcscpy_s(lptszCategoryMessageFile, MAX_PATH, tszPath);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    ret = registry1.<a class="code" href="../../d4/d78/class_registry.html#ac25e698794a4085ccedcdb1d9a51f1bb">QueryValue</a>(<a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#ab3fc27297031a54d413c76e7e85100d2">ENTRY_EVENT_MESSAGE_FILE</a>, eType, (LPBYTE)tszPath, MAX_PATH);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span> (!ret) <span class="keywordflow">return</span> FALSE;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span> (eType == RegistryValueTypes::EXPAND_SZ)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        ::ExpandEnvironmentStrings(tszPath, lptszEventMessageFile, MAX_PATH);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        _tcscpy_s(lptszEventMessageFile, MAX_PATH, tszPath);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">return</span> TRUE;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">// Get the provider DLL that contains the string resources for the</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">// category strings, event message strings, and parameter insert strings.</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">// For this example, the path to the DLL is hardcoded but typically,</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">// you would read the CategoryMessageFile, EventMessageFile, and </span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">// ParameterMessageFile registry values under the source&#39;s registry key located </span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">// under \SYSTEM\CurrentControlSet\Services\Eventlog\Application in</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">// the HKLM registry hive. In this example, all resources are included in</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">// the same resource-only DLL.</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#aab46c7ee37a145710df9833cf4e2de31">  185</a></span>&#160;HANDLE <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aab46c7ee37a145710df9833cf4e2de31">GetMessageResources</a>(LPCTSTR lpctszResourceFile)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    HANDLE hResources = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    hResources = ::LoadLibraryEx(lpctszResourceFile, <span class="keyword">nullptr</span>, LOAD_LIBRARY_AS_IMAGE_RESOURCE | LOAD_LIBRARY_AS_DATAFILE);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == hResources)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        _tprintf(_T(<span class="stringliteral">&quot;LoadLibrary failed with %lu.\n&quot;</span>), ::GetLastError());</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> hResources;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">// Loop through the buffer and print the contents of each record </span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">// in the buffer.</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a7866d0a054032a4b940bbde142b90131">  201</a></span>&#160;DWORD <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a7866d0a054032a4b940bbde142b90131">DumpRecordsInBuffer</a>(LPBYTE lpbyBuffer, DWORD dwBytesRead)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    DWORD dwStatus = ERROR_SUCCESS;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    LPBYTE lpbyRecord = lpbyBuffer;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    LPBYTE lpbyEndOfRecords = lpbyBuffer + dwBytesRead;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    LPTSTR lptszMessage = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    LPTSTR lptszFinalMessage = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    TCHAR tszTimeStamp[<a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a1ddf2fd58a3eab1fb47066728eec6fe0">MAX_TIMESTAMP_LEN</a>];</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">while</span> (lpbyRecord &lt; lpbyEndOfRecords)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="comment">// If the event was written by our provider, write the contents of the event.</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">if</span> (0 == ::_tcscmp(<a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a95e27f40eff67ab99562a02abddc080b">PROVIDER_NAME</a>, (LPTSTR)(lpbyRecord + <span class="keyword">sizeof</span>(EVENTLOGRECORD))))</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            PEVENTLOGRECORD p = (PEVENTLOGRECORD)lpbyRecord;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac88443b796d6422c6bcf490301216cc7">GetTimeStamp</a>(((PEVENTLOGRECORD)lpbyRecord)-&gt;TimeGenerated, tszTimeStamp);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            _tprintf(_T(<span class="stringliteral">&quot;------------------------------------------------------------\n&quot;</span>));</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            _tprintf(_T(<span class="stringliteral">&quot;time stamp: %s\n&quot;</span>), tszTimeStamp);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            _tprintf(_T(<span class="stringliteral">&quot;record number: %lu\n&quot;</span>), ((PEVENTLOGRECORD)lpbyRecord)-&gt;RecordNumber);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            _tprintf(_T(<span class="stringliteral">&quot;event type: %s\n&quot;</span>), <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#afc0dca8ea9ca32710e3c07806e95d5d9">lptszEventTypeNames</a>[<a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a533817dd907420ff6eb9f2b536b53126">GetEventTypeName</a>(((PEVENTLOGRECORD)lpbyRecord)-&gt;EventType)]);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            _tprintf(_T(<span class="stringliteral">&quot;event id: %d\n&quot;</span>), ((PEVENTLOGRECORD)lpbyRecord)-&gt;EventID &amp; 0xFFFF);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            lptszMessage = <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a59e7dad9533bd29631da680a3f7a4001">GetMessageString</a>(<a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac57f8458bbc141863e878ee0046b86f6">g_hCategoryResource</a>, ((PEVENTLOGRECORD)lpbyRecord)-&gt;EventCategory, 0, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordflow">if</span> (lptszMessage)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                _tprintf(_T(<span class="stringliteral">&quot;event category: %d %s&quot;</span>), ((PEVENTLOGRECORD)lpbyRecord)-&gt;EventCategory, lptszMessage);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                ::LocalFree(lptszMessage);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                lptszMessage = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            lptszMessage = <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a59e7dad9533bd29631da680a3f7a4001">GetMessageString</a>(<a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aaef4e285e43eed756e050513d7e0d6cb">g_hMessageResource</a>, ((PEVENTLOGRECORD)lpbyRecord)-&gt;EventID,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                ((PEVENTLOGRECORD)lpbyRecord)-&gt;NumStrings, (LPTSTR)(lpbyRecord + ((PEVENTLOGRECORD)lpbyRecord)-&gt;StringOffset));</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">if</span> (lptszMessage)</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                dwStatus = <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a7f5460ae83bc0f5388774bcbf744a90e">ApplyParameterStringsToMessage</a>(lptszMessage, lptszFinalMessage);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                _tprintf(_T(<span class="stringliteral">&quot;event message: %s&quot;</span>), (lptszFinalMessage) ? lptszFinalMessage : lptszMessage);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                ::LocalFree(lptszMessage);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                lptszMessage = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="keywordflow">if</span> (lptszFinalMessage)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    ::free(lptszFinalMessage);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    lptszFinalMessage = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            }</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="comment">// To write the event data, you need to know the format of the data. In</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="comment">// this example, we know that the event data is a null-terminated string.</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">if</span> (((PEVENTLOGRECORD)lpbyRecord)-&gt;DataLength &gt; 0)</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                _tprintf(_T(<span class="stringliteral">&quot;event data: %s\n&quot;</span>), (LPTSTR)(lpbyRecord + ((PEVENTLOGRECORD)lpbyRecord)-&gt;DataOffset));</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            _tprintf(_T(<span class="stringliteral">&quot;\n&quot;</span>));</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        lpbyRecord += ((PEVENTLOGRECORD)lpbyRecord)-&gt;Length;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">return</span> dwStatus;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">// Get an dwIndex value to the lptszEventTypeNames array based on </span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">// the event type value.</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a533817dd907420ff6eb9f2b536b53126">  270</a></span>&#160;DWORD <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a533817dd907420ff6eb9f2b536b53126">GetEventTypeName</a>(DWORD dwEventType)</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;{</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    DWORD dwIndex = 0;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">switch</span> (dwEventType)</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">case</span> EVENTLOG_SUCCESS:</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            dwIndex = 0;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">case</span> EVENTLOG_ERROR_TYPE:</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            dwIndex = 1;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">case</span> EVENTLOG_WARNING_TYPE:</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            dwIndex = 2;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">case</span> EVENTLOG_INFORMATION_TYPE:</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            dwIndex = 3;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">case</span> EVENTLOG_AUDIT_SUCCESS:</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            dwIndex = 4;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">case</span> EVENTLOG_AUDIT_FAILURE:</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            dwIndex = 5;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">return</span> dwIndex;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment">// Formats the specified message. If the message uses inserts, build</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment">// the argument list to pass to FormatMessage.</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a3a30b7f04b0c4760fc3091d17dd2c86d">  302</a></span>&#160;LPTSTR <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a59e7dad9533bd29631da680a3f7a4001">GetMessageString</a>(HANDLE hResource, DWORD dwMessageID, DWORD dwArgc, LPTSTR lptszArgv)</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;{</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    LPTSTR lptszMessage = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    DWORD dwFormatFlags =</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        FORMAT_MESSAGE_FROM_SYSTEM |</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        FORMAT_MESSAGE_FROM_HMODULE |</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        FORMAT_MESSAGE_ALLOCATE_BUFFER;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    DWORD_PTR* lpdwArgs = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    LPTSTR lptszString = lptszArgv;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">// The insertion strings appended to the end of the event record</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="comment">// are an array of strings; however, FormatMessage requires</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="comment">// an array of addresses. Create an array of DWORD_PTRs based on</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="comment">// the count of strings. Assign the address of each string</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="comment">// to an element in the array (maintaining the same order).</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">if</span> (dwArgc &gt; 0)</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    {</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        lpdwArgs = (DWORD_PTR*)::malloc(<span class="keyword">sizeof</span>(DWORD_PTR) * dwArgc);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">if</span> (lpdwArgs)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            dwFormatFlags |= FORMAT_MESSAGE_ARGUMENT_ARRAY;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keywordflow">for</span> (DWORD i = 0; i &lt; dwArgc; i++)</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                lpdwArgs[i] = (DWORD_PTR)lptszString;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                lptszString += _tcslen(lptszString) + 1;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            }</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        }</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            dwFormatFlags |= FORMAT_MESSAGE_IGNORE_INSERTS;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            _tprintf(_T(<span class="stringliteral">&quot;Failed to allocate memory for the insert string array.\n&quot;</span>));</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    }</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">if</span> (!::FormatMessage(dwFormatFlags,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        hResource,</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        dwMessageID,</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        0,</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        (LPTSTR)&amp;lptszMessage,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        0,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        (va_list*)lpdwArgs))</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    {</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        _tprintf(_T(<span class="stringliteral">&quot;Format message failed with %lu\n&quot;</span>), ::GetLastError());</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">if</span> (lpdwArgs)</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        ::free(lpdwArgs);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">return</span> lptszMessage;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">// If the message string contains parameter insertion strings (for example, %%4096),</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">// you must perform the parameter substitution yourself. To get the parameter message </span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="comment">// string, call FormatMessage with the message identifier found in the parameter insertion </span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">// string (for example, 4096 is the message identifier if the parameter insertion string</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">// is %%4096). You then substitute the parameter insertion string in the message </span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment">// string with the actual parameter message string. </span></div>
+<div class="line"><a name="l00360"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a7f5460ae83bc0f5388774bcbf744a90e">  360</a></span>&#160;DWORD <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a7f5460ae83bc0f5388774bcbf744a90e">ApplyParameterStringsToMessage</a>(LPCTSTR lptszMessage, LPTSTR&amp; lptszFinalMessage)</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;{</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    DWORD dwStatus = ERROR_SUCCESS;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    DWORD dwParameterCount = 0;  <span class="comment">// Number of insertion strings found in lptszMessage</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordtype">size_t</span> cbBuffer = 0;         <span class="comment">// Size of the buffer in bytes</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordtype">size_t</span> cchBuffer = 0;        <span class="comment">// Size of the buffer in characters</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordtype">size_t</span> cchParameters = 0;    <span class="comment">// Number of characters in all the parameter strings</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordtype">size_t</span> cch = 0;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    DWORD i = 0;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    LPTSTR* lptszStartingAddresses = <span class="keyword">nullptr</span>;  <span class="comment">// Array of pointers to the beginning of each parameter string in lptszMessage</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    LPTSTR* lptszEndingAddresses = <span class="keyword">nullptr</span>;    <span class="comment">// Array of pointers to the end of each parameter string in lptszMessage</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    LPDWORD lpdwParameterIDs = <span class="keyword">nullptr</span>;        <span class="comment">// Array of parameter identifiers found in lptszMessage</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    LPTSTR* lptszParameters = <span class="keyword">nullptr</span>;         <span class="comment">// Array of the actual parameter strings</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    LPTSTR lptszTempMessage = (LPTSTR)lptszMessage;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    LPTSTR lptszTempFinalMessage = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="comment">// Determine the number of parameter insertion strings in lptszMessage.</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">while</span> (lptszTempMessage = ::_tcschr(lptszTempMessage, L<span class="charliteral">&#39;%&#39;</span>))</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        dwParameterCount++;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        lptszTempMessage++;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="comment">// If there are no parameter insertion strings in lptszMessage, return.</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">if</span> (0 == dwParameterCount)</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    {</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        lptszFinalMessage = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    }</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="comment">// Allocate an array of pointers that will contain the beginning address </span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="comment">// of each parameter insertion string.</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    cbBuffer = <span class="keyword">sizeof</span>(LPTSTR) * dwParameterCount;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    lptszStartingAddresses = (LPTSTR*)::malloc(cbBuffer);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == lptszStartingAddresses)</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    {</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        _tprintf(_T(<span class="stringliteral">&quot;Failed to allocate memory for lptszStartingAddresses.\n&quot;</span>));</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        dwStatus = ERROR_OUTOFMEMORY;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    }</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    ::RtlZeroMemory(lptszStartingAddresses, cbBuffer);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="comment">// Allocate an array of pointers that will contain the ending address (one</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="comment">// character past the of the identifier) of the each parameter insertion string.</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    lptszEndingAddresses = (LPTSTR*)::malloc(cbBuffer);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == lptszEndingAddresses)</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        _tprintf(_T(<span class="stringliteral">&quot;Failed to allocate memory for lptszEndingAddresses.\n&quot;</span>));</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        dwStatus = ERROR_OUTOFMEMORY;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    }</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    ::RtlZeroMemory(lptszEndingAddresses, cbBuffer);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="comment">// Allocate an array of pointers that will contain pointers to the actual</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="comment">// parameter strings.</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    lptszParameters = (LPTSTR*)::malloc(cbBuffer);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == lptszParameters)</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    {</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        _tprintf(_T(<span class="stringliteral">&quot;Failed to allocate memory for lptszEndingAddresses.\n&quot;</span>));</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        dwStatus = ERROR_OUTOFMEMORY;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    }</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    ::RtlZeroMemory(lptszParameters, cbBuffer);</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <span class="comment">// Allocate an array of DWORDs that will contain the message identifier</span></div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="comment">// for each parameter.</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    lpdwParameterIDs = (DWORD*)::malloc(cbBuffer);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == lpdwParameterIDs)</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    {</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        _tprintf(_T(<span class="stringliteral">&quot;Failed to allocate memory for lpdwParameterIDs.\n&quot;</span>));</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        dwStatus = ERROR_OUTOFMEMORY;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    }</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    ::RtlZeroMemory(lpdwParameterIDs, cbBuffer);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="comment">// Find each parameter in lptszMessage and get the pointer to the</span></div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="comment">// beginning of the insertion string, the end of the insertion string,</span></div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="comment">// and the message identifier of the parameter.</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    lptszTempMessage = (LPTSTR)lptszMessage;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordflow">while</span> (lptszTempMessage = ::_tcschr(lptszTempMessage, L<span class="charliteral">&#39;%&#39;</span>))</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    {</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="keywordflow">if</span> (::isdigit(*(lptszTempMessage + 1)))</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        {</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            lptszStartingAddresses[i] = lptszTempMessage;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            lptszTempMessage++;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            lpdwParameterIDs[i] = (DWORD)::_wtoi(lptszTempMessage);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160; </div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="keywordflow">while</span> (::isdigit(*++lptszTempMessage))</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                ;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            lptszEndingAddresses[i] = lptszTempMessage;</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            i++;</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        }</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    }</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="comment">// For each parameter, use the message identifier to get the</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <span class="comment">// actual parameter string.</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="keywordflow">for</span> (DWORD i = 0; i &lt; dwParameterCount; i++)</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    {</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        lptszParameters[i] = <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#a59e7dad9533bd29631da680a3f7a4001">GetMessageString</a>(<a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#aaef4e285e43eed756e050513d7e0d6cb">g_hMessageResource</a>, lpdwParameterIDs[i], 0, <span class="keyword">nullptr</span>); <span class="comment">// TODO:g_hMessageResourceは暫定措置</span></div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == lptszParameters[i])</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        {</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            _tprintf(_T(<span class="stringliteral">&quot;GetMessageString could not find parameter string for insert %lu.\n&quot;</span>), i);</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            dwStatus = ERROR_INVALID_PARAMETER;</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        }</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160; </div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        cchParameters += ::_tcslen(lptszParameters[i]);</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    }</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160; </div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="comment">// Allocate enough memory for lptszFinalMessage based on the length of lptszMessage</span></div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <span class="comment">// and the length of each parameter string. The lptszFinalMessage buffer will contain </span></div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="comment">// the completed parameter substitution.</span></div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    lptszTempMessage = (LPTSTR)lptszMessage;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    cbBuffer = (_tcslen(lptszMessage) + cchParameters + 1) * <span class="keyword">sizeof</span>(WCHAR);</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    lptszFinalMessage = (LPTSTR)::malloc(cbBuffer);</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == lptszFinalMessage)</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    {</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;        _tprintf(_T(<span class="stringliteral">&quot;Failed to allocate memory for lptszFinalMessage.\n&quot;</span>));</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        dwStatus = ERROR_OUTOFMEMORY;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;        <span class="keywordflow">goto</span> cleanup;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    }</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160; </div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    ::RtlZeroMemory(lptszFinalMessage, cbBuffer);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    cchBuffer = cbBuffer / <span class="keyword">sizeof</span>(WCHAR);</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    lptszTempFinalMessage = lptszFinalMessage;</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="comment">// Build the final message string.</span></div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <span class="keywordflow">for</span> (DWORD i = 0; i &lt; dwParameterCount; i++)</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    {</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        <span class="comment">// Append the segment from lptszMessage. In the first iteration, this is &quot;8 &quot; and in the</span></div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        <span class="comment">// second iteration, this is &quot; = 2 &quot;.</span></div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        _tcsncpy_s(lptszTempFinalMessage, cchBuffer, lptszTempMessage, cch = (lptszStartingAddresses[i] - lptszTempMessage));</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        lptszTempMessage = lptszEndingAddresses[i];</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        cchBuffer -= cch;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        <span class="comment">// Append the parameter string. In the first iteration, this is &quot;quarts&quot; and in the</span></div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        <span class="comment">// second iteration, this is &quot;gallons&quot;</span></div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        lptszTempFinalMessage += cch;</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;        _tcscpy_s(lptszTempFinalMessage, cchBuffer, lptszParameters[i]);</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        cchBuffer -= cch = _tcslen(lptszParameters[i]);</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160; </div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        lptszTempFinalMessage += cch;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    }</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160; </div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <span class="comment">// Append the last segment from lptszMessage, which is &quot;.&quot;.</span></div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    _tcscpy_s(lptszTempFinalMessage, cchBuffer, lptszTempMessage);</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160; </div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;cleanup:</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <span class="keywordflow">if</span> (ERROR_SUCCESS != dwStatus)</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        lptszFinalMessage = (LPTSTR)lptszMessage;</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keywordflow">if</span> (lptszStartingAddresses)</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        ::free(lptszStartingAddresses);</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keywordflow">if</span> (lptszEndingAddresses)</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        ::free(lptszEndingAddresses);</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160; </div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    <span class="keywordflow">if</span> (lpdwParameterIDs)</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        ::free(lpdwParameterIDs);</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keywordflow">for</span> (DWORD i = 0; i &lt; dwParameterCount; i++)</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    {</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <span class="keywordflow">if</span> (lptszParameters[i])</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;            ::LocalFree(lptszParameters[i]);</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    }</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="keywordflow">return</span> dwStatus;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;}</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160; </div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160; </div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;<span class="comment">// Get a string that contains the time stamp of when the event </span></div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;<span class="comment">// was generated.</span></div>
+<div class="line"><a name="l00540"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#ac88443b796d6422c6bcf490301216cc7">  540</a></span>&#160;VOID <a class="code" href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac88443b796d6422c6bcf490301216cc7">GetTimeStamp</a>(<span class="keyword">const</span> DWORD cdwTime, TCHAR tszDisplayString[])</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;{</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    ULONGLONG ullTimeStamp = 0;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    ULONGLONG ullSecsTo1970 = 116444736000000000;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    SYSTEMTIME st;</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    FILETIME ft;</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    FILETIME ftLocal;</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160; </div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    ullTimeStamp = Int32x32To64(cdwTime, 10000000) + ullSecsTo1970;</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    ft.dwHighDateTime = (DWORD)((ullTimeStamp &gt;&gt; 32) &amp; 0xFFFFFFFF);</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    ft.dwLowDateTime = (DWORD)(ullTimeStamp &amp; 0xFFFFFFFF);</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160; </div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    ::FileTimeToLocalFileTime(&amp;ft, &amp;ftLocal);</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    ::FileTimeToSystemTime(&amp;ftLocal, &amp;st);</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    ::StringCchPrintf(</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        tszDisplayString,</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a1ddf2fd58a3eab1fb47066728eec6fe0">MAX_TIMESTAMP_LEN</a>,</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        _T(<span class="stringliteral">&quot;%04d/%02d/%02d %.2d:%.2d:%.2d&quot;</span>),</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond);</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_i_service_html"><div class="ttname"><a href="../../d5/ddc/class_i_service.html">IService</a></div><div class="ttdoc">サービス提供プロジェクトへのインターフェースクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d50/_i_service_8h_source.html#l00011">IService.h:12</a></div></div>
+<div class="ttc" id="aclass_registry_html_ae09f2a9cb7e848886848c22e9065db38"><div class="ttname"><a href="../../d4/d78/class_registry.html#ae09f2a9cb7e848886848c22e9065db38">Registry::Open</a></div><div class="ttdeci">BOOL Open(HKEY hRootKey, LPCTSTR lpctszSubKey, REGSAM samDesired=KEY_ALL_ACCESS)</div><div class="ttdoc">レジストリキーをオープンします。</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d54/_registry_2_registry_8cpp_source.html#l00050">Registry.cpp:50</a></div></div>
+<div class="ttc" id="aclass_service_status_handler_html_a8730c8d1ea75c183c58f211705f3c66e"><div class="ttname"><a href="../../d4/dfa/class_service_status_handler.html#a8730c8d1ea75c183c58f211705f3c66e">ServiceStatusHandler::Init</a></div><div class="ttdeci">BOOL WINAPI Init(LPCTSTR lpctszServiceName, LPHANDLER_FUNCTION lpfnCtrlHandler)</div><div class="ttdoc">サービス制御関数の登録処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00353">ServiceCommon.hpp:353</a></div></div>
+<div class="ttc" id="aclass_service_handler_html_a82b249089271ffb76a008c4c2feb0343"><div class="ttname"><a href="../../d1/d69/class_service_handler.html#a82b249089271ffb76a008c4c2feb0343">ServiceHandler::Close</a></div><div class="ttdeci">virtual BOOL WINAPI Close()</div><div class="ttdoc">クローズ処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00114">ServiceCommon.hpp:114</a></div></div>
+<div class="ttc" id="aclass_thread_html_ac5062c3b9e01c2f8c5ac9ef7b38ec4c4"><div class="ttname"><a href="../../d8/d18/class_thread.html#ac5062c3b9e01c2f8c5ac9ef7b38ec4c4">Thread::Resume</a></div><div class="ttdeci">virtual BOOL Resume()</div><div class="ttdoc">スレッドの再開</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d00/_thread_8cpp_source.html#l00055">Thread.cpp:55</a></div></div>
+<div class="ttc" id="aclass_service_command_html_a1b16f038ff452c39c9f4e13af91c4e11"><div class="ttname"><a href="../../d5/dab/class_service_command.html#a1b16f038ff452c39c9f4e13af91c4e11">ServiceCommand::TemplateAction</a></div><div class="ttdeci">BOOL WINAPI TemplateAction(DWORD dwOpenParam, TemplateMethod method, LPCTSTR lpctszLastMessage, LPVOID lpvParam=nullptr)</div><div class="ttdoc">コマンド操作のプロローグとエピローグ</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00626">ServiceCommand.cpp:626</a></div></div>
+<div class="ttc" id="aclass_service2_html"><div class="ttname"><a href="../../d9/d2d/class_service2.html">Service2</a></div><div class="ttdoc">サービスを提供するクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d86/_service2_8h_source.html#l00014">Service2.h:15</a></div></div>
+<div class="ttc" id="aclass_service_core_html_a5e4e1370aec1f7335af3555b92931bec"><div class="ttname"><a href="../../dd/d44/class_service_core.html#a5e4e1370aec1f7335af3555b92931bec">ServiceCore::ReportStatus</a></div><div class="ttdeci">BOOL WINAPI ReportStatus(DWORD dwCurrentState, DWORD dwWin32ExitCode=NO_ERROR, DWORD dwWaitHint=MAX_STATE_TRANSITION_TIME)</div><div class="ttdoc">サービスの現在の状態を設定</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_service_core_8cpp_source.html#l00439">ServiceCore.cpp:439</a></div></div>
+<div class="ttc" id="a_svc_8cpp_html_a98ebd77b3a5c8a51b1b09ad7d27f2558"><div class="ttname"><a href="../../d2/dc2/_svc_8cpp.html#a98ebd77b3a5c8a51b1b09ad7d27f2558">SvcReportEvent</a></div><div class="ttdeci">VOID SvcReportEvent(LPTSTR)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dc2/_svc_8cpp_source.html#l00304">Svc.cpp:304</a></div></div>
+<div class="ttc" id="a_svc_8cpp_html_a05d66032c9dbb36f15e4ab879f321bec"><div class="ttname"><a href="../../d2/dc2/_svc_8cpp.html#a05d66032c9dbb36f15e4ab879f321bec">SvcCtrlHandler</a></div><div class="ttdeci">VOID WINAPI SvcCtrlHandler(DWORD)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dc2/_svc_8cpp_source.html#l00266">Svc.cpp:266</a></div></div>
+<div class="ttc" id="aclass_service_status_html"><div class="ttname"><a href="../../d1/dbd/class_service_status.html">ServiceStatus</a></div><div class="ttdoc">サービス状態の操作クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00368">ServiceCommon.hpp:369</a></div></div>
+<div class="ttc" id="aclass_event_logger_html_a401008cc7636e1f0aa3617399f07f3fa"><div class="ttname"><a href="../../d8/d91/class_event_logger.html#a401008cc7636e1f0aa3617399f07f3fa">EventLogger::Trace</a></div><div class="ttdeci">BOOL WINAPI Trace(WORD wCategory, LPCTSTR lpctszFunctionName, LPCTSTR lpctszMessage=nullptr)</div><div class="ttdoc">汎用トレースログ出力用</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d10/_event_logger_8cpp_source.html#l00126">EventLogger.cpp:126</a></div></div>
+<div class="ttc" id="aclass_service2_html_a5d24a4d06dd17fae915d18d4a34b871e"><div class="ttname"><a href="../../d9/d2d/class_service2.html#a5d24a4d06dd17fae915d18d4a34b871e">Service2::Resume</a></div><div class="ttdeci">BOOL WINAPI Resume()</div><div class="ttdoc">サービスを再開します。</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/_service2_8cpp_source.html#l00024">Service2.cpp:24</a></div></div>
+<div class="ttc" id="aclass_service_control_html_a21c564956c73bc6b8cfd4ebe6a4d8d83"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#a21c564956c73bc6b8cfd4ebe6a4d8d83">ServiceControl::QueryStatusEx</a></div><div class="ttdeci">BOOL WINAPI QueryStatusEx(SERVICE_STATUS_PROCESS &amp;status)</div><div class="ttdoc">サービスの状態取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00222">ServiceCommon.hpp:222</a></div></div>
+<div class="ttc" id="aclass_i_service_html_ad140d101c5890c1780dac10345fdce0c"><div class="ttname"><a href="../../d5/ddc/class_i_service.html#ad140d101c5890c1780dac10345fdce0c">IService::Start</a></div><div class="ttdeci">virtual BOOL Start()=0</div><div class="ttdoc">処理開始インターフェース</div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_a1ddf2fd58a3eab1fb47066728eec6fe0"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#a1ddf2fd58a3eab1fb47066728eec6fe0">MAX_TIMESTAMP_LEN</a></div><div class="ttdeci">#define MAX_TIMESTAMP_LEN</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00014">Main.h:14</a></div></div>
+<div class="ttc" id="aclass_service_command_html_ae44c05a975611a488e2a69ddc665551b"><div class="ttname"><a href="../../d5/dab/class_service_command.html#ae44c05a975611a488e2a69ddc665551b">ServiceCommand::ChangeConfig2Description</a></div><div class="ttdeci">BOOL WINAPI ChangeConfig2Description()</div><div class="ttdoc">サービスの説明文言を変更</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00489">ServiceCommand.cpp:489</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8cpp_html_aab46c7ee37a145710df9833cf4e2de31"><div class="ttname"><a href="../../de/d67/_event_log_dump_2_main_8cpp.html#aab46c7ee37a145710df9833cf4e2de31">GetMessageResources</a></div><div class="ttdeci">HANDLE GetMessageResources(LPCTSTR lpctszResourceFile)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00185">Main.cpp:185</a></div></div>
+<div class="ttc" id="aclass_i_service_html_ac38a8208e033979944437544abe4b703"><div class="ttname"><a href="../../d5/ddc/class_i_service.html#ac38a8208e033979944437544abe4b703">IService::Stop</a></div><div class="ttdeci">virtual BOOL Stop()=0</div><div class="ttdoc">処理終了インターフェース</div></div>
+<div class="ttc" id="a_svc_8cpp_html_a0aa62bc0d3fc0aba63a46ccc17fa5ace"><div class="ttname"><a href="../../d2/dc2/_svc_8cpp.html#a0aa62bc0d3fc0aba63a46ccc17fa5ace">SvcInstall</a></div><div class="ttdeci">VOID SvcInstall(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dc2/_svc_8cpp_source.html#l00070">Svc.cpp:70</a></div></div>
+<div class="ttc" id="a_svc_8cpp_html_a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8"><div class="ttname"><a href="../../d2/dc2/_svc_8cpp.html#a1cbfd5ad76dd5b1dd1fe9e7e0bcfd1f8">SvcInit</a></div><div class="ttdeci">VOID SvcInit(DWORD, LPTSTR *)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dc2/_svc_8cpp_source.html#l00178">Svc.cpp:178</a></div></div>
+<div class="ttc" id="a_monitoring1_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../de/df4/_monitoring1_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="../../de/df4/_monitoring1_8cpp_source.html#l00017">Monitoring1.cpp:17</a></div></div>
+<div class="ttc" id="a_svc_config_8cpp_html_a1586056bc6cf620c0662bdbe3340f279"><div class="ttname"><a href="../../da/d7e/_svc_config_8cpp.html#a1586056bc6cf620c0662bdbe3340f279">DoQuerySvc</a></div><div class="ttdeci">VOID __stdcall DoQuerySvc(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/_svc_config_8cpp_source.html#l00083">SvcConfig.cpp:83</a></div></div>
+<div class="ttc" id="aclass_service_command_html"><div class="ttname"><a href="../../d5/dab/class_service_command.html">ServiceCommand</a></div><div class="ttdoc">サービスに対する操作を集約したクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d72/_service_command_8h_source.html#l00026">ServiceCommand.h:27</a></div></div>
+<div class="ttc" id="aclass_service_control_html_ab1034729db0814bb0ff0ae01d23ee202"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#ab1034729db0814bb0ff0ae01d23ee202">ServiceControl::GetManager</a></div><div class="ttdeci">ServiceControlManager &amp; GetManager()</div><div class="ttdoc">このサービスに紐づくSCMのハンドルを取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00323">ServiceCommon.hpp:323</a></div></div>
+<div class="ttc" id="aclass_service1_html_ac0b709e8a0b7b5c50c6c8e17dcc99ef1"><div class="ttname"><a href="../../df/d9d/class_service1.html#ac0b709e8a0b7b5c50c6c8e17dcc99ef1">Service1::Wait</a></div><div class="ttdeci">BOOL WINAPI Wait()</div><div class="ttdoc">サービスの終了を待機します。</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d36/_service1_8cpp_source.html#l00034">Service1.cpp:34</a></div></div>
+<div class="ttc" id="aclass_registry_html_ac25e698794a4085ccedcdb1d9a51f1bb"><div class="ttname"><a href="../../d4/d78/class_registry.html#ac25e698794a4085ccedcdb1d9a51f1bb">Registry::QueryValue</a></div><div class="ttdeci">BOOL QueryValue(LPCTSTR lpctszEntry, RegistryValueTypes &amp;eType, LPBYTE lpbyData, DWORD dwDataLen)</div><div class="ttdoc">エントリ名に設定された値を取得します。</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d54/_registry_2_registry_8cpp_source.html#l00214">Registry.cpp:214</a></div></div>
+<div class="ttc" id="aclass_i_service_html_a714f878aab3b553c8bee36fc0d4f8063"><div class="ttname"><a href="../../d5/ddc/class_i_service.html#a714f878aab3b553c8bee36fc0d4f8063">IService::Wait</a></div><div class="ttdeci">virtual BOOL Wait()=0</div><div class="ttdoc">処理終了待機インターフェース</div></div>
+<div class="ttc" id="aclass_service_control_manager_html_a044d96579b5112838192d865517057cb"><div class="ttname"><a href="../../d0/d5e/class_service_control_manager.html#a044d96579b5112838192d865517057cb">ServiceControlManager::Open</a></div><div class="ttdeci">BOOL WINAPI Open()</div><div class="ttdoc">SCMのオープン</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00135">ServiceCommon.hpp:135</a></div></div>
+<div class="ttc" id="aclass_thread_html_a467740601cd9d7e36f195b491484da3b"><div class="ttname"><a href="../../d8/d18/class_thread.html#a467740601cd9d7e36f195b491484da3b">Thread::Wait</a></div><div class="ttdeci">virtual BOOL Wait(DWORD dwMillisec=INFINITE)</div><div class="ttdoc">終了待機</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d00/_thread_8cpp_source.html#l00068">Thread.cpp:68</a></div></div>
+<div class="ttc" id="aclass_service_control_html"><div class="ttname"><a href="../../d5/d0b/class_service_control.html">ServiceControl</a></div><div class="ttdoc">個別のサービスを管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00147">ServiceCommon.hpp:148</a></div></div>
+<div class="ttc" id="aclass_service1_html_a50b6c77e8b31e6c463da27a329ebf010"><div class="ttname"><a href="../../df/d9d/class_service1.html#a50b6c77e8b31e6c463da27a329ebf010">Service1::Run</a></div><div class="ttdeci">BOOL WINAPI Run()</div><div class="ttdoc">サービス開始関数</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d36/_service1_8cpp_source.html#l00039">Service1.cpp:39</a></div></div>
+<div class="ttc" id="aclass_thread_html_a6b2d67e14cf29651c6d703e2a8c7b194"><div class="ttname"><a href="../../d8/d18/class_thread.html#a6b2d67e14cf29651c6d703e2a8c7b194">Thread::Run</a></div><div class="ttdeci">virtual BOOL Run()=0</div><div class="ttdoc">スレッド処理関数</div></div>
+<div class="ttc" id="aclass_service_command_html_a9f87084cfeec504c6e0560670765ea5d"><div class="ttname"><a href="../../d5/dab/class_service_command.html#a9f87084cfeec504c6e0560670765ea5d">ServiceCommand::Stop</a></div><div class="ttdeci">BOOL WINAPI Stop()</div><div class="ttdoc">サービスの終了</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00574">ServiceCommand.cpp:574</a></div></div>
+<div class="ttc" id="aclass_event_html_af4694345529393e773b4f9598fdc064f"><div class="ttname"><a href="../../d1/da9/class_event.html#af4694345529393e773b4f9598fdc064f">Event::Wait</a></div><div class="ttdeci">DWORD WINAPI Wait(DWORD dwMilliSeconds=INFINITE)</div><div class="ttdoc">シグナル状態になるとブロックを解除します。</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dc3/_event_8hpp_source.html#l00078">Event.hpp:78</a></div></div>
+<div class="ttc" id="aclass_service_command_html_a63bdf8c2dbbe32909fb1ae5eeec7154c"><div class="ttname"><a href="../../d5/dab/class_service_command.html#a63bdf8c2dbbe32909fb1ae5eeec7154c">ServiceCommand::Disable</a></div><div class="ttdeci">BOOL WINAPI Disable()</div><div class="ttdoc">サービスの無効化</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00457">ServiceCommand.cpp:457</a></div></div>
+<div class="ttc" id="aclass_event_html_a465cab85f59d36ef2d4c483dfe7a0cfc"><div class="ttname"><a href="../../d1/da9/class_event.html#a465cab85f59d36ef2d4c483dfe7a0cfc">Event::Create</a></div><div class="ttdeci">BOOL WINAPI Create()</div><div class="ttdoc">イベントを作成します。</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dc3/_event_8hpp_source.html#l00031">Event.hpp:31</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8cpp_html_aaef4e285e43eed756e050513d7e0d6cb"><div class="ttname"><a href="../../de/d67/_event_log_dump_2_main_8cpp.html#aaef4e285e43eed756e050513d7e0d6cb">g_hMessageResource</a></div><div class="ttdeci">HANDLE g_hMessageResource</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00009">Main.cpp:9</a></div></div>
+<div class="ttc" id="aclass_service_status_handler_html"><div class="ttname"><a href="../../d4/dfa/class_service_status_handler.html">ServiceStatusHandler</a></div><div class="ttdoc">サービス制御関数の登録を行うクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00334">ServiceCommon.hpp:335</a></div></div>
+<div class="ttc" id="aclass_service_core_html_a077ee6ffbe84d8124911d7765c0e6d98"><div class="ttname"><a href="../../dd/d44/class_service_core.html#a077ee6ffbe84d8124911d7765c0e6d98">ServiceCore::Resume</a></div><div class="ttdeci">BOOL WINAPI Resume()</div><div class="ttdoc">再開処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_service_core_8cpp_source.html#l00376">ServiceCore.cpp:376</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_a6c5f5d7dd67667aab49de3791fb5833c"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#a6c5f5d7dd67667aab49de3791fb5833c">EVENT_ROOT</a></div><div class="ttdeci">#define EVENT_ROOT</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00017">Main.h:17</a></div></div>
+<div class="ttc" id="aclass_service1_html"><div class="ttname"><a href="../../df/d9d/class_service1.html">Service1</a></div><div class="ttdoc">サービスを提供するクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d81/_service1_8h_source.html#l00014">Service1.h:15</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8cpp_html_a2fc1f493acf321f87b269920b858666d"><div class="ttname"><a href="../../de/d67/_event_log_dump_2_main_8cpp.html#a2fc1f493acf321f87b269920b858666d">_tmain</a></div><div class="ttdeci">int _tmain(int argc, TCHAR **argv)</div><div class="ttdoc">メイン関数</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00011">Main.cpp:11</a></div></div>
+<div class="ttc" id="aclass_event_logger_html_a01c0e5d5d51ba3b51079909f74d998b1"><div class="ttname"><a href="../../d8/d91/class_event_logger.html#a01c0e5d5d51ba3b51079909f74d998b1">EventLogger::Init</a></div><div class="ttdeci">BOOL WINAPI Init(LPCTSTR lpctszServiceName)</div><div class="ttdoc">初期化処理</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d10/_event_logger_8cpp_source.html#l00009">EventLogger.cpp:9</a></div></div>
+<div class="ttc" id="aclass_event_logger_html_a02e9518bd093348362eb30a8f1314657"><div class="ttname"><a href="../../d8/d91/class_event_logger.html#a02e9518bd093348362eb30a8f1314657">EventLogger::Log</a></div><div class="ttdeci">BOOL WINAPI Log(WORD wEventType, WORD wEventCategory, DWORD dwEventID, WORD wArgc,...)</div><div class="ttdoc">汎用的なログ出力処理</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d10/_event_logger_8cpp_source.html#l00021">EventLogger.cpp:21</a></div></div>
+<div class="ttc" id="aclass_thread_html"><div class="ttname"><a href="../../d8/d18/class_thread.html">Thread</a></div><div class="ttdoc">スレッドに関するWindowsAPIを集約したクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d48/_thread_8h_source.html#l00011">Thread.h:12</a></div></div>
+<div class="ttc" id="a_service_common_8cpp_html_a8b8a254d92aa12af09217d7d20fa00ab"><div class="ttname"><a href="../../d0/ddc/_service_common_8cpp.html#a8b8a254d92aa12af09217d7d20fa00ab">PrintMessage</a></div><div class="ttdeci">VOID WINAPI PrintMessage(LPCTSTR lpctszMessage, DWORD dwErrorCode, LPCTSTR lpctszOption)</div><div class="ttdoc">メッセージをコンソールに出力します。</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/ddc/_service_common_8cpp_source.html#l00009">ServiceCommon.cpp:9</a></div></div>
+<div class="ttc" id="aclass_service_info_html_a5821bc4529f4fbad51cbf9adddd957d2"><div class="ttname"><a href="../../de/dbd/class_service_info.html#a5821bc4529f4fbad51cbf9adddd957d2">ServiceInfo::GetWorkDirectory</a></div><div class="ttdeci">LPCTSTR GetWorkDirectory()</div><div class="ttdoc">現在の稼働しているモジュールのあるディレクトリ名を取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d1a/_service_info_8h_source.html#l00032">ServiceInfo.h:32</a></div></div>
+<div class="ttc" id="aclass_event_logger_html_a50fcf4db64eadf47adee3f1247246775"><div class="ttname"><a href="../../d8/d91/class_event_logger.html#a50fcf4db64eadf47adee3f1247246775">EventLogger::Exit</a></div><div class="ttdeci">BOOL WINAPI Exit()</div><div class="ttdoc">終了処理</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d10/_event_logger_8cpp_source.html#l00016">EventLogger.cpp:16</a></div></div>
+<div class="ttc" id="aclass_event_logger_html"><div class="ttname"><a href="../../d8/d91/class_event_logger.html">EventLogger</a></div><div class="ttdoc">イベントログ書き込みクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9c/_event_logger_8h_source.html#l00011">EventLogger.h:12</a></div></div>
+<div class="ttc" id="aclass_service_core_html_a10c56f83231c9e54eeef1906dcb06583"><div class="ttname"><a href="../../dd/d44/class_service_core.html#a10c56f83231c9e54eeef1906dcb06583">ServiceCore::Exit</a></div><div class="ttdeci">BOOL WINAPI Exit()</div><div class="ttdoc">終了処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_service_core_8cpp_source.html#l00402">ServiceCore.cpp:402</a></div></div>
+<div class="ttc" id="aclass_event_html_ac9591c372885864da8b66fa5b5f3488c"><div class="ttname"><a href="../../d1/da9/class_event.html#ac9591c372885864da8b66fa5b5f3488c">Event::Close</a></div><div class="ttdeci">BOOL WINAPI Close()</div><div class="ttdoc">ハンドルをクローズします。</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dc3/_event_8hpp_source.html#l00087">Event.hpp:87</a></div></div>
+<div class="ttc" id="aclass_thread_html_a1aa807171531084c5e65bf8072d32248"><div class="ttname"><a href="../../d8/d18/class_thread.html#a1aa807171531084c5e65bf8072d32248">Thread::ThreadFunction</a></div><div class="ttdeci">static DWORD ThreadFunction(LPVOID lpvParam)</div><div class="ttdoc">スレッド処理関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d00/_thread_8cpp_source.html#l00096">Thread.cpp:96</a></div></div>
+<div class="ttc" id="aclass_event_html_ade73e0cc906f96ec66ebf7a0c571f15f"><div class="ttname"><a href="../../d1/da9/class_event.html#ade73e0cc906f96ec66ebf7a0c571f15f">Event::Reset</a></div><div class="ttdeci">BOOL WINAPI Reset()</div><div class="ttdoc">イベントをリセット(非シグナル状態に)します。</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dc3/_event_8hpp_source.html#l00065">Event.hpp:65</a></div></div>
+<div class="ttc" id="aclass_service_command_html_a9401b28216d7fea9eb2a89382cabb574"><div class="ttname"><a href="../../d5/dab/class_service_command.html#a9401b28216d7fea9eb2a89382cabb574">ServiceCommand::StopDependentServices</a></div><div class="ttdeci">BOOL WINAPI StopDependentServices(ServiceControl &amp;sc, LPVOID lpvParam)</div><div class="ttdoc">このサービスに依存しているサービスの停止処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00729">ServiceCommand.cpp:729</a></div></div>
+<div class="ttc" id="aclass_service_control_html_ac8554fa2803385dd01696b3acb516086"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#ac8554fa2803385dd01696b3acb516086">ServiceControl::Start</a></div><div class="ttdeci">BOOL WINAPI Start()</div><div class="ttdoc">サービスの開始</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00243">ServiceCommon.hpp:243</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8cpp_html_a7f5460ae83bc0f5388774bcbf744a90e"><div class="ttname"><a href="../../de/d67/_event_log_dump_2_main_8cpp.html#a7f5460ae83bc0f5388774bcbf744a90e">ApplyParameterStringsToMessage</a></div><div class="ttdeci">DWORD ApplyParameterStringsToMessage(LPCTSTR lptszMessage, LPTSTR &amp;lptszFinalMessage)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00360">Main.cpp:360</a></div></div>
+<div class="ttc" id="aclass_service_info_html"><div class="ttname"><a href="../../de/dbd/class_service_info.html">ServiceInfo</a></div><div class="ttdoc">サービス情報クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d1a/_service_info_8h_source.html#l00013">ServiceInfo.h:14</a></div></div>
+<div class="ttc" id="a_svc_8cpp_html_ae799aa37771b6dfaa738f4c7a985e20d"><div class="ttname"><a href="../../d2/dc2/_svc_8cpp.html#ae799aa37771b6dfaa738f4c7a985e20d">ReportSvcStatus</a></div><div class="ttdeci">VOID ReportSvcStatus(DWORD, DWORD, DWORD)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dc2/_svc_8cpp_source.html#l00230">Svc.cpp:230</a></div></div>
+<div class="ttc" id="aclass_service_command_html_aca51fe36ba5620d2ce143b324b23072c"><div class="ttname"><a href="../../d5/dab/class_service_command.html#aca51fe36ba5620d2ce143b324b23072c">ServiceCommand::Command</a></div><div class="ttdeci">BOOL WINAPI Command(LPCTSTR lpctszCommand, LPCTSTR lpctszOption=nullptr)</div><div class="ttdoc">コマンド処理のエントリー関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00016">ServiceCommand.cpp:16</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_a651e5b9251b0d79de4e2038d069764c3"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#a651e5b9251b0d79de4e2038d069764c3">SOURCE_NAME</a></div><div class="ttdeci">#define SOURCE_NAME</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00012">Main.h:12</a></div></div>
+<div class="ttc" id="aclass_service_control_html_a11141a9c4e44998399344c73df0127b3"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#a11141a9c4e44998399344c73df0127b3">ServiceControl::ChangeConfig2DelayedAutoStart</a></div><div class="ttdeci">BOOL WINAPI ChangeConfig2DelayedAutoStart(BOOL bDelayed=TRUE)</div><div class="ttdoc">サービスの遅延開始設定</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00302">ServiceCommon.hpp:302</a></div></div>
+<div class="ttc" id="aclass_event_html"><div class="ttname"><a href="../../d1/da9/class_event.html">Event</a></div><div class="ttdoc">イベントに関するWindowsAPIを集約したクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dc3/_event_8hpp_source.html#l00011">Event.hpp:12</a></div></div>
+<div class="ttc" id="a_svc_config_8cpp_html_aa042f092cbd6a2eaa1e65b3b14898f75"><div class="ttname"><a href="../../da/d7e/_svc_config_8cpp.html#aa042f092cbd6a2eaa1e65b3b14898f75">DoDisableSvc</a></div><div class="ttdeci">VOID __stdcall DoDisableSvc(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/_svc_config_8cpp_source.html#l00216">SvcConfig.cpp:216</a></div></div>
+<div class="ttc" id="aclass_service_info_html_a1f85aaf25953ebf73ce54b0f4f2bc153"><div class="ttname"><a href="../../de/dbd/class_service_info.html#a1f85aaf25953ebf73ce54b0f4f2bc153">ServiceInfo::ServiceInfo</a></div><div class="ttdeci">ServiceInfo()</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de8/_service_info_8cpp_source.html#l00009">ServiceInfo.cpp:9</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8cpp_html_aa83312b09827daf2607b2038891c3721"><div class="ttname"><a href="../../de/d67/_event_log_dump_2_main_8cpp.html#aa83312b09827daf2607b2038891c3721">GetResourceFiles</a></div><div class="ttdeci">BOOL GetResourceFiles(LPTSTR lptszCategoryMessageFile, LPTSTR lptszEventMessageFile)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00136">Main.cpp:136</a></div></div>
+<div class="ttc" id="aclass_registry_html"><div class="ttname"><a href="../../d4/d78/class_registry.html">Registry</a></div><div class="ttdoc">レジストリに関するWindowsAPIを集約したクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d71/_registry_2_registry_8h_source.html#l00039">Registry.h:40</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8cpp_html_a7866d0a054032a4b940bbde142b90131"><div class="ttname"><a href="../../de/d67/_event_log_dump_2_main_8cpp.html#a7866d0a054032a4b940bbde142b90131">DumpRecordsInBuffer</a></div><div class="ttdeci">DWORD DumpRecordsInBuffer(LPBYTE lpbyBuffer, DWORD dwBytesRead)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00201">Main.cpp:201</a></div></div>
+<div class="ttc" id="aclass_service_core_html_a0ef6520363b7fc1b784723d3f8822c02"><div class="ttname"><a href="../../dd/d44/class_service_core.html#a0ef6520363b7fc1b784723d3f8822c02">ServiceCore::Init</a></div><div class="ttdeci">BOOL WINAPI Init()</div><div class="ttdoc">初期化処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_service_core_8cpp_source.html#l00250">ServiceCore.cpp:250</a></div></div>
+<div class="ttc" id="a_svc_config_8cpp_html_a145f6c53425b3893527b7260639a295d"><div class="ttname"><a href="../../da/d7e/_svc_config_8cpp.html#a145f6c53425b3893527b7260639a295d">DoUpdateSvcDesc</a></div><div class="ttdeci">VOID __stdcall DoUpdateSvcDesc(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/_svc_config_8cpp_source.html#l00346">SvcConfig.cpp:346</a></div></div>
+<div class="ttc" id="aclass_thread_html_aa625cf1b6f52a8ddf3b6a11e040e77dd"><div class="ttname"><a href="../../d8/d18/class_thread.html#aa625cf1b6f52a8ddf3b6a11e040e77dd">Thread::Suspend</a></div><div class="ttdeci">virtual BOOL Suspend()</div><div class="ttdoc">スレッドの中断</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d00/_thread_8cpp_source.html#l00042">Thread.cpp:42</a></div></div>
+<div class="ttc" id="a_svc_control_8cpp_html_a23aaa6922f137e441925b848826e9925"><div class="ttname"><a href="../../dd/de3/_svc_control_8cpp.html#a23aaa6922f137e441925b848826e9925">DoStartSvc</a></div><div class="ttdeci">VOID __stdcall DoStartSvc(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de3/_svc_control_8cpp_source.html#l00081">SvcControl.cpp:81</a></div></div>
+<div class="ttc" id="aclass_service_handler_html"><div class="ttname"><a href="../../d1/d69/class_service_handler.html">ServiceHandler</a></div><div class="ttdoc">SC_HANDLERを扱うクラスのスーパークラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00095">ServiceCommon.hpp:96</a></div></div>
+<div class="ttc" id="aclass_service_control_html_a7d0721a48ef9db310979ed351c4ee3a8"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#a7d0721a48ef9db310979ed351c4ee3a8">ServiceControl::Stop</a></div><div class="ttdeci">BOOL WINAPI Stop()</div><div class="ttdoc">サービスの停止</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00252">ServiceCommon.hpp:252</a></div></div>
+<div class="ttc" id="aclass_event_logger_html_a626867605a06d48307143895d45d6c2a"><div class="ttname"><a href="../../d8/d91/class_event_logger.html#a626867605a06d48307143895d45d6c2a">EventLogger::TraceStart</a></div><div class="ttdeci">BOOL WINAPI TraceStart(WORD wCategory, LPCTSTR lpctszFunctionName)</div><div class="ttdoc">処理開始ログ出力用</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d10/_event_logger_8cpp_source.html#l00096">EventLogger.cpp:96</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_a95e27f40eff67ab99562a02abddc080b"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#a95e27f40eff67ab99562a02abddc080b">PROVIDER_NAME</a></div><div class="ttdeci">#define PROVIDER_NAME</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00013">Main.h:13</a></div></div>
+<div class="ttc" id="aclass_service_control_html_a57bc65cfb38c18ce594158bc7953e2b7"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#a57bc65cfb38c18ce594158bc7953e2b7">ServiceControl::Create</a></div><div class="ttdeci">BOOL WINAPI Create()</div><div class="ttdoc">サービスの作成</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00162">ServiceCommon.hpp:162</a></div></div>
+<div class="ttc" id="a_svc_control_8cpp_html_a03da76d1114f8dace11a0ab9c680e4af"><div class="ttname"><a href="../../dd/de3/_svc_control_8cpp.html#a03da76d1114f8dace11a0ab9c680e4af">StopDependentServices</a></div><div class="ttdeci">BOOL __stdcall StopDependentServices(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de3/_svc_control_8cpp_source.html#l00596">SvcControl.cpp:596</a></div></div>
+<div class="ttc" id="a_svc_config_8cpp_html_a07994bff23c52961b51c3618e19d96d0"><div class="ttname"><a href="../../da/d7e/_svc_config_8cpp.html#a07994bff23c52961b51c3618e19d96d0">DisplayUsage</a></div><div class="ttdeci">VOID __stdcall DisplayUsage(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/_svc_config_8cpp_source.html#l00059">SvcConfig.cpp:59</a></div></div>
+<div class="ttc" id="aclass_service_core_html_afaf11f98443c40cdbbf26b91765ccdb2"><div class="ttname"><a href="../../dd/d44/class_service_core.html#afaf11f98443c40cdbbf26b91765ccdb2">ServiceCore::Main</a></div><div class="ttdeci">VOID WINAPI Main(DWORD dwArgc, LPTSTR *lptszArgv)</div><div class="ttdoc">サービスメイン関数からの呼び出しに対応する関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_service_core_8cpp_source.html#l00062">ServiceCore.cpp:62</a></div></div>
+<div class="ttc" id="a_service_logics_2pch_8h_html"><div class="ttname"><a href="../../d4/d07/_service_logics_2pch_8h.html">pch.h</a></div><div class="ttdoc">プリコンパイル済みヘッダー ファイルです。</div></div>
+<div class="ttc" id="aclass_event_logger_html_a390cb635df4ba6ed5e68ed2c6226e06e"><div class="ttname"><a href="../../d8/d91/class_event_logger.html#a390cb635df4ba6ed5e68ed2c6226e06e">EventLogger::ApiError</a></div><div class="ttdeci">BOOL WINAPI ApiError(WORD wCategory, DWORD dwErrorCode, LPCTSTR lpctszFunctionName, LPCTSTR lpctszErrorAPI)</div><div class="ttdoc">APIエラーのログ出力用</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d10/_event_logger_8cpp_source.html#l00058">EventLogger.cpp:58</a></div></div>
+<div class="ttc" id="aclass_thread_html_a54dadf4f4f2cec215873f06d5775c734"><div class="ttname"><a href="../../d8/d18/class_thread.html#a54dadf4f4f2cec215873f06d5775c734">Thread::Stop</a></div><div class="ttdeci">virtual BOOL Stop()</div><div class="ttdoc">スレッドの停止</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d00/_thread_8cpp_source.html#l00037">Thread.cpp:37</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8cpp_html_a59e7dad9533bd29631da680a3f7a4001"><div class="ttname"><a href="../../de/d67/_event_log_dump_2_main_8cpp.html#a59e7dad9533bd29631da680a3f7a4001">GetMessageString</a></div><div class="ttdeci">LPTSTR GetMessageString(HANDLE hResource, DWORD dwMessageID, DWORD dwArgc, LPTSTR lptszArgv)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00302">Main.cpp:302</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_afc0dca8ea9ca32710e3c07806e95d5d9"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#afc0dca8ea9ca32710e3c07806e95d5d9">lptszEventTypeNames</a></div><div class="ttdeci">LPCTSTR lptszEventTypeNames[]</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00029">Main.h:29</a></div></div>
+<div class="ttc" id="a_svc_config_8cpp_html_a0a020581fdd04bd6d7e6768f44e31ec5"><div class="ttname"><a href="../../da/d7e/_svc_config_8cpp.html#a0a020581fdd04bd6d7e6768f44e31ec5">DoDeleteSvc</a></div><div class="ttdeci">VOID __stdcall DoDeleteSvc(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/_svc_config_8cpp_source.html#l00407">SvcConfig.cpp:407</a></div></div>
+<div class="ttc" id="aclass_event_logger_html_a98922bde87232c5f0f70ca549baa9e9e"><div class="ttname"><a href="../../d8/d91/class_event_logger.html#a98922bde87232c5f0f70ca549baa9e9e">EventLogger::TraceFinish</a></div><div class="ttdeci">BOOL WINAPI TraceFinish(WORD wCategory, LPCTSTR lpctszFunctionName)</div><div class="ttdoc">処理終了ログ出力用</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d10/_event_logger_8cpp_source.html#l00111">EventLogger.cpp:111</a></div></div>
+<div class="ttc" id="aclass_service_control_manager_html"><div class="ttname"><a href="../../d0/d5e/class_service_control_manager.html">ServiceControlManager</a></div><div class="ttdoc">サービスコントロールマネージャ(SCM)の操作用クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00128">ServiceCommon.hpp:129</a></div></div>
+<div class="ttc" id="aclass_service_info_html_a4987a4aa3a243041f789e9b83486ed7c"><div class="ttname"><a href="../../de/dbd/class_service_info.html#a4987a4aa3a243041f789e9b83486ed7c">ServiceInfo::GetName</a></div><div class="ttdeci">LPCTSTR GetName()</div><div class="ttdoc">サービス名を取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d1a/_service_info_8h_source.html#l00036">ServiceInfo.h:36</a></div></div>
+<div class="ttc" id="aclass_service1_html_a7a232b5af820e3baaa10421942007a33"><div class="ttname"><a href="../../df/d9d/class_service1.html#a7a232b5af820e3baaa10421942007a33">Service1::Stop</a></div><div class="ttdeci">BOOL WINAPI Stop()</div><div class="ttdoc">サービスを停止します。</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d36/_service1_8cpp_source.html#l00029">Service1.cpp:29</a></div></div>
+<div class="ttc" id="aclass_service_core_html_a177b3521bf8fe9fb57decf2bf25fcc78"><div class="ttname"><a href="../../dd/d44/class_service_core.html#a177b3521bf8fe9fb57decf2bf25fcc78">ServiceCore::Handler</a></div><div class="ttdeci">VOID WINAPI Handler(DWORD dwControlCode)</div><div class="ttdoc">サービス制御関数からの呼び出しに対応する関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_service_core_8cpp_source.html#l00177">ServiceCore.cpp:177</a></div></div>
+<div class="ttc" id="aclass_thread_html_a931309995270a6c614fa1d2e66b9ebe9"><div class="ttname"><a href="../../d8/d18/class_thread.html#a931309995270a6c614fa1d2e66b9ebe9">Thread::Start</a></div><div class="ttdeci">virtual BOOL Start()</div><div class="ttdoc">スレッドの起動</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d00/_thread_8cpp_source.html#l00024">Thread.cpp:24</a></div></div>
+<div class="ttc" id="aclass_service_control_html_a1944ec3b59c35839aa6539506aeeb57f"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#a1944ec3b59c35839aa6539506aeeb57f">ServiceControl::Open</a></div><div class="ttdeci">BOOL WINAPI Open(DWORD dwDesiredAccess)</div><div class="ttdoc">サービスのオープン</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00187">ServiceCommon.hpp:187</a></div></div>
+<div class="ttc" id="aclass_service_core_html_a45d87e822ebabe45d2ff99c68183b486"><div class="ttname"><a href="../../dd/d44/class_service_core.html#a45d87e822ebabe45d2ff99c68183b486">ServiceCore::Start</a></div><div class="ttdeci">BOOL WINAPI Start()</div><div class="ttdoc">開始処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_service_core_8cpp_source.html#l00298">ServiceCore.cpp:298</a></div></div>
+<div class="ttc" id="aclass_service_command_html_adb2281b8acc5ae097060ee6238580dfc"><div class="ttname"><a href="../../d5/dab/class_service_command.html#adb2281b8acc5ae097060ee6238580dfc">ServiceCommand::ChangeConfig2DelayedAutoStart</a></div><div class="ttdeci">BOOL WINAPI ChangeConfig2DelayedAutoStart()</div><div class="ttdoc">自動(遅延）を設定</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00510">ServiceCommand.cpp:510</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8cpp_html_ac88443b796d6422c6bcf490301216cc7"><div class="ttname"><a href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac88443b796d6422c6bcf490301216cc7">GetTimeStamp</a></div><div class="ttdeci">VOID GetTimeStamp(const DWORD cdwTime, TCHAR tszDisplayString[])</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00540">Main.cpp:540</a></div></div>
+<div class="ttc" id="aclass_service_control_html_aaf58bfedac72f89fd3da24af9a6a7ca8"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#aaf58bfedac72f89fd3da24af9a6a7ca8">ServiceControl::QueryStatus</a></div><div class="ttdeci">QueryResponse WINAPI QueryStatus(QueryResponse wait)</div><div class="ttdoc">サービスの状態取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/ddc/_service_common_8cpp_source.html#l00058">ServiceCommon.cpp:58</a></div></div>
+<div class="ttc" id="aclass_service2_html_a076d99dd1d2d56dc72ebff1bb7a9ca2f"><div class="ttname"><a href="../../d9/d2d/class_service2.html#a076d99dd1d2d56dc72ebff1bb7a9ca2f">Service2::Stop</a></div><div class="ttdeci">BOOL WINAPI Stop()</div><div class="ttdoc">サービスを停止します。</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/_service2_8cpp_source.html#l00029">Service2.cpp:29</a></div></div>
+<div class="ttc" id="aclass_service1_html_afdffc2e011312a55f16d547fc90dde25"><div class="ttname"><a href="../../df/d9d/class_service1.html#afdffc2e011312a55f16d547fc90dde25">Service1::Resume</a></div><div class="ttdeci">BOOL WINAPI Resume()</div><div class="ttdoc">サービスを再開します。</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d36/_service1_8cpp_source.html#l00024">Service1.cpp:24</a></div></div>
+<div class="ttc" id="aclass_service1_html_abeba5f16c09675c2059b16da8394f06b"><div class="ttname"><a href="../../df/d9d/class_service1.html#abeba5f16c09675c2059b16da8394f06b">Service1::Suspend</a></div><div class="ttdeci">BOOL WINAPI Suspend()</div><div class="ttdoc">サービスを停止します。</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d36/_service1_8cpp_source.html#l00019">Service1.cpp:19</a></div></div>
+<div class="ttc" id="a_service_application1_2_main_8cpp_html_a9dfca7ec3e747016197fa731903c0848"><div class="ttname"><a href="../../d5/dce/_service_application1_2_main_8cpp.html#a9dfca7ec3e747016197fa731903c0848">ServiceMain</a></div><div class="ttdeci">VOID WINAPI ServiceMain(DWORD dwArgc, LPTSTR *lptszArgv)</div><div class="ttdoc">サービス関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dce/_service_application1_2_main_8cpp_source.html#l00058">Main.cpp:58</a></div></div>
+<div class="ttc" id="a_service_application2_2_main_8h_html"><div class="ttname"><a href="../../dd/d1a/_service_application2_2_main_8h.html">Main.h</a></div><div class="ttdoc">サンプルサービス その２</div></div>
+<div class="ttc" id="aclass_service_core_html_ae73b7cdef55900e54b5b45ff34adeedf"><div class="ttname"><a href="../../dd/d44/class_service_core.html#ae73b7cdef55900e54b5b45ff34adeedf">ServiceCore::Entry</a></div><div class="ttdeci">BOOL WINAPI Entry(LPSERVICE_MAIN_FUNCTION fnServiceMain, LPHANDLER_FUNCTION fnHandler, IService *pService, ServiceInfo *si)</div><div class="ttdoc">main()からの呼び出しに対応する関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_service_core_8cpp_source.html#l00022">ServiceCore.cpp:22</a></div></div>
+<div class="ttc" id="aclass_service_core_html_a8f933947ef72ced692dadf2323bc8eca"><div class="ttname"><a href="../../dd/d44/class_service_core.html#a8f933947ef72ced692dadf2323bc8eca">ServiceCore::Suspend</a></div><div class="ttdeci">BOOL WINAPI Suspend()</div><div class="ttdoc">中断処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_service_core_8cpp_source.html#l00350">ServiceCore.cpp:350</a></div></div>
+<div class="ttc" id="aclass_service_core_html"><div class="ttname"><a href="../../dd/d44/class_service_core.html">ServiceCore</a></div><div class="ttdoc">サービス実行クラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9b/_service_core_8h_source.html#l00015">ServiceCore.h:16</a></div></div>
+<div class="ttc" id="aclass_event_html_a7eaa87a5df5f8c9180d5aa10faf8e668"><div class="ttname"><a href="../../d1/da9/class_event.html#a7eaa87a5df5f8c9180d5aa10faf8e668">Event::Set</a></div><div class="ttdeci">BOOL WINAPI Set()</div><div class="ttdoc">イベントをセット(シグナル状態に)します。</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dc3/_event_8hpp_source.html#l00056">Event.hpp:56</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8cpp_html_ac57f8458bbc141863e878ee0046b86f6"><div class="ttname"><a href="../../de/d67/_event_log_dump_2_main_8cpp.html#ac57f8458bbc141863e878ee0046b86f6">g_hCategoryResource</a></div><div class="ttdeci">HANDLE g_hCategoryResource</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00008">Main.cpp:8</a></div></div>
+<div class="ttc" id="a_svc_8cpp_html_ad22574d77bb8f7affd01d401295f19a0"><div class="ttname"><a href="../../d2/dc2/_svc_8cpp.html#ad22574d77bb8f7affd01d401295f19a0">SvcMain</a></div><div class="ttdeci">VOID WINAPI SvcMain(DWORD, LPTSTR *)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dc2/_svc_8cpp_source.html#l00137">Svc.cpp:137</a></div></div>
+<div class="ttc" id="aclass_service_command_html_aeae1bd08cf2ce42c722d4976f30d5c6b"><div class="ttname"><a href="../../d5/dab/class_service_command.html#aeae1bd08cf2ce42c722d4976f30d5c6b">ServiceCommand::Start</a></div><div class="ttdeci">BOOL WINAPI Start()</div><div class="ttdoc">サービスの開始</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00529">ServiceCommand.cpp:529</a></div></div>
+<div class="ttc" id="aclass_service_control_html_a7754c15525e54b991d362556e2a08dd3"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#a7754c15525e54b991d362556e2a08dd3">ServiceControl::Delete</a></div><div class="ttdeci">BOOL WINAPI Delete()</div><div class="ttdoc">サービスの削除</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00316">ServiceCommon.hpp:316</a></div></div>
+<div class="ttc" id="aclass_i_service_html_a80da758e3abdcd14b457f9f94e6c517b"><div class="ttname"><a href="../../d5/ddc/class_i_service.html#a80da758e3abdcd14b457f9f94e6c517b">IService::Suspend</a></div><div class="ttdeci">virtual BOOL Suspend()=0</div><div class="ttdoc">処理中断インターフェース</div></div>
+<div class="ttc" id="aclass_service_command_html_a55065b0fb3fac09a671411945dd743d8"><div class="ttname"><a href="../../d5/dab/class_service_command.html#a55065b0fb3fac09a671411945dd743d8">ServiceCommand::ShowCurrentStatus</a></div><div class="ttdeci">VOID WINAPI ShowCurrentStatus(QueryResponse response)</div><div class="ttdoc">現在のサービスステータスを出力します。</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00691">ServiceCommand.cpp:691</a></div></div>
+<div class="ttc" id="aclass_service_command_html_a503f246d749a81e0e6a28413cdfee917"><div class="ttname"><a href="../../d5/dab/class_service_command.html#a503f246d749a81e0e6a28413cdfee917">ServiceCommand::Remove</a></div><div class="ttdeci">BOOL WINAPI Remove()</div><div class="ttdoc">サービスの削除処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00402">ServiceCommand.cpp:402</a></div></div>
+<div class="ttc" id="aclass_registry_html_a22b28d62d29d35c98413189b44b3945c"><div class="ttname"><a href="../../d4/d78/class_registry.html#a22b28d62d29d35c98413189b44b3945c">Registry::Create</a></div><div class="ttdeci">BOOL Create(HKEY hRootKey, LPCTSTR lpctszSubKey, BOOL bVoratile=FALSE)</div><div class="ttdoc">レジストリキーを新規に作成します。</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d54/_registry_2_registry_8cpp_source.html#l00020">Registry.cpp:20</a></div></div>
+<div class="ttc" id="aclass_service_command_html_abee6dc910a1f35e59789e9cdfdd9caf5"><div class="ttname"><a href="../../d5/dab/class_service_command.html#abee6dc910a1f35e59789e9cdfdd9caf5">ServiceCommand::Status</a></div><div class="ttdeci">BOOL WINAPI Status()</div><div class="ttdoc">サービスの状態表示</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00273">ServiceCommand.cpp:273</a></div></div>
+<div class="ttc" id="aclass_registry_html_a31f3c8a5dec640fbea7447d624464eff"><div class="ttname"><a href="../../d4/d78/class_registry.html#a31f3c8a5dec640fbea7447d624464eff">Registry::Close</a></div><div class="ttdeci">BOOL Close()</div><div class="ttdoc">新規作成/オープンしたサブキーをクローズします。</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d54/_registry_2_registry_8cpp_source.html#l00289">Registry.cpp:289</a></div></div>
+<div class="ttc" id="aclass_i_service_html_af21b7c3f2bc72d219bfb4a6c269f468f"><div class="ttname"><a href="../../d5/ddc/class_i_service.html#af21b7c3f2bc72d219bfb4a6c269f468f">IService::Resume</a></div><div class="ttdeci">virtual BOOL Resume()=0</div><div class="ttdoc">処理再開インターフェース</div></div>
+<div class="ttc" id="aclass_service_control_html_a5061650ea500fc0fc856f9f7edbccedc"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#a5061650ea500fc0fc856f9f7edbccedc">ServiceControl::ChangeConfig2Description</a></div><div class="ttdeci">BOOL WINAPI ChangeConfig2Description()</div><div class="ttdoc">サービスの説明文章の変更</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00284">ServiceCommon.hpp:284</a></div></div>
+<div class="ttc" id="aclass_service_core_html_ac2578abe199956beb40b681a084c1205"><div class="ttname"><a href="../../dd/d44/class_service_core.html#ac2578abe199956beb40b681a084c1205">ServiceCore::Stop</a></div><div class="ttdeci">BOOL WINAPI Stop()</div><div class="ttdoc">停止処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d19/_service_core_8cpp_source.html#l00324">ServiceCore.cpp:324</a></div></div>
+<div class="ttc" id="a_registry_2_registry_8h_html_a1cf569187eb354edc61baddd3a5acbec"><div class="ttname"><a href="../../dc/d71/_registry_2_registry_8h.html#a1cf569187eb354edc61baddd3a5acbec">RegistryValueTypes</a></div><div class="ttdeci">RegistryValueTypes</div><div class="ttdoc">レジストリのキー種別</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d71/_registry_2_registry_8h_source.html#l00012">Registry.h:13</a></div></div>
+<div class="ttc" id="a_svc_control_8cpp_html_ad312cb0ea48754d157b06f2d26c7b9c5"><div class="ttname"><a href="../../dd/de3/_svc_control_8cpp.html#ad312cb0ea48754d157b06f2d26c7b9c5">DoStopSvc</a></div><div class="ttdeci">VOID __stdcall DoStopSvc(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de3/_svc_control_8cpp_source.html#l00450">SvcControl.cpp:450</a></div></div>
+<div class="ttc" id="aclass_service_control_html_a5b4647d5942fd7d854f4021cc3d23417"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#a5b4647d5942fd7d854f4021cc3d23417">ServiceControl::QueryConfig</a></div><div class="ttdeci">BOOL WINAPI QueryConfig(LPQUERY_SERVICE_CONFIG &amp;lpQueryServiceConfig)</div><div class="ttdoc">サービスの設定情報取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00202">ServiceCommon.hpp:202</a></div></div>
+<div class="ttc" id="a_svc_config_8cpp_html_a2f8113dae4a1557e10b860c1eb8cb99e"><div class="ttname"><a href="../../da/d7e/_svc_config_8cpp.html#a2f8113dae4a1557e10b860c1eb8cb99e">DoEnableSvc</a></div><div class="ttdeci">VOID __stdcall DoEnableSvc(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7e/_svc_config_8cpp_source.html#l00281">SvcConfig.cpp:281</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_ab3fc27297031a54d413c76e7e85100d2"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#ab3fc27297031a54d413c76e7e85100d2">ENTRY_EVENT_MESSAGE_FILE</a></div><div class="ttdeci">#define ENTRY_EVENT_MESSAGE_FILE</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00019">Main.h:19</a></div></div>
+<div class="ttc" id="aclass_service_control_html_a20812f4b530d45903a5af17c75bb6c60"><div class="ttname"><a href="../../d5/d0b/class_service_control.html#a20812f4b530d45903a5af17c75bb6c60">ServiceControl::ChangeConfig</a></div><div class="ttdeci">BOOL WINAPI ChangeConfig(BootSettings bootType)</div><div class="ttdoc">サービスの設定変更</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00264">ServiceCommon.hpp:264</a></div></div>
+<div class="ttc" id="aclass_service_status_handler_html_a6b8a3a3875d0fd736e48714e7d999d25"><div class="ttname"><a href="../../d4/dfa/class_service_status_handler.html#a6b8a3a3875d0fd736e48714e7d999d25">ServiceStatusHandler::GetHandle</a></div><div class="ttdeci">SERVICE_STATUS_HANDLE WINAPI GetHandle()</div><div class="ttdoc">サービス制御関数登録時のハンドルを取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00361">ServiceCommon.hpp:361</a></div></div>
+<div class="ttc" id="aclass_service_handler_html_a64e8d5b544fc28fe04a5ebd4b8b1ccc2"><div class="ttname"><a href="../../d1/d69/class_service_handler.html#a64e8d5b544fc28fe04a5ebd4b8b1ccc2">ServiceHandler::GetHandle</a></div><div class="ttdeci">virtual SC_HANDLE WINAPI GetHandle()</div><div class="ttdoc">ハンドル取得</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da7/_service_common_8hpp_source.html#l00121">ServiceCommon.hpp:121</a></div></div>
+<div class="ttc" id="aclass_service2_html_a8a39c21d5e303514031a29756f24aa3f"><div class="ttname"><a href="../../d9/d2d/class_service2.html#a8a39c21d5e303514031a29756f24aa3f">Service2::Wait</a></div><div class="ttdeci">BOOL WINAPI Wait()</div><div class="ttdoc">サービスの終了を待機します。</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/_service2_8cpp_source.html#l00034">Service2.cpp:34</a></div></div>
+<div class="ttc" id="aclass_service_info_html_ae09382b548d11b56588095cd1b01cb8d"><div class="ttname"><a href="../../de/dbd/class_service_info.html#ae09382b548d11b56588095cd1b01cb8d">ServiceInfo::Initialize</a></div><div class="ttdeci">BOOL Initialize(LPCTSTR lpctszSectionName)</div><div class="ttdoc">初期化処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de8/_service_info_8cpp_source.html#l00026">ServiceInfo.cpp:26</a></div></div>
+<div class="ttc" id="aclass_service_command_html_a6cd22a5653232d4414388142f175a2a6"><div class="ttname"><a href="../../d5/dab/class_service_command.html#a6cd22a5653232d4414388142f175a2a6">ServiceCommand::Install</a></div><div class="ttdeci">BOOL WINAPI Install()</div><div class="ttdoc">サービスのインストール処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00068">ServiceCommand.cpp:68</a></div></div>
+<div class="ttc" id="aclass_service2_html_ab0e1ccbe22ee287d780db50a6404224c"><div class="ttname"><a href="../../d9/d2d/class_service2.html#ab0e1ccbe22ee287d780db50a6404224c">Service2::Suspend</a></div><div class="ttdeci">BOOL WINAPI Suspend()</div><div class="ttdoc">サービスを停止します。</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/_service2_8cpp_source.html#l00019">Service2.cpp:19</a></div></div>
+<div class="ttc" id="aclass_service2_html_a32666e6b99d8ac01f4d40d284c9faecc"><div class="ttname"><a href="../../d9/d2d/class_service2.html#a32666e6b99d8ac01f4d40d284c9faecc">Service2::Start</a></div><div class="ttdeci">BOOL WINAPI Start()</div><div class="ttdoc">サービスを開始します。</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/_service2_8cpp_source.html#l00014">Service2.cpp:14</a></div></div>
+<div class="ttc" id="aclass_service_command_html_a786b1ec61b1f7f44ada34ff78836dd80"><div class="ttname"><a href="../../d5/dab/class_service_command.html#a786b1ec61b1f7f44ada34ff78836dd80">ServiceCommand::Enable</a></div><div class="ttdeci">BOOL WINAPI Enable(BOOL bAuto)</div><div class="ttdoc">自動開始/手動開始を設定</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d80/_service_command_8cpp_source.html#l00421">ServiceCommand.cpp:421</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_a2dae984f4965bfa5ed586e3871540ce7"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#a2dae984f4965bfa5ed586e3871540ce7">MAX_RECORD_BUFFER_SIZE</a></div><div class="ttdeci">#define MAX_RECORD_BUFFER_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00015">Main.h:15</a></div></div>
+<div class="ttc" id="a_service_application1_2_main_8cpp_html_aea68d398ffe5443b9ae1f388a1ae039d"><div class="ttname"><a href="../../d5/dce/_service_application1_2_main_8cpp.html#aea68d398ffe5443b9ae1f388a1ae039d">CtrlHandler</a></div><div class="ttdeci">VOID WINAPI CtrlHandler(DWORD dwControlCode)</div><div class="ttdoc">サービス制御関数</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dce/_service_application1_2_main_8cpp_source.html#l00063">Main.cpp:63</a></div></div>
+<div class="ttc" id="aclass_service_status_html_aeb3e02068f8ded41eb4c561e9e251fe0"><div class="ttname"><a href="../../d1/dbd/class_service_status.html#aeb3e02068f8ded41eb4c561e9e251fe0">ServiceStatus::ReportStatus</a></div><div class="ttdeci">BOOL WINAPI ReportStatus(ServiceStatusHandler handler, DWORD dwCurrentState, DWORD dwWin32ExitCode, DWORD dwWaitHint)</div><div class="ttdoc">サービスの現在の状態を設定</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/ddc/_service_common_8cpp_source.html#l00143">ServiceCommon.cpp:143</a></div></div>
+<div class="ttc" id="aclass_registry_html_a9269237772f1c3a372c104b746c11379"><div class="ttname"><a href="../../d4/d78/class_registry.html#a9269237772f1c3a372c104b746c11379">Registry::SetValue</a></div><div class="ttdeci">BOOL SetValue(LPCTSTR lpctszEntry, RegistryValueTypes eType, LPBYTE lpbyData, DWORD dwDataLen)</div><div class="ttdoc">エントリ名に値を設定します。</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d54/_registry_2_registry_8cpp_source.html#l00237">Registry.cpp:237</a></div></div>
+<div class="ttc" id="a_svc_control_8cpp_html_aa45c92389988c2ba63a1c16a0eda2a19"><div class="ttname"><a href="../../dd/de3/_svc_control_8cpp.html#aa45c92389988c2ba63a1c16a0eda2a19">DoUpdateSvcDacl</a></div><div class="ttdeci">VOID __stdcall DoUpdateSvcDacl(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de3/_svc_control_8cpp_source.html#l00307">SvcControl.cpp:307</a></div></div>
+<div class="ttc" id="aclass_service1_html_a40e34d0989d3cfb9872fa69bd5a6e1e5"><div class="ttname"><a href="../../df/d9d/class_service1.html#a40e34d0989d3cfb9872fa69bd5a6e1e5">Service1::Start</a></div><div class="ttdeci">BOOL WINAPI Start()</div><div class="ttdoc">サービスを開始します。</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d36/_service1_8cpp_source.html#l00014">Service1.cpp:14</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_abc211491f4e77884ea8d39a89ff791e6"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#abc211491f4e77884ea8d39a89ff791e6">ENTRY_CATEGORY_MESSAGE_FILE</a></div><div class="ttdeci">#define ENTRY_CATEGORY_MESSAGE_FILE</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00018">Main.h:18</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8cpp_html_a533817dd907420ff6eb9f2b536b53126"><div class="ttname"><a href="../../de/d67/_event_log_dump_2_main_8cpp.html#a533817dd907420ff6eb9f2b536b53126">GetEventTypeName</a></div><div class="ttdeci">DWORD GetEventTypeName(DWORD dwEventType)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00270">Main.cpp:270</a></div></div>
+<div class="ttc" id="aclass_service2_html_a85e550c3a81e991d1ed7750249475f81"><div class="ttname"><a href="../../d9/d2d/class_service2.html#a85e550c3a81e991d1ed7750249475f81">Service2::Run</a></div><div class="ttdeci">BOOL WINAPI Run()</div><div class="ttdoc">サービス開始関数</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/_service2_8cpp_source.html#l00039">Service2.cpp:39</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_592375a4b7512d26ca24a6e58b25ffec.html">EventLogDump</a></li><li class="navelem"><a class="el" href="../../de/d67/_event_log_dump_2_main_8cpp.html">Main.cpp</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

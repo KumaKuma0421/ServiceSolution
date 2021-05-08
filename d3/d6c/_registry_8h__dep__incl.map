@@ -1,5 +1,0 @@
-<map id="ServiceLogics/Registry.h" name="ServiceLogics/Registry.h">
-<area shape="rect" id="node1" title="レジストリに関するWindowsAPIを集約したクラス" alt="" coords="127,5,292,32"/>
-<area shape="rect" id="node2" href="$d7/d22/_registry_8cpp.html" title="レジストリに関するWindowsAPIを集約したクラス" alt="" coords="5,80,184,107"/>
-<area shape="rect" id="node3" href="$d7/d80/_service_command_8cpp.html" title="サービスに対する操作を集約したクラス" alt="" coords="208,80,440,107"/>
-</map>

@@ -1,0 +1,14 @@
+<map id="_tmain" name="_tmain">
+<area shape="rect" id="node1" title="メイン関数" alt="" coords="5,259,67,285"/>
+<area shape="rect" id="node2" href="$d4/d78/class_registry.html#a31f3c8a5dec640fbea7447d624464eff" title="新規作成/オープンしたサブキーをクローズします。" alt="" coords="133,5,244,32"/>
+<area shape="rect" id="node3" href="$d4/d78/class_registry.html#a22b28d62d29d35c98413189b44b3945c" title="レジストリキーを新規に作成します。" alt="" coords="131,56,247,83"/>
+<area shape="rect" id="node4" href="$d4/d78/class_registry.html#adab301168cf03ec4558e539c11ffe447" title="サブキーを削除します。" alt="" coords="119,107,258,133"/>
+<area shape="rect" id="node5" href="$d4/d78/class_registry.html#a3afd14c52502df0d1438b15bf105aef8" title="サブキー配下をすべて削除します。" alt="" coords="119,157,259,184"/>
+<area shape="rect" id="node6" href="$d4/d78/class_registry.html#ae60955135657194880a8e3f421c60e8d" title="エントリ名の値を削除します。" alt="" coords="115,208,263,235"/>
+<area shape="rect" id="node7" href="$d4/d78/class_registry.html#afebea1c401d03a61ff21b4db97e6ac90" title="新規作成/オープンしたサブキーの設定をフラッシュします。" alt="" coords="133,259,244,285"/>
+<area shape="rect" id="node8" href="$d4/d78/class_registry.html#ac82146866368c11844bfc17d7c37219f" title="新規作成/オープンしたサブキーのハンドルを取得します。" alt="" coords="127,309,250,336"/>
+<area shape="rect" id="node9" href="$d4/d78/class_registry.html#ae09f2a9cb7e848886848c22e9065db38" title="レジストリキーをオープンします。" alt="" coords="134,360,243,387"/>
+<area shape="rect" id="node10" href="$d4/d78/class_registry.html#a2f849110e332b60d8145df24466cda68" title="オープンしているキー配下を列挙します。" alt="" coords="132,411,245,437"/>
+<area shape="rect" id="node11" href="$d4/d78/class_registry.html#ac25e698794a4085ccedcdb1d9a51f1bb" title="エントリ名に設定された値を取得します。" alt="" coords="115,461,262,488"/>
+<area shape="rect" id="node12" href="$d4/d78/class_registry.html#a9269237772f1c3a372c104b746c11379" title="エントリ名に値を設定します。" alt="" coords="123,512,254,539"/>
+</map>

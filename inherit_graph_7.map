@@ -1,3 +1,5 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$d1/dbd/class_service_status.html" title="サービス状態の操作クラス" alt="" coords="5,5,108,32"/>
+<area shape="rect" id="node1" href="$d1/d69/class_service_handler.html" title="SC_HANDLERを扱うクラスのスーパークラス" alt="" coords="5,31,113,57"/>
+<area shape="rect" id="node2" href="$d5/d0b/class_service_control.html" title="個別のサービスを管理するクラス" alt="" coords="186,5,291,32"/>
+<area shape="rect" id="node3" href="$d0/d5e/class_service_control_manager.html" title="サービスコントロールマネージャ(SCM)の操作用クラス" alt="" coords="161,56,316,83"/>
 </map>

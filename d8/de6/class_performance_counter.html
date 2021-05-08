@@ -1,0 +1,711 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: PerformanceCounter クラス</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d8/de6/class_performance_counter.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="../../d7/df9/class_performance_counter-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">PerformanceCounter クラス<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a>&gt;</code></p>
+<div class="dynheader">
+PerformanceCounter 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/db4/class_performance_counter__coll__graph.png" border="0" usemap="#a_performance_counter_coll__map" alt="Collaboration graph"/></div>
+<map name="_performance_counter_coll__map" id="a_performance_counter_coll__map">
+<area shape="rect" title=" " alt="" coords="5,5,173,317"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ab289f879dd9ade53712a1a4c7f7d1123"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#ab289f879dd9ade53712a1a4c7f7d1123">PerformanceCounter</a> (HCOUNTER hCounter, PPDH_COUNTER_INFO pCounterInfo)</td></tr>
+<tr class="separator:ab289f879dd9ade53712a1a4c7f7d1123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f6a2cf85ae09a5e61c7ed7bb9027b4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a6f6a2cf85ae09a5e61c7ed7bb9027b4e">~PerformanceCounter</a> ()</td></tr>
+<tr class="separator:a6f6a2cf85ae09a5e61c7ed7bb9027b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28ca1c94dc888d782ac894a89548af84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a28ca1c94dc888d782ac894a89548af84">GetTitleLength</a> ()</td></tr>
+<tr class="separator:a28ca1c94dc888d782ac894a89548af84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c4bc77fe01997c2da129c1fa80d022b"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a5c4bc77fe01997c2da129c1fa80d022b">GetValues</a> ()</td></tr>
+<tr class="separator:a5c4bc77fe01997c2da129c1fa80d022b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abafcfc680c8d299e4b32bab6f07f669b"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#abafcfc680c8d299e4b32bab6f07f669b">OutputFile</a> (HANDLE &amp;hFile)</td></tr>
+<tr class="separator:abafcfc680c8d299e4b32bab6f07f669b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267357a006b95c259ffbbecc889dc2e6"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a267357a006b95c259ffbbecc889dc2e6">OutputString</a> (int iMaxTitleLength, LPTSTR lptszValue, DWORD dwSize)</td></tr>
+<tr class="separator:a267357a006b95c259ffbbecc889dc2e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a57ed472d9bd7785c1f1caa19fcad3079"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a57ed472d9bd7785c1f1caa19fcad3079">ParseInformation</a> ()</td></tr>
+<tr class="separator:a57ed472d9bd7785c1f1caa19fcad3079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a3d396a0939ec8bf95976a12698b53f74"><td class="memItemLeft" align="right" valign="top">LONGLONG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a3d396a0939ec8bf95976a12698b53f74">_counter</a></td></tr>
+<tr class="separator:a3d396a0939ec8bf95976a12698b53f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1513eac414c5ec807e606bd99d7f6d4a"><td class="memItemLeft" align="right" valign="top">PDH_FMT_COUNTERVALUE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a1513eac414c5ec807e606bd99d7f6d4a">_CurrentValue</a></td></tr>
+<tr class="separator:a1513eac414c5ec807e606bd99d7f6d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa72e4513c675c336a7b40d455f53303"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#aaa72e4513c675c336a7b40d455f53303">_dwType</a></td></tr>
+<tr class="separator:aaa72e4513c675c336a7b40d455f53303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d9b5a923c3abbf98c7e91add43adea0"><td class="memItemLeft" align="right" valign="top">HCOUNTER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a6d9b5a923c3abbf98c7e91add43adea0">_hCounter</a></td></tr>
+<tr class="separator:a6d9b5a923c3abbf98c7e91add43adea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3039b1e0a0c6e8b6ded6cf2a7ab131ee"><td class="memItemLeft" align="right" valign="top">LPCTSTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a3039b1e0a0c6e8b6ded6cf2a7ab131ee">_lpctszCounterName</a></td></tr>
+<tr class="separator:a3039b1e0a0c6e8b6ded6cf2a7ab131ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f2aac135414cfb0a617c6cc4fe79b8"><td class="memItemLeft" align="right" valign="top">PDH_FMT_COUNTERVALUE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#ab0f2aac135414cfb0a617c6cc4fe79b8">_MaxValue</a></td></tr>
+<tr class="separator:ab0f2aac135414cfb0a617c6cc4fe79b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a134441a87e54867e0a02d0b08bcdb86c"><td class="memItemLeft" align="right" valign="top">PDH_FMT_COUNTERVALUE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a134441a87e54867e0a02d0b08bcdb86c">_MinValue</a></td></tr>
+<tr class="separator:a134441a87e54867e0a02d0b08bcdb86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9514ad17d92e452d90dece41bed1b77"><td class="memItemLeft" align="right" valign="top">PPDH_COUNTER_INFO&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#ad9514ad17d92e452d90dece41bed1b77">_pCounterInfo</a></td></tr>
+<tr class="separator:ad9514ad17d92e452d90dece41bed1b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc3fc22c50a676a1c069a96321921d5"><td class="memItemLeft" align="right" valign="top">PDH_FMT_COUNTERVALUE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#afdc3fc22c50a676a1c069a96321921d5">_Previous1Value</a></td></tr>
+<tr class="separator:afdc3fc22c50a676a1c069a96321921d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a056d76be4a2801ba88ecb45a69a425c1"><td class="memItemLeft" align="right" valign="top">PDH_FMT_COUNTERVALUE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a056d76be4a2801ba88ecb45a69a425c1">_Previous2Value</a></td></tr>
+<tr class="separator:a056d76be4a2801ba88ecb45a69a425c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9661454e31ddbfc7d2d6f7e9a8096464"><td class="memItemLeft" align="right" valign="top">PDH_FMT_COUNTERVALUE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/class_performance_counter.html#a9661454e31ddbfc7d2d6f7e9a8096464">_Previous3Value</a></td></tr>
+<tr class="separator:a9661454e31ddbfc7d2d6f7e9a8096464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00015">15</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ab289f879dd9ade53712a1a4c7f7d1123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab289f879dd9ade53712a1a4c7f7d1123">&#9670;&nbsp;</a></span>PerformanceCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PerformanceCounter::PerformanceCounter </td>
+          <td>(</td>
+          <td class="paramtype">HCOUNTER&#160;</td>
+          <td class="paramname"><em>hCounter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PPDH_COUNTER_INFO&#160;</td>
+          <td class="paramname"><em>pCounterInfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html">PerformanceMonitor.cpp</a> の <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00007">7</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00038">_counter</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00032">_CurrentValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00028">_hCounter</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00036">_MaxValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00037">_MinValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00029">_pCounterInfo</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00033">_Previous1Value</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00203">ParseInformation()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/de6/class_performance_counter_ab289f879dd9ade53712a1a4c7f7d1123_cgraph.png" border="0" usemap="#ad8/de6/class_performance_counter_ab289f879dd9ade53712a1a4c7f7d1123_cgraph" alt=""/></div>
+<map name="d8/de6/class_performance_counter_ab289f879dd9ade53712a1a4c7f7d1123_cgraph" id="ad8/de6/class_performance_counter_ab289f879dd9ade53712a1a4c7f7d1123_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,153,47"/>
+<area shape="rect" href="../../d8/de6/class_performance_counter.html#a57ed472d9bd7785c1f1caa19fcad3079" title=" " alt="" coords="201,5,341,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6f6a2cf85ae09a5e61c7ed7bb9027b4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f6a2cf85ae09a5e61c7ed7bb9027b4e">&#9670;&nbsp;</a></span>~PerformanceCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PerformanceCounter::~PerformanceCounter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html">PerformanceMonitor.cpp</a> の <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00022">22</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00029">_pCounterInfo</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a28ca1c94dc888d782ac894a89548af84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28ca1c94dc888d782ac894a89548af84">&#9670;&nbsp;</a></span>GetTitleLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PerformanceCounter::GetTitleLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00024">24</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00031">_lpctszCounterName</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../de/df4/_monitoring1_8cpp_source.html#l00024">ShowCounter()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/de6/class_performance_counter_a28ca1c94dc888d782ac894a89548af84_icgraph.png" border="0" usemap="#ad8/de6/class_performance_counter_a28ca1c94dc888d782ac894a89548af84_icgraph" alt=""/></div>
+<map name="d8/de6/class_performance_counter_a28ca1c94dc888d782ac894a89548af84_icgraph" id="ad8/de6/class_performance_counter_a28ca1c94dc888d782ac894a89548af84_icgraph">
+<area shape="rect" title=" " alt="" coords="251,5,391,47"/>
+<area shape="rect" href="../../de/df4/_monitoring1_8cpp.html#a69123a3af32ad7d8489cbc8df3a30006" title=" " alt="" coords="104,13,203,39"/>
+<area shape="rect" href="../../de/df4/_monitoring1_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,56,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5c4bc77fe01997c2da129c1fa80d022b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c4bc77fe01997c2da129c1fa80d022b">&#9670;&nbsp;</a></span>GetValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL PerformanceCounter::GetValues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html">PerformanceMonitor.cpp</a> の <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">27</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00038">_counter</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00032">_CurrentValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00030">_dwType</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00028">_hCounter</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00036">_MaxValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00037">_MinValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00033">_Previous1Value</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00034">_Previous2Value</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00035">_Previous3Value</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00147">OutputFile()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00087">OutputString()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/de6/class_performance_counter_a5c4bc77fe01997c2da129c1fa80d022b_icgraph.png" border="0" usemap="#ad8/de6/class_performance_counter_a5c4bc77fe01997c2da129c1fa80d022b_icgraph" alt=""/></div>
+<map name="d8/de6/class_performance_counter_a5c4bc77fe01997c2da129c1fa80d022b_icgraph" id="ad8/de6/class_performance_counter_a5c4bc77fe01997c2da129c1fa80d022b_icgraph">
+<area shape="rect" title=" " alt="" coords="193,39,333,80"/>
+<area shape="rect" href="../../d8/de6/class_performance_counter.html#abafcfc680c8d299e4b32bab6f07f669b" title=" " alt="" coords="5,5,145,47"/>
+<area shape="rect" href="../../d8/de6/class_performance_counter.html#a267357a006b95c259ffbbecc889dc2e6" title=" " alt="" coords="5,71,145,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abafcfc680c8d299e4b32bab6f07f669b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abafcfc680c8d299e4b32bab6f07f669b">&#9670;&nbsp;</a></span>OutputFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL PerformanceCounter::OutputFile </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE &amp;&#160;</td>
+          <td class="paramname"><em>hFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html">PerformanceMonitor.cpp</a> の <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00147">147</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00032">_CurrentValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00030">_dwType</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00036">_MaxValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00037">_MinValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00033">_Previous1Value</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00034">_Previous2Value</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">GetValues()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/de6/class_performance_counter_abafcfc680c8d299e4b32bab6f07f669b_cgraph.png" border="0" usemap="#ad8/de6/class_performance_counter_abafcfc680c8d299e4b32bab6f07f669b_cgraph" alt=""/></div>
+<map name="d8/de6/class_performance_counter_abafcfc680c8d299e4b32bab6f07f669b_cgraph" id="ad8/de6/class_performance_counter_abafcfc680c8d299e4b32bab6f07f669b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,145,47"/>
+<area shape="rect" href="../../d8/de6/class_performance_counter.html#a5c4bc77fe01997c2da129c1fa80d022b" title=" " alt="" coords="193,5,333,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a267357a006b95c259ffbbecc889dc2e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a267357a006b95c259ffbbecc889dc2e6">&#9670;&nbsp;</a></span>OutputString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL PerformanceCounter::OutputString </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iMaxTitleLength</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>lptszValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html">PerformanceMonitor.cpp</a> の <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00087">87</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00038">_counter</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00032">_CurrentValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00030">_dwType</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00031">_lpctszCounterName</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00036">_MaxValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00037">_MinValue</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00033">_Previous1Value</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00034">_Previous2Value</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">GetValues()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/de6/class_performance_counter_a267357a006b95c259ffbbecc889dc2e6_cgraph.png" border="0" usemap="#ad8/de6/class_performance_counter_a267357a006b95c259ffbbecc889dc2e6_cgraph" alt=""/></div>
+<map name="d8/de6/class_performance_counter_a267357a006b95c259ffbbecc889dc2e6_cgraph" id="ad8/de6/class_performance_counter_a267357a006b95c259ffbbecc889dc2e6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,145,47"/>
+<area shape="rect" href="../../d8/de6/class_performance_counter.html#a5c4bc77fe01997c2da129c1fa80d022b" title=" " alt="" coords="193,5,333,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a57ed472d9bd7785c1f1caa19fcad3079"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57ed472d9bd7785c1f1caa19fcad3079">&#9670;&nbsp;</a></span>ParseInformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID PerformanceCounter::ParseInformation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html">PerformanceMonitor.cpp</a> の <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00203">203</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00030">_dwType</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00031">_lpctszCounterName</a>, <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00029">_pCounterInfo</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00007">PerformanceCounter()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/de6/class_performance_counter_a57ed472d9bd7785c1f1caa19fcad3079_icgraph.png" border="0" usemap="#ad8/de6/class_performance_counter_a57ed472d9bd7785c1f1caa19fcad3079_icgraph" alt=""/></div>
+<map name="d8/de6/class_performance_counter_a57ed472d9bd7785c1f1caa19fcad3079_icgraph" id="ad8/de6/class_performance_counter_a57ed472d9bd7785c1f1caa19fcad3079_icgraph">
+<area shape="rect" title=" " alt="" coords="201,5,341,47"/>
+<area shape="rect" href="../../d8/de6/class_performance_counter.html#ab289f879dd9ade53712a1a4c7f7d1123" title=" " alt="" coords="5,5,153,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a3d396a0939ec8bf95976a12698b53f74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d396a0939ec8bf95976a12698b53f74">&#9670;&nbsp;</a></span>_counter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LONGLONG PerformanceCounter::_counter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00007">PerformanceCounter()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">GetValues()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00087">OutputString()</a>.</p>
+
+</div>
+</div>
+<a id="a1513eac414c5ec807e606bd99d7f6d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1513eac414c5ec807e606bd99d7f6d4a">&#9670;&nbsp;</a></span>_CurrentValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PDH_FMT_COUNTERVALUE PerformanceCounter::_CurrentValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00007">PerformanceCounter()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">GetValues()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00147">OutputFile()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00087">OutputString()</a>.</p>
+
+</div>
+</div>
+<a id="aaa72e4513c675c336a7b40d455f53303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa72e4513c675c336a7b40d455f53303">&#9670;&nbsp;</a></span>_dwType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD PerformanceCounter::_dwType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">GetValues()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00147">OutputFile()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00087">OutputString()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00203">ParseInformation()</a>.</p>
+
+</div>
+</div>
+<a id="a6d9b5a923c3abbf98c7e91add43adea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d9b5a923c3abbf98c7e91add43adea0">&#9670;&nbsp;</a></span>_hCounter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HCOUNTER PerformanceCounter::_hCounter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00028">28</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00007">PerformanceCounter()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">GetValues()</a>.</p>
+
+</div>
+</div>
+<a id="a3039b1e0a0c6e8b6ded6cf2a7ab131ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3039b1e0a0c6e8b6ded6cf2a7ab131ee">&#9670;&nbsp;</a></span>_lpctszCounterName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LPCTSTR PerformanceCounter::_lpctszCounterName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00024">GetTitleLength()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00087">OutputString()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00203">ParseInformation()</a>.</p>
+
+</div>
+</div>
+<a id="ab0f2aac135414cfb0a617c6cc4fe79b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f2aac135414cfb0a617c6cc4fe79b8">&#9670;&nbsp;</a></span>_MaxValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PDH_FMT_COUNTERVALUE PerformanceCounter::_MaxValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00036">36</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00007">PerformanceCounter()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">GetValues()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00147">OutputFile()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00087">OutputString()</a>.</p>
+
+</div>
+</div>
+<a id="a134441a87e54867e0a02d0b08bcdb86c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a134441a87e54867e0a02d0b08bcdb86c">&#9670;&nbsp;</a></span>_MinValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PDH_FMT_COUNTERVALUE PerformanceCounter::_MinValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00007">PerformanceCounter()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">GetValues()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00147">OutputFile()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00087">OutputString()</a>.</p>
+
+</div>
+</div>
+<a id="ad9514ad17d92e452d90dece41bed1b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9514ad17d92e452d90dece41bed1b77">&#9670;&nbsp;</a></span>_pCounterInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PPDH_COUNTER_INFO PerformanceCounter::_pCounterInfo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00029">29</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00007">PerformanceCounter()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00022">~PerformanceCounter()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00203">ParseInformation()</a>.</p>
+
+</div>
+</div>
+<a id="afdc3fc22c50a676a1c069a96321921d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc3fc22c50a676a1c069a96321921d5">&#9670;&nbsp;</a></span>_Previous1Value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PDH_FMT_COUNTERVALUE PerformanceCounter::_Previous1Value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00033">33</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00007">PerformanceCounter()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">GetValues()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00147">OutputFile()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00087">OutputString()</a>.</p>
+
+</div>
+</div>
+<a id="a056d76be4a2801ba88ecb45a69a425c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a056d76be4a2801ba88ecb45a69a425c1">&#9670;&nbsp;</a></span>_Previous2Value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PDH_FMT_COUNTERVALUE PerformanceCounter::_Previous2Value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">GetValues()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00147">OutputFile()</a>, <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00087">OutputString()</a>.</p>
+
+</div>
+</div>
+<a id="a9661454e31ddbfc7d2d6f7e9a8096464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9661454e31ddbfc7d2d6f7e9a8096464">&#9670;&nbsp;</a></span>_Previous3Value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PDH_FMT_COUNTERVALUE PerformanceCounter::_Previous3Value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a> の <a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html#l00035">35</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html#l00027">GetValues()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Monitoring1/<a class="el" href="../../d4/d1b/_performance_monitor_8h_source.html">PerformanceMonitor.h</a></li>
+<li>Monitoring1/<a class="el" href="../../d0/dc6/_performance_monitor_8cpp_source.html">PerformanceMonitor.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d8/de6/class_performance_counter.html">PerformanceCounter</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

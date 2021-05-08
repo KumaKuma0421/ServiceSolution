@@ -6,6 +6,8 @@ var hierarchy =
       [ "Service1", "df/d9d/class_service1.html", null ],
       [ "Service2", "d9/d2d/class_service2.html", null ]
     ] ],
+    [ "PerformanceCounter", "d8/de6/class_performance_counter.html", null ],
+    [ "PerformanceMonitor", "d9/d3e/class_performance_monitor.html", null ],
     [ "Registry", "d4/d78/class_registry.html", null ],
     [ "ServiceCommand", "d5/dab/class_service_command.html", null ],
     [ "ServiceCore", "dd/d44/class_service_core.html", null ],

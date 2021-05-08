@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['schscmanager_477',['schSCManager',['../dd/de3/_svc_control_8cpp.html#a8782d7deed460838d228e833d3d3db64',1,'SvcControl.cpp']]],
-  ['schservice_478',['schService',['../dd/de3/_svc_control_8cpp.html#afcbd4e84f5e5a0a5a084358b0228723c',1,'SvcControl.cpp']]],
-  ['szcommand_479',['szCommand',['../da/d7e/_svc_config_8cpp.html#ab68000d32a3748ead15220107b25d40e',1,'szCommand():&#160;SvcConfig.cpp'],['../dd/de3/_svc_control_8cpp.html#ab68000d32a3748ead15220107b25d40e',1,'szCommand():&#160;SvcControl.cpp']]],
-  ['szsvcname_480',['szSvcName',['../da/d7e/_svc_config_8cpp.html#a77d35d865ebb53d77fbd03c2129b2c5d',1,'szSvcName():&#160;SvcConfig.cpp'],['../dd/de3/_svc_control_8cpp.html#a77d35d865ebb53d77fbd03c2129b2c5d',1,'szSvcName():&#160;SvcControl.cpp']]]
+  ['lptszeventtypenames_554',['lptszEventTypeNames',['../d4/dfd/_event_log_dump_2_main_8h.html#afc0dca8ea9ca32710e3c07806e95d5d9',1,'Main.h']]]
 ];

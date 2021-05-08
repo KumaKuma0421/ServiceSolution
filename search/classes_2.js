@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['registry_289',['Registry',['../d4/d78/class_registry.html',1,'']]]
+  ['performancecounter_329',['PerformanceCounter',['../d8/de6/class_performance_counter.html',1,'']]],
+  ['performancemonitor_330',['PerformanceMonitor',['../d9/d3e/class_performance_monitor.html',1,'']]]
 ];

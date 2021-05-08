@@ -89,11 +89,20 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_bAutoStart
 : <a class="el" href="de/dbd/class_service_info.html#a7917d6b0b9c8432251bd68cea36ee089">ServiceInfo</a>
 </li>
+<li>_counter
+: <a class="el" href="d8/de6/class_performance_counter.html#a3d396a0939ec8bf95976a12698b53f74">PerformanceCounter</a>
+</li>
+<li>_CurrentValue
+: <a class="el" href="d8/de6/class_performance_counter.html#a1513eac414c5ec807e606bd99d7f6d4a">PerformanceCounter</a>
+</li>
 <li>_dwControlCode
 : <a class="el" href="dd/d44/class_service_core.html#a8c5e1d00c90d46afb19fec2daa9ec0d3">ServiceCore</a>
 </li>
 <li>_dwThread
 : <a class="el" href="d8/d18/class_thread.html#aabda264389e10bb258e5fc092a7bddca">Thread</a>
+</li>
+<li>_dwType
+: <a class="el" href="d8/de6/class_performance_counter.html#aaa72e4513c675c336a7b40d455f53303">PerformanceCounter</a>
 </li>
 <li>_event
 : <a class="el" href="dd/d44/class_service_core.html#ae8ca7278ce34087f9d74d882c4fac162">ServiceCore</a>
@@ -108,6 +117,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_handler
 : <a class="el" href="dd/d44/class_service_core.html#ae4d42f3c45ddcb15bd1cf23cc9db00f9">ServiceCore</a>
 </li>
+<li>_hCounter
+: <a class="el" href="d8/de6/class_performance_counter.html#a6d9b5a923c3abbf98c7e91add43adea0">PerformanceCounter</a>
+</li>
 <li>_hEvent
 : <a class="el" href="d1/da9/class_event.html#afa2417ae39d6979bf9a8967b84a1e2c7">Event</a>
 </li>
@@ -120,6 +132,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_hkTarget
 : <a class="el" href="d4/d78/class_registry.html#a16d8a8e39f6dc172da48f00ff2f1771c">Registry</a>
 </li>
+<li>_hQuery
+: <a class="el" href="d9/d3e/class_performance_monitor.html#af7fe877edc565b4446c54f3273fba9c7">PerformanceMonitor</a>
+</li>
 <li>_hService
 : <a class="el" href="d4/dfa/class_service_status_handler.html#a2150af18187d1a630d16e5cdd3489d60">ServiceStatusHandler</a>
 </li>
@@ -131,8 +146,29 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 , <a class="el" href="d9/d2d/class_service2.html#aa9b1de0f09cb815eb8a69eec28b8b309">Service2</a>
 , <a class="el" href="dd/d44/class_service_core.html#aae53470c7eb0ac1c093dfc104473e404">ServiceCore</a>
 </li>
+<li>_lpctszCounterName
+: <a class="el" href="d8/de6/class_performance_counter.html#a3039b1e0a0c6e8b6ded6cf2a7ab131ee">PerformanceCounter</a>
+</li>
 <li>_manager
 : <a class="el" href="d5/d0b/class_service_control.html#ad386277873b52ad3b9bd3156dd84a55f">ServiceControl</a>
+</li>
+<li>_MaxValue
+: <a class="el" href="d8/de6/class_performance_counter.html#ab0f2aac135414cfb0a617c6cc4fe79b8">PerformanceCounter</a>
+</li>
+<li>_MinValue
+: <a class="el" href="d8/de6/class_performance_counter.html#a134441a87e54867e0a02d0b08bcdb86c">PerformanceCounter</a>
+</li>
+<li>_pCounterInfo
+: <a class="el" href="d8/de6/class_performance_counter.html#ad9514ad17d92e452d90dece41bed1b77">PerformanceCounter</a>
+</li>
+<li>_Previous1Value
+: <a class="el" href="d8/de6/class_performance_counter.html#afdc3fc22c50a676a1c069a96321921d5">PerformanceCounter</a>
+</li>
+<li>_Previous2Value
+: <a class="el" href="d8/de6/class_performance_counter.html#a056d76be4a2801ba88ecb45a69a425c1">PerformanceCounter</a>
+</li>
+<li>_Previous3Value
+: <a class="el" href="d8/de6/class_performance_counter.html#a9661454e31ddbfc7d2d6f7e9a8096464">PerformanceCounter</a>
 </li>
 <li>_pService
 : <a class="el" href="dd/d44/class_service_core.html#ac7c6db1d2cc8819bb55b2fe92822b697">ServiceCore</a>
@@ -192,6 +228,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>Close()
 : <a class="el" href="d1/da9/class_event.html#ac9591c372885864da8b66fa5b5f3488c">Event</a>
+, <a class="el" href="d9/d3e/class_performance_monitor.html#a69e24a779db3970a8f973b991434061c">PerformanceMonitor</a>
 , <a class="el" href="d4/d78/class_registry.html#a31f3c8a5dec640fbea7447d624464eff">Registry</a>
 , <a class="el" href="d1/d69/class_service_handler.html#a82b249089271ffb76a008c4c2feb0343">ServiceHandler</a>
 </li>
@@ -200,8 +237,11 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>Create()
 : <a class="el" href="d1/da9/class_event.html#a465cab85f59d36ef2d4c483dfe7a0cfc">Event</a>
-, <a class="el" href="d4/d78/class_registry.html#aae4924c288a7939960abc58feb25783a">Registry</a>
+, <a class="el" href="d4/d78/class_registry.html#a22b28d62d29d35c98413189b44b3945c">Registry</a>
 , <a class="el" href="d5/d0b/class_service_control.html#a57bc65cfb38c18ce594158bc7953e2b7">ServiceControl</a>
+</li>
+<li>CreateCounter()
+: <a class="el" href="d9/d3e/class_performance_monitor.html#a67ab5dfcbf228650c844cf9e2923c27b">PerformanceMonitor</a>
 </li>
 </ul>
 
@@ -284,6 +324,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>GetStatus()
 : <a class="el" href="d1/dbd/class_service_status.html#a51f07cbd804453c74e30b27e51d0b597">ServiceStatus</a>
 </li>
+<li>GetTitleLength()
+: <a class="el" href="d8/de6/class_performance_counter.html#a28ca1c94dc888d782ac894a89548af84">PerformanceCounter</a>
+</li>
+<li>GetValues()
+: <a class="el" href="d8/de6/class_performance_counter.html#a5c4bc77fe01997c2da129c1fa80d022b">PerformanceCounter</a>
+</li>
 <li>GetWorkDirectory()
 : <a class="el" href="de/dbd/class_service_info.html#a5821bc4529f4fbad51cbf9adddd957d2">ServiceInfo</a>
 </li>
@@ -332,16 +378,37 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_o"></a>- o -</h3><ul>
 <li>Open()
 : <a class="el" href="d1/da9/class_event.html#aaf6e4433ca6b506c87ff2b347cc74a78">Event</a>
-, <a class="el" href="d4/d78/class_registry.html#aaea2a63dff7b99d6f77b0a97823021c7">Registry</a>
+, <a class="el" href="d9/d3e/class_performance_monitor.html#aff2c3752ad4fec93d85fedcf00ab92ff">PerformanceMonitor</a>
+, <a class="el" href="d4/d78/class_registry.html#ae09f2a9cb7e848886848c22e9065db38">Registry</a>
 , <a class="el" href="d5/d0b/class_service_control.html#a1944ec3b59c35839aa6539506aeeb57f">ServiceControl</a>
 , <a class="el" href="d0/d5e/class_service_control_manager.html#a044d96579b5112838192d865517057cb">ServiceControlManager</a>
+</li>
+<li>OutputFile()
+: <a class="el" href="d8/de6/class_performance_counter.html#abafcfc680c8d299e4b32bab6f07f669b">PerformanceCounter</a>
+</li>
+<li>OutputString()
+: <a class="el" href="d8/de6/class_performance_counter.html#a267357a006b95c259ffbbecc889dc2e6">PerformanceCounter</a>
+</li>
+</ul>
+
+
+<h3><a id="index_p"></a>- p -</h3><ul>
+<li>ParseInformation()
+: <a class="el" href="d8/de6/class_performance_counter.html#a57ed472d9bd7785c1f1caa19fcad3079">PerformanceCounter</a>
+</li>
+<li>PerformanceCounter()
+: <a class="el" href="d8/de6/class_performance_counter.html#ab289f879dd9ade53712a1a4c7f7d1123">PerformanceCounter</a>
+</li>
+<li>PerformanceMonitor()
+: <a class="el" href="d9/d3e/class_performance_monitor.html#a39c0ce83c465380461c257771871e279">PerformanceMonitor</a>
 </li>
 </ul>
 
 
 <h3><a id="index_q"></a>- q -</h3><ul>
 <li>Query()
-: <a class="el" href="d4/d78/class_registry.html#a2f849110e332b60d8145df24466cda68">Registry</a>
+: <a class="el" href="d9/d3e/class_performance_monitor.html#ac25970d50a2cc55bbf8e153d635ed003">PerformanceMonitor</a>
+, <a class="el" href="d4/d78/class_registry.html#a2f849110e332b60d8145df24466cda68">Registry</a>
 </li>
 <li>QueryConfig()
 : <a class="el" href="d5/d0b/class_service_control.html#a5b4647d5942fd7d854f4021cc3d23417">ServiceControl</a>
@@ -353,7 +420,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="d5/d0b/class_service_control.html#a21c564956c73bc6b8cfd4ebe6a4d8d83">ServiceControl</a>
 </li>
 <li>QueryValue()
-: <a class="el" href="d4/d78/class_registry.html#a53fb7807427dd310959846820b920a0c">Registry</a>
+: <a class="el" href="d4/d78/class_registry.html#ac25e698794a4085ccedcdb1d9a51f1bb">Registry</a>
 </li>
 </ul>
 
@@ -392,13 +459,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="df/d9d/class_service1.html#a480aeecb4406391fc201fdee8e8ff5ee">Service1</a>
 </li>
 <li>Service2()
-: <a class="el" href="d9/d2d/class_service2.html#a769e887231d0fb1ec249c44ad5437e5b">Service2</a>
+: <a class="el" href="d9/d2d/class_service2.html#a07df10ca29644f8cac270b24cceb669c">Service2</a>
 </li>
 <li>ServiceCommand()
 : <a class="el" href="d5/dab/class_service_command.html#aa7e07fd0311cc0efcd49fc1bad4e07fe">ServiceCommand</a>
 </li>
 <li>ServiceControl()
-: <a class="el" href="d5/d0b/class_service_control.html#aedad646ba00c9fa17382cfc3529c0cc0">ServiceControl</a>
+: <a class="el" href="d5/d0b/class_service_control.html#a2d007dcb48edd94c69b425c72464ffb3">ServiceControl</a>
 </li>
 <li>ServiceCore()
 : <a class="el" href="dd/d44/class_service_core.html#ac42055e8303621e69ddbd9bd27ab393b">ServiceCore</a>
@@ -500,6 +567,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>~IService()
 : <a class="el" href="d5/ddc/class_i_service.html#a48368a39b1737412b2fed00a2172c18b">IService</a>
+</li>
+<li>~PerformanceCounter()
+: <a class="el" href="d8/de6/class_performance_counter.html#a6f6a2cf85ae09a5e61c7ed7bb9027b4e">PerformanceCounter</a>
+</li>
+<li>~PerformanceMonitor()
+: <a class="el" href="d9/d3e/class_performance_monitor.html#a3384e92808b5b887b52c6e0d5b864b16">PerformanceMonitor</a>
 </li>
 <li>~Registry()
 : <a class="el" href="d4/d78/class_registry.html#ac28e339aef39d9d97f1975623c8d8314">Registry</a>

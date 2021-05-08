@@ -1,0 +1,6 @@
+<map id="Registry/pch.h" name="Registry/pch.h">
+<area shape="rect" id="node1" title="プリコンパイル済みヘッダー ファイルです。" alt="" coords="163,5,270,32"/>
+<area shape="rect" id="node2" href="$d3/df8/_registry_2_main_8cpp.html" title=" " alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node3" href="$d5/dfe/_registry_2pch_8cpp.html" title="プリコンパイル済みヘッダーに対応するソース" alt="" coords="157,80,277,107"/>
+<area shape="rect" id="node4" href="$d0/d54/_registry_2_registry_8cpp.html" title="レジストリに関するWindowsAPIを集約したクラス" alt="" coords="301,80,447,107"/>
+</map>

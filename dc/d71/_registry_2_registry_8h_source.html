@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: Registry/Registry.h ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('dc/d71/_registry_2_registry_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Registry.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d71/_registry_2_registry_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../dc/d71/_registry_2_registry_8h.html#a26545336d0ab0d77af434c289f1c5922">    9</a></span>&#160;<span class="preprocessor">#define MAX_KEY_LENGTH 1024</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../dc/d71/_registry_2_registry_8h.html#a1cf569187eb354edc61baddd3a5acbec">   12</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="../../dc/d71/_registry_2_registry_8h.html#a1cf569187eb354edc61baddd3a5acbec">RegistryValueTypes</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    NONE = REG_NONE,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    DWORD = REG_DWORD,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    SZ = REG_SZ,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    EXPAND_SZ = REG_EXPAND_SZ,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    MULTI_SZ = REG_MULTI_SZ,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    BINARY = REG_BINARY,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    QWORD = REG_QWORD,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    QWORD_LITTLE_ENDIAN = REG_QWORD_LITTLE_ENDIAN,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    DWORD_LITTLE_ENDIAN = REG_DWORD_LITTLE_ENDIAN,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    DWORD_BIG_ENDIAN = REG_DWORD_BIG_ENDIAN,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../dc/d71/_registry_2_registry_8h.html#a1cf569187eb354edc61baddd3a5acbecab50339a10e1de285ac99d4c3990b8693">LINK</a> = REG_LINK,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d4/d78/class_registry.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/ddd/_registry_2pch_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a> <a class="code" href="../../d4/d78/class_registry.html">Registry</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../d4/d78/class_registry.html">Registry</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ~<a class="code" href="../../d4/d78/class_registry.html">Registry</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    BOOL Create(HKEY hRootKey, LPCTSTR lpctszSubKey, BOOL bVoratile = FALSE);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    BOOL Open(HKEY hRootKey, LPCTSTR lpctszSubKey, REGSAM samDesired = KEY_ALL_ACCESS);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    BOOL Query();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    BOOL QueryValue(</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        LPCTSTR lpctszEntry,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="../../dc/d71/_registry_2_registry_8h.html#a1cf569187eb354edc61baddd3a5acbec">RegistryValueTypes</a>&amp; eType,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        LPBYTE lpbyData,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        DWORD dwDataLen);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    BOOL SetValue(</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        LPCTSTR lpctszEntry,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="../../dc/d71/_registry_2_registry_8h.html#a1cf569187eb354edc61baddd3a5acbec">RegistryValueTypes</a> eType,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        LPBYTE lpbyData,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        DWORD dwDataLen);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    BOOL DeleteTree(LPCTSTR lpctszSubKey);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    BOOL DeleteKey(LPCTSTR lpctszSubKey);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    BOOL DeleteValue(LPCTSTR lpctszEntry);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    BOOL Flush();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    BOOL Close();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="../../d4/d78/class_registry.html#ac82146866368c11844bfc17d7c37219f">  165</a></span>&#160;    HKEY <a class="code" href="../../d4/d78/class_registry.html#ac82146866368c11844bfc17d7c37219f">GetKey</a>() { <span class="keywordflow">return</span> _hkTarget; };</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="../../d4/d78/class_registry.html#abffcdb246702ddbc0324d4f26abf3d7c">  168</a></span>&#160;    HKEY <a class="code" href="../../d4/d78/class_registry.html#abffcdb246702ddbc0324d4f26abf3d7c">_hkRoot</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="../../d4/d78/class_registry.html#a16d8a8e39f6dc172da48f00ff2f1771c">  169</a></span>&#160;    HKEY <a class="code" href="../../d4/d78/class_registry.html#a16d8a8e39f6dc172da48f00ff2f1771c">_hkTarget</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="a_registry_2_registry_8h_html_a1cf569187eb354edc61baddd3a5acbecab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="../../dc/d71/_registry_2_registry_8h.html#a1cf569187eb354edc61baddd3a5acbecab50339a10e1de285ac99d4c3990b8693">RegistryValueTypes::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdoc">設定なし</div></div>
+<div class="ttc" id="aclass_registry_html_abffcdb246702ddbc0324d4f26abf3d7c"><div class="ttname"><a href="../../d4/d78/class_registry.html#abffcdb246702ddbc0324d4f26abf3d7c">Registry::_hkRoot</a></div><div class="ttdeci">HKEY _hkRoot</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d71/_registry_2_registry_8h_source.html#l00168">Registry.h:165</a></div></div>
+<div class="ttc" id="aclass_registry_html"><div class="ttname"><a href="../../d4/d78/class_registry.html">Registry</a></div><div class="ttdoc">レジストリに関するWindowsAPIを集約したクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d71/_registry_2_registry_8h_source.html#l00039">Registry.h:40</a></div></div>
+<div class="ttc" id="aclass_registry_html_a16d8a8e39f6dc172da48f00ff2f1771c"><div class="ttname"><a href="../../d4/d78/class_registry.html#a16d8a8e39f6dc172da48f00ff2f1771c">Registry::_hkTarget</a></div><div class="ttdeci">HKEY _hkTarget</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d71/_registry_2_registry_8h_source.html#l00169">Registry.h:169</a></div></div>
+<div class="ttc" id="a_registry_2_registry_8h_html_a1cf569187eb354edc61baddd3a5acbec"><div class="ttname"><a href="../../dc/d71/_registry_2_registry_8h.html#a1cf569187eb354edc61baddd3a5acbec">RegistryValueTypes</a></div><div class="ttdeci">RegistryValueTypes</div><div class="ttdoc">レジストリのキー種別</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d71/_registry_2_registry_8h_source.html#l00012">Registry.h:13</a></div></div>
+<div class="ttc" id="aclass_registry_html_ac82146866368c11844bfc17d7c37219f"><div class="ttname"><a href="../../d4/d78/class_registry.html#ac82146866368c11844bfc17d7c37219f">Registry::GetKey</a></div><div class="ttdeci">HKEY GetKey()</div><div class="ttdoc">新規作成/オープンしたサブキーのハンドルを取得します。</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d71/_registry_2_registry_8h_source.html#l00165">Registry.h:165</a></div></div>
+<div class="ttc" id="a_registry_2pch_8h_html_aa4c7a931f4a968f818b2a1b10a432185"><div class="ttname"><a href="../../d1/ddd/_registry_2pch_8h.html#aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</a></div><div class="ttdeci">#define DECLSPEC</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/ddd/_registry_2pch_8h_source.html#l00015">pch.h:15</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_050dbe9f83839be7359d3d2e52808557.html">Registry</a></li><li class="navelem"><a class="el" href="../../dc/d71/_registry_2_registry_8h.html">Registry.h</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>

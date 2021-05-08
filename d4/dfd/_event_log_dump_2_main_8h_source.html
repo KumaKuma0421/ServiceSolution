@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ServiceSolution: EventLogDump/Main.h ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ServiceSolution
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Windows Service Application for Visual Studio 2019</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d4/dfd/_event_log_dump_2_main_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Main.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/dfd/_event_log_dump_2_main_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Main.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/d29/framework_8h.html">framework.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;Registry.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//#define SOURCE_NAME             _T(&quot;ServiceApplication&quot;)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//#define PROVIDER_NAME           _T(&quot;ServiceApplication1&quot;)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a651e5b9251b0d79de4e2038d069764c3">   12</a></span>&#160;<span class="preprocessor">#define SOURCE_NAME             _T(&quot;Application&quot;)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a95e27f40eff67ab99562a02abddc080b">   13</a></span>&#160;<span class="preprocessor">#define PROVIDER_NAME           _T(&quot;ESENT&quot;)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a1ddf2fd58a3eab1fb47066728eec6fe0">   14</a></span>&#160;<span class="preprocessor">#define MAX_TIMESTAMP_LEN       23 + 1   // mm/dd/yyyy hh:mm:ss.mmm</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a2dae984f4965bfa5ed586e3871540ce7">   15</a></span>&#160;<span class="preprocessor">#define MAX_RECORD_BUFFER_SIZE  0x10000  // 64K</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a6c5f5d7dd67667aab49de3791fb5833c">   17</a></span>&#160;<span class="preprocessor">#define EVENT_ROOT _T(&quot;SYSTEM\\CurrentControlSet\\Services\\EventLog&quot;)</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#abc211491f4e77884ea8d39a89ff791e6">   18</a></span>&#160;<span class="preprocessor">#define ENTRY_CATEGORY_MESSAGE_FILE _T(&quot;CategoryMessageFile&quot;)</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#ab3fc27297031a54d413c76e7e85100d2">   19</a></span>&#160;<span class="preprocessor">#define ENTRY_EVENT_MESSAGE_FILE _T(&quot;EventMessageFile&quot;)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;BOOL <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#aa83312b09827daf2607b2038891c3721">GetResourceFiles</a>(LPTSTR lptszCategoryMessageFile, LPTSTR lptszEventMessageFile);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;HANDLE <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#aab46c7ee37a145710df9833cf4e2de31">GetMessageResources</a>(LPCTSTR lpctszResourceFile);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;DWORD <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a7866d0a054032a4b940bbde142b90131">DumpRecordsInBuffer</a>(LPBYTE lpbyBuffer, DWORD dwBytesRead);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;DWORD <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a533817dd907420ff6eb9f2b536b53126">GetEventTypeName</a>(DWORD dwEventType);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;LPWSTR <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a3a30b7f04b0c4760fc3091d17dd2c86d">GetMessageString</a>(HANDLE hResource, DWORD dwMessageID, DWORD dwArgc, LPTSTR lptszArgv);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;DWORD <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#a7f5460ae83bc0f5388774bcbf744a90e">ApplyParameterStringsToMessage</a>(LPCTSTR lptszMessage, LPTSTR&amp; lptszFinalMessage);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;VOID <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#ac88443b796d6422c6bcf490301216cc7">GetTimeStamp</a>(<span class="keyword">const</span> DWORD cdwTime, TCHAR tszDisplayString[]);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d4/dfd/_event_log_dump_2_main_8h.html#afc0dca8ea9ca32710e3c07806e95d5d9">   29</a></span>&#160;LPCTSTR <a class="code" href="../../d4/dfd/_event_log_dump_2_main_8h.html#afc0dca8ea9ca32710e3c07806e95d5d9">lptszEventTypeNames</a>[] =</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    (LPTSTR)_T(<span class="stringliteral">&quot;Success&quot;</span>),</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    (LPTSTR)_T(<span class="stringliteral">&quot;Error&quot;</span>), </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    (LPTSTR)_T(<span class="stringliteral">&quot;Warning&quot;</span>),</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    (LPTSTR)_T(<span class="stringliteral">&quot;Informational&quot;</span>),</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    (LPTSTR)_T(<span class="stringliteral">&quot;Audit Success&quot;</span>),</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    (LPTSTR)_T(<span class="stringliteral">&quot;Audit Failure&quot;</span>)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_ac88443b796d6422c6bcf490301216cc7"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#ac88443b796d6422c6bcf490301216cc7">GetTimeStamp</a></div><div class="ttdeci">VOID GetTimeStamp(const DWORD cdwTime, TCHAR tszDisplayString[])</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00540">Main.cpp:540</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_a7866d0a054032a4b940bbde142b90131"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#a7866d0a054032a4b940bbde142b90131">DumpRecordsInBuffer</a></div><div class="ttdeci">DWORD DumpRecordsInBuffer(LPBYTE lpbyBuffer, DWORD dwBytesRead)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00201">Main.cpp:201</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_a3a30b7f04b0c4760fc3091d17dd2c86d"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#a3a30b7f04b0c4760fc3091d17dd2c86d">GetMessageString</a></div><div class="ttdeci">LPWSTR GetMessageString(HANDLE hResource, DWORD dwMessageID, DWORD dwArgc, LPTSTR lptszArgv)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00302">Main.cpp:302</a></div></div>
+<div class="ttc" id="aframework_8h_html"><div class="ttname"><a href="../../d6/d29/framework_8h.html">framework.h</a></div><div class="ttdoc">このプロジェクトのポーティングに関する情報</div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_aab46c7ee37a145710df9833cf4e2de31"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#aab46c7ee37a145710df9833cf4e2de31">GetMessageResources</a></div><div class="ttdeci">HANDLE GetMessageResources(LPCTSTR lpctszResourceFile)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00185">Main.cpp:185</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_a533817dd907420ff6eb9f2b536b53126"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#a533817dd907420ff6eb9f2b536b53126">GetEventTypeName</a></div><div class="ttdeci">DWORD GetEventTypeName(DWORD dwEventType)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00270">Main.cpp:270</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_afc0dca8ea9ca32710e3c07806e95d5d9"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#afc0dca8ea9ca32710e3c07806e95d5d9">lptszEventTypeNames</a></div><div class="ttdeci">LPCTSTR lptszEventTypeNames[]</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/_event_log_dump_2_main_8h_source.html#l00029">Main.h:29</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_a7f5460ae83bc0f5388774bcbf744a90e"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#a7f5460ae83bc0f5388774bcbf744a90e">ApplyParameterStringsToMessage</a></div><div class="ttdeci">DWORD ApplyParameterStringsToMessage(LPCTSTR lptszMessage, LPTSTR &amp;lptszFinalMessage)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00360">Main.cpp:360</a></div></div>
+<div class="ttc" id="a_event_log_dump_2_main_8h_html_aa83312b09827daf2607b2038891c3721"><div class="ttname"><a href="../../d4/dfd/_event_log_dump_2_main_8h.html#aa83312b09827daf2607b2038891c3721">GetResourceFiles</a></div><div class="ttdeci">BOOL GetResourceFiles(LPTSTR lptszCategoryMessageFile, LPTSTR lptszEventMessageFile)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_event_log_dump_2_main_8cpp_source.html#l00136">Main.cpp:136</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_592375a4b7512d26ca24a6e58b25ffec.html">EventLogDump</a></li><li class="navelem"><a class="el" href="../../d4/dfd/_event_log_dump_2_main_8h.html">Main.h</a></li>
+    <li class="footer">構築: <a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+  </ul>
+</div>
+</body>
+</html>
