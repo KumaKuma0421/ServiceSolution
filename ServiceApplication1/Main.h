@@ -25,7 +25,7 @@
 //! @return BOOL
 //! @retval ERROR_SUCCESS(成功)
 //! @retval -1(失敗)
-int WINAPI _tmain(int argc, TCHAR** argv);
+int WINAPI _tmain (int argc, TCHAR** argv);
 
 //! @brief
 //!   サービス関数
@@ -36,7 +36,7 @@ int WINAPI _tmain(int argc, TCHAR** argv);
 //! @param dwArgc 引数の数
 //! @param lptszArgv 引数
 //! @return VOID
-VOID WINAPI ServiceMain(DWORD dwArgc, LPTSTR* lptszArgv);
+VOID WINAPI ServiceMain (DWORD dwArgc, LPTSTR* lptszArgv);
 
 //! @brief
 //!   サービス制御関数
@@ -49,4 +49,4 @@ VOID WINAPI ServiceMain(DWORD dwArgc, LPTSTR* lptszArgv);
 //!   - SERVICE_CONTROL_PRESHUTDOWN
 //!   - SERVICE_CONTROL_CONTINUE
 //! @return VOID
-VOID WINAPI CtrlHandler(DWORD dwControlCode);
+VOID WINAPI CtrlHandler (DWORD dwControlCode);

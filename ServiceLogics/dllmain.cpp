@@ -14,19 +14,19 @@
 //!   - DLL_PROCESS_DETACH
 //! @param lpvReserved リザーブ
 //! @return TRUE
-BOOL APIENTRY DllMain(HMODULE hModule,
-                      DWORD  dwReasonForCall,
-                      LPVOID lpvReserved
+BOOL APIENTRY DllMain (HMODULE hModule,
+					  DWORD  dwReasonForCall,
+					  LPVOID lpvReserved
 )
 {
-    switch (dwReasonForCall)
-    {
-        case DLL_PROCESS_ATTACH:
-        case DLL_THREAD_ATTACH:
-        case DLL_THREAD_DETACH:
-        case DLL_PROCESS_DETACH:
-            break;
-    }
+	switch (dwReasonForCall)
+	{
+		case DLL_PROCESS_ATTACH:
+		case DLL_THREAD_ATTACH:
+		case DLL_THREAD_DETACH:
+		case DLL_PROCESS_DETACH:
+			break;
+	}
 
-    return TRUE;
+	return TRUE;
 }

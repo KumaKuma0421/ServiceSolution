@@ -18,20 +18,20 @@
 #define ENTRY_CATEGORY_MESSAGE_FILE _T("CategoryMessageFile")
 #define ENTRY_EVENT_MESSAGE_FILE _T("EventMessageFile")
 
-BOOL GetResourceFiles(LPTSTR lptszCategoryMessageFile, LPTSTR lptszEventMessageFile);
-HANDLE GetMessageResources(LPCTSTR lpctszResourceFile);
-DWORD DumpRecordsInBuffer(LPBYTE lpbyBuffer, DWORD dwBytesRead);
-DWORD GetEventTypeName(DWORD dwEventType);
-LPWSTR GetMessageString(HANDLE hResource, DWORD dwMessageID, DWORD dwArgc, LPTSTR lptszArgv);
-DWORD ApplyParameterStringsToMessage(LPCTSTR lptszMessage, LPTSTR& lptszFinalMessage);
-VOID GetTimeStamp(const DWORD cdwTime, TCHAR tszDisplayString[]);
+BOOL GetResourceFiles (LPTSTR lptszCategoryMessageFile, LPTSTR lptszEventMessageFile);
+HANDLE GetMessageResources (LPCTSTR lpctszResourceFile);
+DWORD DumpRecordsInBuffer (LPBYTE lpbyBuffer, DWORD dwBytesRead);
+DWORD GetEventTypeName (DWORD dwEventType);
+LPWSTR GetMessageString (HANDLE hResource, DWORD dwMessageID, DWORD dwArgc, LPTSTR lptszArgv);
+DWORD ApplyParameterStringsToMessage (LPCTSTR lptszMessage, LPTSTR& lptszFinalMessage);
+VOID GetTimeStamp (const DWORD cdwTime, TCHAR tszDisplayString[]);
 
 LPCTSTR lptszEventTypeNames[] =
 {
-    (LPTSTR)_T("Success"),
-    (LPTSTR)_T("Error"), 
-    (LPTSTR)_T("Warning"),
-    (LPTSTR)_T("Informational"),
-    (LPTSTR)_T("Audit Success"),
-    (LPTSTR)_T("Audit Failure")
+	(LPTSTR)_T ("Success"),
+	(LPTSTR)_T ("Error"),
+	(LPTSTR)_T ("Warning"),
+	(LPTSTR)_T ("Informational"),
+	(LPTSTR)_T ("Audit Success"),
+	(LPTSTR)_T ("Audit Failure")
 };

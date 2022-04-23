@@ -9,58 +9,58 @@
 #include "ServiceInfo.h"
 
 static EventLogger __logger;
-static ServiceCore __core(__logger);
+static ServiceCore __core (__logger);
 
-int WINAPI _tmain(int argc, TCHAR** argv)
+int WINAPI _tmain (int argc, TCHAR** argv)
 {
 	BOOL ret;
 
-	_tsetlocale(LC_ALL, _T("Japanese"));
+	_tsetlocale (LC_ALL, _T ("Japanese"));
 
 	do
 	{
 		ServiceInfo si;
-		ret = si.Initialize(_T("Service1"));
+		ret = si.Initialize (_T ("Service1"));
 		if (!ret)
 		{
-			_tprintf(_T("ServiceInfo の取得に失敗しました。\n"));
+			_tprintf (_T ("ServiceInfo の取得に失敗しました。\n"));
 			break;
 		}
 
-		ret = __logger.Init(si.GetName());
+		ret = __logger.Init (si.GetName ());
 		if (!ret)
 		{
-			_tprintf(_T("EventLogger の初期化に失敗しました。\n"));
+			_tprintf (_T ("EventLogger の初期化に失敗しました。\n"));
 			break;
 		}
 
 		if (argc > 1)
 		{
-			ServiceCommand command(si);
-			ret = command.Command(argv[1], argv[2]);
+			ServiceCommand command (si);
+			ret = command.Command (argv[1], argv[2]);
 		}
 		else
 		{
-			IService* pService = new Service1(__logger);
-			ret = __core.Entry(ServiceMain, CtrlHandler, pService, &si);
+			IService* pService = new Service1 (__logger);
+			ret = __core.Entry (ServiceMain, CtrlHandler, pService, &si);
 		}
 
 		if (!ret) break;
 
-		ret = __logger.Exit();
-		if (!ret) _tprintf(_T("EventLogger の終了処理に失敗しました。\n"));
+		ret = __logger.Exit ();
+		if (!ret) _tprintf (_T ("EventLogger の終了処理に失敗しました。\n"));
 
 	} while (0);
 
 	return ret == TRUE ? ERROR_SUCCESS : -1;
 }
 
-VOID WINAPI ServiceMain(DWORD dwArgc, LPTSTR* lptszArgv)
+VOID WINAPI ServiceMain (DWORD dwArgc, LPTSTR* lptszArgv)
 {
-	__core.Main(dwArgc, lptszArgv);
+	__core.Main (dwArgc, lptszArgv);
 }
 
-VOID WINAPI CtrlHandler(DWORD dwControlCode)
+VOID WINAPI CtrlHandler (DWORD dwControlCode)
 {
-	__core.Handler(dwControlCode);
+	__core.Handler (dwControlCode);
 }

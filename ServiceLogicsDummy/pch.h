@@ -15,43 +15,43 @@
 #undef StartServiceCtrlDispatcher
 #define StartServiceCtrlDispatcher StartServiceCtrlDispatcherD
 
-extern BOOL WINAPI StartServiceCtrlDispatcherD(
-    _In_ CONST  SERVICE_TABLE_ENTRYW* lpServiceStartTable);
+extern BOOL WINAPI StartServiceCtrlDispatcherD (
+	_In_ CONST  SERVICE_TABLE_ENTRYW* lpServiceStartTable);
 
 // ----------------------------------------------------------------------------
 #undef StartService
 #define StartService StartServiceD
 
-extern BOOL WINAPI StartServiceD(
-    _In_            SC_HANDLE            hService,
-    _In_            DWORD                dwNumServiceArgs,
-    _In_reads_opt_(dwNumServiceArgs)     LPCWSTR* lpServiceArgVectors);
+extern BOOL WINAPI StartServiceD (
+	_In_            SC_HANDLE            hService,
+	_In_            DWORD                dwNumServiceArgs,
+	_In_reads_opt_ (dwNumServiceArgs)     LPCWSTR* lpServiceArgVectors);
 
 // ----------------------------------------------------------------------------
 #undef RegisterServiceCtrlHandler
 #define RegisterServiceCtrlHandler RegisterServiceCtrlHandlerD
 
-extern SERVICE_STATUS_HANDLE WINAPI RegisterServiceCtrlHandlerD(
-    _In_    LPCWSTR                    lpServiceName,
-    _In_    __callback
-            LPHANDLER_FUNCTION          lpHandlerProc
+extern SERVICE_STATUS_HANDLE WINAPI RegisterServiceCtrlHandlerD (
+	_In_    LPCWSTR                    lpServiceName,
+	_In_    __callback
+			LPHANDLER_FUNCTION          lpHandlerProc
 );
 
 // ----------------------------------------------------------------------------
 #undef SetServiceStatus
 #define SetServiceStatus SetServiceStatusD
 
-extern BOOL WINAPI SetServiceStatusD(
-    _In_        SERVICE_STATUS_HANDLE   hServiceStatus,
-    _In_        LPSERVICE_STATUS        lpServiceStatus
+extern BOOL WINAPI SetServiceStatusD (
+	_In_        SERVICE_STATUS_HANDLE   hServiceStatus,
+	_In_        LPSERVICE_STATUS        lpServiceStatus
 );
 
 // ----------------------------------------------------------------------------
 #undef CreateEvent
 #define CreateEvent CreateEventD
 
-extern HANDLE WINAPI CreateEventD(
-    _In_opt_ LPSECURITY_ATTRIBUTES lpEventAttributes,
-    _In_ BOOL bManualReset,
-    _In_ BOOL bInitialState,
-    _In_opt_ LPCWSTR lpName);
+extern HANDLE WINAPI CreateEventD (
+	_In_opt_ LPSECURITY_ATTRIBUTES lpEventAttributes,
+	_In_ BOOL bManualReset,
+	_In_ BOOL bInitialState,
+	_In_opt_ LPCWSTR lpName);

@@ -11,57 +11,57 @@
 class DECLSPEC Thread
 {
 public:
-    //! @brief コンストラクタ
-    Thread();
+	//! @brief コンストラクタ
+	Thread ();
 
-    //! @brief デストラクタ
-    virtual ~Thread();
+	//! @brief デストラクタ
+	virtual ~Thread ();
 
-    //! @brief スレッドの起動
-    //! @return BOOL
-    //! @retval TRUE(成功)
-    //! @retval FALSE(失敗)
-    virtual BOOL Start();
+	//! @brief スレッドの起動
+	//! @return BOOL
+	//! @retval TRUE(成功)
+	//! @retval FALSE(失敗)
+	virtual BOOL Start ();
 
-    //! @brief スレッドの停止
-    //! @return BOOL
-    //! @retval TRUE(成功)
-    //! @retval FALSE(失敗)
-    virtual BOOL Stop();
+	//! @brief スレッドの停止
+	//! @return BOOL
+	//! @retval TRUE(成功)
+	//! @retval FALSE(失敗)
+	virtual BOOL Stop ();
 
-    //! @brief スレッドの中断
-    //! @return BOOL
-    //! @retval TRUE(成功)
-    //! @retval FALSE(失敗)
-    virtual BOOL Suspend();
+	//! @brief スレッドの中断
+	//! @return BOOL
+	//! @retval TRUE(成功)
+	//! @retval FALSE(失敗)
+	virtual BOOL Suspend ();
 
-    //! @brief スレッドの再開
-    //! @return BOOL
-    //! @retval TRUE(成功)
-    //! @retval FALSE(失敗)
-    virtual BOOL Resume();
+	//! @brief スレッドの再開
+	//! @return BOOL
+	//! @retval TRUE(成功)
+	//! @retval FALSE(失敗)
+	virtual BOOL Resume ();
 
-    //! @brief スレッド処理関数
-    //! @return BOOL
-    //! @retval TRUE(成功)
-    //! @retval FALSE(失敗)
-    virtual BOOL Run() = 0;
+	//! @brief スレッド処理関数
+	//! @return BOOL
+	//! @retval TRUE(成功)
+	//! @retval FALSE(失敗)
+	virtual BOOL Run () = 0;
 
-    //! @brief 終了待機
-    //! @return BOOL
-    //! @retval TRUE(成功)
-    //! @retval FALSE(失敗)
-    virtual BOOL Wait(DWORD dwMillisec = INFINITE);
+	//! @brief 終了待機
+	//! @return BOOL
+	//! @retval TRUE(成功)
+	//! @retval FALSE(失敗)
+	virtual BOOL Wait (DWORD dwMillisec = INFINITE);
 
 protected:
-    Event _event;
+	Event _event;
 
 private:
-    //! @brief スレッド処理関数
-    //! @param lpvParam 実際にスレッド処理を行うインスタンス
-    //! @return スレッド関数からの戻り値
-    static DWORD ThreadFunction(LPVOID lpvParam);
+	//! @brief スレッド処理関数
+	//! @param lpvParam 実際にスレッド処理を行うインスタンス
+	//! @return スレッド関数からの戻り値
+	static DWORD ThreadFunction (LPVOID lpvParam);
 
-    HANDLE _hThread;
-    DWORD _dwThread;
+	HANDLE _hThread;
+	DWORD _dwThread;
 };
